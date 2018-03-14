@@ -30,8 +30,6 @@ public class AdminHome extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        MovieImage1 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
@@ -41,11 +39,12 @@ public class AdminHome extends javax.swing.JFrame {
         jTextField2 = new javax.swing.JTextField();
         jTextField4 = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
-        MovieImage3 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        MovieImage2 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jLabel11 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         ReportsMenu = new javax.swing.JMenu();
@@ -70,16 +69,6 @@ public class AdminHome extends javax.swing.JFrame {
         jLabel2.setText("Current Show");
         jPanel1.add(jLabel2);
         jLabel2.setBounds(10, 60, 120, 20);
-
-        MovieImage1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/movieday/images/Folder.jpg"))); // NOI18N
-        MovieImage1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
-        MovieImage1.setPreferredSize(new java.awt.Dimension(500, 500));
-        jPanel1.add(MovieImage1);
-        MovieImage1.setBounds(20, 110, 200, 200);
-
-        jLabel4.setText("Movie1 Title");
-        jPanel1.add(jLabel4);
-        jLabel4.setBounds(60, 330, 110, 30);
 
         jLabel6.setText("Current Summary");
         jPanel1.add(jLabel6);
@@ -115,29 +104,29 @@ public class AdminHome extends javax.swing.JFrame {
 
         jPanel2.setLayout(null);
 
-        MovieImage3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/movieday/images/Folder.jpg"))); // NOI18N
-        MovieImage3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
-        MovieImage3.setPreferredSize(new java.awt.Dimension(500, 500));
-        jPanel2.add(MovieImage3);
-        MovieImage3.setBounds(520, 20, 200, 200);
-
-        jLabel3.setText("Movie1 Title");
-        jPanel2.add(jLabel3);
-        jLabel3.setBounds(570, 240, 110, 30);
-
-        MovieImage2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/movieday/images/Folder.jpg"))); // NOI18N
-        MovieImage2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
-        MovieImage2.setPreferredSize(new java.awt.Dimension(500, 500));
-        jPanel2.add(MovieImage2);
-        MovieImage2.setBounds(270, 20, 200, 200);
-
-        jLabel5.setText("Movie1 Title");
-        jPanel2.add(jLabel5);
-        jLabel5.setBounds(320, 240, 110, 30);
-
-        jButton1.setText("Movies Screen");
+        jButton1.setText("View Movies");
         jPanel2.add(jButton1);
-        jButton1.setBounds(290, 290, 140, 29);
+        jButton1.setBounds(90, 250, 140, 29);
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/movieday/images/Folder.jpg"))); // NOI18N
+        jPanel2.add(jLabel4);
+        jLabel4.setBounds(70, 40, 200, 200);
+
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/movieday/images/Folder.jpg"))); // NOI18N
+        jPanel2.add(jLabel10);
+        jLabel10.setBounds(310, 40, 200, 200);
+
+        jButton3.setText("View Users");
+        jPanel2.add(jButton3);
+        jButton3.setBounds(330, 250, 140, 29);
+
+        jButton4.setText("View Profile");
+        jPanel2.add(jButton4);
+        jButton4.setBounds(560, 250, 140, 29);
+
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/movieday/images/Folder.jpg"))); // NOI18N
+        jPanel2.add(jLabel11);
+        jLabel11.setBounds(540, 40, 200, 200);
 
         jPanel1.add(jPanel2);
         jPanel2.setBounds(0, 90, 770, 330);
@@ -214,18 +203,17 @@ public class AdminHome extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel MovieImage1;
-    private javax.swing.JLabel MovieImage2;
-    private javax.swing.JLabel MovieImage3;
     private javax.swing.JMenu MoviesMenu;
     private javax.swing.JMenu ReportsMenu;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;

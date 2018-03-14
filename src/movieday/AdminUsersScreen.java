@@ -31,8 +31,6 @@ public class AdminUsersScreen extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        usersList = new javax.swing.JList<>();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -43,6 +41,9 @@ public class AdminUsersScreen extends javax.swing.JFrame {
         jTextField3 = new javax.swing.JTextField();
         jTextField4 = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jButton1 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         ReportsMenu = new javax.swing.JMenu();
@@ -53,9 +54,11 @@ public class AdminUsersScreen extends javax.swing.JFrame {
         jMenu5 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(770, 660));
+        setBounds(new java.awt.Rectangle(0, 0, 960, 725));
+        setMinimumSize(new java.awt.Dimension(960, 725));
+        setPreferredSize(new java.awt.Dimension(960, 725));
         setResizable(false);
-        setSize(new java.awt.Dimension(770, 660));
+        setSize(new java.awt.Dimension(960, 725));
         getContentPane().setLayout(null);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -68,17 +71,6 @@ public class AdminUsersScreen extends javax.swing.JFrame {
         jLabel2.setText("Last Name");
         jPanel1.add(jLabel2);
         jLabel2.setBounds(20, 110, 70, 20);
-
-        usersList.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "User 1", "User 2", "User 3", "User 4", "User 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        usersList.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        jScrollPane2.setViewportView(usersList);
-
-        jPanel1.add(jScrollPane2);
-        jScrollPane2.setBounds(20, 360, 200, 200);
 
         jLabel3.setText("First Name");
         jPanel1.add(jLabel3);
@@ -118,12 +110,40 @@ public class AdminUsersScreen extends javax.swing.JFrame {
 
         jLabel7.setText("Registered Users");
         jPanel1.add(jLabel7);
-        jLabel7.setBounds(20, 320, 200, 30);
+        jLabel7.setBounds(20, 340, 200, 30);
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Kamo", "Matjila", "F", "1996", "kamo@uwc.ac.za", "1234", "IDK"},
+                {"Sive", "Mbiza", "M", "1996", "sive@yahoo.com", "1243", "IDK"},
+                {"", null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Name", "Surname", "Sex", "D.O.B", "Email", "Password", "Security Question Answer"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane3.setViewportView(jTable1);
+
+        jPanel1.add(jScrollPane3);
+        jScrollPane3.setBounds(20, 390, 680, 270);
+
+        jButton1.setText("Save Details");
+        jPanel1.add(jButton1);
+        jButton1.setBounds(130, 280, 160, 40);
 
         jScrollPane1.setViewportView(jPanel1);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(0, 0, 770, 640);
+        jScrollPane1.setBounds(0, 0, 950, 690);
 
         jMenu1.setText("Home");
         jMenuBar1.add(jMenu1);
@@ -198,6 +218,7 @@ public class AdminUsersScreen extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu MoviesMenu;
     private javax.swing.JMenu ReportsMenu;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -214,11 +235,11 @@ public class AdminUsersScreen extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
-    private javax.swing.JList<String> usersList;
     // End of variables declaration//GEN-END:variables
 }

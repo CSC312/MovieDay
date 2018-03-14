@@ -94,13 +94,13 @@ public class ReportScreen extends javax.swing.JFrame {
         jPanel1.add(jScrollPane1);
         jScrollPane1.setBounds(20, 240, 720, 200);
 
-        jLabel2.setText("Per Movie");
+        jLabel2.setText("Summary For Each Movie");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(20, 200, 80, 30);
+        jLabel2.setBounds(20, 200, 190, 30);
 
-        jLabel3.setText("Per Show");
+        jLabel3.setText("Summary For Each Show");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(20, 20, 80, 30);
+        jLabel3.setBounds(20, 20, 180, 30);
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
