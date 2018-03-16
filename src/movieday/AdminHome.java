@@ -46,13 +46,13 @@ public class AdminHome extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        ReportsMenu = new javax.swing.JMenu();
-        MoviesMenu = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
-        jMenu3 = new javax.swing.JMenu();
-        jMenu4 = new javax.swing.JMenu();
-        jMenu5 = new javax.swing.JMenu();
+        adminHomeMenu = new javax.swing.JMenu();
+        adminReportsMenu = new javax.swing.JMenu();
+        adminMoviesMenu = new javax.swing.JMenu();
+        adminUsersMenu = new javax.swing.JMenu();
+        adminProfileMenu = new javax.swing.JMenu();
+        adminHelpMenu = new javax.swing.JMenu();
+        adminExitMenu = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Admin Home");
@@ -133,39 +133,52 @@ public class AdminHome extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 770, 660));
 
-        jMenu1.setText("Home");
-        jMenuBar1.add(jMenu1);
-
-        ReportsMenu.setText("Reports");
-        ReportsMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+        adminHomeMenu.setText("Home");
+        adminHomeMenu.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ReportsMenuMouseClicked(evt);
+                adminHomeMenuMouseClicked(evt);
             }
         });
-        jMenuBar1.add(ReportsMenu);
+        jMenuBar1.add(adminHomeMenu);
 
-        MoviesMenu.setText("Movies");
-        jMenuBar1.add(MoviesMenu);
+        adminReportsMenu.setText("Reports");
+        adminReportsMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                adminReportsMenuMouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(adminReportsMenu);
 
-        jMenu2.setText("Users");
-        jMenuBar1.add(jMenu2);
+        adminMoviesMenu.setText("Movies");
+        jMenuBar1.add(adminMoviesMenu);
 
-        jMenu3.setText("Profile");
-        jMenuBar1.add(jMenu3);
+        adminUsersMenu.setText("Users");
+        jMenuBar1.add(adminUsersMenu);
 
-        jMenu4.setText("Help");
-        jMenuBar1.add(jMenu4);
+        adminProfileMenu.setText("Profile");
+        jMenuBar1.add(adminProfileMenu);
 
-        jMenu5.setText("Exit");
-        jMenuBar1.add(jMenu5);
+        adminHelpMenu.setText("Help");
+        jMenuBar1.add(adminHelpMenu);
+
+        adminExitMenu.setText("Exit");
+        jMenuBar1.add(adminExitMenu);
 
         setJMenuBar(jMenuBar1);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void ReportsMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ReportsMenuMouseClicked
-    }//GEN-LAST:event_ReportsMenuMouseClicked
+    private void adminReportsMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminReportsMenuMouseClicked
+        
+        new ReportScreen().setVisible(true);
+        this.setVisible(false);
+       
+    }//GEN-LAST:event_adminReportsMenuMouseClicked
+
+    private void adminHomeMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminHomeMenuMouseClicked
+       
+    }//GEN-LAST:event_adminHomeMenuMouseClicked
 
     /**
      * @param args the command line arguments
@@ -203,8 +216,13 @@ public class AdminHome extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu MoviesMenu;
-    private javax.swing.JMenu ReportsMenu;
+    private javax.swing.JMenu adminExitMenu;
+    private javax.swing.JMenu adminHelpMenu;
+    private javax.swing.JMenu adminHomeMenu;
+    private javax.swing.JMenu adminMoviesMenu;
+    private javax.swing.JMenu adminProfileMenu;
+    private javax.swing.JMenu adminReportsMenu;
+    private javax.swing.JMenu adminUsersMenu;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -218,11 +236,6 @@ public class AdminHome extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
-    private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
