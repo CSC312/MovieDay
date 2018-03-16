@@ -11,7 +11,7 @@ import static com.sun.glass.ui.Cursor.setVisible;
  *
  * @author johnclaude
  */
-public class Functions {
+public class Function {
     public static void goToAdminHome(){
         AdminHome screen = new AdminHome();
         screen.setVisible(true);
