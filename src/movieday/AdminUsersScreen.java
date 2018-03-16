@@ -137,6 +137,11 @@ public class AdminUsersScreen extends javax.swing.JFrame {
         jScrollPane3.setBounds(20, 390, 680, 270);
 
         jButton1.setText("Save Details");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton1);
         jButton1.setBounds(130, 280, 160, 40);
 
@@ -146,6 +151,11 @@ public class AdminUsersScreen extends javax.swing.JFrame {
         jScrollPane1.setBounds(0, 0, 950, 690);
 
         jMenu1.setText("Home");
+        jMenu1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu1MouseClicked(evt);
+            }
+        });
         jMenuBar1.add(jMenu1);
 
         ReportsMenu.setText("Reports");
@@ -179,6 +189,19 @@ public class AdminUsersScreen extends javax.swing.JFrame {
     private void ReportsMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ReportsMenuMouseClicked
 
     }//GEN-LAST:event_ReportsMenuMouseClicked
+
+    private void jMenu1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu1MouseClicked
+        System.out.println("Menu Clicked"); 
+        new AdminHome().setVisible(true);
+        this.setVisible(false);
+       
+    }//GEN-LAST:event_jMenu1MouseClicked
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+         System.out.println("Menu Clicked"); 
+        new AdminHome().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
