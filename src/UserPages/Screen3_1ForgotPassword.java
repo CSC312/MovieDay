@@ -5,17 +5,41 @@
  */
 package UserPages;
 
+import javax.swing.ButtonGroup;
+import javax.swing.Icon;
+import javax.swing.JOptionPane;
+import javax.swing.JRadioButton;
+
 /**
  *
  * @author Nino
  */
 public class Screen3_1ForgotPassword extends javax.swing.JFrame {
-
-    /**
-     * Creates new form Screen3_1ForgotPassword
-     */
+    String name = "";
+    String surname = "";
+    String username = "";
+    String contactNo="";
+    String password = "";
+    String secQuestion = "";
+    
     public Screen3_1ForgotPassword() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        addButtonGroup();
+        txfName.setEnabled(false);
+        txfSurname.setEnabled(false);
+        txfPassword.setEnabled(false);
+        btnSubmit2.setEnabled(false);
+        txfUsername.setEnabled(false);
+        txfSecQuest.setEnabled(false);
+        btnSubmit1.setEnabled(false);
+        btnLogin.setEnabled(false);
+    }
+    
+    private void addButtonGroup(){
+        ButtonGroup group = new ButtonGroup();
+        group.add(rbtnPassword);
+        group.add(rbtnUsername);
     }
 
     /**
@@ -50,7 +74,6 @@ public class Screen3_1ForgotPassword extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         lblPassword = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
         rbtnPassword = new javax.swing.JRadioButton();
         rbtnUsername = new javax.swing.JRadioButton();
         btnClear = new javax.swing.JButton();
@@ -69,6 +92,7 @@ public class Screen3_1ForgotPassword extends javax.swing.JFrame {
         jSeparator2 = new javax.swing.JPopupMenu.Separator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setName("Password Recovery"); // NOI18N
 
         jPanel2.setBackground(new java.awt.Color(0, 153, 0));
 
@@ -85,6 +109,11 @@ public class Screen3_1ForgotPassword extends javax.swing.JFrame {
         txfName.setMaximumSize(new java.awt.Dimension(4, 19));
 
         btnSubmit2.setText("Submit");
+        btnSubmit2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSubmit2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -247,10 +276,6 @@ public class Screen3_1ForgotPassword extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel12.setText("PASSWORD RECOVERY");
-
         rbtnPassword.setText("Forgot Password?");
 
         org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, buttonGroup1, org.jdesktop.beansbinding.ELProperty.create("${selection.selected}"), rbtnPassword, org.jdesktop.beansbinding.BeanProperty.create("selected"));
@@ -353,26 +378,19 @@ public class Screen3_1ForgotPassword extends javax.swing.JFrame {
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(34, 34, 34))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(btnClear)
-                                .addGap(23, 23, 23)
-                                .addComponent(btnBack)
-                                .addGap(25, 25, 25)
-                                .addComponent(btnExit)
-                                .addGap(39, 39, 39)
-                                .addComponent(btnLogin)
-                                .addContainerGap())))))
+                        .addComponent(btnClear)
+                        .addGap(23, 23, 23)
+                        .addComponent(btnBack)
+                        .addGap(25, 25, 25)
+                        .addComponent(btnExit)
+                        .addGap(39, 39, 39)
+                        .addComponent(btnLogin)
+                        .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(59, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(rbtnPassword)
                     .addComponent(rbtnUsername))
@@ -395,19 +413,26 @@ public class Screen3_1ForgotPassword extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSubmit1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmit1ActionPerformed
-        /*try{
+        try{
             username = txfUsername.getText();
             secQuestion = txfSecQuest.getText();
 
             if(!(username.equals("")) || !(secQuestion.equals(""))){
-                if(Screen3_1ForgotPasswordGUI.login(username, secQuestion)==true){
+                /*if(Screen3_1ForgotPasswordGUI.login(username, secQuestion)==true){
                     Screen3_1ForgotPasswordGUI objNewJ = new Screen3_1ForgotPasswordGUI();
                     //JOptionPane.showMessageDialog(rootPane, "Username exists!");
                     lblPassword.setText("Username exists!");
 
                 }else{
                     JOptionPane.showMessageDialog(rootPane,"Username or Security answer is incorrect!");
-                }
+                }*/
+                btnLogin.setEnabled(true);
+                btnSubmit1.setEnabled(false);
+                btnClear.setEnabled(false);
+                txfUsername.setEnabled(false);
+                txfSecQuest.setEnabled(false);
+                rbtnPassword.setEnabled(false);
+                rbtnUsername.setEnabled(false);
             }else{
                 JOptionPane.showMessageDialog(rootPane,"Please enter username and the security answer!");
             }
@@ -416,7 +441,7 @@ public class Screen3_1ForgotPassword extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane,"Please fill in all the fields correctly", "Error", JOptionPane.ERROR_MESSAGE);
         }catch(Exception ex){
             JOptionPane.showMessageDialog(rootPane,"Please provide data of correct data type in all fields", "Error", JOptionPane.ERROR_MESSAGE);
-        }*/
+        }
     }//GEN-LAST:event_btnSubmit1ActionPerformed
 
     private void rbtnPasswordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rbtnPasswordMouseClicked
@@ -468,6 +493,40 @@ public class Screen3_1ForgotPassword extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
+    private void btnSubmit2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmit2ActionPerformed
+        try{
+            name = txfName.getText();
+            surname = txfSurname.getText();
+            password = txfPassword.getText();
+
+            if(!(name.equals("")) || !(surname.equals("")) || !(password.equals(""))){
+                /*if(Screen3_1ForgotPasswordGUI.login(username, secQuestion)==true){
+                    Screen3_1ForgotPasswordGUI objNewJ = new Screen3_1ForgotPasswordGUI();
+                    //JOptionPane.showMessageDialog(rootPane, "Username exists!");
+                    lblPassword.setText("Username exists!");
+
+                }else{
+                    JOptionPane.showMessageDialog(rootPane,"Username or Security answer is incorrect!");
+                }*/
+                btnLogin.setEnabled(true);
+                btnSubmit1.setEnabled(false);
+                btnClear.setEnabled(false);
+                txfName.setEnabled(false);
+                txfSurname.setEnabled(false);
+                txfPassword.setEnabled(false);
+                rbtnPassword.setEnabled(false);
+                rbtnUsername.setEnabled(false);
+            }else{
+                JOptionPane.showMessageDialog(rootPane,"Please enter username and the security answer!");
+            }
+
+        }catch(StringIndexOutOfBoundsException string){
+            JOptionPane.showMessageDialog(rootPane,"Please fill in all the fields correctly", "Error", JOptionPane.ERROR_MESSAGE);
+        }catch(Exception ex){
+            JOptionPane.showMessageDialog(rootPane,"Please provide data of correct data type in all fields", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btnSubmit2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -513,7 +572,6 @@ public class Screen3_1ForgotPassword extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

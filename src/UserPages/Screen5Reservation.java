@@ -16,6 +16,7 @@ public class Screen5Reservation extends javax.swing.JFrame {
      */
     public Screen5Reservation() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**

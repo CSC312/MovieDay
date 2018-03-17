@@ -1,9 +1,22 @@
 package UserPages;
 
-public class Screen2Register extends javax.swing.JFrame {
+import javax.swing.JOptionPane;
 
+public class Screen2Register extends javax.swing.JFrame {
+    String name = "",surname = "",username = "",
+           email="", DOB="", password = "",secQuestion = "";
+    
     public Screen2Register() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        
+        btnSubmit.setEnabled(false);
+        btnNewPass.setEnabled(true);
+        btnClear.setEnabled(true);
+        
+        btnLogin.setEnabled(false);
+        btnDeleteRecord.setEnabled(false);
+        tblUserInformation.setVisible(false);
     }
 
     /**
@@ -15,7 +28,6 @@ public class Screen2Register extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel4 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jPanel10 = new javax.swing.JPanel();
@@ -29,10 +41,10 @@ public class Screen2Register extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         lblPassword = new javax.swing.JLabel();
         btnNewPass = new javax.swing.JButton();
-        txfContactNo = new javax.swing.JTextField();
+        txfEmail = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        txfContactNo1 = new javax.swing.JTextField();
+        txfDOB = new javax.swing.JTextField();
         txfSecurityQuestion = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
         btnSubmit = new javax.swing.JButton();
@@ -56,10 +68,6 @@ public class Screen2Register extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("REGISTER");
-
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Details"));
 
         jPanel3.setForeground(new java.awt.Color(240, 240, 240));
@@ -78,18 +86,15 @@ public class Screen2Register extends javax.swing.JFrame {
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(txfName, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(txfName, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addComponent(jLabel3)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addComponent(txfName)
+            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(txfName)
+                .addComponent(jLabel3))
         );
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -100,18 +105,15 @@ public class Screen2Register extends javax.swing.JFrame {
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(txfSurname, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                .addComponent(txfSurname, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addComponent(jLabel6)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addComponent(txfSurname)
+            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(txfSurname)
+                .addComponent(jLabel6))
         );
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -147,17 +149,17 @@ public class Screen2Register extends javax.swing.JFrame {
             }
         });
 
-        txfContactNo.setToolTipText("");
-        txfContactNo.setMaximumSize(new java.awt.Dimension(4, 19));
+        txfEmail.setToolTipText("");
+        txfEmail.setMaximumSize(new java.awt.Dimension(4, 19));
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel12.setText("Email");
+        jLabel12.setText("Email:");
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel11.setText("Date of Birth:");
 
-        txfContactNo1.setToolTipText("");
-        txfContactNo1.setMaximumSize(new java.awt.Dimension(4, 19));
+        txfDOB.setToolTipText("");
+        txfDOB.setMaximumSize(new java.awt.Dimension(4, 19));
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
@@ -169,21 +171,19 @@ public class Screen2Register extends javax.swing.JFrame {
                         .addGap(47, 47, 47)
                         .addComponent(jLabel11)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txfContactNo1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txfDOB, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
                                 .addGap(0, 46, Short.MAX_VALUE)
-                                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addGroup(jPanel10Layout.createSequentialGroup()
-                                        .addGap(12, 12, 12)
                                         .addComponent(jLabel12)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(txfContactNo, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(11, 11, 11))))
+                                        .addComponent(txfEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addComponent(jPanel11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(jPanel10Layout.createSequentialGroup()
                                 .addGap(10, 10, 10)
@@ -199,12 +199,12 @@ public class Screen2Register extends javax.swing.JFrame {
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txfContactNo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txfEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel12))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
-                    .addComponent(txfContactNo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txfDOB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -331,7 +331,7 @@ public class Screen2Register extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(33, Short.MAX_VALUE)
+                .addContainerGap(40, Short.MAX_VALUE)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -417,40 +417,24 @@ public class Screen2Register extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 694, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnLogin)
-                .addContainerGap(22, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(128, 128, 128))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(3, 3, 3)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGap(4, 4, 4)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 286, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btnLogin)
-                        .addGap(55, 55, 55))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(95, 95, 95)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(139, Short.MAX_VALUE)))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnLogin))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -465,7 +449,7 @@ public class Screen2Register extends javax.swing.JFrame {
     }//GEN-LAST:event_txfNameActionPerformed
 
     private void btnNewPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewPassActionPerformed
-        /*try{
+        try{
             name = (txfName.getText().trim().toLowerCase()).trim();
             surname = (txfSurname.getText().toLowerCase()).trim();
             username = (name.substring(0,3)+surname.substring(0,3) + Math.round(Math.random()*899+100)).trim();
@@ -476,7 +460,7 @@ public class Screen2Register extends javax.swing.JFrame {
         }
         catch(StringIndexOutOfBoundsException string){
             JOptionPane.showMessageDialog(rootPane,"Please fill in all the fields correctly", "Error", JOptionPane.ERROR_MESSAGE);
-        }*/
+        }
     }//GEN-LAST:event_btnNewPassActionPerformed
 
     private void txfSecurityQuestionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txfSecurityQuestionMouseClicked
@@ -489,24 +473,20 @@ public class Screen2Register extends javax.swing.JFrame {
     }//GEN-LAST:event_txfSecurityQuestionActionPerformed
 
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
-        /*try{
-            //name = txfName.getText().trim().toLowerCase();
-            //surname = txfSurname.getText().trim().toLowerCase();
+        try{
+            name = txfName.getText().trim().toLowerCase();
+            surname = txfSurname.getText().trim().toLowerCase();
             username = name.substring(0,3)+surname.substring(0,3) + Math.round(Math.random()*899+100);
             secQuestion = txfSecurityQuestion.getText().trim();
-            contactNo = (txfContactNo.getText()).trim();
+            DOB = (txfDOB.getText()).trim();
 
             lblPassword.setText(password);
 
-            int Contact = Integer.parseInt(contactNo);
-            if((contactNo.length())!=10){
-                txfContactNo.setText("");
-                JOptionPane.showMessageDialog(rootPane, "Contact number must be 10 digits!");
-            }else if(secQuestion.equals("")){
+            if(secQuestion.equals("")){
                 JOptionPane.showMessageDialog(rootPane,"Please fill in all the fields correctly", "Error", JOptionPane.ERROR_MESSAGE);
             }else{
 
-                Tblallusers inputToAll  = new Tblallusers();
+                /*Tblallusers inputToAll  = new Tblallusers();
 
                 inputToAll.setName(name.trim());
                 inputToAll.setSurname(surname.trim());
@@ -527,11 +507,12 @@ public class Screen2Register extends javax.swing.JFrame {
                 tblallusersList.addAll(result);
                 //tblallusersList.clear();
                 //tblallusersList.addAll(tblallusersQuery.getResultList());
-                /*
+                */
                 JOptionPane.showMessageDialog(rootPane, "--------YOUR DETAILS-------- \n" +
                     "Name: \t\t" + name + "\n" +
                     "Surname: \t\t" + surname + "\n" +
-                    "Contact number: \t" + contactNo + "\n" +
+                    "Email: \t" + email + "\n" +
+                    "DOB: \t\t"+ DOB + "\n"+
                     "Security Answer: \t" + secQuestion + "\n\n" +
                     "Username: \t\t" + username + "\n" +
                     "Password: \t\t" + password,
@@ -539,11 +520,11 @@ public class Screen2Register extends javax.swing.JFrame {
                 
                 txfName.setEnabled(false);
                 txfSurname.setEnabled(false);
-                txfContactNo.setEnabled(false);
+                txfEmail.setEnabled(false);
+                txfDOB.setEnabled(false);
                 txfSecurityQuestion.setEnabled(false);
 
                 btnClear.setEnabled(false);
-                //btnBack.setEnabled(false);
                 btnSubmit.setEnabled(false);
 
                 tblUserInformation.setVisible(true);
@@ -559,7 +540,7 @@ public class Screen2Register extends javax.swing.JFrame {
         catch(Exception ex){
             JOptionPane.showMessageDialog(rootPane,"Please fill in all the fields correctly", "Error", JOptionPane.ERROR_MESSAGE);
         }
-          */
+          
         //int p = JOptionPane.showConfirmDialog(rootPane, "Are you satisfied with the data you provided?", "SUBMIT", JOptionPane.YES_NO_OPTION);
     }//GEN-LAST:event_btnSubmitActionPerformed
 
@@ -571,7 +552,7 @@ public class Screen2Register extends javax.swing.JFrame {
     private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
         txfName.setText("");
         txfSurname.setText("");
-        txfContactNo.setText("");
+        txfEmail.setText("");
         lblPassword.setText("<Password>");
 
     }//GEN-LAST:event_btnClearActionPerformed
@@ -677,7 +658,6 @@ public class Screen2Register extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
@@ -698,8 +678,8 @@ public class Screen2Register extends javax.swing.JFrame {
     private javax.swing.JPopupMenu.Separator jSeparator3;
     private javax.swing.JLabel lblPassword;
     private javax.swing.JTable tblUserInformation;
-    private javax.swing.JTextField txfContactNo;
-    private javax.swing.JTextField txfContactNo1;
+    private javax.swing.JTextField txfDOB;
+    private javax.swing.JTextField txfEmail;
     private javax.swing.JTextField txfName;
     private javax.swing.JTextField txfSecurityQuestion;
     private javax.swing.JTextField txfSurname;

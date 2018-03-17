@@ -16,6 +16,7 @@ public class Screen7_1UsersMovies extends javax.swing.JFrame {
      */
     public Screen7_1UsersMovies() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**

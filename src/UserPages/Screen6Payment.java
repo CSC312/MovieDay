@@ -16,6 +16,7 @@ public class Screen6Payment extends javax.swing.JFrame {
      */
     public Screen6Payment() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
