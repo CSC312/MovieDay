@@ -18,6 +18,7 @@ public class AdminHelpScreen extends javax.swing.JFrame {
      */
     public AdminHelpScreen() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
