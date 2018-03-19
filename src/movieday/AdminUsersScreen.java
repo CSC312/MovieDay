@@ -5,6 +5,8 @@
  */
 package movieday;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author johnclaude
@@ -45,13 +47,13 @@ public class AdminUsersScreen extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        ReportsMenu = new javax.swing.JMenu();
-        MoviesMenu = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
-        jMenu3 = new javax.swing.JMenu();
-        jMenu4 = new javax.swing.JMenu();
-        jMenu5 = new javax.swing.JMenu();
+        adminHomeMenu = new javax.swing.JMenu();
+        adminReportsMenu = new javax.swing.JMenu();
+        adminMoviesMenu = new javax.swing.JMenu();
+        adminUsersMenu = new javax.swing.JMenu();
+        adminProfileMenu = new javax.swing.JMenu();
+        adminHelpMenu = new javax.swing.JMenu();
+        adminExitMenu = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBounds(new java.awt.Rectangle(0, 0, 960, 725));
@@ -150,58 +152,109 @@ public class AdminUsersScreen extends javax.swing.JFrame {
         getContentPane().add(jScrollPane1);
         jScrollPane1.setBounds(0, 0, 950, 690);
 
-        jMenu1.setText("Home");
-        jMenu1.addMouseListener(new java.awt.event.MouseAdapter() {
+        adminHomeMenu.setText("Home");
+        adminHomeMenu.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jMenu1MouseClicked(evt);
+                adminHomeMenuMouseClicked(evt);
             }
         });
-        jMenuBar1.add(jMenu1);
+        jMenuBar1.add(adminHomeMenu);
 
-        ReportsMenu.setText("Reports");
-        ReportsMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+        adminReportsMenu.setText("Reports");
+        adminReportsMenu.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ReportsMenuMouseClicked(evt);
+                adminReportsMenuMouseClicked(evt);
             }
         });
-        jMenuBar1.add(ReportsMenu);
+        jMenuBar1.add(adminReportsMenu);
 
-        MoviesMenu.setText("Movies");
-        jMenuBar1.add(MoviesMenu);
+        adminMoviesMenu.setText("Movies");
+        adminMoviesMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                adminMoviesMenuMouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(adminMoviesMenu);
 
-        jMenu2.setText("Users");
-        jMenuBar1.add(jMenu2);
+        adminUsersMenu.setText("Users");
+        adminUsersMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                adminUsersMenuMouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(adminUsersMenu);
 
-        jMenu3.setText("Profile");
-        jMenuBar1.add(jMenu3);
+        adminProfileMenu.setText("Profile");
+        adminProfileMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                adminProfileMenuMouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(adminProfileMenu);
 
-        jMenu4.setText("Help");
-        jMenuBar1.add(jMenu4);
+        adminHelpMenu.setText("Help");
+        adminHelpMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                adminHelpMenuMouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(adminHelpMenu);
 
-        jMenu5.setText("Exit");
-        jMenuBar1.add(jMenu5);
+        adminExitMenu.setText("Exit");
+        adminExitMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                adminExitMenuMouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(adminExitMenu);
 
         setJMenuBar(jMenuBar1);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void ReportsMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ReportsMenuMouseClicked
-
-    }//GEN-LAST:event_ReportsMenuMouseClicked
-
-    private void jMenu1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu1MouseClicked
-        System.out.println("Menu Clicked"); 
-        new AdminHome().setVisible(true);
-        this.setVisible(false);
-       
-    }//GEN-LAST:event_jMenu1MouseClicked
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
          System.out.println("Menu Clicked"); 
         new AdminHome().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void adminHomeMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminHomeMenuMouseClicked
+        Function.goToAdminHome();
+        this.setVisible(false);
+    }//GEN-LAST:event_adminHomeMenuMouseClicked
+
+    private void adminReportsMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminReportsMenuMouseClicked
+        Function.goToReportScreen();
+        this.setVisible(false);
+    }//GEN-LAST:event_adminReportsMenuMouseClicked
+
+    private void adminMoviesMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminMoviesMenuMouseClicked
+        Function.goToAdminMoviesScreen();
+        this.setVisible(false);
+    }//GEN-LAST:event_adminMoviesMenuMouseClicked
+
+    private void adminUsersMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminUsersMenuMouseClicked
+        Function.goToAdminUserScreen();
+        this.setVisible(false);
+    }//GEN-LAST:event_adminUsersMenuMouseClicked
+
+    private void adminProfileMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminProfileMenuMouseClicked
+        Function.goToAdminUserScreen();
+        this.setVisible(false);
+    }//GEN-LAST:event_adminProfileMenuMouseClicked
+
+    private void adminHelpMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminHelpMenuMouseClicked
+        Function.goToAdminHelpScreen();
+        this.setVisible(false);
+    }//GEN-LAST:event_adminHelpMenuMouseClicked
+
+    private void adminExitMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminExitMenuMouseClicked
+        int choice  = JOptionPane.showConfirmDialog(rootPane, "Are you sure you want to exit?");
+        if(choice == 0){
+            System.exit(0);
+        }
+    }//GEN-LAST:event_adminExitMenuMouseClicked
 
     /**
      * @param args the command line arguments
@@ -239,8 +292,13 @@ public class AdminUsersScreen extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu MoviesMenu;
-    private javax.swing.JMenu ReportsMenu;
+    private javax.swing.JMenu adminExitMenu;
+    private javax.swing.JMenu adminHelpMenu;
+    private javax.swing.JMenu adminHomeMenu;
+    private javax.swing.JMenu adminMoviesMenu;
+    private javax.swing.JMenu adminProfileMenu;
+    private javax.swing.JMenu adminReportsMenu;
+    private javax.swing.JMenu adminUsersMenu;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -249,11 +307,6 @@ public class AdminUsersScreen extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
-    private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField jPasswordField1;

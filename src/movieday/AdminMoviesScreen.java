@@ -5,6 +5,8 @@
  */
 package movieday;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author johnclaude
@@ -14,6 +16,42 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
     /**
      * Creates new form AdminMoviesScreen
      */
+    //Show 1 - Movie 1
+    String show1m1Title, show1m1Year, show1m1Description;
+    int show1m1Length;
+    
+    //Show 1 - Movie 2
+    String show1m2Title, show1m2Year, show1m2Description;
+    int show1m2Length;
+    
+    //Show 1 - Movie 3
+    String show1m3Title, show1m3Year, show1m3Description;
+    int show1m3Length;
+    
+    //Show 2 - Movie 1
+    String show2m1Title, show2m1Year, show2m1Description;
+    int show2m1Length;
+    
+    //Show 2 - Movie 2
+    String show2m2Title, show2m2Year, show2m2Description;
+    int show2m2Length;
+    
+    //Show 2 - Movie 3
+    String show2m3Title, show2m3Year, show2m3Description;
+    int show2m3Length;
+    
+    //Show 3 - Movie 1
+    String show3m1Title, show3m1Year, show3m1Description;
+    int show3m1Length;
+    
+    //Show 3 - Movie 2
+    String show3m2Title, show3m2Year, show3m2Description;
+    int show3m2Length;
+    
+    //Show 3 - Movie 3
+    String show3m3Title, show3m3Year, show3m3Description;
+    int show3m3Length;
+    
     public AdminMoviesScreen() {
         initComponents();
     }
@@ -27,44 +65,43 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane4 = new javax.swing.JScrollPane();
         jTabbedPane1 = new javax.swing.JTabbedPane();
-        jPanel1 = new javax.swing.JPanel();
+        show1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
+        s1m1Image = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
+        s1m1Title = new javax.swing.JTextField();
+        s1m1Length = new javax.swing.JTextField();
+        s1m1Year = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        s1m1Description = new javax.swing.JTextArea();
         jPanel4 = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
+        s1m3Image = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jTextField7 = new javax.swing.JTextField();
+        s1m3Title = new javax.swing.JTextField();
+        s1m3Length = new javax.swing.JTextField();
+        s1m3Year = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
+        s1m3Description = new javax.swing.JTextArea();
         jPanel5 = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
+        s1m2Image = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        jTextField8 = new javax.swing.JTextField();
-        jTextField9 = new javax.swing.JTextField();
-        jTextField10 = new javax.swing.JTextField();
+        s1m2Title = new javax.swing.JTextField();
+        s1m2Length = new javax.swing.JTextField();
+        s1m2Year = new javax.swing.JTextField();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTextArea3 = new javax.swing.JTextArea();
-        jButton2 = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
+        s1m2Description = new javax.swing.JTextArea();
+        s1Savechanges = new javax.swing.JButton();
+        show2 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
@@ -72,35 +109,35 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
-        jTextField11 = new javax.swing.JTextField();
-        jTextField12 = new javax.swing.JTextField();
-        jTextField13 = new javax.swing.JTextField();
+        s2m1Title = new javax.swing.JTextField();
+        s2m1Length = new javax.swing.JTextField();
+        s2m1Year = new javax.swing.JTextField();
         jScrollPane5 = new javax.swing.JScrollPane();
-        jTextArea4 = new javax.swing.JTextArea();
+        s2m1Description = new javax.swing.JTextArea();
         jPanel8 = new javax.swing.JPanel();
         jLabel23 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
-        jTextField14 = new javax.swing.JTextField();
-        jTextField15 = new javax.swing.JTextField();
-        jTextField16 = new javax.swing.JTextField();
+        s2m3Title = new javax.swing.JTextField();
+        s2m3Length = new javax.swing.JTextField();
+        s2m3Year = new javax.swing.JTextField();
         jScrollPane6 = new javax.swing.JScrollPane();
-        jTextArea5 = new javax.swing.JTextArea();
+        s2m3Description = new javax.swing.JTextArea();
         jPanel9 = new javax.swing.JPanel();
         jLabel28 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
-        jTextField17 = new javax.swing.JTextField();
-        jTextField18 = new javax.swing.JTextField();
-        jTextField19 = new javax.swing.JTextField();
+        s2m2Title = new javax.swing.JTextField();
+        s2m2Length = new javax.swing.JTextField();
+        s2m2Year = new javax.swing.JTextField();
         jScrollPane7 = new javax.swing.JScrollPane();
-        jTextArea6 = new javax.swing.JTextArea();
-        jButton1 = new javax.swing.JButton();
-        jPanel10 = new javax.swing.JPanel();
+        s2m2Description = new javax.swing.JTextArea();
+        s2SaveChangesButton = new javax.swing.JButton();
+        show3 = new javax.swing.JPanel();
         jPanel11 = new javax.swing.JPanel();
         jPanel12 = new javax.swing.JPanel();
         jLabel18 = new javax.swing.JLabel();
@@ -108,35 +145,35 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
         jLabel34 = new javax.swing.JLabel();
         jLabel35 = new javax.swing.JLabel();
         jLabel36 = new javax.swing.JLabel();
-        jTextField20 = new javax.swing.JTextField();
-        jTextField21 = new javax.swing.JTextField();
-        jTextField22 = new javax.swing.JTextField();
+        s3m1Title = new javax.swing.JTextField();
+        s3m1Length = new javax.swing.JTextField();
+        s3m1Year = new javax.swing.JTextField();
         jScrollPane8 = new javax.swing.JScrollPane();
-        jTextArea7 = new javax.swing.JTextArea();
+        s3m1Description = new javax.swing.JTextArea();
         jPanel13 = new javax.swing.JPanel();
         jLabel37 = new javax.swing.JLabel();
         jLabel38 = new javax.swing.JLabel();
         jLabel39 = new javax.swing.JLabel();
         jLabel40 = new javax.swing.JLabel();
         jLabel41 = new javax.swing.JLabel();
-        jTextField23 = new javax.swing.JTextField();
-        jTextField24 = new javax.swing.JTextField();
-        jTextField25 = new javax.swing.JTextField();
+        s3m3Title = new javax.swing.JTextField();
+        s3m3Length = new javax.swing.JTextField();
+        s3m3Year = new javax.swing.JTextField();
         jScrollPane9 = new javax.swing.JScrollPane();
-        jTextArea8 = new javax.swing.JTextArea();
+        s3m3Description = new javax.swing.JTextArea();
         jPanel14 = new javax.swing.JPanel();
         jLabel42 = new javax.swing.JLabel();
         jLabel43 = new javax.swing.JLabel();
         jLabel44 = new javax.swing.JLabel();
         jLabel45 = new javax.swing.JLabel();
         jLabel46 = new javax.swing.JLabel();
-        jTextField26 = new javax.swing.JTextField();
-        jTextField27 = new javax.swing.JTextField();
-        jTextField28 = new javax.swing.JTextField();
+        s3m2Title = new javax.swing.JTextField();
+        s3m2Length = new javax.swing.JTextField();
+        s3m2Year = new javax.swing.JTextField();
         jScrollPane10 = new javax.swing.JScrollPane();
-        jTextArea9 = new javax.swing.JTextArea();
-        jButton3 = new javax.swing.JButton();
-        jPanel15 = new javax.swing.JPanel();
+        s3m2Description = new javax.swing.JTextArea();
+        s3SaveChangesButton = new javax.swing.JButton();
+        manageReservations = new javax.swing.JPanel();
         jScrollPane11 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
@@ -145,149 +182,159 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        ReportsMenu = new javax.swing.JMenu();
-        MoviesMenu = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
-        jMenu3 = new javax.swing.JMenu();
-        jMenu4 = new javax.swing.JMenu();
-        jMenu5 = new javax.swing.JMenu();
+        adminHomeMenu = new javax.swing.JMenu();
+        adminReportsMenu = new javax.swing.JMenu();
+        adminMoviesMenu = new javax.swing.JMenu();
+        adminUsersMenu = new javax.swing.JMenu();
+        adminProfileMenu = new javax.swing.JMenu();
+        adminHelpMenu = new javax.swing.JMenu();
+        adminExitMenu = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(960, 725));
+        setBounds(new java.awt.Rectangle(0, 0, 960, 770));
+        setMinimumSize(new java.awt.Dimension(960, 770));
+        setPreferredSize(new java.awt.Dimension(960, 770));
         setResizable(false);
-        setSize(new java.awt.Dimension(960, 725));
+        setSize(new java.awt.Dimension(960, 770));
         getContentPane().setLayout(null);
 
-        jScrollPane4.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        jScrollPane4.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
-        jScrollPane4.setPreferredSize(new java.awt.Dimension(770, 640));
-
-        jPanel1.setLayout(null);
+        show1.setLayout(null);
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(null);
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/movieday/images/Folder.jpg"))); // NOI18N
-        jPanel2.add(jLabel4);
-        jLabel4.setBounds(40, 80, 200, 180);
+        s1m1Image.setIcon(new javax.swing.ImageIcon(getClass().getResource("/movieday/images/Folder.jpg"))); // NOI18N
+        s1m1Image.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                s1m1ImageMouseClicked(evt);
+            }
+        });
+        jPanel2.add(s1m1Image);
+        s1m1Image.setBounds(40, 80, 200, 180);
 
         jLabel2.setText("Length");
         jPanel2.add(jLabel2);
-        jLabel2.setBounds(40, 370, 50, 30);
+        jLabel2.setBounds(40, 360, 50, 40);
 
         jLabel3.setText("Year");
         jPanel2.add(jLabel3);
-        jLabel3.setBounds(40, 320, 80, 30);
+        jLabel3.setBounds(40, 320, 50, 40);
 
         jLabel5.setText("Title");
         jPanel2.add(jLabel5);
-        jLabel5.setBounds(40, 280, 80, 30);
+        jLabel5.setBounds(40, 280, 50, 40);
 
         jLabel6.setText("Description");
         jPanel2.add(jLabel6);
         jLabel6.setBounds(40, 430, 120, 20);
-        jPanel2.add(jTextField2);
-        jTextField2.setBounds(90, 280, 160, 30);
-        jPanel2.add(jTextField3);
-        jTextField3.setBounds(90, 370, 160, 30);
-        jPanel2.add(jTextField4);
-        jTextField4.setBounds(90, 320, 160, 30);
+        jPanel2.add(s1m1Title);
+        s1m1Title.setBounds(90, 280, 160, 40);
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        s1m1Length.setToolTipText("Length of Movie in minutes");
+        jPanel2.add(s1m1Length);
+        s1m1Length.setBounds(90, 360, 160, 40);
+        jPanel2.add(s1m1Year);
+        s1m1Year.setBounds(90, 320, 160, 40);
+
+        s1m1Description.setColumns(20);
+        s1m1Description.setRows(5);
+        jScrollPane1.setViewportView(s1m1Description);
 
         jPanel2.add(jScrollPane1);
         jScrollPane1.setBounds(40, 470, 210, 130);
 
-        jPanel1.add(jPanel2);
+        show1.add(jPanel2);
         jPanel2.setBounds(10, 20, 300, 620);
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
         jPanel4.setLayout(null);
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/movieday/images/Folder.jpg"))); // NOI18N
-        jPanel4.add(jLabel7);
-        jLabel7.setBounds(40, 80, 200, 180);
+        s1m3Image.setIcon(new javax.swing.ImageIcon(getClass().getResource("/movieday/images/Folder.jpg"))); // NOI18N
+        jPanel4.add(s1m3Image);
+        s1m3Image.setBounds(40, 80, 200, 180);
 
         jLabel9.setText("Length");
         jPanel4.add(jLabel9);
-        jLabel9.setBounds(40, 370, 50, 30);
+        jLabel9.setBounds(40, 360, 50, 40);
 
         jLabel10.setText("Year");
         jPanel4.add(jLabel10);
-        jLabel10.setBounds(40, 320, 80, 30);
+        jLabel10.setBounds(40, 320, 50, 40);
 
         jLabel11.setText("Title");
         jPanel4.add(jLabel11);
-        jLabel11.setBounds(40, 280, 80, 30);
+        jLabel11.setBounds(40, 280, 50, 40);
 
         jLabel12.setText("Description");
         jPanel4.add(jLabel12);
         jLabel12.setBounds(40, 430, 120, 20);
-        jPanel4.add(jTextField5);
-        jTextField5.setBounds(90, 280, 160, 30);
-        jPanel4.add(jTextField6);
-        jTextField6.setBounds(90, 370, 160, 30);
-        jPanel4.add(jTextField7);
-        jTextField7.setBounds(90, 320, 160, 30);
+        jPanel4.add(s1m3Title);
+        s1m3Title.setBounds(90, 280, 160, 40);
+        jPanel4.add(s1m3Length);
+        s1m3Length.setBounds(90, 360, 160, 40);
+        jPanel4.add(s1m3Year);
+        s1m3Year.setBounds(90, 320, 160, 40);
 
-        jTextArea2.setColumns(20);
-        jTextArea2.setRows(5);
-        jScrollPane2.setViewportView(jTextArea2);
+        s1m3Description.setColumns(20);
+        s1m3Description.setRows(5);
+        jScrollPane2.setViewportView(s1m3Description);
 
         jPanel4.add(jScrollPane2);
         jScrollPane2.setBounds(40, 470, 210, 130);
 
-        jPanel1.add(jPanel4);
+        show1.add(jPanel4);
         jPanel4.setBounds(600, 20, 300, 620);
 
         jPanel5.setLayout(null);
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/movieday/images/Folder.jpg"))); // NOI18N
-        jPanel5.add(jLabel8);
-        jLabel8.setBounds(40, 80, 200, 180);
+        s1m2Image.setIcon(new javax.swing.ImageIcon(getClass().getResource("/movieday/images/Folder.jpg"))); // NOI18N
+        jPanel5.add(s1m2Image);
+        s1m2Image.setBounds(40, 80, 200, 180);
 
         jLabel13.setText("Length");
         jPanel5.add(jLabel13);
-        jLabel13.setBounds(40, 370, 50, 30);
+        jLabel13.setBounds(40, 360, 50, 40);
 
         jLabel14.setText("Year");
         jPanel5.add(jLabel14);
-        jLabel14.setBounds(40, 320, 80, 30);
+        jLabel14.setBounds(40, 320, 50, 40);
 
         jLabel15.setText("Title");
         jPanel5.add(jLabel15);
-        jLabel15.setBounds(40, 280, 80, 30);
+        jLabel15.setBounds(40, 280, 50, 40);
 
         jLabel16.setText("Description");
         jPanel5.add(jLabel16);
         jLabel16.setBounds(40, 430, 120, 20);
-        jPanel5.add(jTextField8);
-        jTextField8.setBounds(90, 280, 160, 30);
-        jPanel5.add(jTextField9);
-        jTextField9.setBounds(90, 370, 160, 30);
-        jPanel5.add(jTextField10);
-        jTextField10.setBounds(90, 320, 160, 30);
+        jPanel5.add(s1m2Title);
+        s1m2Title.setBounds(90, 280, 160, 40);
+        jPanel5.add(s1m2Length);
+        s1m2Length.setBounds(90, 360, 160, 40);
+        jPanel5.add(s1m2Year);
+        s1m2Year.setBounds(90, 320, 160, 40);
 
-        jTextArea3.setColumns(20);
-        jTextArea3.setRows(5);
-        jScrollPane3.setViewportView(jTextArea3);
+        s1m2Description.setColumns(20);
+        s1m2Description.setRows(5);
+        jScrollPane3.setViewportView(s1m2Description);
 
         jPanel5.add(jScrollPane3);
         jScrollPane3.setBounds(40, 470, 210, 130);
 
-        jPanel1.add(jPanel5);
+        show1.add(jPanel5);
         jPanel5.setBounds(300, 20, 300, 620);
 
-        jButton2.setText("Save Changes");
-        jPanel1.add(jButton2);
-        jButton2.setBounds(350, 650, 180, 40);
+        s1Savechanges.setText("Save Changes");
+        s1Savechanges.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                s1SavechangesActionPerformed(evt);
+            }
+        });
+        show1.add(s1Savechanges);
+        s1Savechanges.setBounds(360, 650, 180, 40);
 
-        jTabbedPane1.addTab("Show 1-15:00", jPanel1);
+        jTabbedPane1.addTab("Show 1-15:00", show1);
 
-        jPanel3.setLayout(null);
+        show2.setLayout(null);
 
         jPanel6.setLayout(null);
 
@@ -300,29 +347,29 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
 
         jLabel19.setText("Length");
         jPanel7.add(jLabel19);
-        jLabel19.setBounds(40, 370, 50, 30);
+        jLabel19.setBounds(40, 360, 50, 40);
 
         jLabel20.setText("Year");
         jPanel7.add(jLabel20);
-        jLabel20.setBounds(40, 320, 80, 30);
+        jLabel20.setBounds(40, 320, 50, 40);
 
         jLabel21.setText("Title");
         jPanel7.add(jLabel21);
-        jLabel21.setBounds(40, 280, 80, 30);
+        jLabel21.setBounds(40, 280, 50, 40);
 
         jLabel22.setText("Description");
         jPanel7.add(jLabel22);
         jLabel22.setBounds(40, 430, 120, 20);
-        jPanel7.add(jTextField11);
-        jTextField11.setBounds(90, 280, 160, 30);
-        jPanel7.add(jTextField12);
-        jTextField12.setBounds(90, 370, 160, 30);
-        jPanel7.add(jTextField13);
-        jTextField13.setBounds(90, 320, 160, 30);
+        jPanel7.add(s2m1Title);
+        s2m1Title.setBounds(90, 280, 160, 40);
+        jPanel7.add(s2m1Length);
+        s2m1Length.setBounds(90, 360, 160, 40);
+        jPanel7.add(s2m1Year);
+        s2m1Year.setBounds(90, 320, 160, 40);
 
-        jTextArea4.setColumns(20);
-        jTextArea4.setRows(5);
-        jScrollPane5.setViewportView(jTextArea4);
+        s2m1Description.setColumns(20);
+        s2m1Description.setRows(5);
+        jScrollPane5.setViewportView(s2m1Description);
 
         jPanel7.add(jScrollPane5);
         jScrollPane5.setBounds(40, 470, 210, 130);
@@ -343,25 +390,25 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
 
         jLabel25.setText("Year");
         jPanel8.add(jLabel25);
-        jLabel25.setBounds(40, 320, 80, 30);
+        jLabel25.setBounds(40, 320, 50, 40);
 
         jLabel26.setText("Title");
         jPanel8.add(jLabel26);
-        jLabel26.setBounds(40, 280, 80, 30);
+        jLabel26.setBounds(40, 280, 50, 40);
 
         jLabel27.setText("Description");
         jPanel8.add(jLabel27);
         jLabel27.setBounds(40, 430, 120, 20);
-        jPanel8.add(jTextField14);
-        jTextField14.setBounds(90, 280, 160, 30);
-        jPanel8.add(jTextField15);
-        jTextField15.setBounds(90, 370, 160, 30);
-        jPanel8.add(jTextField16);
-        jTextField16.setBounds(90, 320, 160, 30);
+        jPanel8.add(s2m3Title);
+        s2m3Title.setBounds(90, 280, 160, 40);
+        jPanel8.add(s2m3Length);
+        s2m3Length.setBounds(90, 360, 160, 40);
+        jPanel8.add(s2m3Year);
+        s2m3Year.setBounds(90, 320, 160, 40);
 
-        jTextArea5.setColumns(20);
-        jTextArea5.setRows(5);
-        jScrollPane6.setViewportView(jTextArea5);
+        s2m3Description.setColumns(20);
+        s2m3Description.setRows(5);
+        jScrollPane6.setViewportView(s2m3Description);
 
         jPanel8.add(jScrollPane6);
         jScrollPane6.setBounds(40, 470, 210, 130);
@@ -377,29 +424,29 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
 
         jLabel29.setText("Length");
         jPanel9.add(jLabel29);
-        jLabel29.setBounds(40, 370, 50, 30);
+        jLabel29.setBounds(40, 360, 50, 40);
 
         jLabel30.setText("Year");
         jPanel9.add(jLabel30);
-        jLabel30.setBounds(40, 320, 80, 30);
+        jLabel30.setBounds(40, 320, 50, 40);
 
         jLabel31.setText("Title");
         jPanel9.add(jLabel31);
-        jLabel31.setBounds(40, 280, 80, 30);
+        jLabel31.setBounds(40, 280, 50, 40);
 
         jLabel32.setText("Description");
         jPanel9.add(jLabel32);
         jLabel32.setBounds(40, 430, 120, 20);
-        jPanel9.add(jTextField17);
-        jTextField17.setBounds(90, 280, 160, 30);
-        jPanel9.add(jTextField18);
-        jTextField18.setBounds(90, 370, 160, 30);
-        jPanel9.add(jTextField19);
-        jTextField19.setBounds(90, 320, 160, 30);
+        jPanel9.add(s2m2Title);
+        s2m2Title.setBounds(90, 280, 160, 40);
+        jPanel9.add(s2m2Length);
+        s2m2Length.setBounds(90, 360, 160, 40);
+        jPanel9.add(s2m2Year);
+        s2m2Year.setBounds(90, 320, 160, 40);
 
-        jTextArea6.setColumns(20);
-        jTextArea6.setRows(5);
-        jScrollPane7.setViewportView(jTextArea6);
+        s2m2Description.setColumns(20);
+        s2m2Description.setRows(5);
+        jScrollPane7.setViewportView(s2m2Description);
 
         jPanel9.add(jScrollPane7);
         jScrollPane7.setBounds(40, 470, 210, 130);
@@ -407,16 +454,16 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
         jPanel6.add(jPanel9);
         jPanel9.setBounds(300, 20, 300, 620);
 
-        jPanel3.add(jPanel6);
+        show2.add(jPanel6);
         jPanel6.setBounds(0, 0, 920, 650);
 
-        jButton1.setText("Save Changes");
-        jPanel3.add(jButton1);
-        jButton1.setBounds(350, 650, 180, 40);
+        s2SaveChangesButton.setText("Save Changes");
+        show2.add(s2SaveChangesButton);
+        s2SaveChangesButton.setBounds(350, 650, 180, 40);
 
-        jTabbedPane1.addTab("Show 2-17:00", jPanel3);
+        jTabbedPane1.addTab("Show 2-17:00", show2);
 
-        jPanel10.setLayout(null);
+        show3.setLayout(null);
 
         jPanel11.setLayout(null);
 
@@ -429,29 +476,29 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
 
         jLabel33.setText("Length");
         jPanel12.add(jLabel33);
-        jLabel33.setBounds(40, 370, 50, 30);
+        jLabel33.setBounds(40, 360, 50, 40);
 
         jLabel34.setText("Year");
         jPanel12.add(jLabel34);
-        jLabel34.setBounds(40, 320, 80, 30);
+        jLabel34.setBounds(40, 320, 50, 40);
 
         jLabel35.setText("Title");
         jPanel12.add(jLabel35);
-        jLabel35.setBounds(40, 280, 80, 30);
+        jLabel35.setBounds(40, 280, 50, 40);
 
         jLabel36.setText("Description");
         jPanel12.add(jLabel36);
         jLabel36.setBounds(40, 430, 120, 20);
-        jPanel12.add(jTextField20);
-        jTextField20.setBounds(90, 280, 160, 30);
-        jPanel12.add(jTextField21);
-        jTextField21.setBounds(90, 370, 160, 30);
-        jPanel12.add(jTextField22);
-        jTextField22.setBounds(90, 320, 160, 30);
+        jPanel12.add(s3m1Title);
+        s3m1Title.setBounds(90, 280, 160, 40);
+        jPanel12.add(s3m1Length);
+        s3m1Length.setBounds(90, 360, 160, 40);
+        jPanel12.add(s3m1Year);
+        s3m1Year.setBounds(90, 320, 160, 40);
 
-        jTextArea7.setColumns(20);
-        jTextArea7.setRows(5);
-        jScrollPane8.setViewportView(jTextArea7);
+        s3m1Description.setColumns(20);
+        s3m1Description.setRows(5);
+        jScrollPane8.setViewportView(s3m1Description);
 
         jPanel12.add(jScrollPane8);
         jScrollPane8.setBounds(40, 470, 210, 130);
@@ -472,25 +519,25 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
 
         jLabel39.setText("Year");
         jPanel13.add(jLabel39);
-        jLabel39.setBounds(40, 320, 80, 30);
+        jLabel39.setBounds(40, 320, 50, 40);
 
         jLabel40.setText("Title");
         jPanel13.add(jLabel40);
-        jLabel40.setBounds(40, 280, 80, 30);
+        jLabel40.setBounds(40, 280, 50, 40);
 
         jLabel41.setText("Description");
         jPanel13.add(jLabel41);
         jLabel41.setBounds(40, 430, 120, 20);
-        jPanel13.add(jTextField23);
-        jTextField23.setBounds(90, 280, 160, 30);
-        jPanel13.add(jTextField24);
-        jTextField24.setBounds(90, 370, 160, 30);
-        jPanel13.add(jTextField25);
-        jTextField25.setBounds(90, 320, 160, 30);
+        jPanel13.add(s3m3Title);
+        s3m3Title.setBounds(90, 280, 160, 40);
+        jPanel13.add(s3m3Length);
+        s3m3Length.setBounds(90, 360, 160, 40);
+        jPanel13.add(s3m3Year);
+        s3m3Year.setBounds(90, 320, 160, 40);
 
-        jTextArea8.setColumns(20);
-        jTextArea8.setRows(5);
-        jScrollPane9.setViewportView(jTextArea8);
+        s3m3Description.setColumns(20);
+        s3m3Description.setRows(5);
+        jScrollPane9.setViewportView(s3m3Description);
 
         jPanel13.add(jScrollPane9);
         jScrollPane9.setBounds(40, 470, 210, 130);
@@ -506,29 +553,29 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
 
         jLabel43.setText("Length");
         jPanel14.add(jLabel43);
-        jLabel43.setBounds(40, 370, 50, 30);
+        jLabel43.setBounds(40, 360, 50, 40);
 
         jLabel44.setText("Year");
         jPanel14.add(jLabel44);
-        jLabel44.setBounds(40, 320, 80, 30);
+        jLabel44.setBounds(40, 320, 50, 30);
 
         jLabel45.setText("Title");
         jPanel14.add(jLabel45);
-        jLabel45.setBounds(40, 280, 80, 30);
+        jLabel45.setBounds(40, 280, 50, 40);
 
         jLabel46.setText("Description");
         jPanel14.add(jLabel46);
         jLabel46.setBounds(40, 430, 120, 20);
-        jPanel14.add(jTextField26);
-        jTextField26.setBounds(90, 280, 160, 30);
-        jPanel14.add(jTextField27);
-        jTextField27.setBounds(90, 370, 160, 30);
-        jPanel14.add(jTextField28);
-        jTextField28.setBounds(90, 320, 160, 30);
+        jPanel14.add(s3m2Title);
+        s3m2Title.setBounds(90, 280, 160, 40);
+        jPanel14.add(s3m2Length);
+        s3m2Length.setBounds(90, 360, 160, 40);
+        jPanel14.add(s3m2Year);
+        s3m2Year.setBounds(90, 320, 160, 40);
 
-        jTextArea9.setColumns(20);
-        jTextArea9.setRows(5);
-        jScrollPane10.setViewportView(jTextArea9);
+        s3m2Description.setColumns(20);
+        s3m2Description.setRows(5);
+        jScrollPane10.setViewportView(s3m2Description);
 
         jPanel14.add(jScrollPane10);
         jScrollPane10.setBounds(40, 470, 210, 130);
@@ -536,16 +583,16 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
         jPanel11.add(jPanel14);
         jPanel14.setBounds(300, 20, 300, 620);
 
-        jPanel10.add(jPanel11);
+        show3.add(jPanel11);
         jPanel11.setBounds(0, 0, 920, 650);
 
-        jButton3.setText("Save Changes");
-        jPanel10.add(jButton3);
-        jButton3.setBounds(350, 650, 180, 40);
+        s3SaveChangesButton.setText("Save Changes");
+        show3.add(s3SaveChangesButton);
+        s3SaveChangesButton.setBounds(350, 650, 180, 40);
 
-        jTabbedPane1.addTab("Show 3-19:00", jPanel10);
+        jTabbedPane1.addTab("Show 3-19:00", show3);
 
-        jPanel15.setLayout(null);
+        manageReservations.setLayout(null);
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -568,21 +615,21 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
         });
         jScrollPane11.setViewportView(jTable1);
 
-        jPanel15.add(jScrollPane11);
-        jScrollPane11.setBounds(30, 170, 640, 210);
+        manageReservations.add(jScrollPane11);
+        jScrollPane11.setBounds(30, 170, 860, 260);
 
         jLabel1.setText("Manage Reservations");
-        jPanel15.add(jLabel1);
+        manageReservations.add(jLabel1);
         jLabel1.setBounds(30, 60, 230, 40);
 
         jLabel47.setText("Search");
-        jPanel15.add(jLabel47);
-        jLabel47.setBounds(40, 110, 41, 30);
-        jPanel15.add(jTextField1);
+        manageReservations.add(jLabel47);
+        jLabel47.setBounds(40, 110, 60, 40);
+        manageReservations.add(jTextField1);
         jTextField1.setBounds(100, 110, 120, 40);
 
         jButton4.setText("Go");
-        jPanel15.add(jButton4);
+        manageReservations.add(jButton4);
         jButton4.setBounds(230, 110, 90, 40);
 
         jButton5.setText("Delete Selected");
@@ -591,54 +638,183 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
                 jButton5ActionPerformed(evt);
             }
         });
-        jPanel15.add(jButton5);
-        jButton5.setBounds(30, 390, 150, 50);
+        manageReservations.add(jButton5);
+        jButton5.setBounds(30, 440, 150, 50);
 
-        jTabbedPane1.addTab("Manage Reservations", jPanel15);
+        jTabbedPane1.addTab("Manage Reservations", manageReservations);
 
-        jScrollPane4.setViewportView(jTabbedPane1);
+        getContentPane().add(jTabbedPane1);
+        jTabbedPane1.setBounds(0, 0, 960, 760);
 
-        getContentPane().add(jScrollPane4);
-        jScrollPane4.setBounds(0, 0, 960, 760);
-
-        jMenu1.setText("Home");
-        jMenuBar1.add(jMenu1);
-
-        ReportsMenu.setText("Reports");
-        ReportsMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+        adminHomeMenu.setText("Home");
+        adminHomeMenu.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ReportsMenuMouseClicked(evt);
+                adminHomeMenuMouseClicked(evt);
             }
         });
-        jMenuBar1.add(ReportsMenu);
+        jMenuBar1.add(adminHomeMenu);
 
-        MoviesMenu.setText("Movies");
-        jMenuBar1.add(MoviesMenu);
+        adminReportsMenu.setText("Reports");
+        adminReportsMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                adminReportsMenuMouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(adminReportsMenu);
 
-        jMenu2.setText("Users");
-        jMenuBar1.add(jMenu2);
+        adminMoviesMenu.setText("Movies");
+        adminMoviesMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                adminMoviesMenuMouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(adminMoviesMenu);
 
-        jMenu3.setText("Profile");
-        jMenuBar1.add(jMenu3);
+        adminUsersMenu.setText("Users");
+        adminUsersMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                adminUsersMenuMouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(adminUsersMenu);
 
-        jMenu4.setText("Help");
-        jMenuBar1.add(jMenu4);
+        adminProfileMenu.setText("Profile");
+        adminProfileMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                adminProfileMenuMouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(adminProfileMenu);
 
-        jMenu5.setText("Exit");
-        jMenuBar1.add(jMenu5);
+        adminHelpMenu.setText("Help");
+        adminHelpMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                adminHelpMenuMouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(adminHelpMenu);
+
+        adminExitMenu.setText("Exit");
+        adminExitMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                adminExitMenuMouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(adminExitMenu);
 
         setJMenuBar(jMenuBar1);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void ReportsMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ReportsMenuMouseClicked
-
-    }//GEN-LAST:event_ReportsMenuMouseClicked
-
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void adminHomeMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminHomeMenuMouseClicked
+        Function.goToAdminHome();
+        this.setVisible(false);
+    }//GEN-LAST:event_adminHomeMenuMouseClicked
+
+    private void adminReportsMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminReportsMenuMouseClicked
+        Function.goToReportScreen();
+        this.setVisible(false);
+    }//GEN-LAST:event_adminReportsMenuMouseClicked
+
+    private void adminMoviesMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminMoviesMenuMouseClicked
+        Function.goToAdminMoviesScreen();
+        this.setVisible(false);
+    }//GEN-LAST:event_adminMoviesMenuMouseClicked
+
+    private void adminUsersMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminUsersMenuMouseClicked
+        Function.goToAdminUserScreen();
+        this.setVisible(false);
+    }//GEN-LAST:event_adminUsersMenuMouseClicked
+
+    private void adminProfileMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminProfileMenuMouseClicked
+        Function.goToAdminUserScreen();
+        this.setVisible(false);
+    }//GEN-LAST:event_adminProfileMenuMouseClicked
+
+    private void adminHelpMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminHelpMenuMouseClicked
+        Function.goToAdminHelpScreen();
+        this.setVisible(false);
+    }//GEN-LAST:event_adminHelpMenuMouseClicked
+
+    private void adminExitMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminExitMenuMouseClicked
+        int choice  = JOptionPane.showConfirmDialog(rootPane, "Are you sure you want to exit?");
+        if(choice == 0){
+            System.exit(0);
+        }
+    }//GEN-LAST:event_adminExitMenuMouseClicked
+
+    private void s1m1ImageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_s1m1ImageMouseClicked
+        
+    }//GEN-LAST:event_s1m1ImageMouseClicked
+
+    private void s1SavechangesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_s1SavechangesActionPerformed
+    //Show 1
+      try{
+        show1m1Title = s1m1Title.getText();
+        show1m1Year = s1m1Year.getText();
+        show1m1Description = s1m1Description.getText();
+        show1m1Length = Integer.parseInt(s1m1Length.getText());
+
+        show1m2Title = s1m2Title.getText();
+        show1m2Year = s1m2Year.getText();
+        show1m2Description = s1m2Description.getText();
+        show1m2Length = Integer.parseInt(s1m2Length.getText());
+
+        show1m3Title = s1m3Title.getText();
+        show1m3Year = s1m3Year.getText();
+        show1m3Description = s1m3Description.getText();
+        show1m3Length = Integer.parseInt(s1m3Length.getText());
+      }
+    catch(NumberFormatException e){
+          JOptionPane.showMessageDialog(rootPane, e.getMessage(), "Length Format Error", JOptionPane.ERROR_MESSAGE);
+    }
+      
+    //Show 2
+    try{
+        show2m1Title = s2m1Title.getText();
+        show2m1Year = s2m1Year.getText();
+        show2m1Description = s2m1Description.getText();
+        show2m1Length = Integer.parseInt(s2m1Length.getText());
+
+        show2m2Title = s2m2Title.getText();
+        show2m2Year = s2m2Year.getText();
+        show2m2Description = s2m2Description.getText();
+        show2m2Length = Integer.parseInt(s2m2Length.getText());
+
+        show2m3Title = s2m3Title.getText();
+        show2m3Year = s2m3Year.getText();
+        show2m3Description = s2m3Description.getText();
+        show2m3Length = Integer.parseInt(s2m3Length.getText());
+    }
+    catch(NumberFormatException e){
+          JOptionPane.showMessageDialog(rootPane, e.getMessage(), "Length Format Error", JOptionPane.ERROR_MESSAGE);
+    }
+    //Show 3
+    try{
+        show3m1Title = s3m1Title.getText();
+        show3m1Year = s3m1Year.getText();
+        show3m1Description = s3m1Description.getText();
+        show3m1Length = Integer.parseInt(s3m1Length.getText());
+
+        show3m2Title = s3m2Title.getText();
+        show3m2Year = s3m2Year.getText();
+        show3m2Description = s3m2Description.getText();
+        show3m2Length = Integer.parseInt(s3m2Length.getText());
+
+        show3m3Title = s3m3Title.getText();
+        show3m3Year = s3m3Year.getText();
+        show3m3Description = s3m3Description.getText();
+        show3m3Length = Integer.parseInt(s3m3Length.getText());
+      }
+      catch(NumberFormatException e){
+          JOptionPane.showMessageDialog(rootPane, e.getMessage(), "Length Format Error", JOptionPane.ERROR_MESSAGE);
+      }
+    }//GEN-LAST:event_s1SavechangesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -676,11 +852,13 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu MoviesMenu;
-    private javax.swing.JMenu ReportsMenu;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JMenu adminExitMenu;
+    private javax.swing.JMenu adminHelpMenu;
+    private javax.swing.JMenu adminHomeMenu;
+    private javax.swing.JMenu adminMoviesMenu;
+    private javax.swing.JMenu adminProfileMenu;
+    private javax.swing.JMenu adminReportsMenu;
+    private javax.swing.JMenu adminUsersMenu;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
@@ -716,7 +894,6 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel42;
@@ -727,24 +904,13 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
-    private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
-    private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
@@ -756,7 +922,6 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane11;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
@@ -764,42 +929,52 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextArea jTextArea2;
-    private javax.swing.JTextArea jTextArea3;
-    private javax.swing.JTextArea jTextArea4;
-    private javax.swing.JTextArea jTextArea5;
-    private javax.swing.JTextArea jTextArea6;
-    private javax.swing.JTextArea jTextArea7;
-    private javax.swing.JTextArea jTextArea8;
-    private javax.swing.JTextArea jTextArea9;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField12;
-    private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField14;
-    private javax.swing.JTextField jTextField15;
-    private javax.swing.JTextField jTextField16;
-    private javax.swing.JTextField jTextField17;
-    private javax.swing.JTextField jTextField18;
-    private javax.swing.JTextField jTextField19;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField20;
-    private javax.swing.JTextField jTextField21;
-    private javax.swing.JTextField jTextField22;
-    private javax.swing.JTextField jTextField23;
-    private javax.swing.JTextField jTextField24;
-    private javax.swing.JTextField jTextField25;
-    private javax.swing.JTextField jTextField26;
-    private javax.swing.JTextField jTextField27;
-    private javax.swing.JTextField jTextField28;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
+    private javax.swing.JPanel manageReservations;
+    private javax.swing.JButton s1Savechanges;
+    private javax.swing.JTextArea s1m1Description;
+    private javax.swing.JLabel s1m1Image;
+    private javax.swing.JTextField s1m1Length;
+    private javax.swing.JTextField s1m1Title;
+    private javax.swing.JTextField s1m1Year;
+    private javax.swing.JTextArea s1m2Description;
+    private javax.swing.JLabel s1m2Image;
+    private javax.swing.JTextField s1m2Length;
+    private javax.swing.JTextField s1m2Title;
+    private javax.swing.JTextField s1m2Year;
+    private javax.swing.JTextArea s1m3Description;
+    private javax.swing.JLabel s1m3Image;
+    private javax.swing.JTextField s1m3Length;
+    private javax.swing.JTextField s1m3Title;
+    private javax.swing.JTextField s1m3Year;
+    private javax.swing.JButton s2SaveChangesButton;
+    private javax.swing.JTextArea s2m1Description;
+    private javax.swing.JTextField s2m1Length;
+    private javax.swing.JTextField s2m1Title;
+    private javax.swing.JTextField s2m1Year;
+    private javax.swing.JTextArea s2m2Description;
+    private javax.swing.JTextField s2m2Length;
+    private javax.swing.JTextField s2m2Title;
+    private javax.swing.JTextField s2m2Year;
+    private javax.swing.JTextArea s2m3Description;
+    private javax.swing.JTextField s2m3Length;
+    private javax.swing.JTextField s2m3Title;
+    private javax.swing.JTextField s2m3Year;
+    private javax.swing.JButton s3SaveChangesButton;
+    private javax.swing.JTextArea s3m1Description;
+    private javax.swing.JTextField s3m1Length;
+    private javax.swing.JTextField s3m1Title;
+    private javax.swing.JTextField s3m1Year;
+    private javax.swing.JTextArea s3m2Description;
+    private javax.swing.JTextField s3m2Length;
+    private javax.swing.JTextField s3m2Title;
+    private javax.swing.JTextField s3m2Year;
+    private javax.swing.JTextArea s3m3Description;
+    private javax.swing.JTextField s3m3Length;
+    private javax.swing.JTextField s3m3Title;
+    private javax.swing.JTextField s3m3Year;
+    private javax.swing.JPanel show1;
+    private javax.swing.JPanel show2;
+    private javax.swing.JPanel show3;
     // End of variables declaration//GEN-END:variables
 }
