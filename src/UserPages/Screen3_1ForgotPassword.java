@@ -82,8 +82,9 @@ public class Screen3_1ForgotPassword extends javax.swing.JFrame {
         btnLogin = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
+        mnuCreateAccount = new javax.swing.JMenuItem();
+        mnuSignIn = new javax.swing.JMenuItem();
+        mnuExit = new javax.swing.JMenuItem();
         jSeparator3 = new javax.swing.JPopupMenu.Separator();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem4 = new javax.swing.JMenuItem();
@@ -94,9 +95,9 @@ public class Screen3_1ForgotPassword extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setName("Password Recovery"); // NOI18N
 
-        jPanel2.setBackground(new java.awt.Color(0, 153, 0));
+        jPanel2.setBackground(new java.awt.Color(0, 0, 204));
 
-        jPanel4.setBackground(new java.awt.Color(0, 153, 0));
+        jPanel4.setBackground(new java.awt.Color(0, 0, 204));
         jPanel4.setMaximumSize(new java.awt.Dimension(227, 123));
         jPanel4.setMinimumSize(new java.awt.Dimension(227, 123));
 
@@ -187,7 +188,7 @@ public class Screen3_1ForgotPassword extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel1.setBackground(new java.awt.Color(0, 153, 0));
+        jPanel1.setBackground(new java.awt.Color(0, 0, 204));
 
         btnSubmit1.setText("Submit");
         btnSubmit1.addActionListener(new java.awt.event.ActionListener() {
@@ -196,7 +197,7 @@ public class Screen3_1ForgotPassword extends javax.swing.JFrame {
             }
         });
 
-        jPanel5.setBackground(new java.awt.Color(0, 153, 0));
+        jPanel5.setBackground(new java.awt.Color(0, 0, 204));
         jPanel5.setMaximumSize(new java.awt.Dimension(230, 100));
         jPanel5.setMinimumSize(new java.awt.Dimension(230, 100));
 
@@ -328,13 +329,32 @@ public class Screen3_1ForgotPassword extends javax.swing.JFrame {
 
         jMenu1.setText("Menu");
 
-        jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem2.setText("Sign In");
-        jMenu1.add(jMenuItem2);
+        mnuCreateAccount.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_MASK));
+        mnuCreateAccount.setText("Create a new account");
+        mnuCreateAccount.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuCreateAccountActionPerformed(evt);
+            }
+        });
+        jMenu1.add(mnuCreateAccount);
 
-        jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem3.setText("Exit");
-        jMenu1.add(jMenuItem3);
+        mnuSignIn.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
+        mnuSignIn.setText("Sign In");
+        mnuSignIn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuSignInActionPerformed(evt);
+            }
+        });
+        jMenu1.add(mnuSignIn);
+
+        mnuExit.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
+        mnuExit.setText("Exit");
+        mnuExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuExitActionPerformed(evt);
+            }
+        });
+        jMenu1.add(mnuExit);
         jMenu1.add(jSeparator3);
 
         jMenuBar1.add(jMenu1);
@@ -374,8 +394,7 @@ public class Screen3_1ForgotPassword extends javax.swing.JFrame {
                         .addGap(10, 10, 10)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(rbtnUsername, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addContainerGap())
+                            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(btnClear)
@@ -384,8 +403,8 @@ public class Screen3_1ForgotPassword extends javax.swing.JFrame {
                         .addGap(25, 25, 25)
                         .addComponent(btnExit)
                         .addGap(39, 39, 39)
-                        .addComponent(btnLogin)
-                        .addContainerGap())))
+                        .addComponent(btnLogin)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -489,10 +508,6 @@ public class Screen3_1ForgotPassword extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_btnLoginActionPerformed
 
-    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem4ActionPerformed
-
     private void btnSubmit2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmit2ActionPerformed
         try{
             name = txfName.getText();
@@ -526,6 +541,24 @@ public class Screen3_1ForgotPassword extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane,"Please provide data of correct data type in all fields", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnSubmit2ActionPerformed
+
+    private void mnuCreateAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuCreateAccountActionPerformed
+        new Screen2Register().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_mnuCreateAccountActionPerformed
+
+    private void mnuSignInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuSignInActionPerformed
+        new Screen3Login().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_mnuSignInActionPerformed
+
+    private void mnuExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuExitActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_mnuExitActionPerformed
+
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -581,8 +614,6 @@ public class Screen3_1ForgotPassword extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
@@ -594,6 +625,9 @@ public class Screen3_1ForgotPassword extends javax.swing.JFrame {
     private javax.swing.JPopupMenu.Separator jSeparator3;
     private javax.swing.JLabel lblPassword;
     private javax.swing.JLabel lblUsername;
+    private javax.swing.JMenuItem mnuCreateAccount;
+    private javax.swing.JMenuItem mnuExit;
+    private javax.swing.JMenuItem mnuSignIn;
     private javax.swing.JRadioButton rbtnPassword;
     private javax.swing.JRadioButton rbtnUsername;
     private javax.swing.JTextField txfName;

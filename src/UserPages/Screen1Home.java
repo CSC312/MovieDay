@@ -5,6 +5,8 @@
  */
 package UserPages;
 
+import movieday.AdminHome;
+
 /**
  *
  * @author Nino
@@ -36,10 +38,10 @@ public class Screen1Home extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem7 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
+        mnuCreateAccount = new javax.swing.JMenuItem();
+        mnuSignIn = new javax.swing.JMenuItem();
+        mnnuSignInAdmin = new javax.swing.JMenuItem();
+        mnuExit = new javax.swing.JMenuItem();
         jSeparator3 = new javax.swing.JPopupMenu.Separator();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem4 = new javax.swing.JMenuItem();
@@ -130,21 +132,41 @@ public class Screen1Home extends javax.swing.JFrame {
 
         jMenu1.setText("Menu");
 
-        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem1.setText("Create a new account");
-        jMenu1.add(jMenuItem1);
+        mnuCreateAccount.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_MASK));
+        mnuCreateAccount.setText("Create a new account");
+        mnuCreateAccount.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuCreateAccountActionPerformed(evt);
+            }
+        });
+        jMenu1.add(mnuCreateAccount);
 
-        jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem2.setText("Sign In");
-        jMenu1.add(jMenuItem2);
+        mnuSignIn.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
+        mnuSignIn.setText("Sign In");
+        mnuSignIn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuSignInActionPerformed(evt);
+            }
+        });
+        jMenu1.add(mnuSignIn);
 
-        jMenuItem7.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem7.setText("Sign In(Administrator)");
-        jMenu1.add(jMenuItem7);
+        mnnuSignInAdmin.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_MASK));
+        mnnuSignInAdmin.setText("Sign In(Administrator)");
+        mnnuSignInAdmin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnnuSignInAdminActionPerformed(evt);
+            }
+        });
+        jMenu1.add(mnnuSignInAdmin);
 
-        jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem3.setText("Exit");
-        jMenu1.add(jMenuItem3);
+        mnuExit.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
+        mnuExit.setText("Exit");
+        mnuExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuExitActionPerformed(evt);
+            }
+        });
+        jMenu1.add(mnuExit);
         jMenu1.add(jSeparator3);
 
         jMenuBar1.add(jMenu1);
@@ -199,6 +221,25 @@ public class Screen1Home extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
+    private void mnuCreateAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuCreateAccountActionPerformed
+        new Screen2Register().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_mnuCreateAccountActionPerformed
+
+    private void mnuSignInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuSignInActionPerformed
+        new Screen3Login().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_mnuSignInActionPerformed
+
+    private void mnnuSignInAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnnuSignInAdminActionPerformed
+        new AdminHome().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_mnnuSignInAdminActionPerformed
+
+    private void mnuExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuExitActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_mnuExitActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -243,16 +284,16 @@ public class Screen1Home extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
-    private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPopupMenu.Separator jSeparator2;
     private javax.swing.JPopupMenu.Separator jSeparator3;
+    private javax.swing.JMenuItem mnnuSignInAdmin;
+    private javax.swing.JMenuItem mnuCreateAccount;
+    private javax.swing.JMenuItem mnuExit;
+    private javax.swing.JMenuItem mnuSignIn;
     // End of variables declaration//GEN-END:variables
 }
