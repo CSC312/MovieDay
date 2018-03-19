@@ -5,6 +5,8 @@
  */
 package movieday;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author johnclaude
@@ -39,11 +41,11 @@ public class AdminHome extends javax.swing.JFrame {
         jTextField2 = new javax.swing.JTextField();
         jTextField4 = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        viewMoviesButton = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        viewUsersButton = new javax.swing.JButton();
+        viewProfileButton = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         adminHomeMenu = new javax.swing.JMenu();
@@ -64,7 +66,7 @@ public class AdminHome extends javax.swing.JFrame {
 
         jLabel1.setText("Welcome [Admin Name]");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(590, 30, 149, 16);
+        jLabel1.setBounds(800, 40, 149, 30);
 
         jLabel2.setText("Current Show");
         jPanel1.add(jLabel2);
@@ -102,11 +104,17 @@ public class AdminHome extends javax.swing.JFrame {
         jPanel1.add(jTextField4);
         jTextField4.setBounds(240, 490, 110, 26);
 
+        jPanel2.setBackground(new java.awt.Color(102, 102, 102));
         jPanel2.setLayout(null);
 
-        jButton1.setText("View Movies");
-        jPanel2.add(jButton1);
-        jButton1.setBounds(90, 250, 140, 29);
+        viewMoviesButton.setText("View Movies");
+        viewMoviesButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewMoviesButtonActionPerformed(evt);
+            }
+        });
+        jPanel2.add(viewMoviesButton);
+        viewMoviesButton.setBounds(100, 250, 140, 40);
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/movieday/images/Folder.jpg"))); // NOI18N
         jPanel2.add(jLabel4);
@@ -114,24 +122,34 @@ public class AdminHome extends javax.swing.JFrame {
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/movieday/images/Folder.jpg"))); // NOI18N
         jPanel2.add(jLabel10);
-        jLabel10.setBounds(310, 40, 200, 200);
+        jLabel10.setBounds(380, 40, 200, 200);
 
-        jButton3.setText("View Users");
-        jPanel2.add(jButton3);
-        jButton3.setBounds(330, 250, 140, 29);
+        viewUsersButton.setText("View Users");
+        viewUsersButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewUsersButtonActionPerformed(evt);
+            }
+        });
+        jPanel2.add(viewUsersButton);
+        viewUsersButton.setBounds(410, 250, 140, 40);
 
-        jButton4.setText("View Profile");
-        jPanel2.add(jButton4);
-        jButton4.setBounds(560, 250, 140, 29);
+        viewProfileButton.setText("View Profile");
+        viewProfileButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewProfileButtonActionPerformed(evt);
+            }
+        });
+        jPanel2.add(viewProfileButton);
+        viewProfileButton.setBounds(710, 250, 140, 40);
 
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/movieday/images/Folder.jpg"))); // NOI18N
         jPanel2.add(jLabel11);
-        jLabel11.setBounds(540, 40, 200, 200);
+        jLabel11.setBounds(680, 40, 200, 200);
 
         jPanel1.add(jPanel2);
-        jPanel2.setBounds(0, 90, 770, 330);
+        jPanel2.setBounds(0, 90, 970, 330);
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 770, 660));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 970, 660));
 
         adminHomeMenu.setText("Home");
         adminHomeMenu.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -150,18 +168,43 @@ public class AdminHome extends javax.swing.JFrame {
         jMenuBar1.add(adminReportsMenu);
 
         adminMoviesMenu.setText("Movies");
+        adminMoviesMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                adminMoviesMenuMouseClicked(evt);
+            }
+        });
         jMenuBar1.add(adminMoviesMenu);
 
         adminUsersMenu.setText("Users");
+        adminUsersMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                adminUsersMenuMouseClicked(evt);
+            }
+        });
         jMenuBar1.add(adminUsersMenu);
 
         adminProfileMenu.setText("Profile");
+        adminProfileMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                adminProfileMenuMouseClicked(evt);
+            }
+        });
         jMenuBar1.add(adminProfileMenu);
 
         adminHelpMenu.setText("Help");
+        adminHelpMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                adminHelpMenuMouseClicked(evt);
+            }
+        });
         jMenuBar1.add(adminHelpMenu);
 
         adminExitMenu.setText("Exit");
+        adminExitMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                adminExitMenuMouseClicked(evt);
+            }
+        });
         jMenuBar1.add(adminExitMenu);
 
         setJMenuBar(jMenuBar1);
@@ -170,15 +213,56 @@ public class AdminHome extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void adminReportsMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminReportsMenuMouseClicked
-        
-        new ReportScreen().setVisible(true);
+        Function.goToReportScreen();
         this.setVisible(false);
-       
     }//GEN-LAST:event_adminReportsMenuMouseClicked
 
     private void adminHomeMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminHomeMenuMouseClicked
-       
+       Function.goToAdminHome();
+       this.setVisible(false);
     }//GEN-LAST:event_adminHomeMenuMouseClicked
+
+    private void adminMoviesMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminMoviesMenuMouseClicked
+       Function.goToAdminMoviesScreen();
+       this.setVisible(false);
+    }//GEN-LAST:event_adminMoviesMenuMouseClicked
+
+    private void adminUsersMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminUsersMenuMouseClicked
+       Function.goToAdminUserScreen();
+       this.setVisible(false);
+    }//GEN-LAST:event_adminUsersMenuMouseClicked
+
+    private void adminProfileMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminProfileMenuMouseClicked
+        Function.goToAdminUserScreen();
+        this.setVisible(false);
+    }//GEN-LAST:event_adminProfileMenuMouseClicked
+
+    private void adminHelpMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminHelpMenuMouseClicked
+        Function.goToAdminHelpScreen();
+        this.setVisible(false);
+    }//GEN-LAST:event_adminHelpMenuMouseClicked
+
+    private void adminExitMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminExitMenuMouseClicked
+       int choice  = JOptionPane.showConfirmDialog(rootPane, "Are you sure you want to exit?");
+       if(choice == 0){
+           System.exit(0);
+       }
+    }//GEN-LAST:event_adminExitMenuMouseClicked
+
+    private void viewMoviesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewMoviesButtonActionPerformed
+       Function.goToAdminMoviesScreen();
+       this.setVisible(false);
+    }//GEN-LAST:event_viewMoviesButtonActionPerformed
+
+    private void viewUsersButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewUsersButtonActionPerformed
+      Function.goToAdminUserScreen();
+      this.setVisible(false);
+    }//GEN-LAST:event_viewUsersButtonActionPerformed
+
+    private void viewProfileButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewProfileButtonActionPerformed
+      Function.goToAdminUserScreen();
+      this.setVisible(false);
+    }//GEN-LAST:event_viewProfileButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -223,10 +307,7 @@ public class AdminHome extends javax.swing.JFrame {
     private javax.swing.JMenu adminProfileMenu;
     private javax.swing.JMenu adminReportsMenu;
     private javax.swing.JMenu adminUsersMenu;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -242,5 +323,8 @@ public class AdminHome extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField4;
+    private javax.swing.JButton viewMoviesButton;
+    private javax.swing.JButton viewProfileButton;
+    private javax.swing.JButton viewUsersButton;
     // End of variables declaration//GEN-END:variables
 }

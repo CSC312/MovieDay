@@ -11,28 +11,24 @@ import static com.sun.glass.ui.Cursor.setVisible;
  *
  * @author johnclaude
  */
-public class Functions {
+public class Function {
     public static void goToAdminHome(){
-        AdminHome screen = new AdminHome();
-        screen.setVisible(true);
-        setVisible(false);
+        new AdminHome().setVisible(true);
     }
     
     public static void goToAdminUserScreen(){
-        AdminUsersScreen screen = new AdminUsersScreen();
-        screen.setVisible(true);
-        setVisible(false);
+        new AdminUsersScreen().setVisible(true);
     }
     
     public static void goToReportScreen(){
-        ReportScreen screen = new ReportScreen();
-        screen.setVisible(true);
-        setVisible(false);
+         new ReportScreen().setVisible(true);
     }
     
      public static void goToAdminMoviesScreen(){
-        AdminMoviesScreen screen = new AdminMoviesScreen();
-        screen.setVisible(true);
-        setVisible(false);
+        new AdminMoviesScreen().setVisible(true);
+    }
+     
+     public static void goToAdminHelpScreen(){
+        new AdminHelpScreen().setVisible(true);
     }
 }
