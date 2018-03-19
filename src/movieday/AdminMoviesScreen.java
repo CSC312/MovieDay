@@ -55,6 +55,7 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
     public AdminMoviesScreen() {
         initComponents();
         this.setLocationRelativeTo(null);
+        
     }
 
     /**
