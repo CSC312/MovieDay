@@ -16,6 +16,7 @@ public class Screen4_MovieReservations extends javax.swing.JFrame {
      */
     public Screen4_MovieReservations() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**

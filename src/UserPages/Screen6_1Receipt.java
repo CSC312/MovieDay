@@ -16,6 +16,7 @@ public class Screen6_1Receipt extends javax.swing.JFrame {
      */
     public Screen6_1Receipt() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**

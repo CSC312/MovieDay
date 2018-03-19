@@ -16,6 +16,7 @@ public class Screen1Home extends javax.swing.JFrame {
      */
     public Screen1Home() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**

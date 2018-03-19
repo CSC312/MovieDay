@@ -16,6 +16,7 @@ public class Screen7UserProfile extends javax.swing.JFrame {
      */
     public Screen7UserProfile() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
