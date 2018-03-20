@@ -53,26 +53,59 @@ public class Function {
         }
         
         try {
-        c = DriverManager.getConnection(dbUrl, dbUserID, dbPassword);
-         /*       
+            c = DriverManager.getConnection(dbUrl, dbUserID, dbPassword);
+              
         try {
             
           Statement s = c.createStatement();
         
           // The statements are copied from the SQL script directly
-          s.addBatch("DROP DATABASE shop");
-          s.addBatch("CREATE DATABASE shop");
-          s.addBatch("USE shop");
+          s.addBatch("DROP DATABASE MovieDay");
+          s.addBatch("CREATE DATABASE MovieDay");
+          s.addBatch("USE MovieDay");
           s.addBatch(
-              "CREATE TABLE products (" +
-              "item_id CHAR(6) NOT NULL UNIQUE, title VARCHAR(50), " +
-              "price DOUBLE, PRIMARY KEY (item_id))");
+              "CREATE TABLE User (" +
+              "UserID INTEGER NOT NULL AUTO_INCREMENT UNIQUE, Name VARCHAR(50) NOT NULL, " +
+              "Surname VARCHAR(50) NOT NULL, DateOfBirth DATE NOT NULL,"
+                      + " Email VARCHAR (50) NOT NULL UNIQUE, Password VARCHAR(50) NOT NULL,"+
+              "SecQuestionAnswer VARCHAR (100), PRIMARY KEY (UserID))");
           s.addBatch(
-              "CREATE TABLE users (" +
-              "user_id INTEGER NOT NULL AUTO_INCREMENT UNIQUE, " +
-              "login_id VARCHAR(16) NOT NULL UNIQUE, " +
-              "user_password VARCHAR(16) NOT NULL, " +
-              "email VARCHAR(30) NOT NULL UNIQUE,  PRIMARY KEY (user_id))");
+              "CREATE TABLE Admin (" +
+              "UserID INTEGER NOT NULL AUTO_INCREMENT UNIQUE, " +
+              "Name VARCHAR(50) NOT NULL UNIQUE, " +
+              "Surname VARCHAR(50) NOT NULL, " +
+              "Email VARCHAR(50) NOT NULL UNIQUE," +
+              "Password VARCHAR (50) NOT NULL," +
+              "PRIMARY KEY (UserID))");
+          s.addBatch(
+                "CREATE TABLE Reservation("+
+                "ReservationID INTEGER NOT NULL AUTO_INCREMENT UNIQUE,"+ 
+                "UserID INTEGER,"+
+                "PRIMARY KEY(ReservationID),"+
+                "FOREIGN KEY (UserID) REFERENCES User(UserID))");
+           s.addBatch(
+                "CREATE TABLE Venue (" +
+                "VenueID INTEGER NOT NULL AUTO_INCREMENT UNIQUE,"+
+                "Venue BOOLEAN NOT NULL, " +
+                "VenueFee DOUBLE,"+
+                "PRIMARY KEY (VenueID))");
+           s.addBatch(
+                "CREATE TABLE Movie (" +
+                "MovieID INTEGER NOT NULL AUTO_INCREMENT UNIQUE,"+
+                "Title VARCHAR (50) NOT NULL," +
+                "Year DATETIME NOT NULL," + 
+                "Length INTEGER," +
+                "Description VARCHAR (250)," +
+                "Price DOUBLE," +
+                "PRIMARY KEY (MovieID))");
+           s.addBatch(
+                "CREATE TABLE Seat (" +
+                "SeatID INTEGER NOT NULL AUTO_INCREMENT UNIQUE,"+
+                "ReservationStatUs BOOLEAN, " +
+                "VenueID INTEGER,"+
+                "PRIMARY KEY (SeatID),"+
+                "FOREIGN KEY(VenueID) REFERENCES Venue(VenueID))");
+          /*
           s.addBatch(
               "INSERT INTO products VALUES " +
               "('100420', 'Coffee', 4.50), " +
@@ -82,7 +115,7 @@ public class Function {
               "INSERT INTO users (login_id, user_password, email) VALUES " +
               "('joe', 'joe', 'joe@yahoo.com'), " +
               "('jane', 'jane', 'jane@hotmail.com')");
-                
+                */
           // In case you want to see the update results from each statement
           // Normally not needed to store the results.
           int results[] = s.executeBatch();  
@@ -91,7 +124,6 @@ public class Function {
             System.err.println("Failed to execute one of the statements.");
             System.err.println(sqlexp.getMessage());
         }
-        */
         c.close();
         
       } catch (SQLException sqlexp) {
