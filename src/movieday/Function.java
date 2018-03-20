@@ -122,17 +122,12 @@ public class Function {
                     //Populating Admin Data
                     s.addBatch(
                             "INSERT INTO Admin VALUES "
-                            + "(1,'Admin','Guy', '1234','admin@movieday.com'),"
-                            + "(2,'John', 'Claude', '1234','john@movieday.com')"
+                            + "(1,'Admin','Guy', 'admin@movieday.com','1234'),"
+                            + "(2,'John', 'Claude', 'john@movieday.com','q234')"
                     );
 
                     //Populating Movies Table
-                    s.addBatch(
-                            "INSERT INTO Movie VALUES"
-                            + "()"
-                            + "()"
-                            + "()"
-                    );
+
                     // In case you want to see the update results from each statement
                     // Normally not needed to store the results.
                     int results[] = s.executeBatch();
