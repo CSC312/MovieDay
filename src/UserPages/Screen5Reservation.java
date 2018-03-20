@@ -224,7 +224,7 @@ public class Screen5Reservation extends javax.swing.JFrame {
         jLabel8.setBounds(12, 314, 333, 16);
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(0, 61, 480, 342);
+        jPanel1.setBounds(0, 61, 480, 370);
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Key"));
 
@@ -272,26 +272,13 @@ public class Screen5Reservation extends javax.swing.JFrame {
         jLabel7.setBounds(12, 24, 86, 16);
 
         getContentPane().add(jPanel4);
-        jPanel4.setBounds(550, 180, 209, 210);
+        jPanel4.setBounds(550, 180, 230, 250);
+
+        jPanel5.setLayout(null);
 
         jLabel1.setText("User name");
-
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addContainerGap(134, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(127, 127, 127))
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addContainerGap(21, Short.MAX_VALUE))
-        );
+        jPanel5.add(jLabel1);
+        jLabel1.setBounds(136, 6, 66, 16);
 
         getContentPane().add(jPanel5);
         jPanel5.setBounds(309, 0, 327, 43);
