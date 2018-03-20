@@ -60,6 +60,7 @@ public class Function {
           Statement s = c.createStatement();
         
           // The statements are copied from the SQL script directly
+          // They recreate the database and tables
           s.addBatch("DROP DATABASE MovieDay");
           s.addBatch("CREATE DATABASE MovieDay");
           s.addBatch("USE MovieDay");
@@ -97,25 +98,42 @@ public class Function {
                 "Length INTEGER," +
                 "Description VARCHAR (250)," +
                 "Price DOUBLE," +
+                "MovieUrl VARCHAR(250)"+
                 "PRIMARY KEY (MovieID))");
            s.addBatch(
                 "CREATE TABLE Seat (" +
                 "SeatID INTEGER NOT NULL AUTO_INCREMENT UNIQUE,"+
                 "ReservationStatUs BOOLEAN, " +
-                "VenueID INTEGER,"+
+                "VenueID INTEGER NOT NULL,"+
                 "PRIMARY KEY (SeatID),"+
                 "FOREIGN KEY(VenueID) REFERENCES Venue(VenueID))");
-          /*
-          s.addBatch(
-              "INSERT INTO products VALUES " +
-              "('100420', 'Coffee', 4.50), " +
-              "('123456', 'Tea', 5.00), " +
-              "('241412', 'Orange Juice', 6.50)");
-          s.addBatch(
-              "INSERT INTO users (login_id, user_password, email) VALUES " +
-              "('joe', 'joe', 'joe@yahoo.com'), " +
-              "('jane', 'jane', 'jane@hotmail.com')");
-                */
+           
+           //Initial Populating of Users Data
+            s.addBatch(
+              "INSERT INTO User VALUES " +
+              "(1,'Nino', 'Jacobs', '2008-7-04','nino@gmail.com','1234','Fort Nite'), " +
+              "(2,'Jean Luc','Niyonzima', '2008-7-04','jean@gmail.com','1234','MAT211'), " +
+              "(3,'Kamo','Matjila', '2008-7-04','kamo@gmail.com','1234','MAT211')," +
+              "(4,'Big', 'Sean', 21/05/1990,'sean@gmail.com','1234','i Decided'), " +
+              "(5,'Zuks','Something', '2008-7-04','zuks@gmail.com','1234','MAT211'), " +
+              "(6,'Stevie','Wonder', '2008-7-04','stevie@gmail.com','1234','MAT211')"
+            );
+            
+            //Populating Admin Data
+            s.addBatch(
+                "INSERT INTO Admin VALUES "+
+                "(1,'Admin','Guy', '1234','admin@movieday.com'),"+
+                "(2,'John', 'Claude', '1234','john@movieday.com')"
+            );
+            
+            //Populating Movies Table
+            s.addBatch(
+                "INSERT INTO Movie VALUES"+
+                "()" +
+                "()" +
+                "()"
+            );
+       
           // In case you want to see the update results from each statement
           // Normally not needed to store the results.
           int results[] = s.executeBatch();  
