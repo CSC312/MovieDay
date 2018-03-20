@@ -98,7 +98,7 @@ public class Screen5Reservation extends javax.swing.JFrame {
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("====MOVIE SCREEN====");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(12, 24, 333, 16);
+        jLabel3.setBounds(50, 30, 333, 16);
 
         jButton3.setText("A1");
         jPanel1.add(jButton3);
