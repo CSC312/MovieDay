@@ -281,7 +281,7 @@ public class Screen5Reservation extends javax.swing.JFrame {
         jLabel1.setBounds(136, 6, 66, 16);
 
         getContentPane().add(jPanel5);
-        jPanel5.setBounds(309, 0, 327, 43);
+        jPanel5.setBounds(309, 0, 0, 0);
 
         jMenu1.setText("Menu");
 
