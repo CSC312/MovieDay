@@ -1,5 +1,6 @@
 package UserPages;
 
+import java.awt.Color;
 import javax.swing.*;
 
 public class Screen5Reservation extends javax.swing.JFrame {
@@ -10,6 +11,13 @@ public class Screen5Reservation extends javax.swing.JFrame {
     public Screen5Reservation() {
         initComponents();
         this.setLocationRelativeTo(null);
+        
+        btnClear.setBackground(Color.blue);
+        btnReserveSeats.setBackground(Color.blue);
+        btnBack.setBackground(Color.blue);
+        btnClear.setForeground(Color.white);
+        btnReserveSeats.setForeground(Color.white);
+        btnBack.setForeground(Color.white);
     }
 
     @SuppressWarnings("unchecked")
@@ -59,6 +67,7 @@ public class Screen5Reservation extends javax.swing.JFrame {
         btnClear = new javax.swing.JButton();
         btnBack = new javax.swing.JButton();
         lblPrice = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
@@ -78,7 +87,8 @@ public class Screen5Reservation extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(null);
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Seating Arrangement"));
+        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Seating Arrangement", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 11), new java.awt.Color(255, 255, 255))); // NOI18N
         jPanel1.setLayout(null);
 
 <<<<<<< HEAD
@@ -96,6 +106,7 @@ public class Screen5Reservation extends javax.swing.JFrame {
         btnA1.setBounds(60, 70, 48, 25);
 >>>>>>> ninoChanges
 
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("====MOVIE SCREEN====");
         jPanel1.add(jLabel3);
@@ -444,14 +455,17 @@ public class Screen5Reservation extends javax.swing.JFrame {
         jPanel1.add(jSeparator6);
         jSeparator6.setBounds(17, 50, 333, 10);
 
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("R80");
         jPanel1.add(jLabel4);
         jLabel4.setBounds(20, 100, 30, 15);
 
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("R70");
         jPanel1.add(jLabel5);
         jLabel5.setBounds(20, 190, 30, 15);
 
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("R60");
         jPanel1.add(jLabel6);
         jLabel6.setBounds(17, 255, 30, 15);
@@ -460,6 +474,7 @@ public class Screen5Reservation extends javax.swing.JFrame {
         jPanel1.add(jSeparator8);
         jSeparator8.setBounds(17, 234, 333, 10);
 
+        lblUserSeats.setForeground(new java.awt.Color(255, 255, 255));
         lblUserSeats.setText("Your seats: ");
         jPanel1.add(lblUserSeats);
         lblUserSeats.setBounds(17, 295, 333, 15);
@@ -468,7 +483,8 @@ public class Screen5Reservation extends javax.swing.JFrame {
         jPanel1.setBounds(10, 20, 380, 330);
 >>>>>>> ninoChanges
 
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Key"));
+        jPanel3.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Key", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 11), new java.awt.Color(255, 255, 255))); // NOI18N
         jPanel3.setLayout(null);
 
         btnAvailable.setBackground(new java.awt.Color(0, 153, 0));
@@ -484,12 +500,18 @@ public class Screen5Reservation extends javax.swing.JFrame {
         getContentPane().add(jPanel3);
         jPanel3.setBounds(400, 20, 190, 110);
 
+<<<<<<< HEAD
         getContentPane().add(jPanel3);
         jPanel3.setBounds(560, 60, 181, 113);
 
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Payment"));
+=======
+        jPanel4.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Payment", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 11), new java.awt.Color(255, 255, 255))); // NOI18N
+>>>>>>> ninoChanges
         jPanel4.setLayout(null);
 
+        btnReserveSeats.setForeground(new java.awt.Color(255, 255, 255));
         btnReserveSeats.setText("Reserve seats");
         btnReserveSeats.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -507,6 +529,7 @@ public class Screen5Reservation extends javax.swing.JFrame {
         jPanel4.add(btnReserveSeats);
         btnReserveSeats.setBounds(20, 120, 150, 25);
 
+        btnClear.setForeground(new java.awt.Color(255, 255, 255));
         btnClear.setText("Clear");
         btnClear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -517,6 +540,7 @@ public class Screen5Reservation extends javax.swing.JFrame {
         btnClear.setBounds(20, 150, 70, 25);
 >>>>>>> ninoChanges
 
+        btnBack.setForeground(new java.awt.Color(255, 255, 255));
         btnBack.setText("Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -549,6 +573,7 @@ public class Screen5Reservation extends javax.swing.JFrame {
         jPanel4.add(btnBack);
         btnBack.setBounds(98, 150, 70, 25);
 
+        lblPrice.setForeground(new java.awt.Color(255, 255, 255));
         lblPrice.setText("Price: R");
         jPanel4.add(lblPrice);
         lblPrice.setBounds(17, 29, 150, 15);
@@ -556,6 +581,10 @@ public class Screen5Reservation extends javax.swing.JFrame {
         getContentPane().add(jPanel4);
         jPanel4.setBounds(400, 150, 190, 200);
 >>>>>>> ninoChanges
+
+        jPanel2.setBackground(new java.awt.Color(51, 51, 51));
+        getContentPane().add(jPanel2);
+        jPanel2.setBounds(0, 0, 620, 390);
 
         jMenu1.setText("Menu");
 
@@ -1091,6 +1120,7 @@ public class Screen5Reservation extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPopupMenu.Separator jSeparator2;
