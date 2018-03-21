@@ -5,10 +5,8 @@
  */
 package UserPages;
 
-/**
- *
- * @author Nino
- */
+import java.awt.Color;
+
 public class Screen6_1Receipt extends javax.swing.JFrame {
 
     /**
@@ -17,6 +15,9 @@ public class Screen6_1Receipt extends javax.swing.JFrame {
     public Screen6_1Receipt() {
         initComponents();
         this.setLocationRelativeTo(null);
+        btnCancel.setBackground(Color.blue);
+        btnConfirm.setBackground(Color.blue);
+        btnExit.setBackground(Color.blue);
     }
 
     /**
@@ -29,14 +30,15 @@ public class Screen6_1Receipt extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        lblMovie = new javax.swing.JLabel();
+        lblDate = new javax.swing.JLabel();
+        lblTime = new javax.swing.JLabel();
+        lblSeats = new javax.swing.JLabel();
+        lblTotal = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        btnConfirm = new javax.swing.JButton();
+        btnCancel = new javax.swing.JButton();
+        btnExit = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
@@ -49,53 +51,66 @@ public class Screen6_1Receipt extends javax.swing.JFrame {
         jSeparator2 = new javax.swing.JPopupMenu.Separator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(400, 300));
+        setMinimumSize(new java.awt.Dimension(400, 300));
+        setPreferredSize(new java.awt.Dimension(400, 300));
         getContentPane().setLayout(null);
 
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Digital Receipt");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(154, 26, 67, 15);
+        jLabel1.setBounds(154, 26, 150, 15);
 
-        jLabel2.setText("Movie name:");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(110, 59, 60, 15);
+        lblMovie.setForeground(new java.awt.Color(255, 255, 255));
+        lblMovie.setText("Movie name:");
+        getContentPane().add(lblMovie);
+        lblMovie.setBounds(110, 59, 230, 15);
 
-        jLabel3.setText("Date:");
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(110, 78, 25, 15);
+        lblDate.setForeground(new java.awt.Color(255, 255, 255));
+        lblDate.setText("Date:");
+        getContentPane().add(lblDate);
+        lblDate.setBounds(110, 78, 230, 15);
 
-        jLabel4.setText("Show Time:");
-        getContentPane().add(jLabel4);
-        jLabel4.setBounds(110, 99, 57, 15);
+        lblTime.setForeground(new java.awt.Color(255, 255, 255));
+        lblTime.setText("Show Time:");
+        getContentPane().add(lblTime);
+        lblTime.setBounds(110, 99, 230, 15);
 
-        jLabel5.setText("Seat no(s):");
-        getContentPane().add(jLabel5);
-        jLabel5.setBounds(110, 120, 54, 15);
+        lblSeats.setForeground(new java.awt.Color(255, 255, 255));
+        lblSeats.setText("Seat no(s):");
+        getContentPane().add(lblSeats);
+        lblSeats.setBounds(110, 120, 240, 15);
 
-        jLabel6.setText("Total Amount:");
-        getContentPane().add(jLabel6);
-        jLabel6.setBounds(110, 141, 66, 15);
+        lblTotal.setForeground(new java.awt.Color(255, 255, 255));
+        lblTotal.setText("Total Amount:");
+        getContentPane().add(lblTotal);
+        lblTotal.setBounds(110, 141, 240, 15);
 
-        jButton1.setText("Confirm");
-        getContentPane().add(jButton1);
-        jButton1.setBounds(189, 170, 71, 25);
+        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel1.setLayout(null);
 
-        jButton2.setText("Cancel");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnConfirm.setForeground(new java.awt.Color(255, 255, 255));
+        btnConfirm.setText("Confirm");
+        jPanel1.add(btnConfirm);
+        btnConfirm.setBounds(120, 170, 90, 25);
+
+        btnCancel.setForeground(new java.awt.Color(255, 255, 255));
+        btnCancel.setText("Cancel");
+        jPanel1.add(btnCancel);
+        btnCancel.setBounds(210, 210, 90, 25);
+
+        btnExit.setForeground(new java.awt.Color(255, 255, 255));
+        btnExit.setText("Exit");
+        btnExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnExitActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2);
-        jButton2.setBounds(261, 243, 67, 25);
+        jPanel1.add(btnExit);
+        btnExit.setBounds(310, 210, 70, 25);
 
-        jButton3.setText("Exit");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton3);
-        jButton3.setBounds(338, 243, 51, 25);
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(0, 0, 420, 290);
 
         jMenu1.setText("Menu");
 
@@ -144,15 +159,9 @@ public class Screen6_1Receipt extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+    private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
         System.exit(0);
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        new Screen5Reservation().setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnExitActionPerformed
 
     private void mnuExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuExitActionPerformed
         System.exit(0);
@@ -194,7 +203,6 @@ public class Screen6_1Receipt extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
-
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -204,15 +212,10 @@ public class Screen6_1Receipt extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton btnCancel;
+    private javax.swing.JButton btnConfirm;
+    private javax.swing.JButton btnExit;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
@@ -220,8 +223,14 @@ public class Screen6_1Receipt extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPopupMenu.Separator jSeparator2;
     private javax.swing.JPopupMenu.Separator jSeparator3;
+    private javax.swing.JLabel lblDate;
+    private javax.swing.JLabel lblMovie;
+    private javax.swing.JLabel lblSeats;
+    private javax.swing.JLabel lblTime;
+    private javax.swing.JLabel lblTotal;
     private javax.swing.JMenuItem mnuExit;
     // End of variables declaration//GEN-END:variables
 }

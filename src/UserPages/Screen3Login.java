@@ -5,6 +5,7 @@
  */
 package UserPages;
 
+import java.awt.Color;
 import javax.swing.JOptionPane;
 
 /**
@@ -19,6 +20,17 @@ public class Screen3Login extends javax.swing.JFrame {
     public Screen3Login() {
         initComponents();
         this.setLocationRelativeTo(null);
+        btnClear.setBackground(Color.blue);
+        btnLogin.setBackground(Color.blue);
+        btnExit.setBackground(Color.blue);
+        btnHome.setBackground(Color.blue);
+        btnCreateAcc.setBackground(Color.blue);
+        
+        btnClear.setForeground(Color.white);
+        btnLogin.setForeground(Color.white);
+        btnExit.setForeground(Color.white);
+        btnHome.setForeground(Color.white);
+        btnCreateAcc.setForeground(Color.white);
     }
 
     /**
@@ -33,14 +45,15 @@ public class Screen3Login extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         btnLogin = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
-        btnBack1 = new javax.swing.JButton();
+        btnCreateAcc = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         txfUsername = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         pwfPassword = new javax.swing.JPasswordField();
         btnClear = new javax.swing.JButton();
-        btnBack = new javax.swing.JButton();
+        btnHome = new javax.swing.JButton();
         btnExit = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         mnuCreateAccount = new javax.swing.JMenuItem();
@@ -53,6 +66,7 @@ public class Screen3Login extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Login");
+        setBackground(new java.awt.Color(51, 51, 51));
         setMaximumSize(new java.awt.Dimension(487, 283));
         setMinimumSize(new java.awt.Dimension(487, 283));
         setName("Login"); // NOI18N
@@ -60,10 +74,11 @@ public class Screen3Login extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(null);
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Login details"));
+        jPanel2.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Login details", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 11), new java.awt.Color(255, 255, 255))); // NOI18N
         jPanel2.setLayout(null);
 
-        btnLogin.setBackground(new java.awt.Color(0, 0, 204));
+        btnLogin.setBackground(new java.awt.Color(51, 102, 255));
         btnLogin.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         btnLogin.setForeground(new java.awt.Color(255, 255, 255));
         btnLogin.setText("Login");
@@ -76,6 +91,7 @@ public class Screen3Login extends javax.swing.JFrame {
         btnLogin.setBounds(100, 120, 100, 24);
 
         jLabel5.setBackground(new java.awt.Color(0, 51, 255));
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Forgot password?");
         jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -85,34 +101,44 @@ public class Screen3Login extends javax.swing.JFrame {
         jPanel2.add(jLabel5);
         jLabel5.setBounds(260, 90, 110, 15);
 
-        btnBack1.setBackground(new java.awt.Color(0, 0, 204));
-        btnBack1.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        btnBack1.setForeground(new java.awt.Color(255, 255, 255));
-        btnBack1.setText("Dont have an account?");
-        btnBack1.addActionListener(new java.awt.event.ActionListener() {
+        btnCreateAcc.setBackground(new java.awt.Color(51, 102, 255));
+        btnCreateAcc.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        btnCreateAcc.setForeground(new java.awt.Color(255, 255, 255));
+        btnCreateAcc.setText("Dont have an account?");
+        btnCreateAcc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBack1ActionPerformed(evt);
+                btnCreateAccActionPerformed(evt);
             }
         });
-        jPanel2.add(btnBack1);
-        btnBack1.setBounds(210, 120, 152, 24);
+        jPanel2.add(btnCreateAcc);
+        btnCreateAcc.setBounds(210, 120, 152, 24);
 
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Username:");
         jPanel2.add(jLabel3);
-        jLabel3.setBounds(120, 30, 70, 15);
+        jLabel3.setBounds(100, 30, 90, 17);
+
+        txfUsername.setBackground(new java.awt.Color(0, 0, 0));
+        txfUsername.setForeground(new java.awt.Color(255, 255, 255));
         jPanel2.add(txfUsername);
         txfUsername.setBounds(200, 19, 163, 30);
 
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Password:");
         jPanel2.add(jLabel4);
-        jLabel4.setBounds(120, 70, 70, 15);
+        jLabel4.setBounds(100, 70, 90, 17);
+
+        pwfPassword.setBackground(new java.awt.Color(0, 0, 0));
+        pwfPassword.setForeground(new java.awt.Color(255, 255, 255));
         jPanel2.add(pwfPassword);
         pwfPassword.setBounds(200, 60, 163, 30);
 
         getContentPane().add(jPanel2);
         jPanel2.setBounds(12, 20, 460, 160);
 
-        btnClear.setBackground(new java.awt.Color(0, 0, 204));
+        btnClear.setBackground(new java.awt.Color(51, 102, 255));
         btnClear.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         btnClear.setForeground(new java.awt.Color(255, 255, 255));
         btnClear.setText("Clear");
@@ -124,19 +150,19 @@ public class Screen3Login extends javax.swing.JFrame {
         getContentPane().add(btnClear);
         btnClear.setBounds(10, 190, 80, 24);
 
-        btnBack.setBackground(new java.awt.Color(0, 0, 204));
-        btnBack.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        btnBack.setForeground(new java.awt.Color(255, 255, 255));
-        btnBack.setText("Home");
-        btnBack.addActionListener(new java.awt.event.ActionListener() {
+        btnHome.setBackground(new java.awt.Color(51, 102, 255));
+        btnHome.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        btnHome.setForeground(new java.awt.Color(255, 255, 255));
+        btnHome.setText("Home");
+        btnHome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBackActionPerformed(evt);
+                btnHomeActionPerformed(evt);
             }
         });
-        getContentPane().add(btnBack);
-        btnBack.setBounds(340, 190, 73, 24);
+        getContentPane().add(btnHome);
+        btnHome.setBounds(340, 190, 73, 24);
 
-        btnExit.setBackground(new java.awt.Color(0, 0, 204));
+        btnExit.setBackground(new java.awt.Color(51, 102, 255));
         btnExit.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         btnExit.setForeground(new java.awt.Color(255, 255, 255));
         btnExit.setText("Exit");
@@ -147,6 +173,10 @@ public class Screen3Login extends javax.swing.JFrame {
         });
         getContentPane().add(btnExit);
         btnExit.setBounds(420, 190, 55, 24);
+
+        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(0, 0, 490, 270);
 
         jMenu1.setText("Menu");
 
@@ -239,22 +269,22 @@ public class Screen3Login extends javax.swing.JFrame {
         pwfPassword.setText("");
     }//GEN-LAST:event_btnClearActionPerformed
 
-    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+    private void btnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeActionPerformed
         // TODO add your handling code here:
         new Screen1Home().setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_btnBackActionPerformed
+    }//GEN-LAST:event_btnHomeActionPerformed
 
     private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_btnExitActionPerformed
 
-    private void btnBack1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBack1ActionPerformed
+    private void btnCreateAccActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateAccActionPerformed
         // TODO add your handling code here:
         new Screen2Register().setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_btnBack1ActionPerformed
+    }//GEN-LAST:event_btnCreateAccActionPerformed
 
     private void mnuCreateAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuCreateAccountActionPerformed
         new Screen2Register().setVisible(true);
@@ -306,10 +336,10 @@ public class Screen3Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnBack;
-    private javax.swing.JButton btnBack1;
     private javax.swing.JButton btnClear;
+    private javax.swing.JButton btnCreateAcc;
     private javax.swing.JButton btnExit;
+    private javax.swing.JButton btnHome;
     private javax.swing.JButton btnLogin;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -319,6 +349,7 @@ public class Screen3Login extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPopupMenu.Separator jSeparator2;
     private javax.swing.JPopupMenu.Separator jSeparator3;
