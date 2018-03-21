@@ -53,7 +53,7 @@ public class Screen1Home extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Welcome, Visitor!");
+        jLabel4.setText("Welcome!");
         jLabel4.setToolTipText("");
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
