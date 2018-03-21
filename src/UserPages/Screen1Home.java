@@ -33,6 +33,7 @@ public class Screen1Home extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Home Screen");
+        setBackground(new java.awt.Color(51, 51, 51));
         setMaximumSize(new java.awt.Dimension(826, 401));
         setMinimumSize(new java.awt.Dimension(826, 401));
         setName("Home"); // NOI18N
@@ -40,11 +41,12 @@ public class Screen1Home extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(null);
 
+        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
         jPanel1.setLayout(null);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Welcome, Visitor!");
+        jLabel4.setText("WELCOME!");
         jLabel4.setToolTipText("");
         jPanel1.add(jLabel4);
         jLabel4.setBounds(516, 19, 170, 22);
@@ -92,11 +94,15 @@ public class Screen1Home extends javax.swing.JFrame {
         jPanel2.setBounds(0, 0, 6, 100);
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(0, 0, 830, 380);
+        jPanel1.setBounds(-10, 0, 840, 380);
 
+        jMenuBar1.setBackground(new java.awt.Color(51, 51, 51));
+
+        jMenu1.setBackground(new java.awt.Color(51, 51, 51));
         jMenu1.setText("Menu");
 
         mnuCreateAccount.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_MASK));
+        mnuCreateAccount.setBackground(new java.awt.Color(51, 51, 51));
         mnuCreateAccount.setText("Create a new account");
         mnuCreateAccount.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -106,6 +112,7 @@ public class Screen1Home extends javax.swing.JFrame {
         jMenu1.add(mnuCreateAccount);
 
         mnuSignIn.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
+        mnuSignIn.setBackground(new java.awt.Color(51, 51, 51));
         mnuSignIn.setText("Sign In");
         mnuSignIn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -115,6 +122,7 @@ public class Screen1Home extends javax.swing.JFrame {
         jMenu1.add(mnuSignIn);
 
         mnnuSignInAdmin.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_MASK));
+        mnnuSignInAdmin.setBackground(new java.awt.Color(51, 51, 51));
         mnnuSignInAdmin.setText("Sign In(Administrator)");
         mnnuSignInAdmin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -124,6 +132,7 @@ public class Screen1Home extends javax.swing.JFrame {
         jMenu1.add(mnnuSignInAdmin);
 
         mnuExit.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
+        mnuExit.setBackground(new java.awt.Color(51, 51, 51));
         mnuExit.setText("Exit");
         mnuExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
