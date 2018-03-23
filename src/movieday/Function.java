@@ -46,7 +46,7 @@ public class Function {
     }
 
     public void initDatabase() {
-        if (checkDBExists() == true) {
+        if (checkDBExists() == false) {
             System.out.println("DB Does Not Exist and will created ...");
             try {
                 Class.forName(jdbcDriver);
