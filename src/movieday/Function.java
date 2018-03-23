@@ -84,6 +84,9 @@ public class Function {
                             "CREATE TABLE Reservation("
                             + "ReservationID INTEGER NOT NULL AUTO_INCREMENT UNIQUE,"
                             + "UserID INTEGER,"
+                            + "SeatID INTEGER,"
+                            + "ShowID INTEGER,"
+                            + "MovieID INTEGER,"
                             + "PRIMARY KEY(ReservationID),"
                             + "FOREIGN KEY (UserID) REFERENCES User(UserID))");
                     s.addBatch(
@@ -102,12 +105,18 @@ public class Function {
                             + "Price DOUBLE,"
                             + "PRIMARY KEY (MovieID))");
                     s.addBatch(
+                            "CREATE TABLE MovieShow ("
+                            + "ShowID INTEGER NOT NULL AUTO_INCREMENT UNIQUE,"
+                            + "MovieIDs VARCHAR(250),"
+                            + "PRIMARY KEY (ShowID))");
+                    s.addBatch(
                             "CREATE TABLE Seat ("
                             + "SeatID INTEGER NOT NULL AUTO_INCREMENT UNIQUE,"
                             + "ReservationStatUs BOOLEAN, "
                             + "VenueID INTEGER,"
                             + "PRIMARY KEY (SeatID),"
                             + "FOREIGN KEY(VenueID) REFERENCES Venue(VenueID))");
+
                     //Initial Populating of Users Data
                     s.addBatch(
                             "INSERT INTO User VALUES "
@@ -125,13 +134,11 @@ public class Function {
                             + "(1,'Admin','Guy', 'admin@movieday.com','1234'),"
                             + "(2,'John', 'Claude', 'john@movieday.com','q234')"
                     );
-
                     //Populating Movies Table
-
+                    
                     // In case you want to see the update results from each statement
                     // Normally not needed to store the results.
                     int results[] = s.executeBatch();
-
                 } catch (SQLException sqlexp) {
                     System.err.println("Failed to execute one of the statements.");
                     System.err.println(sqlexp.getMessage());
