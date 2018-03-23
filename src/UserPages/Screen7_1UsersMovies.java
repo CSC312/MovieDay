@@ -5,6 +5,8 @@
  */
 package UserPages;
 
+import java.awt.Color;
+
 /**
  *
  * @author Nino
@@ -17,6 +19,9 @@ public class Screen7_1UsersMovies extends javax.swing.JFrame {
     public Screen7_1UsersMovies() {
         initComponents();
         this.setLocationRelativeTo(null);
+        btnBack.setBackground(Color.blue);
+        btnCancelRes.setBackground(Color.blue);
+        btnExit.setBackground(Color.blue);
     }
 
     /**
@@ -29,18 +34,19 @@ public class Screen7_1UsersMovies extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        lblLength = new javax.swing.JLabel();
+        lblMovie = new javax.swing.JLabel();
+        lblSeats = new javax.swing.JLabel();
+        lblTime = new javax.swing.JLabel();
+        lblGenre = new javax.swing.JLabel();
+        lblYear = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        lstMovieList = new javax.swing.JList();
+        btnBack = new javax.swing.JButton();
+        btnCancelRes = new javax.swing.JButton();
+        btnExit = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
@@ -53,91 +59,84 @@ public class Screen7_1UsersMovies extends javax.swing.JFrame {
         jSeparator2 = new javax.swing.JPopupMenu.Separator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(545, 356));
+        setMinimumSize(new java.awt.Dimension(545, 356));
+        setPreferredSize(new java.awt.Dimension(545, 356));
+        setResizable(false);
+        getContentPane().setLayout(null);
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("About Movie"));
+        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "About Movie", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 11), new java.awt.Color(255, 255, 255))); // NOI18N
+        jPanel1.setLayout(null);
 
-        jLabel5.setText("Length");
+        lblLength.setForeground(new java.awt.Color(255, 255, 255));
+        lblLength.setText("Length");
+        jPanel1.add(lblLength);
+        lblLength.setBounds(17, 113, 280, 15);
 
-        jLabel1.setText("Movie name");
+        lblMovie.setForeground(new java.awt.Color(255, 255, 255));
+        lblMovie.setText("Movie name");
+        jPanel1.add(lblMovie);
+        lblMovie.setBounds(17, 29, 280, 15);
 
-        jLabel6.setText("Your seats");
+        lblSeats.setForeground(new java.awt.Color(255, 255, 255));
+        lblSeats.setText("Your seats");
+        jPanel1.add(lblSeats);
+        lblSeats.setBounds(17, 134, 280, 15);
 
-        jLabel2.setText("Time(s)");
+        lblTime.setForeground(new java.awt.Color(255, 255, 255));
+        lblTime.setText("Time(s)");
+        jPanel1.add(lblTime);
+        lblTime.setBounds(17, 50, 280, 15);
 
-        jLabel3.setText("Genre(s)");
+        lblGenre.setForeground(new java.awt.Color(255, 255, 255));
+        lblGenre.setText("Genre(s)");
+        jPanel1.add(lblGenre);
+        lblGenre.setBounds(17, 71, 280, 15);
 
-        jLabel4.setText("Year");
+        lblYear.setForeground(new java.awt.Color(255, 255, 255));
+        lblYear.setText("Year");
+        jPanel1.add(lblYear);
+        lblYear.setBounds(17, 92, 280, 15);
 
-        jButton1.setText("Cancel Reservation");
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(210, 20, 310, 170);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel6))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(159, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addContainerGap())
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addContainerGap())
-        );
+        jPanel2.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Movie List", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 11), new java.awt.Color(255, 255, 255))); // NOI18N
+        jPanel2.setLayout(null);
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Movie List"));
-
-        jList1.setModel(new javax.swing.AbstractListModel() {
+        lstMovieList.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public Object getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane1.setViewportView(jList1);
+        jScrollPane1.setViewportView(lstMovieList);
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1)
-                .addContainerGap())
-        );
+        jPanel2.add(jScrollPane1);
+        jScrollPane1.setBounds(17, 29, 137, 241);
 
-        jButton2.setText("Back");
+        getContentPane().add(jPanel2);
+        jPanel2.setBounds(10, 20, 170, 287);
 
-        jButton3.setText("Exit");
+        btnBack.setForeground(new java.awt.Color(255, 255, 255));
+        btnBack.setText("Back");
+        getContentPane().add(btnBack);
+        btnBack.setBounds(370, 240, 70, 25);
+
+        btnCancelRes.setForeground(new java.awt.Color(255, 255, 255));
+        btnCancelRes.setText("Cancel Reservation");
+        getContentPane().add(btnCancelRes);
+        btnCancelRes.setBounds(370, 200, 150, 25);
+
+        btnExit.setForeground(new java.awt.Color(255, 255, 255));
+        btnExit.setText("Exit");
+        getContentPane().add(btnExit);
+        btnExit.setBounds(460, 240, 60, 25);
+
+        jPanel3.setBackground(new java.awt.Color(51, 51, 51));
+        getContentPane().add(jPanel3);
+        jPanel3.setBounds(0, 0, 560, 350);
 
         jMenu1.setText("Menu");
 
@@ -182,37 +181,6 @@ public class Screen7_1UsersMovies extends javax.swing.JFrame {
         jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jButton2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton3)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton2)
-                            .addComponent(jButton3))))
-                .addContainerGap())
-        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -266,16 +234,9 @@ public class Screen7_1UsersMovies extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JList jList1;
+    private javax.swing.JButton btnBack;
+    private javax.swing.JButton btnCancelRes;
+    private javax.swing.JButton btnExit;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
@@ -285,9 +246,17 @@ public class Screen7_1UsersMovies extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPopupMenu.Separator jSeparator2;
     private javax.swing.JPopupMenu.Separator jSeparator3;
+    private javax.swing.JLabel lblGenre;
+    private javax.swing.JLabel lblLength;
+    private javax.swing.JLabel lblMovie;
+    private javax.swing.JLabel lblSeats;
+    private javax.swing.JLabel lblTime;
+    private javax.swing.JLabel lblYear;
+    private javax.swing.JList lstMovieList;
     private javax.swing.JMenuItem mnuExit;
     // End of variables declaration//GEN-END:variables
 }
