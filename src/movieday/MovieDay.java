@@ -14,5 +14,7 @@ public class MovieDay {
      */
     public static void main(String[] args) {
         //new AdminHome().setVisible(true);
+        
+        new Function().initDatabase();
     }   
 }

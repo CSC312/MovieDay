@@ -18,6 +18,7 @@ public class AdminUsersScreen extends javax.swing.JFrame {
      */
     public AdminUsersScreen() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**

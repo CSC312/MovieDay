@@ -616,9 +616,6 @@
       <SubComponents>
         <Component class="javax.swing.JButton" name="btnReserveSeats">
           <Properties>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Reserve seats"/>
           </Properties>
           <Events>
@@ -632,9 +629,6 @@
         </Component>
         <Component class="javax.swing.JButton" name="btnClear">
           <Properties>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Clear"/>
           </Properties>
           <Events>
@@ -648,9 +642,6 @@
         </Component>
         <Component class="javax.swing.JButton" name="btnBack">
           <Properties>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Back"/>
           </Properties>
           <Events>
