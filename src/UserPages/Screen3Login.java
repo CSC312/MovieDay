@@ -75,7 +75,7 @@ public class Screen3Login extends javax.swing.JFrame {
         getContentPane().setLayout(null);
 
         jPanel2.setBackground(new java.awt.Color(51, 51, 51));
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Login details", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 11), new java.awt.Color(255, 255, 255))); // NOI18N
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Login details", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Lucida Grande", 0, 13), new java.awt.Color(255, 255, 255))); // NOI18N
         jPanel2.setLayout(null);
 
         btnLogin.setBackground(new java.awt.Color(51, 102, 255));
@@ -88,7 +88,7 @@ public class Screen3Login extends javax.swing.JFrame {
             }
         });
         jPanel2.add(btnLogin);
-        btnLogin.setBounds(100, 120, 100, 24);
+        btnLogin.setBounds(100, 120, 100, 29);
 
         jLabel5.setBackground(new java.awt.Color(0, 51, 255));
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -99,7 +99,7 @@ public class Screen3Login extends javax.swing.JFrame {
             }
         });
         jPanel2.add(jLabel5);
-        jLabel5.setBounds(260, 90, 110, 15);
+        jLabel5.setBounds(260, 90, 110, 16);
 
         btnCreateAcc.setBackground(new java.awt.Color(51, 102, 255));
         btnCreateAcc.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
@@ -111,7 +111,7 @@ public class Screen3Login extends javax.swing.JFrame {
             }
         });
         jPanel2.add(btnCreateAcc);
-        btnCreateAcc.setBounds(210, 120, 152, 24);
+        btnCreateAcc.setBounds(210, 120, 162, 29);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -148,7 +148,7 @@ public class Screen3Login extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnClear);
-        btnClear.setBounds(10, 190, 80, 24);
+        btnClear.setBounds(10, 190, 80, 29);
 
         btnHome.setBackground(new java.awt.Color(51, 102, 255));
         btnHome.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
@@ -160,7 +160,7 @@ public class Screen3Login extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnHome);
-        btnHome.setBounds(340, 190, 73, 24);
+        btnHome.setBounds(340, 190, 73, 29);
 
         btnExit.setBackground(new java.awt.Color(51, 102, 255));
         btnExit.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
@@ -172,7 +172,7 @@ public class Screen3Login extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnExit);
-        btnExit.setBounds(420, 190, 55, 24);
+        btnExit.setBounds(420, 190, 75, 29);
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
         getContentPane().add(jPanel1);

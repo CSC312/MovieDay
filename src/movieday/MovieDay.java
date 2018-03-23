@@ -3,6 +3,8 @@
  */
 package movieday;
 
+import UserPages.Screen1Home;
+
 /**
  *
  * @author johnclaude
@@ -16,5 +18,6 @@ public class MovieDay {
         //new AdminHome().setVisible(true);
         
         new Function().initDatabase();
+        new Screen1Home().setVisible(true);
     }   
 }

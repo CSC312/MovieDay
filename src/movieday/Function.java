@@ -63,7 +63,7 @@ public class Function {
                     Statement s = c.createStatement();
 
                     // The statements are copied from the SQL script directly
-                    s.addBatch("DROP DATABASE MovieDay");
+                    //s.addBatch("DROP DATABASE MovieDay");
                     s.addBatch("CREATE DATABASE MovieDay");
                     s.addBatch("USE MovieDay");
                     s.addBatch(
@@ -103,7 +103,7 @@ public class Function {
                             "CREATE TABLE Movie ("
                             + "MovieID INTEGER NOT NULL AUTO_INCREMENT UNIQUE,"
                             + "Title VARCHAR (50) NOT NULL,"
-                            + "Year DATETIME NOT NULL,"
+                            + "Year VARCHAR(30) NOT NULL,"
                             + "Length INTEGER,"
                             + "Description VARCHAR (250),"
                             + "Price DOUBLE,"
