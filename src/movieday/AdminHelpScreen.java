@@ -18,6 +18,7 @@ public class AdminHelpScreen extends javax.swing.JFrame {
      */
     public AdminHelpScreen() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -74,6 +75,7 @@ public class AdminHelpScreen extends javax.swing.JFrame {
         jMenuBar1.add(adminHomeMenu);
 
         adminReportsMenu.setText("Reports");
+        adminReportsMenu.setToolTipText("");
         adminReportsMenu.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 adminReportsMenuMouseClicked(evt);

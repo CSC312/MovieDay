@@ -18,6 +18,7 @@ public class ReportScreen extends javax.swing.JFrame {
      */
     public ReportScreen() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
     
     /**

@@ -77,7 +77,7 @@ public class Screen1Home extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("|");
         jPanel1.add(jLabel6);
-        jLabel6.setBounds(566, 49, 7, 15);
+        jLabel6.setBounds(566, 49, 8, 15);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
