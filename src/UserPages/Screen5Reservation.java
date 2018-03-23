@@ -88,14 +88,9 @@ public class Screen5Reservation extends javax.swing.JFrame {
         getContentPane().setLayout(null);
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Seating Arrangement", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 11), new java.awt.Color(255, 255, 255))); // NOI18N
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Seating Arrangement", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Lucida Grande", 0, 13), new java.awt.Color(255, 255, 255))); // NOI18N
         jPanel1.setLayout(null);
 
-<<<<<<< HEAD
-        jButton2.setText("A1");
-        jPanel1.add(jButton2);
-        jButton2.setBounds(45, 65, 75, 29);
-=======
         btnA1.setText("A1");
         btnA1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -103,93 +98,13 @@ public class Screen5Reservation extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnA1);
-        btnA1.setBounds(60, 70, 48, 25);
->>>>>>> ninoChanges
+        btnA1.setBounds(60, 70, 75, 29);
 
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("====MOVIE SCREEN====");
         jPanel1.add(jLabel3);
-<<<<<<< HEAD
-        jLabel3.setBounds(50, 30, 333, 16);
-
-        jButton3.setText("A1");
-        jPanel1.add(jButton3);
-        jButton3.setBounds(132, 65, 75, 29);
-
-        jButton4.setText("A1");
-        jPanel1.add(jButton4);
-        jButton4.setBounds(219, 65, 75, 29);
-
-        jButton5.setText("A1");
-        jPanel1.add(jButton5);
-        jButton5.setBounds(306, 65, 75, 29);
-
-        jButton6.setText("A1");
-        jPanel1.add(jButton6);
-        jButton6.setBounds(393, 65, 75, 29);
-
-        jButton7.setText("B1");
-        jPanel1.add(jButton7);
-        jButton7.setBounds(45, 106, 75, 29);
-
-        jButton8.setText("A1");
-        jPanel1.add(jButton8);
-        jButton8.setBounds(132, 106, 75, 29);
-
-        jButton9.setText("A1");
-        jPanel1.add(jButton9);
-        jButton9.setBounds(219, 106, 75, 29);
-
-        jButton10.setText("A1");
-        jPanel1.add(jButton10);
-        jButton10.setBounds(306, 106, 75, 29);
-
-        jButton11.setText("A1");
-        jPanel1.add(jButton11);
-        jButton11.setBounds(393, 106, 75, 29);
-
-        jButton12.setText("C1");
-        jPanel1.add(jButton12);
-        jButton12.setBounds(45, 169, 75, 29);
-
-        jButton13.setText("A1");
-        jPanel1.add(jButton13);
-        jButton13.setBounds(132, 169, 75, 29);
-
-        jButton14.setText("A1");
-        jPanel1.add(jButton14);
-        jButton14.setBounds(219, 169, 75, 29);
-
-        jButton15.setText("A1");
-        jPanel1.add(jButton15);
-        jButton15.setBounds(306, 169, 75, 29);
-
-        jButton16.setText("A1");
-        jPanel1.add(jButton16);
-        jButton16.setBounds(393, 169, 75, 29);
-
-        jButton17.setText("D1");
-        jPanel1.add(jButton17);
-        jButton17.setBounds(45, 210, 75, 29);
-
-        jButton18.setText("A1");
-        jPanel1.add(jButton18);
-        jButton18.setBounds(132, 210, 75, 29);
-
-        jButton19.setText("A1");
-        jPanel1.add(jButton19);
-        jButton19.setBounds(219, 210, 75, 29);
-
-        jButton20.setText("A1");
-        jPanel1.add(jButton20);
-        jButton20.setBounds(306, 210, 75, 29);
-
-        jButton21.setText("A1");
-        jPanel1.add(jButton21);
-        jButton21.setBounds(393, 210, 75, 29);
-=======
-        jLabel3.setBounds(20, 20, 333, 15);
+        jLabel3.setBounds(20, 20, 333, 16);
 
         btnA2.setText("A2");
         btnA2.addActionListener(new java.awt.event.ActionListener() {
@@ -198,7 +113,7 @@ public class Screen5Reservation extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnA2);
-        btnA2.setBounds(120, 70, 48, 25);
+        btnA2.setBounds(120, 70, 75, 29);
 
         btnA3.setText("A3");
         btnA3.addActionListener(new java.awt.event.ActionListener() {
@@ -207,7 +122,7 @@ public class Screen5Reservation extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnA3);
-        btnA3.setBounds(180, 70, 48, 25);
+        btnA3.setBounds(180, 70, 75, 29);
 
         btnA4.setText("A4");
         btnA4.addActionListener(new java.awt.event.ActionListener() {
@@ -216,7 +131,7 @@ public class Screen5Reservation extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnA4);
-        btnA4.setBounds(240, 70, 48, 25);
+        btnA4.setBounds(240, 70, 75, 29);
 
         btnA5.setText("A5");
         btnA5.addActionListener(new java.awt.event.ActionListener() {
@@ -225,7 +140,7 @@ public class Screen5Reservation extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnA5);
-        btnA5.setBounds(300, 70, 48, 25);
+        btnA5.setBounds(300, 70, 75, 29);
 
         btnB1.setText("B1");
         btnB1.addActionListener(new java.awt.event.ActionListener() {
@@ -234,7 +149,7 @@ public class Screen5Reservation extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnB1);
-        btnB1.setBounds(60, 110, 47, 25);
+        btnB1.setBounds(60, 110, 75, 29);
 
         btnB2.setText("B2");
         btnB2.addActionListener(new java.awt.event.ActionListener() {
@@ -243,7 +158,7 @@ public class Screen5Reservation extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnB2);
-        btnB2.setBounds(120, 110, 47, 25);
+        btnB2.setBounds(120, 110, 75, 29);
 
         btnB3.setText("B3");
         btnB3.addActionListener(new java.awt.event.ActionListener() {
@@ -252,7 +167,7 @@ public class Screen5Reservation extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnB3);
-        btnB3.setBounds(180, 110, 47, 25);
+        btnB3.setBounds(180, 110, 75, 29);
 
         btnB4.setText("B4");
         btnB4.addActionListener(new java.awt.event.ActionListener() {
@@ -261,7 +176,7 @@ public class Screen5Reservation extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnB4);
-        btnB4.setBounds(240, 110, 47, 25);
+        btnB4.setBounds(240, 110, 75, 29);
 
         btnB5.setText("B5");
         btnB5.addActionListener(new java.awt.event.ActionListener() {
@@ -270,7 +185,7 @@ public class Screen5Reservation extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnB5);
-        btnB5.setBounds(300, 110, 47, 25);
+        btnB5.setBounds(300, 110, 75, 29);
 
         btnC1.setText("C1");
         btnC1.addActionListener(new java.awt.event.ActionListener() {
@@ -279,7 +194,7 @@ public class Screen5Reservation extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnC1);
-        btnC1.setBounds(60, 160, 47, 25);
+        btnC1.setBounds(60, 160, 75, 29);
 
         btnC2.setText("C2");
         btnC2.addActionListener(new java.awt.event.ActionListener() {
@@ -288,7 +203,7 @@ public class Screen5Reservation extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnC2);
-        btnC2.setBounds(120, 160, 47, 25);
+        btnC2.setBounds(120, 160, 75, 29);
 
         btnC3.setText("C3");
         btnC3.addActionListener(new java.awt.event.ActionListener() {
@@ -297,7 +212,7 @@ public class Screen5Reservation extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnC3);
-        btnC3.setBounds(180, 160, 47, 25);
+        btnC3.setBounds(180, 160, 75, 29);
 
         btnC4.setText("C4");
         btnC4.addActionListener(new java.awt.event.ActionListener() {
@@ -306,7 +221,7 @@ public class Screen5Reservation extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnC4);
-        btnC4.setBounds(240, 160, 47, 25);
+        btnC4.setBounds(240, 160, 75, 29);
 
         btnC5.setText("C5");
         btnC5.addActionListener(new java.awt.event.ActionListener() {
@@ -315,7 +230,7 @@ public class Screen5Reservation extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnC5);
-        btnC5.setBounds(300, 160, 47, 25);
+        btnC5.setBounds(300, 160, 75, 29);
 
         btnD1.setText("D1");
         btnD1.addActionListener(new java.awt.event.ActionListener() {
@@ -324,7 +239,7 @@ public class Screen5Reservation extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnD1);
-        btnD1.setBounds(60, 200, 47, 25);
+        btnD1.setBounds(60, 200, 75, 29);
 
         btnD2.setText("D2");
         btnD2.addActionListener(new java.awt.event.ActionListener() {
@@ -333,7 +248,7 @@ public class Screen5Reservation extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnD2);
-        btnD2.setBounds(120, 200, 47, 25);
+        btnD2.setBounds(120, 200, 75, 29);
 
         btnD3.setText("D3");
         btnD3.addActionListener(new java.awt.event.ActionListener() {
@@ -342,7 +257,7 @@ public class Screen5Reservation extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnD3);
-        btnD3.setBounds(180, 200, 47, 25);
+        btnD3.setBounds(180, 200, 75, 29);
 
         btnD4.setText("D4");
         btnD4.addActionListener(new java.awt.event.ActionListener() {
@@ -351,7 +266,7 @@ public class Screen5Reservation extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnD4);
-        btnD4.setBounds(240, 200, 47, 25);
+        btnD4.setBounds(240, 200, 75, 29);
 
         btnD5.setText("D5");
         btnD5.addActionListener(new java.awt.event.ActionListener() {
@@ -360,8 +275,7 @@ public class Screen5Reservation extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnD5);
-        btnD5.setBounds(300, 200, 47, 25);
->>>>>>> ninoChanges
+        btnD5.setBounds(300, 200, 75, 29);
 
         btnE1.setText("E1");
         btnE1.addActionListener(new java.awt.event.ActionListener() {
@@ -369,53 +283,8 @@ public class Screen5Reservation extends javax.swing.JFrame {
                 btnE1ActionPerformed(evt);
             }
         });
-<<<<<<< HEAD
-        jPanel1.add(jButton22);
-        jButton22.setBounds(45, 264, 75, 29);
-
-        jButton23.setText("A1");
-        jPanel1.add(jButton23);
-        jButton23.setBounds(132, 264, 75, 29);
-
-        jButton24.setText("A1");
-        jPanel1.add(jButton24);
-        jButton24.setBounds(219, 264, 75, 29);
-
-        jButton25.setText("A1");
-        jPanel1.add(jButton25);
-        jButton25.setBounds(306, 264, 75, 29);
-
-        jButton26.setText("A1");
-        jPanel1.add(jButton26);
-        jButton26.setBounds(393, 264, 75, 29);
-        jPanel1.add(jSeparator6);
-        jSeparator6.setBounds(12, 46, 333, 10);
-
-        jLabel4.setText("R80");
-        jPanel1.add(jLabel4);
-        jLabel4.setBounds(12, 87, 24, 16);
-
-        jLabel5.setText("R70");
-        jPanel1.add(jLabel5);
-        jLabel5.setBounds(12, 223, 24, 16);
-
-        jLabel6.setText("R60");
-        jPanel1.add(jLabel6);
-        jLabel6.setBounds(12, 269, 24, 16);
-        jPanel1.add(jSeparator7);
-        jSeparator7.setBounds(12, 153, 333, 10);
-        jPanel1.add(jSeparator8);
-        jSeparator8.setBounds(12, 248, 333, 10);
-
-        jLabel8.setText("Your seats: ");
-        jPanel1.add(jLabel8);
-        jLabel8.setBounds(12, 314, 333, 16);
-
-        getContentPane().add(jPanel1);
-        jPanel1.setBounds(0, 61, 480, 370);
-=======
         jPanel1.add(btnE1);
-        btnE1.setBounds(60, 250, 46, 25);
+        btnE1.setBounds(60, 250, 75, 29);
 
         btnE2.setText("E2");
         btnE2.addActionListener(new java.awt.event.ActionListener() {
@@ -424,7 +293,7 @@ public class Screen5Reservation extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnE2);
-        btnE2.setBounds(120, 250, 46, 25);
+        btnE2.setBounds(120, 250, 75, 29);
 
         btnE3.setText("E3");
         btnE3.addActionListener(new java.awt.event.ActionListener() {
@@ -433,7 +302,7 @@ public class Screen5Reservation extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnE3);
-        btnE3.setBounds(180, 250, 46, 25);
+        btnE3.setBounds(180, 250, 75, 29);
 
         btnE4.setText("E4");
         btnE4.addActionListener(new java.awt.event.ActionListener() {
@@ -442,7 +311,7 @@ public class Screen5Reservation extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnE4);
-        btnE4.setBounds(240, 250, 46, 25);
+        btnE4.setBounds(240, 250, 75, 29);
 
         btnE5.setText("E5");
         btnE5.addActionListener(new java.awt.event.ActionListener() {
@@ -451,24 +320,24 @@ public class Screen5Reservation extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnE5);
-        btnE5.setBounds(300, 250, 46, 25);
+        btnE5.setBounds(300, 250, 75, 29);
         jPanel1.add(jSeparator6);
         jSeparator6.setBounds(17, 50, 333, 10);
 
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("R80");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(20, 100, 30, 15);
+        jLabel4.setBounds(20, 100, 30, 16);
 
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("R70");
         jPanel1.add(jLabel5);
-        jLabel5.setBounds(20, 190, 30, 15);
+        jLabel5.setBounds(20, 190, 30, 16);
 
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("R60");
         jPanel1.add(jLabel6);
-        jLabel6.setBounds(17, 255, 30, 15);
+        jLabel6.setBounds(17, 255, 30, 16);
         jPanel1.add(jSeparator7);
         jSeparator7.setBounds(17, 148, 333, 10);
         jPanel1.add(jSeparator8);
@@ -477,38 +346,30 @@ public class Screen5Reservation extends javax.swing.JFrame {
         lblUserSeats.setForeground(new java.awt.Color(255, 255, 255));
         lblUserSeats.setText("Your seats: ");
         jPanel1.add(lblUserSeats);
-        lblUserSeats.setBounds(17, 295, 333, 15);
+        lblUserSeats.setBounds(17, 295, 333, 16);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(10, 20, 380, 330);
->>>>>>> ninoChanges
 
         jPanel3.setBackground(new java.awt.Color(51, 51, 51));
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Key", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 11), new java.awt.Color(255, 255, 255))); // NOI18N
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Key", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Lucida Grande", 0, 13), new java.awt.Color(255, 255, 255))); // NOI18N
         jPanel3.setLayout(null);
 
         btnAvailable.setBackground(new java.awt.Color(0, 153, 0));
         btnAvailable.setText("Available");
         jPanel3.add(btnAvailable);
-        btnAvailable.setBounds(20, 30, 150, 25);
+        btnAvailable.setBounds(20, 30, 150, 29);
 
         btnReserved.setBackground(new java.awt.Color(204, 0, 0));
         btnReserved.setText("Reserved");
         jPanel3.add(btnReserved);
-        btnReserved.setBounds(20, 70, 150, 25);
+        btnReserved.setBounds(20, 70, 150, 29);
 
         getContentPane().add(jPanel3);
         jPanel3.setBounds(400, 20, 190, 110);
 
-<<<<<<< HEAD
-        getContentPane().add(jPanel3);
-        jPanel3.setBounds(560, 60, 181, 113);
-
-        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Payment"));
-=======
         jPanel4.setBackground(new java.awt.Color(51, 51, 51));
-        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Payment", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 11), new java.awt.Color(255, 255, 255))); // NOI18N
->>>>>>> ninoChanges
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Payment", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Lucida Grande", 0, 13), new java.awt.Color(255, 255, 255))); // NOI18N
         jPanel4.setLayout(null);
 
         btnReserveSeats.setForeground(new java.awt.Color(255, 255, 255));
@@ -518,16 +379,8 @@ public class Screen5Reservation extends javax.swing.JFrame {
                 btnReserveSeatsActionPerformed(evt);
             }
         });
-<<<<<<< HEAD
-        jPanel4.add(jButton1);
-        jButton1.setBounds(12, 159, 92, 29);
-
-        jButton32.setText("Clear");
-        jPanel4.add(jButton32);
-        jButton32.setBounds(121, 118, 76, 29);
-=======
         jPanel4.add(btnReserveSeats);
-        btnReserveSeats.setBounds(20, 120, 150, 25);
+        btnReserveSeats.setBounds(20, 120, 150, 29);
 
         btnClear.setForeground(new java.awt.Color(255, 255, 255));
         btnClear.setText("Clear");
@@ -537,50 +390,25 @@ public class Screen5Reservation extends javax.swing.JFrame {
             }
         });
         jPanel4.add(btnClear);
-        btnClear.setBounds(20, 150, 70, 25);
->>>>>>> ninoChanges
+        btnClear.setBounds(20, 150, 70, 29);
 
         btnBack.setForeground(new java.awt.Color(255, 255, 255));
         btnBack.setText("Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-<<<<<<< HEAD
-                jButton33ActionPerformed(evt);
-            }
-        });
-        jPanel4.add(jButton33);
-        jButton33.setBounds(122, 159, 75, 29);
-
-        jLabel7.setText("Price: Rxxxxx");
-        jPanel4.add(jLabel7);
-        jLabel7.setBounds(12, 24, 86, 16);
-
-        getContentPane().add(jPanel4);
-        jPanel4.setBounds(550, 180, 230, 250);
-
-        jPanel5.setLayout(null);
-
-        jLabel1.setText("User name");
-        jPanel5.add(jLabel1);
-        jLabel1.setBounds(136, 6, 66, 16);
-
-        getContentPane().add(jPanel5);
-        jPanel5.setBounds(309, 0, 0, 0);
-=======
                 btnBackActionPerformed(evt);
             }
         });
         jPanel4.add(btnBack);
-        btnBack.setBounds(98, 150, 70, 25);
+        btnBack.setBounds(98, 150, 70, 29);
 
         lblPrice.setForeground(new java.awt.Color(255, 255, 255));
         lblPrice.setText("Price: R");
         jPanel4.add(lblPrice);
-        lblPrice.setBounds(17, 29, 150, 15);
+        lblPrice.setBounds(17, 29, 150, 16);
 
         getContentPane().add(jPanel4);
         jPanel4.setBounds(400, 150, 190, 200);
->>>>>>> ninoChanges
 
         jPanel2.setBackground(new java.awt.Color(51, 51, 51));
         getContentPane().add(jPanel2);

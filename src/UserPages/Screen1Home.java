@@ -46,11 +46,7 @@ public class Screen1Home extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-<<<<<<< HEAD
-        jLabel4.setText("Welcome!");
-=======
         jLabel4.setText("WELCOME!");
->>>>>>> ninoChanges
         jLabel4.setToolTipText("");
         jPanel1.add(jLabel4);
         jLabel4.setBounds(516, 19, 170, 22);
@@ -81,7 +77,7 @@ public class Screen1Home extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("|");
         jPanel1.add(jLabel6);
-        jLabel6.setBounds(566, 49, 7, 15);
+        jLabel6.setBounds(566, 49, 8, 15);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
