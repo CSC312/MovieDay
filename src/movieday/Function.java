@@ -94,6 +94,10 @@ public class Function {
                             + "VenueID INTEGER NOT NULL AUTO_INCREMENT UNIQUE,"
                             + "Venue BOOLEAN NOT NULL, "
                             + "VenueFee DOUBLE,"
+                            + "UserID INTEGER NOT NULL,"
+                            + "SeatID INTEGER NOT NULL,"
+                            + "ShowID INTEGER NOT NULL,"
+                            + "MovieID INTEGER NOT NULL,"
                             + "PRIMARY KEY (VenueID))");
                     s.addBatch(
                             "CREATE TABLE Movie ("
@@ -116,7 +120,11 @@ public class Function {
                             + "VenueID INTEGER,"
                             + "PRIMARY KEY (SeatID),"
                             + "FOREIGN KEY(VenueID) REFERENCES Venue(VenueID))");
-
+                    s.addBatch(
+                            "CREATE TABLE MovieShow("
+                            + "ShowID INTEGER NOT NULL AUTO_INCREMENT UNIQUE,"
+                            + "MovieIDs VARCHAR (250),"
+                            + "PRIMARY KEY (ShowID))");
                     //Initial Populating of Users Data
                     s.addBatch(
                             "INSERT INTO User VALUES "
@@ -135,7 +143,6 @@ public class Function {
                             + "(2,'John', 'Claude', 'john@movieday.com','q234')"
                     );
                     //Populating Movies Table
-                    
                     // In case you want to see the update results from each statement
                     // Normally not needed to store the results.
                     int results[] = s.executeBatch();
