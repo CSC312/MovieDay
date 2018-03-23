@@ -372,7 +372,6 @@ public class Screen5Reservation extends javax.swing.JFrame {
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Payment", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Lucida Grande", 0, 13), new java.awt.Color(255, 255, 255))); // NOI18N
         jPanel4.setLayout(null);
 
-        btnReserveSeats.setForeground(new java.awt.Color(255, 255, 255));
         btnReserveSeats.setText("Reserve seats");
         btnReserveSeats.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -382,7 +381,6 @@ public class Screen5Reservation extends javax.swing.JFrame {
         jPanel4.add(btnReserveSeats);
         btnReserveSeats.setBounds(20, 120, 150, 29);
 
-        btnClear.setForeground(new java.awt.Color(255, 255, 255));
         btnClear.setText("Clear");
         btnClear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -392,7 +390,6 @@ public class Screen5Reservation extends javax.swing.JFrame {
         jPanel4.add(btnClear);
         btnClear.setBounds(20, 150, 70, 29);
 
-        btnBack.setForeground(new java.awt.Color(255, 255, 255));
         btnBack.setText("Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
