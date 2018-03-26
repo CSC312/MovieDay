@@ -155,6 +155,14 @@ public class Function {
                                     + "(7,'Test Movie 2 Out', '2017', 123, 'Thriller movie about blah.', 98.00,'../movieday/images/Folder.jpg'),"
                                     + "(8,'This Is Another One', '2017', 123,'Thriller movie about blah.', 98.00,'../movieday/images/Folder.jpg'),"
                                     + "(9,'Movie Number 4', '2017', 123, 'Thriller movie about blah.', 98.00,'../movieday/images/Folder.jpg')");
+                    s.addBatch(
+                            "INSERT INTO Reservation VALUES"
+                                    + "(1,1,1,1,1),"
+                                    + "(2,2,1,2,2),"
+                                    + "(3,3,1,3,5),"
+                                    + "(4,2,1,1,3),"
+                                    + "(5,1,1,2,6),"
+                                    + "(6,2,1,3,4)");
                     // In case you want to see the update results from each statement
                     // Normally not needed to store the results.
                     int results[] = s.executeBatch();
@@ -197,4 +205,5 @@ public class Function {
         }
         return false;
     }
+    
 }
