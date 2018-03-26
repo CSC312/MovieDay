@@ -77,7 +77,7 @@ public class Screen2Register extends javax.swing.JFrame {
         getContentPane().setLayout(null);
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Details", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 11), new java.awt.Color(255, 255, 255))); // NOI18N
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Details", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Lucida Grande", 0, 13), new java.awt.Color(255, 255, 255))); // NOI18N
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(null);
 
@@ -91,7 +91,7 @@ public class Screen2Register extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnSubmit);
-        btnSubmit.setBounds(474, 110, 120, 24);
+        btnSubmit.setBounds(474, 110, 120, 29);
 
         btnBack.setBackground(new java.awt.Color(51, 102, 255));
         btnBack.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
@@ -103,7 +103,7 @@ public class Screen2Register extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnBack);
-        btnBack.setBounds(600, 110, 60, 24);
+        btnBack.setBounds(600, 110, 75, 29);
 
         btnClear.setBackground(new java.awt.Color(51, 102, 255));
         btnClear.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
@@ -115,7 +115,7 @@ public class Screen2Register extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnClear);
-        btnClear.setBounds(670, 110, 64, 24);
+        btnClear.setBounds(670, 110, 75, 29);
 
         txfSecurityQuestion.setBackground(new java.awt.Color(0, 0, 0));
         txfSecurityQuestion.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
@@ -145,7 +145,7 @@ public class Screen2Register extends javax.swing.JFrame {
         jLabel15.setForeground(new java.awt.Color(255, 255, 255));
         jLabel15.setText("Security Question:");
         jPanel1.add(jLabel15);
-        jLabel15.setBounds(480, 20, 127, 17);
+        jLabel15.setBounds(480, 20, 129, 17);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -178,7 +178,7 @@ public class Screen2Register extends javax.swing.JFrame {
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("Email:");
         jPanel1.add(jLabel12);
-        jLabel12.setBounds(40, 160, 41, 17);
+        jLabel12.setBounds(40, 160, 43, 17);
 
         txfEmail.setBackground(new java.awt.Color(0, 0, 0));
         txfEmail.setForeground(java.awt.Color.white);
@@ -191,7 +191,7 @@ public class Screen2Register extends javax.swing.JFrame {
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Date of Birth:");
         jPanel1.add(jLabel11);
-        jLabel11.setBounds(40, 120, 93, 17);
+        jLabel11.setBounds(40, 120, 95, 17);
 
         txfDOB.setBackground(new java.awt.Color(0, 0, 0));
         txfDOB.setForeground(java.awt.Color.white);
@@ -208,7 +208,7 @@ public class Screen2Register extends javax.swing.JFrame {
 
         lblPassword.setText("<Password>");
         jPanel1.add(lblPassword);
-        lblPassword.setBounds(150, 200, 126, 15);
+        lblPassword.setBounds(150, 200, 126, 16);
 
         btnNewPass.setBackground(new java.awt.Color(51, 102, 255));
         btnNewPass.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
@@ -220,7 +220,7 @@ public class Screen2Register extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnNewPass);
-        btnNewPass.setBounds(40, 230, 157, 24);
+        btnNewPass.setBounds(40, 230, 167, 29);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 12, 820, 270);
@@ -266,7 +266,7 @@ public class Screen2Register extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnLogin);
-        btnLogin.setBounds(730, 300, 80, 32);
+        btnLogin.setBounds(730, 300, 89, 29);
 
         jPanel2.setBackground(new java.awt.Color(51, 51, 51));
         jPanel2.setLayout(null);
