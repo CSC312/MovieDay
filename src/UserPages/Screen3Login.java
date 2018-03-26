@@ -67,51 +67,52 @@ public class Screen3Login extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Login");
         setBackground(new java.awt.Color(51, 51, 51));
-        setMaximumSize(new java.awt.Dimension(487, 283));
         setMinimumSize(new java.awt.Dimension(487, 283));
         setName("Login"); // NOI18N
-        setPreferredSize(new java.awt.Dimension(487, 283));
         setResizable(false);
         getContentPane().setLayout(null);
 
         jPanel2.setBackground(new java.awt.Color(51, 51, 51));
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Login details", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Lucida Grande", 0, 13), new java.awt.Color(255, 255, 255))); // NOI18N
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Login details", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(255, 255, 255))); // NOI18N
         jPanel2.setLayout(null);
 
         btnLogin.setBackground(new java.awt.Color(51, 102, 255));
         btnLogin.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         btnLogin.setForeground(new java.awt.Color(255, 255, 255));
         btnLogin.setText("Login");
+        btnLogin.setToolTipText("Log in your account");
         btnLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLoginActionPerformed(evt);
             }
         });
         jPanel2.add(btnLogin);
-        btnLogin.setBounds(100, 120, 100, 29);
+        btnLogin.setBounds(100, 120, 100, 24);
 
         jLabel5.setBackground(new java.awt.Color(0, 51, 255));
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Forgot password?");
+        jLabel5.setToolTipText("Recover your password");
         jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel5MouseClicked(evt);
             }
         });
         jPanel2.add(jLabel5);
-        jLabel5.setBounds(260, 90, 110, 16);
+        jLabel5.setBounds(260, 90, 110, 15);
 
         btnCreateAcc.setBackground(new java.awt.Color(51, 102, 255));
         btnCreateAcc.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         btnCreateAcc.setForeground(new java.awt.Color(255, 255, 255));
         btnCreateAcc.setText("Dont have an account?");
+        btnCreateAcc.setToolTipText("Create a new account");
         btnCreateAcc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCreateAccActionPerformed(evt);
             }
         });
         jPanel2.add(btnCreateAcc);
-        btnCreateAcc.setBounds(210, 120, 162, 29);
+        btnCreateAcc.setBounds(210, 120, 152, 24);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -121,6 +122,7 @@ public class Screen3Login extends javax.swing.JFrame {
 
         txfUsername.setBackground(new java.awt.Color(0, 0, 0));
         txfUsername.setForeground(new java.awt.Color(255, 255, 255));
+        txfUsername.setToolTipText("Enter your username");
         jPanel2.add(txfUsername);
         txfUsername.setBounds(200, 19, 163, 30);
 
@@ -132,6 +134,7 @@ public class Screen3Login extends javax.swing.JFrame {
 
         pwfPassword.setBackground(new java.awt.Color(0, 0, 0));
         pwfPassword.setForeground(new java.awt.Color(255, 255, 255));
+        pwfPassword.setToolTipText("Enter your password");
         jPanel2.add(pwfPassword);
         pwfPassword.setBounds(200, 60, 163, 30);
 
@@ -142,37 +145,40 @@ public class Screen3Login extends javax.swing.JFrame {
         btnClear.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         btnClear.setForeground(new java.awt.Color(255, 255, 255));
         btnClear.setText("Clear");
+        btnClear.setToolTipText("Clear everything");
         btnClear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnClearActionPerformed(evt);
             }
         });
         getContentPane().add(btnClear);
-        btnClear.setBounds(10, 190, 80, 29);
+        btnClear.setBounds(10, 190, 80, 24);
 
         btnHome.setBackground(new java.awt.Color(51, 102, 255));
         btnHome.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         btnHome.setForeground(new java.awt.Color(255, 255, 255));
         btnHome.setText("Home");
+        btnHome.setToolTipText("Go to home page");
         btnHome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnHomeActionPerformed(evt);
             }
         });
         getContentPane().add(btnHome);
-        btnHome.setBounds(340, 190, 73, 29);
+        btnHome.setBounds(340, 190, 73, 24);
 
         btnExit.setBackground(new java.awt.Color(51, 102, 255));
         btnExit.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         btnExit.setForeground(new java.awt.Color(255, 255, 255));
         btnExit.setText("Exit");
+        btnExit.setToolTipText("Exit ");
         btnExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnExitActionPerformed(evt);
             }
         });
         getContentPane().add(btnExit);
-        btnExit.setBounds(420, 190, 75, 29);
+        btnExit.setBounds(420, 190, 55, 24);
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
         getContentPane().add(jPanel1);

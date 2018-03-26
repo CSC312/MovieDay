@@ -169,6 +169,7 @@
         <Component class="javax.swing.JButton" name="jButton2">
           <Properties>
             <Property name="text" type="java.lang.String" value="View Reports"/>
+            <Property name="toolTipText" type="java.lang.String" value="View reports"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -225,6 +226,7 @@
             <Component class="javax.swing.JButton" name="viewMoviesButton">
               <Properties>
                 <Property name="text" type="java.lang.String" value="View Movies"/>
+                <Property name="toolTipText" type="java.lang.String" value="View movies"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="viewMoviesButtonActionPerformed"/>
@@ -262,6 +264,7 @@
             <Component class="javax.swing.JButton" name="viewUsersButton">
               <Properties>
                 <Property name="text" type="java.lang.String" value="View Users"/>
+                <Property name="toolTipText" type="java.lang.String" value="View users"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="viewUsersButtonActionPerformed"/>
@@ -275,6 +278,7 @@
             <Component class="javax.swing.JButton" name="viewProfileButton">
               <Properties>
                 <Property name="text" type="java.lang.String" value="View Profile"/>
+                <Property name="toolTipText" type="java.lang.String" value="View user profiles"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="viewProfileButtonActionPerformed"/>

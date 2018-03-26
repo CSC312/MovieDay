@@ -59,7 +59,6 @@ public class AdminUsersScreen extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBounds(new java.awt.Rectangle(0, 0, 960, 725));
         setMinimumSize(new java.awt.Dimension(960, 725));
-        setPreferredSize(new java.awt.Dimension(960, 725));
         setResizable(false);
         setSize(new java.awt.Dimension(960, 725));
         getContentPane().setLayout(null);
@@ -92,22 +91,27 @@ public class AdminUsersScreen extends javax.swing.JFrame {
         jLabel6.setBounds(20, 230, 110, 30);
 
         jPasswordField1.setText("jPasswordField1");
+        jPasswordField1.setToolTipText("Enter a password");
         jPanel1.add(jPasswordField1);
         jPasswordField1.setBounds(130, 230, 160, 30);
 
         jTextField1.setText("mail@mailman.com");
+        jTextField1.setToolTipText("Enter mail account");
         jPanel1.add(jTextField1);
         jTextField1.setBounds(130, 190, 160, 30);
 
         jTextField2.setText("John");
+        jTextField2.setToolTipText("Enter name");
         jPanel1.add(jTextField2);
         jTextField2.setBounds(130, 70, 160, 30);
 
         jTextField3.setText("12/12/2012");
+        jTextField3.setToolTipText("Enter date of birth");
         jPanel1.add(jTextField3);
         jTextField3.setBounds(130, 150, 160, 30);
 
         jTextField4.setText("Doe");
+        jTextField4.setToolTipText("Enter surname");
         jPanel1.add(jTextField4);
         jTextField4.setBounds(130, 110, 160, 30);
 
@@ -140,6 +144,7 @@ public class AdminUsersScreen extends javax.swing.JFrame {
         jScrollPane3.setBounds(20, 390, 680, 270);
 
         jButton1.setText("Save Details");
+        jButton1.setToolTipText("Save Details");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);

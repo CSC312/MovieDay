@@ -51,7 +51,6 @@ public class ReportScreen extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
-        setPreferredSize(new java.awt.Dimension(950, 725));
         setResizable(false);
         setSize(new java.awt.Dimension(770, 660));
         getContentPane().setLayout(null);
@@ -131,6 +130,7 @@ public class ReportScreen extends javax.swing.JFrame {
         jScrollPane2.setBounds(20, 60, 870, 140);
 
         jButton1.setText("Print Report");
+        jButton1.setToolTipText("Print the report");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);

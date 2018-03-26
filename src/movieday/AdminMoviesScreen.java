@@ -376,7 +376,6 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBounds(new java.awt.Rectangle(0, 0, 960, 770));
         setMinimumSize(new java.awt.Dimension(960, 770));
-        setPreferredSize(new java.awt.Dimension(960, 770));
         setResizable(false);
         setSize(new java.awt.Dimension(960, 770));
         getContentPane().setLayout(null);
@@ -527,6 +526,7 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
         jPanel5.setBounds(300, 20, 300, 620);
 
         s1Savechanges.setText("Save Changes");
+        s1Savechanges.setToolTipText("Save Changes");
         s1Savechanges.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 s1SavechangesActionPerformed(evt);

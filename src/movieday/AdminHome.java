@@ -67,7 +67,7 @@ public class AdminHome extends javax.swing.JFrame {
 
         jLabel1.setText("Welcome [Admin Name]");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(800, 40, 149, 30);
+        jLabel1.setBounds(800, 40, 165, 30);
 
         jLabel2.setText("Current Show");
         jPanel1.add(jLabel2);
@@ -90,25 +90,27 @@ public class AdminHome extends javax.swing.JFrame {
         jLabel7.setBounds(30, 570, 100, 30);
 
         jButton2.setText("View Reports");
+        jButton2.setToolTipText("View reports");
         jPanel1.add(jButton2);
-        jButton2.setBounds(270, 620, 160, 29);
+        jButton2.setBounds(270, 620, 160, 25);
 
         jTextField1.setText("R1080");
         jPanel1.add(jTextField1);
-        jTextField1.setBounds(240, 570, 110, 26);
+        jTextField1.setBounds(240, 570, 110, 19);
 
         jTextField2.setText("12");
         jPanel1.add(jTextField2);
-        jTextField2.setBounds(240, 530, 110, 26);
+        jTextField2.setBounds(240, 530, 110, 19);
 
         jTextField4.setText("120");
         jPanel1.add(jTextField4);
-        jTextField4.setBounds(240, 490, 110, 26);
+        jTextField4.setBounds(240, 490, 110, 19);
 
         jPanel2.setBackground(new java.awt.Color(102, 102, 102));
         jPanel2.setLayout(null);
 
         viewMoviesButton.setText("View Movies");
+        viewMoviesButton.setToolTipText("View movies");
         viewMoviesButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 viewMoviesButtonActionPerformed(evt);
@@ -126,6 +128,7 @@ public class AdminHome extends javax.swing.JFrame {
         jLabel10.setBounds(380, 40, 200, 200);
 
         viewUsersButton.setText("View Users");
+        viewUsersButton.setToolTipText("View users");
         viewUsersButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 viewUsersButtonActionPerformed(evt);
@@ -135,6 +138,7 @@ public class AdminHome extends javax.swing.JFrame {
         viewUsersButton.setBounds(410, 250, 140, 40);
 
         viewProfileButton.setText("View Profile");
+        viewProfileButton.setToolTipText("View user profiles");
         viewProfileButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 viewProfileButtonActionPerformed(evt);

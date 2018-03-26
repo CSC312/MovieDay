@@ -2,6 +2,7 @@ package UserPages;
 
 import java.awt.Color;
 import javax.swing.JOptionPane;
+import movieday.AdminHelpScreen;
 
 public class Screen2Register extends javax.swing.JFrame {
     String name = "",surname = "",username = "",
@@ -63,21 +64,19 @@ public class Screen2Register extends javax.swing.JFrame {
         mnuExit = new javax.swing.JMenuItem();
         jSeparator3 = new javax.swing.JPopupMenu.Separator();
         jMenu2 = new javax.swing.JMenu();
-        jMenuItem4 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
         jSeparator2 = new javax.swing.JPopupMenu.Separator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(51, 51, 51));
-        setMaximumSize(new java.awt.Dimension(823, 431));
         setMinimumSize(new java.awt.Dimension(823, 431));
         setName("Registration"); // NOI18N
-        setPreferredSize(new java.awt.Dimension(823, 431));
         setResizable(false);
         getContentPane().setLayout(null);
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Details", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Lucida Grande", 0, 13), new java.awt.Color(255, 255, 255))); // NOI18N
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Details", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(255, 255, 255))); // NOI18N
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(null);
 
@@ -85,41 +84,45 @@ public class Screen2Register extends javax.swing.JFrame {
         btnSubmit.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         btnSubmit.setForeground(new java.awt.Color(255, 255, 255));
         btnSubmit.setText("Submit");
+        btnSubmit.setToolTipText("summit your account application");
         btnSubmit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSubmitActionPerformed(evt);
             }
         });
         jPanel1.add(btnSubmit);
-        btnSubmit.setBounds(474, 110, 120, 29);
+        btnSubmit.setBounds(474, 110, 120, 24);
 
         btnBack.setBackground(new java.awt.Color(51, 102, 255));
         btnBack.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         btnBack.setForeground(new java.awt.Color(255, 255, 255));
         btnBack.setText("Back");
+        btnBack.setToolTipText("Go to the previous screen ");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackActionPerformed(evt);
             }
         });
         jPanel1.add(btnBack);
-        btnBack.setBounds(600, 110, 75, 29);
+        btnBack.setBounds(600, 110, 60, 24);
 
         btnClear.setBackground(new java.awt.Color(51, 102, 255));
         btnClear.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         btnClear.setForeground(new java.awt.Color(255, 255, 255));
         btnClear.setText("Clear");
+        btnClear.setToolTipText("clear everything");
         btnClear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnClearActionPerformed(evt);
             }
         });
         jPanel1.add(btnClear);
-        btnClear.setBounds(670, 110, 75, 29);
+        btnClear.setBounds(670, 110, 64, 24);
 
         txfSecurityQuestion.setBackground(new java.awt.Color(0, 0, 0));
         txfSecurityQuestion.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
         txfSecurityQuestion.setForeground(java.awt.Color.white);
+        txfSecurityQuestion.setToolTipText("A Security question ");
         txfSecurityQuestion.setMaximumSize(new java.awt.Dimension(4, 19));
         txfSecurityQuestion.setMinimumSize(new java.awt.Dimension(4, 19));
         txfSecurityQuestion.setPreferredSize(new java.awt.Dimension(4, 19));
@@ -145,16 +148,17 @@ public class Screen2Register extends javax.swing.JFrame {
         jLabel15.setForeground(new java.awt.Color(255, 255, 255));
         jLabel15.setText("Security Question:");
         jPanel1.add(jLabel15);
-        jLabel15.setBounds(480, 20, 129, 17);
+        jLabel15.setBounds(480, 20, 147, 17);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Name:");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(40, 40, 45, 17);
+        jLabel3.setBounds(40, 40, 50, 17);
 
         txfName.setBackground(new java.awt.Color(0, 0, 0));
         txfName.setForeground(new java.awt.Color(255, 255, 255));
+        txfName.setToolTipText("Enter your name");
         txfName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txfNameActionPerformed(evt);
@@ -167,10 +171,11 @@ public class Screen2Register extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Surname:");
         jPanel1.add(jLabel6);
-        jLabel6.setBounds(40, 80, 67, 17);
+        jLabel6.setBounds(40, 80, 76, 17);
 
         txfSurname.setBackground(new java.awt.Color(0, 0, 0));
         txfSurname.setForeground(java.awt.Color.white);
+        txfSurname.setToolTipText("Enter your surname");
         jPanel1.add(txfSurname);
         txfSurname.setBounds(150, 70, 170, 30);
 
@@ -178,11 +183,11 @@ public class Screen2Register extends javax.swing.JFrame {
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("Email:");
         jPanel1.add(jLabel12);
-        jLabel12.setBounds(40, 160, 43, 17);
+        jLabel12.setBounds(40, 160, 46, 17);
 
         txfEmail.setBackground(new java.awt.Color(0, 0, 0));
         txfEmail.setForeground(java.awt.Color.white);
-        txfEmail.setToolTipText("");
+        txfEmail.setToolTipText("Enter your mail address(e.g siveW@gmail.com)");
         txfEmail.setMaximumSize(new java.awt.Dimension(4, 19));
         jPanel1.add(txfEmail);
         txfEmail.setBounds(150, 150, 170, 30);
@@ -191,11 +196,11 @@ public class Screen2Register extends javax.swing.JFrame {
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Date of Birth:");
         jPanel1.add(jLabel11);
-        jLabel11.setBounds(40, 120, 95, 17);
+        jLabel11.setBounds(40, 120, 105, 17);
 
         txfDOB.setBackground(new java.awt.Color(0, 0, 0));
         txfDOB.setForeground(java.awt.Color.white);
-        txfDOB.setToolTipText("");
+        txfDOB.setToolTipText("Enter your date of birth dd/mm/yyyy(e.g 03/10/1994)");
         txfDOB.setMaximumSize(new java.awt.Dimension(4, 19));
         jPanel1.add(txfDOB);
         txfDOB.setBounds(150, 110, 170, 30);
@@ -204,23 +209,25 @@ public class Screen2Register extends javax.swing.JFrame {
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setText("Password:");
         jPanel1.add(jLabel14);
-        jLabel14.setBounds(40, 200, 72, 17);
+        jLabel14.setBounds(40, 200, 84, 17);
 
         lblPassword.setText("<Password>");
+        lblPassword.setToolTipText("Here's your  password");
         jPanel1.add(lblPassword);
-        lblPassword.setBounds(150, 200, 126, 16);
+        lblPassword.setBounds(150, 200, 126, 15);
 
         btnNewPass.setBackground(new java.awt.Color(51, 102, 255));
         btnNewPass.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         btnNewPass.setForeground(new java.awt.Color(255, 255, 255));
         btnNewPass.setText("Generate new password");
+        btnNewPass.setToolTipText("Click to get your new password");
         btnNewPass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNewPassActionPerformed(evt);
             }
         });
         jPanel1.add(btnNewPass);
-        btnNewPass.setBounds(40, 230, 167, 29);
+        btnNewPass.setBounds(40, 230, 157, 24);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 12, 820, 270);
@@ -260,13 +267,14 @@ public class Screen2Register extends javax.swing.JFrame {
         btnLogin.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         btnLogin.setForeground(new java.awt.Color(255, 255, 255));
         btnLogin.setText("Login");
+        btnLogin.setToolTipText("Log in your account");
         btnLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLoginActionPerformed(evt);
             }
         });
         getContentPane().add(btnLogin);
-        btnLogin.setBounds(730, 300, 89, 29);
+        btnLogin.setBounds(730, 300, 80, 32);
 
         jPanel2.setBackground(new java.awt.Color(51, 51, 51));
         jPanel2.setLayout(null);
@@ -296,8 +304,18 @@ public class Screen2Register extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setText("Help & About");
+        jMenu2.setText("Help");
 
+        jMenuItem5.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1, 0));
+        jMenuItem5.setText("Help");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem5);
+
+        jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F2, 0));
         jMenuItem4.setText("About");
         jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -305,9 +323,6 @@ public class Screen2Register extends javax.swing.JFrame {
             }
         });
         jMenu2.add(jMenuItem4);
-
-        jMenuItem5.setText("FAQ");
-        jMenu2.add(jMenuItem5);
         jMenu2.add(jSeparator2);
 
         jMenuBar1.add(jMenu2);
@@ -452,7 +467,14 @@ public class Screen2Register extends javax.swing.JFrame {
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         // TODO add your handling code here:
+        new AboutScreen().setVisible(true);
+        //this.setVisible(true);
     }//GEN-LAST:event_jMenuItem4ActionPerformed
+
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        // TODO add your handling code here:
+        new AdminHelpScreen().setVisible(true);
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     /**
      * @param args the command line arguments

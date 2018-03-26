@@ -8,6 +8,7 @@ package UserPages;
 import java.awt.Color;
 import javax.swing.ButtonGroup;
 import javax.swing.JOptionPane;
+import movieday.AdminHelpScreen;
 
 /**
  *
@@ -103,15 +104,12 @@ public class Screen3_1ForgotPassword extends javax.swing.JFrame {
         jMenu2 = new javax.swing.JMenu();
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
-        jMenuItem6 = new javax.swing.JMenuItem();
         jSeparator2 = new javax.swing.JPopupMenu.Separator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Password Recovery");
-        setMaximumSize(new java.awt.Dimension(500, 369));
         setMinimumSize(new java.awt.Dimension(500, 369));
         setName("Password Recovery"); // NOI18N
-        setPreferredSize(new java.awt.Dimension(500, 369));
         setResizable(false);
         getContentPane().setLayout(null);
 
@@ -128,6 +126,7 @@ public class Screen3_1ForgotPassword extends javax.swing.JFrame {
         jLabel5.setBounds(12, 162, 110, 15);
 
         btnSubmit2.setText("Submit");
+        btnSubmit2.setToolTipText("Submit");
         btnSubmit2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSubmit2ActionPerformed(evt);
@@ -142,6 +141,7 @@ public class Screen3_1ForgotPassword extends javax.swing.JFrame {
 
         txfName.setBackground(new java.awt.Color(0, 0, 0));
         txfName.setForeground(new java.awt.Color(255, 255, 255));
+        txfName.setToolTipText("Enter your name");
         txfName.setMaximumSize(new java.awt.Dimension(4, 19));
         jPn2.add(txfName);
         txfName.setBounds(90, 19, 130, 30);
@@ -152,6 +152,7 @@ public class Screen3_1ForgotPassword extends javax.swing.JFrame {
 
         txfSurname.setBackground(new java.awt.Color(0, 0, 0));
         txfSurname.setForeground(new java.awt.Color(255, 255, 255));
+        txfSurname.setToolTipText("Enter your surname");
         jPn2.add(txfSurname);
         txfSurname.setBounds(90, 59, 130, 30);
 
@@ -161,6 +162,7 @@ public class Screen3_1ForgotPassword extends javax.swing.JFrame {
 
         txfPassword.setBackground(new java.awt.Color(0, 0, 0));
         txfPassword.setForeground(new java.awt.Color(255, 255, 255));
+        txfPassword.setToolTipText("Enter your password");
         jPn2.add(txfPassword);
         txfPassword.setBounds(90, 99, 130, 30);
 
@@ -172,6 +174,7 @@ public class Screen3_1ForgotPassword extends javax.swing.JFrame {
         jPn1.setLayout(null);
 
         btnSubmit1.setText("Submit");
+        btnSubmit1.setToolTipText("Submit ");
         btnSubmit1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSubmit1ActionPerformed(evt);
@@ -194,6 +197,7 @@ public class Screen3_1ForgotPassword extends javax.swing.JFrame {
 
         txfUsername.setBackground(new java.awt.Color(0, 0, 0));
         txfUsername.setForeground(new java.awt.Color(255, 255, 255));
+        txfUsername.setToolTipText("Enter your username");
         jPn1.add(txfUsername);
         txfUsername.setBounds(80, 19, 140, 30);
 
@@ -207,6 +211,7 @@ public class Screen3_1ForgotPassword extends javax.swing.JFrame {
 
         txfSecQuest.setBackground(new java.awt.Color(0, 0, 0));
         txfSecQuest.setForeground(new java.awt.Color(255, 255, 255));
+        txfSecQuest.setToolTipText("Security question answer");
         jPn1.add(txfSecQuest);
         txfSecQuest.setBounds(10, 99, 210, 30);
 
@@ -215,6 +220,7 @@ public class Screen3_1ForgotPassword extends javax.swing.JFrame {
 
         rbtnPassword.setForeground(new java.awt.Color(255, 255, 255));
         rbtnPassword.setText("Forgot Password?");
+        rbtnPassword.setToolTipText("Forgot password");
 
         org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, buttonGroup1, org.jdesktop.beansbinding.ELProperty.create("${selection.selected}"), rbtnPassword, org.jdesktop.beansbinding.BeanProperty.create("selected"));
         bindingGroup.addBinding(binding);
@@ -229,6 +235,7 @@ public class Screen3_1ForgotPassword extends javax.swing.JFrame {
 
         rbtnUsername.setForeground(new java.awt.Color(255, 255, 255));
         rbtnUsername.setText("Forgot Username?");
+        rbtnUsername.setToolTipText("Forgot username");
 
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, buttonGroup1, org.jdesktop.beansbinding.ELProperty.create("${selection.selected}"), rbtnUsername, org.jdesktop.beansbinding.BeanProperty.create("selected"));
         bindingGroup.addBinding(binding);
@@ -242,40 +249,44 @@ public class Screen3_1ForgotPassword extends javax.swing.JFrame {
         rbtnUsername.setBounds(260, 10, 220, 23);
 
         btnClear.setText("Clear");
+        btnClear.setToolTipText("Clear everything");
         btnClear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnClearActionPerformed(evt);
             }
         });
         getContentPane().add(btnClear);
-        btnClear.setBounds(180, 270, 59, 25);
+        btnClear.setBounds(180, 270, 71, 25);
 
         btnBack.setText("Back");
+        btnBack.setToolTipText("Go to prevoius screen ");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackActionPerformed(evt);
             }
         });
         getContentPane().add(btnBack);
-        btnBack.setBounds(260, 270, 58, 25);
+        btnBack.setBounds(260, 270, 67, 25);
 
         btnExit.setText("Exit");
+        btnExit.setToolTipText("Exit");
         btnExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnExitActionPerformed(evt);
             }
         });
         getContentPane().add(btnExit);
-        btnExit.setBounds(340, 270, 51, 25);
+        btnExit.setBounds(340, 270, 59, 25);
 
         btnLogin.setText("Login");
+        btnLogin.setToolTipText("Log in your account ");
         btnLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLoginActionPerformed(evt);
             }
         });
         getContentPane().add(btnLogin);
-        btnLogin.setBounds(430, 270, 60, 25);
+        btnLogin.setBounds(430, 270, 73, 25);
 
         jPanel3.setBackground(new java.awt.Color(51, 51, 51));
         getContentPane().add(jPanel3);
@@ -313,9 +324,10 @@ public class Screen3_1ForgotPassword extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setText("Help & About");
+        jMenu2.setText("Help ");
 
-        jMenuItem4.setText("About UWC Movies");
+        jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1, 0));
+        jMenuItem4.setText("Help");
         jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem4ActionPerformed(evt);
@@ -323,11 +335,14 @@ public class Screen3_1ForgotPassword extends javax.swing.JFrame {
         });
         jMenu2.add(jMenuItem4);
 
-        jMenuItem5.setText("FAQ");
+        jMenuItem5.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F2, 0));
+        jMenuItem5.setText("About");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItem5);
-
-        jMenuItem6.setText("Not sure what to do?");
-        jMenu2.add(jMenuItem6);
         jMenu2.add(jSeparator2);
 
         jMenuBar1.add(jMenu2);
@@ -441,6 +456,7 @@ public class Screen3_1ForgotPassword extends javax.swing.JFrame {
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         // TODO add your handling code here:
+        new AdminHelpScreen().setVisible(true);
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void btnSubmit2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmit2ActionPerformed
@@ -480,6 +496,11 @@ public class Screen3_1ForgotPassword extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane,"Please provide data of correct data type in all fields", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnSubmit2ActionPerformed
+
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        // TODO add your handling code here:
+        new AboutScreen().setVisible(true);
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -537,7 +558,6 @@ public class Screen3_1ForgotPassword extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPn1;
     private javax.swing.JPanel jPn2;
