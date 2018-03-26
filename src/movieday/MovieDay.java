@@ -18,6 +18,6 @@ public class MovieDay {
         //new AdminHome().setVisible(true);
         
         new Function().initDatabase();
-        new Screen1Home().setVisible(true);
+        //new Screen1Home().setVisible(true);
     }   
 }

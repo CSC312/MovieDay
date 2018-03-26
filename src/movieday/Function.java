@@ -107,6 +107,7 @@ public class Function {
                             + "Length INTEGER,"
                             + "Description VARCHAR (250),"
                             + "Price DOUBLE,"
+                            + "ImageUrl VARCHAR(250),"
                             + "PRIMARY KEY (MovieID))");
                     s.addBatch(
                             "CREATE TABLE MovieShow ("
@@ -143,6 +144,17 @@ public class Function {
                             + "(2,'John', 'Claude', 'john@movieday.com','q234')"
                     );
                     //Populating Movies Table
+                    s.addBatch(
+                            "INSERT INTO Movie VALUES"
+                                    + "(1,'Get Out', '2017', 123, 'Thriller movie about blah.', 98.00,'../movieday/images/Folder.jpg'),"
+                                    + "(2,'Blade Runner', '2018', 156, 'Sci-Fi movie about blah.', 98.00,'../movieday/images/Folder.jpg'),"
+                                    + "(3,'Maze Runner', '2017', 123, 'Thriller movie about blah.', 98.00,'../movieday/images/Folder.jpg'),"
+                                    + "(4,'Black Panther', '2017', 123, 'Thriller movie about blah.', 98.00,'../movieday/images/Folder.jpg'),"
+                                    + "(5, '50 Shades', '2018', 123, 'Thriller movie about blah.', 98.00,'../movieday/images/Folder.jpg'),"
+                                    + "(6,'Test Movie', '2017', 123, 'Thriller movie about blah.', 98.00,'../movieday/images/Folder.jpg'),"
+                                    + "(7,'Test Movie 2 Out', '2017', 123, 'Thriller movie about blah.', 98.00,'../movieday/images/Folder.jpg'),"
+                                    + "(8,'This Is Another One', '2017', 123,'Thriller movie about blah.', 98.00,'../movieday/images/Folder.jpg'),"
+                                    + "(9,'Movie Number 4', '2017', 123, 'Thriller movie about blah.', 98.00,'../movieday/images/Folder.jpg')");
                     // In case you want to see the update results from each statement
                     // Normally not needed to store the results.
                     int results[] = s.executeBatch();

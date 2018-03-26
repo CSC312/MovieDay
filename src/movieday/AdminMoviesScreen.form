@@ -241,6 +241,7 @@
                       <Properties>
                         <Property name="columns" type="int" value="20"/>
                         <Property name="rows" type="int" value="5"/>
+                        <Property name="text" type="java.lang.String" value="dfvsdcds"/>
                       </Properties>
                     </Component>
                   </SubComponents>
@@ -361,6 +362,7 @@
                       <Properties>
                         <Property name="columns" type="int" value="20"/>
                         <Property name="rows" type="int" value="5"/>
+                        <Property name="text" type="java.lang.String" value="cgvjhbkjl"/>
                       </Properties>
                     </Component>
                   </SubComponents>
@@ -476,6 +478,7 @@
                       <Properties>
                         <Property name="columns" type="int" value="20"/>
                         <Property name="rows" type="int" value="5"/>
+                        <Property name="text" type="java.lang.String" value="dzxfcgvbnohv hjhfxjkl"/>
                       </Properties>
                     </Component>
                   </SubComponents>

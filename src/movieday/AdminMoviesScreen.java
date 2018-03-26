@@ -9,7 +9,9 @@ import java.sql.Connection;
 import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.Calendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -69,6 +71,119 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
     public AdminMoviesScreen() {
         initComponents();
         this.setLocationRelativeTo(null);
+
+        //Code to retrieve data from database and populate Fields
+        try {
+            Class.forName(jdbcDriver);
+            Connection c = DriverManager.getConnection("jdbc:mysql://localhost:8889/MovieDay", dbUserID, dbPassword);
+
+            // The SQL SELECT query. 
+            // if you only need a few columns, specify them by name instead of using "*"
+            String query = "SELECT * FROM Movie WHERE Movie.MovieID = 1";
+
+            // create the java statement
+            Statement st = c.createStatement();
+
+            // execute the query, and get a java resultset
+            ResultSet rs = st.executeQuery(query);
+            // iterate through the java resultset
+            while (rs.next()) {
+                //int id = rs.getInt("id");
+                s1m1Title.setText(rs.getString("Title"));
+                s1m1Year.setText(rs.getString("Year"));
+                s1m1Length.setText("" + rs.getInt("Length"));
+                s1m1Description.setText(rs.getString("Description"));
+
+            }
+
+            //Show 1 Movie 2
+            query = "SELECT * FROM Movie WHERE Movie.MovieID = 2";
+            rs = st.executeQuery(query);
+            while (rs.next()) {
+                s1m2Title.setText(rs.getString("Title"));
+                s1m2Year.setText(rs.getString("Year"));
+                s1m2Length.setText("" + rs.getInt("Length"));
+                s1m2Description.setText(rs.getString("Description"));
+            }
+
+            //Show 1 Movie 3
+            query = "SELECT * FROM Movie WHERE Movie.MovieID = 3";
+            rs = st.executeQuery(query);
+            while (rs.next()) {
+                s1m3Title.setText(rs.getString("Title"));
+                s1m3Year.setText(rs.getString("Year"));
+                s1m3Length.setText("" + rs.getInt("Length"));
+                s1m3Description.setText(rs.getString("Description"));
+            }
+
+            //Show 2 Movie 1
+            query = "SELECT * FROM Movie WHERE Movie.MovieID = 4";
+            rs = st.executeQuery(query);
+            while (rs.next()) {
+                s2m1Title.setText(rs.getString("Title"));
+                s2m1Year.setText(rs.getString("Year"));
+                s2m1Length.setText("" + rs.getInt("Length"));
+                s2m1Description.setText(rs.getString("Description"));
+            }
+
+            //Show 2 Movie 2
+            query = "SELECT * FROM Movie WHERE Movie.MovieID = 5";
+            rs = st.executeQuery(query);
+            while (rs.next()) {
+                s2m2Title.setText(rs.getString("Title"));
+                s2m2Year.setText(rs.getString("Year"));
+                s2m2Length.setText("" + rs.getInt("Length"));
+                s2m2Description.setText(rs.getString("Description"));
+            }
+
+            //Show 2 Movie 3
+            query = "SELECT * FROM Movie WHERE Movie.MovieID = 6";
+            rs = st.executeQuery(query);
+            while (rs.next()) {
+                s2m3Title.setText(rs.getString("Title"));
+                s2m3Year.setText(rs.getString("Year"));
+                s2m3Length.setText("" + rs.getInt("Length"));
+                s2m3Description.setText(rs.getString("Description"));
+            }
+
+            //Show 3 Movie 1
+            query = "SELECT * FROM Movie WHERE Movie.MovieID = 7";
+            rs = st.executeQuery(query);
+            while (rs.next()) {
+                s3m1Title.setText(rs.getString("Title"));
+                s3m1Year.setText(rs.getString("Year"));
+                s3m1Length.setText("" + rs.getInt("Length"));
+                s3m1Description.setText(rs.getString("Description"));
+            }
+
+            //Show 3 Movie 2
+            query = "SELECT * FROM Movie WHERE Movie.MovieID = 8";
+            rs = st.executeQuery(query);
+            while (rs.next()) {
+                s3m2Title.setText(rs.getString("Title"));
+                s3m2Year.setText(rs.getString("Year"));
+                s3m2Length.setText("" + rs.getInt("Length"));
+                s3m2Description.setText(rs.getString("Description"));
+            }
+
+            //Show 3 Movie 3
+            query = "SELECT * FROM Movie WHERE Movie.MovieID = 9";
+            rs = st.executeQuery(query);
+            while (rs.next()) {
+                s3m3Title.setText(rs.getString("Title"));
+                s3m3Year.setText(rs.getString("Year"));
+                s3m3Length.setText("" + rs.getInt("Length"));
+                s3m3Description.setText(rs.getString("Description"));
+            }
+
+            c.close();
+
+        } catch (ClassNotFoundException exp) {
+            System.err.println("Could not load the JDBC driver " + jdbcDriver);
+            return;
+        } catch (SQLException ex) {
+            Logger.getLogger(AdminMoviesScreen.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -258,6 +373,7 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
 
         s1m1Description.setColumns(20);
         s1m1Description.setRows(5);
+        s1m1Description.setText("dfvsdcds");
         jScrollPane1.setViewportView(s1m1Description);
 
         jPanel2.add(jScrollPane1);
@@ -303,6 +419,7 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
 
         s1m3Description.setColumns(20);
         s1m3Description.setRows(5);
+        s1m3Description.setText("cgvjhbkjl");
         jScrollPane2.setViewportView(s1m3Description);
 
         jPanel4.add(jScrollPane2);
@@ -347,6 +464,7 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
 
         s1m2Description.setColumns(20);
         s1m2Description.setRows(5);
+        s1m2Description.setText("dzxfcgvbnohv hjhfxjkl");
         jScrollPane3.setViewportView(s1m2Description);
 
         jPanel5.add(jScrollPane3);
@@ -820,18 +938,45 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
             Connection c = DriverManager.getConnection("jdbc:mysql://localhost:8889/MovieDay", dbUserID, dbPassword);
 
             // the mysql insert statement
-            String query = " INSERT into Movie (Title, Year, Length, Description, Price)" + " values (?,?,?,?,?)";
+            String query = " UPDATE Movie set Title = ?, Year = ?, Length = ?, Description = ? WHERE MovieID = ?";
             // create the mysql insert preparedstatement
             PreparedStatement preparedStmt = c.prepareStatement(query);
+
             preparedStmt.setString(1, show1m1Title);
             preparedStmt.setString(2, show1m1Year);
             preparedStmt.setInt(3, show1m1Length);
             preparedStmt.setString(4, show1m1Description);
-            preparedStmt.setDouble(5, 97.00);
-
+            preparedStmt.setInt(5, 1);
             // execute the preparedstatement
             preparedStmt.execute();
-            JOptionPane.showMessageDialog(rootPane, "Movie Added Successfully");
+
+            //Update Movie 2
+            String query2 = " UPDATE Movie SET Title = ?, Year = ?, Length = ?, Description = ? WHERE MovieID = ?";
+            // create the mysql insert preparedstatement
+            PreparedStatement preparedStmt2 = c.prepareStatement(query);
+            preparedStmt2.setString(1, show1m2Title);
+            preparedStmt2.setString(2, show1m2Year);
+            preparedStmt2.setInt(3, show1m2Length);
+            preparedStmt2.setString(4, show1m2Description);
+            preparedStmt2.setInt(5, 2);
+            // execute the preparedstatement
+            preparedStmt2.execute();
+
+            //Update Movie 3
+            String query3 = " UPDATE Movie set Title = ?, Year = ?, Length = ?, Description = ? WHERE MovieID = ?";
+            // create the mysql insert preparedstatement
+            PreparedStatement preparedStmt3 = c.prepareStatement(query);
+            preparedStmt3.setString(1, show1m3Title);
+            preparedStmt3.setString(2, show1m3Year);
+            preparedStmt3.setInt(3, show1m3Length);
+            preparedStmt3.setString(4, show1m3Description);
+            //preparedStmt.setDouble(5, 97.00);
+            preparedStmt3.setInt(5, 3);
+            // execute the preparedstatement
+            preparedStmt3.execute();
+
+            JOptionPane.showMessageDialog(rootPane, "Movie Changes Saved Successfully");
+
             c.close();
 
         } catch (ClassNotFoundException exp) {
@@ -863,6 +1008,59 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(rootPane, "Enter The Length in minutes", "Length Format Error", JOptionPane.ERROR_MESSAGE);
         }
+        try {
+            Class.forName(jdbcDriver);
+            Connection c = DriverManager.getConnection("jdbc:mysql://localhost:8889/MovieDay", dbUserID, dbPassword);
+
+            // the mysql insert statement
+            String query = " UPDATE Movie set Title = ?, Year = ?, Length = ?, Description = ?, Price = ? WHERE MovieID = ?";
+            // create the mysql insert preparedstatement
+            PreparedStatement preparedStmt = c.prepareStatement(query);
+            preparedStmt.setString(1, show2m1Title);
+            preparedStmt.setString(2, show2m1Year);
+            preparedStmt.setInt(3, show2m1Length);
+            preparedStmt.setString(4, show2m1Description);
+            preparedStmt.setDouble(5, 97.00);
+            preparedStmt.setInt(6, 4);
+            // execute the preparedstatement
+            preparedStmt.execute();
+
+            //Update Movie 2
+            String query2 = " UPDATE Movie set Title = ?, Year = ?, Length = ?, Description = ?, Price = ? WHERE MovieID = ?";
+            // create the mysql insert preparedstatement
+            PreparedStatement preparedStmt2 = c.prepareStatement(query);
+            preparedStmt2.setString(1, show2m2Title);
+            preparedStmt2.setString(2, show2m2Year);
+            preparedStmt2.setInt(3, show2m2Length);
+            preparedStmt2.setString(4, show2m2Description);
+            preparedStmt2.setDouble(5, 97.00);
+            preparedStmt2.setInt(6, 5);
+            // execute the preparedstatement
+            preparedStmt2.execute();
+
+            //Update Movie 3
+            String query3 = " UPDATE Movie set Title = ?, Year = ?, Length = ?, Description = ?, Price = ? WHERE MovieID = ?";
+            // create the mysql insert preparedstatement
+            PreparedStatement preparedStmt3 = c.prepareStatement(query);
+            preparedStmt3.setString(1, show2m3Title);
+            preparedStmt3.setString(2, show2m3Year);
+            preparedStmt3.setInt(3, show2m3Length);
+            preparedStmt3.setString(4, show2m3Description);
+            preparedStmt3.setDouble(5, 97.00);
+            preparedStmt3.setInt(6, 6);
+            // execute the preparedstatement
+            preparedStmt3.execute();
+
+            JOptionPane.showMessageDialog(rootPane, "Movie Changes Saved Successfully");
+            c.close();
+
+        } catch (ClassNotFoundException exp) {
+            System.err.println("Could not load the JDBC driver " + jdbcDriver);
+            return;
+        } catch (SQLException ex) {
+            Logger.getLogger(AdminMoviesScreen.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }//GEN-LAST:event_s2SaveChangesButtonActionPerformed
 
     private void s3SaveChangesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_s3SaveChangesButtonActionPerformed
@@ -884,6 +1082,58 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
             show3m3Length = Integer.parseInt(s3m3Length.getText());
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(rootPane, "Enter The Length in minutes", "Length Format Error", JOptionPane.ERROR_MESSAGE);
+        }
+        try {
+            Class.forName(jdbcDriver);
+            Connection c = DriverManager.getConnection("jdbc:mysql://localhost:8889/MovieDay", dbUserID, dbPassword);
+
+            // the mysql insert statement
+            String query = " UPDATE Movie set Title = ?, Year = ?, Length = ?, Description = ?, Price = ? WHERE MovieID = ?";
+            // create the mysql insert preparedstatement
+            PreparedStatement preparedStmt = c.prepareStatement(query);
+            preparedStmt.setString(1, show3m1Title);
+            preparedStmt.setString(2, show3m1Year);
+            preparedStmt.setInt(3, show3m1Length);
+            preparedStmt.setString(4, show3m1Description);
+            preparedStmt.setDouble(5, 97.00);
+            preparedStmt.setInt(6, 7);
+            // execute the preparedstatement
+            preparedStmt.execute();
+
+            //Update Movie 2
+            String query2 = " UPDATE Movie set Title = ?, Year = ?, Length = ?, Description = ?, Price = ? WHERE MovieID = ?";
+            // create the mysql insert preparedstatement
+            PreparedStatement preparedStmt2 = c.prepareStatement(query);
+            preparedStmt2.setString(1, show3m2Title);
+            preparedStmt2.setString(2, show3m2Year);
+            preparedStmt2.setInt(3, show3m2Length);
+            preparedStmt2.setString(4, show3m2Description);
+            preparedStmt2.setDouble(5, 97.00);
+            preparedStmt2.setInt(6, 8);
+            // execute the preparedstatement
+            preparedStmt2.execute();
+
+            //Update Movie 3
+            String query3 = " UPDATE Movie set Title = ?, Year = ?, Length = ?, Description = ?, Price = ? WHERE MovieID = ?";
+            // create the mysql insert preparedstatement
+            PreparedStatement preparedStmt3 = c.prepareStatement(query);
+            preparedStmt3.setString(1, show3m3Title);
+            preparedStmt3.setString(2, show3m3Year);
+            preparedStmt3.setInt(3, show3m3Length);
+            preparedStmt3.setString(4, show3m3Description);
+            preparedStmt3.setDouble(5, 97.00);
+            preparedStmt3.setInt(6, 9);
+            // execute the preparedstatement
+            preparedStmt3.execute();
+
+            JOptionPane.showMessageDialog(rootPane, "Movie Changes Saved Successfully");
+            c.close();
+
+        } catch (ClassNotFoundException exp) {
+            System.err.println("Could not load the JDBC driver " + jdbcDriver);
+            return;
+        } catch (SQLException ex) {
+            Logger.getLogger(AdminMoviesScreen.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_s3SaveChangesButtonActionPerformed
 
