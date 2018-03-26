@@ -10,12 +10,17 @@ import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Calendar;
+import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -176,6 +181,28 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
                 s3m3Description.setText(rs.getString("Description"));
             }
 
+            //Populate Reservations Table
+            PreparedStatement statement = c.prepareStatement("SELECT r.ReservationID AS `Reservation ID`,\n"
+                    + "u.Email AS `Email`,\n"
+                    + "m.Title AS `Movie`,\n"
+                    + "ms.ShowID AS `Show`\n"
+                    + "FROM Reservation r\n"
+                    + "LEFT JOIN Seat s\n"
+                    + "ON s.SeatID = r.SeatID\n"
+                    + "LEFT JOIN Movie m\n"
+                    + "ON m.MovieID = r.MovieID\n"
+                    + "LEFT JOIN `User` u\n"
+                    + "ON u.UserID = r.UserID\n"
+                    + "LEFT JOIN MovieShow ms\n"
+                    + "ON ms.ShowID = r.ShowID\n"
+                    + "GROUP BY r.ReservationID\n");
+            ResultSet res = statement.executeQuery();
+            ResultSetMetaData meta = res.getMetaData();
+            // It creates and displays the table
+            reservationsTable.setModel(buildTableModel(res));
+            // Closes the Connection
+            //JOptionPane.showMessageDialog(null, new JScrollPane(reservationsTable));
+
             c.close();
 
         } catch (ClassNotFoundException exp) {
@@ -184,6 +211,32 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(AdminMoviesScreen.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+
+    public static DefaultTableModel buildTableModel(ResultSet rs)
+            throws SQLException {
+
+        ResultSetMetaData metaData = rs.getMetaData();
+
+        // names of columns
+        Vector<String> columnNames = new Vector<String>();
+        int columnCount = metaData.getColumnCount();
+        for (int column = 1; column <= columnCount; column++) {
+            columnNames.add(metaData.getColumnName(column));
+        }
+
+        // data of the table
+        Vector<Vector<Object>> data = new Vector<Vector<Object>>();
+        while (rs.next()) {
+            Vector<Object> vector = new Vector<Object>();
+            for (int columnIndex = 1; columnIndex <= columnCount; columnIndex++) {
+                vector.add(rs.getObject(columnIndex));
+            }
+            data.add(vector);
+        }
+
+        return new DefaultTableModel(data, columnNames);
+
     }
 
     /**
@@ -305,7 +358,7 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
         s3SaveChangesButton = new javax.swing.JButton();
         manageReservations = new javax.swing.JPanel();
         jScrollPane11 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        reservationsTable = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         jLabel47 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
@@ -754,26 +807,7 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
 
         manageReservations.setLayout(null);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Nino Jacobs", "Infinity War", "15:00", "2", "234"},
-                {"Sive Mbiza", "Black Panther", "17:00", "4", "231"},
-                {"Kamo Matjila", "Black Panther", "17:00", "8", "231"},
-                {"John Claude", "50 Shades", "19:00", "2", "233"}
-            },
-            new String [] {
-                "Full Name", "Movie", "Time", "Number Of Seats", "Resrvation ID"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
-        jScrollPane11.setViewportView(jTable1);
+        jScrollPane11.setViewportView(reservationsTable);
 
         manageReservations.add(jScrollPane11);
         jScrollPane11.setBounds(30, 170, 860, 260);
@@ -1249,9 +1283,9 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JPanel manageReservations;
+    private javax.swing.JTable reservationsTable;
     private javax.swing.JButton s1Savechanges;
     private javax.swing.JTextArea s1m1Description;
     private javax.swing.JLabel s1m1Image;
