@@ -73,6 +73,11 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
     String dbUserID = "root";
     String dbPassword = "root";
 
+    ResultSet res;
+    Connection c;
+    ResultSetMetaData meta;
+    DefaultTableModel model;
+
     public AdminMoviesScreen() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -80,7 +85,7 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
         //Code to retrieve data from database and populate Fields
         try {
             Class.forName(jdbcDriver);
-            Connection c = DriverManager.getConnection("jdbc:mysql://localhost:8889/MovieDay", dbUserID, dbPassword);
+            c = DriverManager.getConnection("jdbc:mysql://localhost:8889/MovieDay", dbUserID, dbPassword);
 
             // The SQL SELECT query. 
             // if you only need a few columns, specify them by name instead of using "*"
@@ -196,10 +201,11 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
                     + "LEFT JOIN MovieShow ms\n"
                     + "ON ms.ShowID = r.ShowID\n"
                     + "GROUP BY r.ReservationID\n");
-            ResultSet res = statement.executeQuery();
-            ResultSetMetaData meta = res.getMetaData();
+            res = statement.executeQuery();
+            meta = res.getMetaData();
             // It creates and displays the table
-            reservationsTable.setModel(buildTableModel(res));
+            model = buildTableModel(res);
+            reservationsTable.setModel(model);
             // Closes the Connection
             //JOptionPane.showMessageDialog(null, new JScrollPane(reservationsTable));
 
@@ -902,7 +908,22 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
+        int row = reservationsTable.getSelectedRow();
+        model.removeRow(row);
+        String selected = model.getValueAt(row, 0).toString();
+        System.out.println(selected);
+        /*
+        String sql = "delete from reservation where ReservationID= ?";
+        PreparedStatement stmt = null;
+        try {
+            stmt = c.prepareStatement(sql);
+            stmt.setInt(1, selected);
+            stmt.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(AdminMoviesScreen.class.getName()).log(Level.SEVERE, null, ex);
+        }
+         */
+        JOptionPane.showMessageDialog(rootPane, "Reservations Deleted Successfully.");
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void adminHomeMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminHomeMenuMouseClicked
@@ -969,7 +990,7 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
 
         try {
             Class.forName(jdbcDriver);
-            Connection c = DriverManager.getConnection("jdbc:mysql://localhost:8889/MovieDay", dbUserID, dbPassword);
+            c = new Function().getConnection();
 
             // the mysql insert statement
             String query = " UPDATE Movie set Title = ?, Year = ?, Length = ?, Description = ? WHERE MovieID = ?";
@@ -1044,7 +1065,7 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
         }
         try {
             Class.forName(jdbcDriver);
-            Connection c = DriverManager.getConnection("jdbc:mysql://localhost:8889/MovieDay", dbUserID, dbPassword);
+            c = new Function().getConnection();
 
             // the mysql insert statement
             String query = " UPDATE Movie set Title = ?, Year = ?, Length = ?, Description = ?, Price = ? WHERE MovieID = ?";
@@ -1119,7 +1140,7 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
         }
         try {
             Class.forName(jdbcDriver);
-            Connection c = DriverManager.getConnection("jdbc:mysql://localhost:8889/MovieDay", dbUserID, dbPassword);
+            c = DriverManager.getConnection("jdbc:mysql://localhost:8889/MovieDay", dbUserID, dbPassword);
 
             // the mysql insert statement
             String query = " UPDATE Movie set Title = ?, Year = ?, Length = ?, Description = ?, Price = ? WHERE MovieID = ?";

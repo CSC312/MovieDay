@@ -187,7 +187,7 @@ public class Function {
             Class.forName(jdbcDriver); //Register JDBC Driver
 
             System.out.println("Creating a connection...");
-            c = DriverManager.getConnection(dbUrl, dbUserID, dbPassword); //Open a connection
+            c = getConnection(); //Open a connection
 
             ResultSet resultSet = c.getMetaData().getCatalogs();
 
@@ -204,6 +204,18 @@ public class Function {
             e.printStackTrace();
         }
         return false;
+    }
+    
+    public Connection getConnection(){
+        Connection con;
+        try{
+            con = DriverManager.getConnection(dbUrl, dbUserID, dbPassword);
+            return con;
+        }
+        catch(Exception e){
+            e.printStackTrace();
+            return null;
+        }
     }
     
 }
