@@ -6,8 +6,12 @@
 package UserPages;
 
 import java.awt.Color;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import javax.swing.ButtonGroup;
 import javax.swing.JOptionPane;
+import movieday.Function;
 
 /**
  *
@@ -20,6 +24,15 @@ public class Screen3_1ForgotPassword extends javax.swing.JFrame {
     String contactNo="";
     String password = "";
     String secQuestion = "";
+    
+        //Databases Variables
+    String jdbcDriver = "com.mysql.jdbc.Driver";
+    String dbUrl = "jdbc:mysql://localhost:8889/MovieDay";
+    String dbUserID = "root";
+    String dbPassword = "root";
+
+    ResultSet res;
+    Connection c;
     
     public Screen3_1ForgotPassword() {
         initComponents();
@@ -89,11 +102,11 @@ public class Screen3_1ForgotPassword extends javax.swing.JFrame {
         txfSecQuest = new javax.swing.JTextField();
         rbtnPassword = new javax.swing.JRadioButton();
         rbtnUsername = new javax.swing.JRadioButton();
+        btnExit = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
         btnClear = new javax.swing.JButton();
         btnBack = new javax.swing.JButton();
-        btnExit = new javax.swing.JButton();
         btnLogin = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         mnuCreateAccount = new javax.swing.JMenuItem();
@@ -113,6 +126,7 @@ public class Screen3_1ForgotPassword extends javax.swing.JFrame {
         setName("Password Recovery"); // NOI18N
         setPreferredSize(new java.awt.Dimension(500, 369));
         setResizable(false);
+        setSize(new java.awt.Dimension(546, 411));
         getContentPane().setLayout(null);
 
         jPn2.setBackground(new java.awt.Color(51, 51, 51));
@@ -121,11 +135,11 @@ public class Screen3_1ForgotPassword extends javax.swing.JFrame {
 
         lblUsername.setText("<Username>");
         jPn2.add(lblUsername);
-        lblUsername.setBounds(12, 177, 100, 15);
+        lblUsername.setBounds(12, 177, 210, 30);
 
         jLabel5.setText("Your username is: ");
         jPn2.add(jLabel5);
-        jLabel5.setBounds(12, 162, 110, 15);
+        jLabel5.setBounds(12, 162, 220, 16);
 
         btnSubmit2.setText("Submit");
         btnSubmit2.addActionListener(new java.awt.event.ActionListener() {
@@ -134,11 +148,11 @@ public class Screen3_1ForgotPassword extends javax.swing.JFrame {
             }
         });
         jPn2.add(btnSubmit2);
-        btnSubmit2.setBounds(150, 140, 70, 25);
+        btnSubmit2.setBounds(150, 140, 70, 29);
 
         jLabel7.setText("Name:");
         jPn2.add(jLabel7);
-        jLabel7.setBounds(20, 30, 46, 15);
+        jLabel7.setBounds(20, 30, 46, 16);
 
         txfName.setBackground(new java.awt.Color(0, 0, 0));
         txfName.setForeground(new java.awt.Color(255, 255, 255));
@@ -148,7 +162,7 @@ public class Screen3_1ForgotPassword extends javax.swing.JFrame {
 
         jLabel8.setText("Surname:");
         jPn2.add(jLabel8);
-        jLabel8.setBounds(20, 70, 60, 15);
+        jLabel8.setBounds(20, 70, 60, 16);
 
         txfSurname.setBackground(new java.awt.Color(0, 0, 0));
         txfSurname.setForeground(new java.awt.Color(255, 255, 255));
@@ -157,7 +171,7 @@ public class Screen3_1ForgotPassword extends javax.swing.JFrame {
 
         jLabel9.setText("Password:");
         jPn2.add(jLabel9);
-        jLabel9.setBounds(20, 110, 70, 15);
+        jLabel9.setBounds(20, 110, 70, 16);
 
         txfPassword.setBackground(new java.awt.Color(0, 0, 0));
         txfPassword.setForeground(new java.awt.Color(255, 255, 255));
@@ -178,19 +192,19 @@ public class Screen3_1ForgotPassword extends javax.swing.JFrame {
             }
         });
         jPn1.add(btnSubmit1);
-        btnSubmit1.setBounds(140, 140, 80, 25);
+        btnSubmit1.setBounds(140, 140, 80, 29);
 
         lblPassword.setText("<Password>");
         jPn1.add(lblPassword);
-        lblPassword.setBounds(12, 177, 100, 15);
+        lblPassword.setBounds(12, 177, 210, 30);
 
         jLabel10.setText("Your password is:");
         jPn1.add(jLabel10);
-        jLabel10.setBounds(12, 162, 110, 15);
+        jLabel10.setBounds(12, 162, 210, 16);
 
-        jLabel3.setText("Username?");
+        jLabel3.setText("Email");
         jPn1.add(jLabel3);
-        jLabel3.setBounds(10, 30, 70, 15);
+        jLabel3.setBounds(10, 16, 70, 30);
 
         txfUsername.setBackground(new java.awt.Color(0, 0, 0));
         txfUsername.setForeground(new java.awt.Color(255, 255, 255));
@@ -199,11 +213,11 @@ public class Screen3_1ForgotPassword extends javax.swing.JFrame {
 
         jLabel4.setText("Security Question:");
         jPn1.add(jLabel4);
-        jLabel4.setBounds(10, 60, 130, 15);
+        jLabel4.setBounds(10, 60, 130, 16);
 
         jLabel1.setText("What is your mothers maden name?");
         jPn1.add(jLabel1);
-        jLabel1.setBounds(10, 80, 210, 15);
+        jLabel1.setBounds(10, 80, 230, 16);
 
         txfSecQuest.setBackground(new java.awt.Color(0, 0, 0));
         txfSecQuest.setForeground(new java.awt.Color(255, 255, 255));
@@ -225,7 +239,7 @@ public class Screen3_1ForgotPassword extends javax.swing.JFrame {
             }
         });
         getContentPane().add(rbtnPassword);
-        rbtnPassword.setBounds(10, 10, 130, 23);
+        rbtnPassword.setBounds(10, 10, 180, 23);
 
         rbtnUsername.setForeground(new java.awt.Color(255, 255, 255));
         rbtnUsername.setText("Forgot Username?");
@@ -241,24 +255,6 @@ public class Screen3_1ForgotPassword extends javax.swing.JFrame {
         getContentPane().add(rbtnUsername);
         rbtnUsername.setBounds(260, 10, 220, 23);
 
-        btnClear.setText("Clear");
-        btnClear.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnClearActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnClear);
-        btnClear.setBounds(180, 270, 59, 25);
-
-        btnBack.setText("Back");
-        btnBack.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBackActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnBack);
-        btnBack.setBounds(260, 270, 58, 25);
-
         btnExit.setText("Exit");
         btnExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -266,7 +262,29 @@ public class Screen3_1ForgotPassword extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnExit);
-        btnExit.setBounds(340, 270, 51, 25);
+        btnExit.setBounds(340, 270, 75, 40);
+
+        jPanel3.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel3.setMinimumSize(new java.awt.Dimension(500, 369));
+        jPanel3.setLayout(null);
+
+        btnClear.setText("Clear");
+        btnClear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClearActionPerformed(evt);
+            }
+        });
+        jPanel3.add(btnClear);
+        btnClear.setBounds(160, 270, 80, 40);
+
+        btnBack.setText("Back");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
+        jPanel3.add(btnBack);
+        btnBack.setBounds(260, 270, 75, 40);
 
         btnLogin.setText("Login");
         btnLogin.addActionListener(new java.awt.event.ActionListener() {
@@ -274,12 +292,11 @@ public class Screen3_1ForgotPassword extends javax.swing.JFrame {
                 btnLoginActionPerformed(evt);
             }
         });
-        getContentPane().add(btnLogin);
-        btnLogin.setBounds(430, 270, 60, 25);
+        jPanel3.add(btnLogin);
+        btnLogin.setBounds(419, 270, 70, 40);
 
-        jPanel3.setBackground(new java.awt.Color(51, 51, 51));
         getContentPane().add(jPanel3);
-        jPanel3.setBounds(0, 0, 500, 350);
+        jPanel3.setBounds(0, 0, 550, 390);
 
         jMenu1.setText("Menu");
 
@@ -345,14 +362,9 @@ public class Screen3_1ForgotPassword extends javax.swing.JFrame {
             secQuestion = txfSecQuest.getText();
 
             if(!(username.equals("")) || !(secQuestion.equals(""))){
-                /*if(Screen3_1ForgotPasswordGUI.login(username, secQuestion)==true){
-                    Screen3_1ForgotPasswordGUI objNewJ = new Screen3_1ForgotPasswordGUI();
-                    //JOptionPane.showMessageDialog(rootPane, "Username exists!");
-                    lblPassword.setText("Username exists!");
-
-                }else{
-                    JOptionPane.showMessageDialog(rootPane,"Username or Security answer is incorrect!");
-                }*/
+                
+                
+                
                 btnLogin.setEnabled(true);
                 btnSubmit1.setEnabled(false);
                 btnClear.setEnabled(false);
@@ -364,6 +376,27 @@ public class Screen3_1ForgotPassword extends javax.swing.JFrame {
                 btnSubmit2.setForeground(Color.gray);
                 btnClear.setForeground(Color.gray);
                 btnLogin.setForeground(Color.white);
+                
+                
+                Class.forName(jdbcDriver);
+                c = new Function().getConnection();
+
+                String query = "SELECT * FROM `User` WHERE Email = \""
+                        + username
+                        + "\" AND SecQuestionAnswer = \""
+                        + secQuestion
+                        + "\"\n";
+                PreparedStatement preparedStmt = c.prepareStatement(query);
+                ResultSet rs = preparedStmt.executeQuery(query);
+                // iterate through the java resultset
+                if (rs.next() == false) {
+                    JOptionPane.showMessageDialog(rootPane, "Email Does Not Exist!");
+                    c.close();
+                }else{
+                    lblPassword.setText(rs.getString("Password"));
+                }
+                
+                
             }else{
                 JOptionPane.showMessageDialog(rootPane,"Please enter username and the security answer!");
             }
@@ -374,34 +407,6 @@ public class Screen3_1ForgotPassword extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane,"Please provide data of correct data type in all fields", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnSubmit1ActionPerformed
-
-    private void rbtnPasswordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rbtnPasswordMouseClicked
-        // TODO add your handling code here:
-        txfName.setEnabled(false);
-        txfSurname.setEnabled(false);
-        txfPassword.setEnabled(false);
-        btnSubmit2.setEnabled(false);
-
-        txfUsername.setEnabled(true);
-        txfSecQuest.setEnabled(true);
-        btnSubmit1.setEnabled(true);
-        
-        btnSubmit1.setForeground(Color.white);
-        btnSubmit2.setForeground(Color.gray);
-    }//GEN-LAST:event_rbtnPasswordMouseClicked
-
-    private void rbtnUsernameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rbtnUsernameMouseClicked
-        txfName.setEnabled(true);
-        txfSurname.setEnabled(true);
-        txfPassword.setEnabled(true);
-        btnSubmit2.setEnabled(true);
-
-        txfUsername.setEnabled(false);
-        txfSecQuest.setEnabled(false);
-        btnSubmit1.setEnabled(false);
-        btnSubmit1.setForeground(Color.gray);
-        btnSubmit2.setForeground(Color.white);
-    }//GEN-LAST:event_rbtnUsernameMouseClicked
 
     private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
         txfUsername.setText("");
@@ -450,14 +455,7 @@ public class Screen3_1ForgotPassword extends javax.swing.JFrame {
             password = txfPassword.getText();
 
             if(!(name.equals("")) || !(surname.equals("")) || !(password.equals(""))){
-                /*if(Screen3_1ForgotPasswordGUI.login(username, secQuestion)==true){
-                    Screen3_1ForgotPasswordGUI objNewJ = new Screen3_1ForgotPasswordGUI();
-                    //JOptionPane.showMessageDialog(rootPane, "Username exists!");
-                    lblPassword.setText("Username exists!");
-
-                }else{
-                    JOptionPane.showMessageDialog(rootPane,"Username or Security answer is incorrect!");
-                }*/
+                
                 btnLogin.setEnabled(true);
                 btnSubmit1.setEnabled(false);
                 btnClear.setEnabled(false);
@@ -470,6 +468,25 @@ public class Screen3_1ForgotPassword extends javax.swing.JFrame {
                 btnSubmit2.setForeground(Color.gray);
                 btnClear.setForeground(Color.gray);
                 btnLogin.setForeground(Color.white);
+                
+                Class.forName(jdbcDriver);
+                c = new Function().getConnection();
+
+                String query = "SELECT * FROM `User` WHERE Name = \""
+                        + name
+                        + "\" AND Password = \""
+                        + password
+                        + "\"\n";
+                PreparedStatement preparedStmt = c.prepareStatement(query);
+                ResultSet rs = preparedStmt.executeQuery(query);
+                // iterate through the java resultset
+                if (rs.next() == false) {
+                    JOptionPane.showMessageDialog(rootPane, "Email Does Not Exist!");
+                    c.close();
+                }else{
+                    lblUsername.setText(rs.getString("Email"));
+                }
+                
             }else{
                 JOptionPane.showMessageDialog(rootPane,"Please enter username and the security answer!");
             }
@@ -480,6 +497,34 @@ public class Screen3_1ForgotPassword extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane,"Please provide data of correct data type in all fields", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnSubmit2ActionPerformed
+
+    private void rbtnUsernameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rbtnUsernameMouseClicked
+        txfName.setEnabled(true);
+        txfSurname.setEnabled(true);
+        txfPassword.setEnabled(true);
+        btnSubmit2.setEnabled(true);
+
+        txfUsername.setEnabled(false);
+        txfSecQuest.setEnabled(false);
+        btnSubmit1.setEnabled(false);
+        btnSubmit1.setForeground(Color.gray);
+        btnSubmit2.setForeground(Color.white);
+    }//GEN-LAST:event_rbtnUsernameMouseClicked
+
+    private void rbtnPasswordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rbtnPasswordMouseClicked
+        // TODO add your handling code here:
+        txfName.setEnabled(false);
+        txfSurname.setEnabled(false);
+        txfPassword.setEnabled(false);
+        btnSubmit2.setEnabled(false);
+
+        txfUsername.setEnabled(true);
+        txfSecQuest.setEnabled(true);
+        btnSubmit1.setEnabled(true);
+
+        btnSubmit1.setForeground(Color.white);
+        btnSubmit2.setForeground(Color.gray);
+    }//GEN-LAST:event_rbtnPasswordMouseClicked
 
     /**
      * @param args the command line arguments

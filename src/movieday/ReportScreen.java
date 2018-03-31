@@ -5,7 +5,13 @@
  */
 package movieday;
 
+import UserPages.Screen1Home;
+import java.awt.print.PrinterException;
+import java.text.MessageFormat;
+import static javax.management.Query.attr;
+import static javax.management.Query.attr;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
 
 /**
  *
@@ -16,11 +22,14 @@ public class ReportScreen extends javax.swing.JFrame {
     /**
      * Creates new form ReportScreen
      */
-    public ReportScreen() {
+    static int UserID;
+
+    public ReportScreen(int usrID) {
         initComponents();
         this.setLocationRelativeTo(null);
+        UserID = usrID;
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -34,11 +43,11 @@ public class ReportScreen extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        movieSummaryTable = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        showSummaryTable = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         adminHomeMenu = new javax.swing.JMenu();
@@ -48,6 +57,7 @@ public class ReportScreen extends javax.swing.JFrame {
         adminProfileMenu = new javax.swing.JMenu();
         adminHelpMenu = new javax.swing.JMenu();
         adminExitMenu = new javax.swing.JMenu();
+        adminLogoutMenu = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -66,7 +76,7 @@ public class ReportScreen extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(250, 250, 250));
         jPanel1.setLayout(null);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        movieSummaryTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Movie 1", "67", "2", "69"},
                 {"Movie 2", "54", "4", "58"},
@@ -91,8 +101,8 @@ public class ReportScreen extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        jTable1.setEnabled(false);
-        jScrollPane1.setViewportView(jTable1);
+        movieSummaryTable.setEnabled(false);
+        jScrollPane1.setViewportView(movieSummaryTable);
 
         jPanel1.add(jScrollPane1);
         jScrollPane1.setBounds(20, 310, 860, 220);
@@ -105,7 +115,7 @@ public class ReportScreen extends javax.swing.JFrame {
         jPanel1.add(jLabel3);
         jLabel3.setBounds(20, 20, 180, 30);
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        showSummaryTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Seats Booked", "123", "123", "123"},
                 {"Seats Cancelled", "12", "12", "12"},
@@ -124,8 +134,8 @@ public class ReportScreen extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        jTable2.setEnabled(false);
-        jScrollPane2.setViewportView(jTable2);
+        showSummaryTable.setEnabled(false);
+        jScrollPane2.setViewportView(showSummaryTable);
 
         jPanel1.add(jScrollPane2);
         jScrollPane2.setBounds(20, 60, 870, 140);
@@ -201,51 +211,83 @@ public class ReportScreen extends javax.swing.JFrame {
         });
         jMenuBar1.add(adminExitMenu);
 
+        adminLogoutMenu.setText("Logout");
+        adminLogoutMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                adminLogoutMenuMouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(adminLogoutMenu);
+
         setJMenuBar(jMenuBar1);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        /*
+        try {
+            boolean complete = showSummaryTable.print();
+            if (complete) {
+                //JOptionPane.showMessageDialog(rootPane, "Priting Complete", "Print Table", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(rootPane, "Priting Complete", "Print Table", JOptionPane.INFORMATION_MESSAGE);
+
+            }
+        } catch (PrinterException pe) {
+
+        }
+        */
+        try{
+            new Function().print(showSummaryTable);
+            new Function().print(movieSummaryTable);
+            JOptionPane.showMessageDialog(rootPane, "Priting Complete", "Print Table", JOptionPane.INFORMATION_MESSAGE);
+        }
+        catch(Exception e){
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void adminHomeMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminHomeMenuMouseClicked
-        Function.goToAdminHome();
+        Function.goToAdminHome(UserID);
         this.setVisible(false);
     }//GEN-LAST:event_adminHomeMenuMouseClicked
 
     private void adminReportsMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminReportsMenuMouseClicked
-        Function.goToReportScreen();
+        Function.goToReportScreen(UserID);
         this.setVisible(false);
     }//GEN-LAST:event_adminReportsMenuMouseClicked
 
     private void adminMoviesMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminMoviesMenuMouseClicked
-        Function.goToAdminMoviesScreen();
+        Function.goToAdminMoviesScreen(UserID);
         this.setVisible(false);
     }//GEN-LAST:event_adminMoviesMenuMouseClicked
 
     private void adminUsersMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminUsersMenuMouseClicked
-        Function.goToAdminUserScreen();
+        Function.goToAdminUserScreen(UserID);
         this.setVisible(false);
     }//GEN-LAST:event_adminUsersMenuMouseClicked
 
     private void adminProfileMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminProfileMenuMouseClicked
-        Function.goToAdminUserScreen();
+        Function.goToAdminUserScreen(UserID);
         this.setVisible(false);
     }//GEN-LAST:event_adminProfileMenuMouseClicked
 
     private void adminHelpMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminHelpMenuMouseClicked
-        Function.goToAdminHelpScreen();
+        Function.goToAdminHelpScreen(UserID);
         this.setVisible(false);
     }//GEN-LAST:event_adminHelpMenuMouseClicked
 
     private void adminExitMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminExitMenuMouseClicked
-        int choice  = JOptionPane.showConfirmDialog(rootPane, "Are you sure you want to exit?");
-        if(choice == 0){
+        int choice = JOptionPane.showConfirmDialog(rootPane, "Are you sure you want to exit?");
+        if (choice == 0) {
             System.exit(0);
         }
     }//GEN-LAST:event_adminExitMenuMouseClicked
+
+    private void adminLogoutMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminLogoutMenuMouseClicked
+        new Screen1Home().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_adminLogoutMenuMouseClicked
 
     /**
      * @param args the command line arguments
@@ -277,7 +319,7 @@ public class ReportScreen extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ReportScreen().setVisible(true);
+                new ReportScreen(UserID).setVisible(true);
             }
         });
     }
@@ -286,6 +328,7 @@ public class ReportScreen extends javax.swing.JFrame {
     private javax.swing.JMenu adminExitMenu;
     private javax.swing.JMenu adminHelpMenu;
     private javax.swing.JMenu adminHomeMenu;
+    private javax.swing.JMenu adminLogoutMenu;
     private javax.swing.JMenu adminMoviesMenu;
     private javax.swing.JMenu adminProfileMenu;
     private javax.swing.JMenu adminReportsMenu;
@@ -299,7 +342,7 @@ public class ReportScreen extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
+    private javax.swing.JTable movieSummaryTable;
+    private javax.swing.JTable showSummaryTable;
     // End of variables declaration//GEN-END:variables
 }

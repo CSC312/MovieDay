@@ -1,26 +1,56 @@
 package UserPages;
 
 import java.awt.Color;
+import java.awt.HeadlessException;
+import java.sql.Connection;
+import java.sql.Date;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Arrays;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import movieday.AdminMoviesScreen;
+import movieday.Function;
 
 public class Screen2Register extends javax.swing.JFrame {
-    String name = "",surname = "",username = "",
-           email="", DOB="", password = "",secQuestion = "";
-    
+
+    String name = "", surname = "", username = "",
+            email = "", DOB = "", password = "", secQuestion = "";
+
+    Function funct = new Function();
+
+    //Databases Variables
+    String jdbcDriver = "com.mysql.jdbc.Driver";
+    String dbUrl = "jdbc:mysql://localhost:8889/MovieDay";
+    String dbUserID = "root";
+    String dbPassword = "root";
+
+    int AdminID = 1;
+
+    ResultSet res;
+    Connection c;
+    ResultSetMetaData meta;
+    DefaultTableModel model;
+
     public Screen2Register() {
         initComponents();
         this.setLocationRelativeTo(null);
-        
+
         btnNewPass.setEnabled(true);
         btnClear.setEnabled(true);
-        
+
         btnSubmit.setEnabled(false);
         btnLogin.setEnabled(false);
-        tblUserInformation.setVisible(false);
-        
+
         btnSubmit.setForeground(Color.GRAY);
         btnLogin.setForeground(Color.GRAY);
-        
+
         btnNewPass.setBackground(Color.BLUE);
         btnClear.setBackground(Color.BLUE);
         btnBack.setBackground(Color.BLUE);
@@ -53,10 +83,8 @@ public class Screen2Register extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         lblPassword = new javax.swing.JLabel();
         btnNewPass = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tblUserInformation = new javax.swing.JTable();
-        btnLogin = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
+        btnLogin = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         mnuSignIn = new javax.swing.JMenuItem();
@@ -91,7 +119,7 @@ public class Screen2Register extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnSubmit);
-        btnSubmit.setBounds(474, 110, 120, 29);
+        btnSubmit.setBounds(474, 110, 120, 40);
 
         btnBack.setBackground(new java.awt.Color(51, 102, 255));
         btnBack.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
@@ -103,7 +131,7 @@ public class Screen2Register extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnBack);
-        btnBack.setBounds(600, 110, 75, 29);
+        btnBack.setBounds(600, 110, 75, 40);
 
         btnClear.setBackground(new java.awt.Color(51, 102, 255));
         btnClear.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
@@ -115,7 +143,7 @@ public class Screen2Register extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnClear);
-        btnClear.setBounds(670, 110, 75, 29);
+        btnClear.setBounds(670, 110, 75, 40);
 
         txfSecurityQuestion.setBackground(new java.awt.Color(0, 0, 0));
         txfSecurityQuestion.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
@@ -134,7 +162,7 @@ public class Screen2Register extends javax.swing.JFrame {
             }
         });
         jPanel1.add(txfSecurityQuestion);
-        txfSecurityQuestion.setBounds(474, 64, 262, 24);
+        txfSecurityQuestion.setBounds(474, 64, 270, 24);
 
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("What is your mothers maden name?");
@@ -195,6 +223,7 @@ public class Screen2Register extends javax.swing.JFrame {
 
         txfDOB.setBackground(new java.awt.Color(0, 0, 0));
         txfDOB.setForeground(java.awt.Color.white);
+        txfDOB.setText("YYYY-MM-DD");
         txfDOB.setToolTipText("");
         txfDOB.setMaximumSize(new java.awt.Dimension(4, 19));
         jPanel1.add(txfDOB);
@@ -220,41 +249,13 @@ public class Screen2Register extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnNewPass);
-        btnNewPass.setBounds(40, 230, 167, 29);
+        btnNewPass.setBounds(40, 230, 167, 40);
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(0, 12, 820, 270);
+        jPanel1.setBounds(0, 12, 820, 280);
 
-        tblUserInformation.setBackground(new java.awt.Color(51, 51, 51));
-        tblUserInformation.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        tblUserInformation.setForeground(new java.awt.Color(255, 255, 255));
-        tblUserInformation.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Name", "Surname", "Email", "Password"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        tblUserInformation.getTableHeader().setReorderingAllowed(false);
-        jScrollPane1.setViewportView(tblUserInformation);
-        if (tblUserInformation.getColumnModel().getColumnCount() > 0) {
-            tblUserInformation.getColumnModel().getColumn(0).setResizable(false);
-            tblUserInformation.getColumnModel().getColumn(1).setResizable(false);
-            tblUserInformation.getColumnModel().getColumn(2).setResizable(false);
-            tblUserInformation.getColumnModel().getColumn(3).setResizable(false);
-        }
-
-        getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(10, 300, 694, 80);
+        jPanel2.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel2.setLayout(null);
 
         btnLogin.setBackground(new java.awt.Color(51, 102, 255));
         btnLogin.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -265,11 +266,9 @@ public class Screen2Register extends javax.swing.JFrame {
                 btnLoginActionPerformed(evt);
             }
         });
-        getContentPane().add(btnLogin);
-        btnLogin.setBounds(730, 300, 89, 29);
+        jPanel2.add(btnLogin);
+        btnLogin.setBounds(620, 300, 120, 40);
 
-        jPanel2.setBackground(new java.awt.Color(51, 51, 51));
-        jPanel2.setLayout(null);
         getContentPane().add(jPanel2);
         jPanel2.setBounds(0, 0, 820, 410);
 
@@ -322,19 +321,18 @@ public class Screen2Register extends javax.swing.JFrame {
     }//GEN-LAST:event_txfNameActionPerformed
 
     private void btnNewPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewPassActionPerformed
-        try{
+        try {
             name = (txfName.getText().trim().toLowerCase()).trim();
             surname = (txfSurname.getText().toLowerCase()).trim();
-            username = (name.substring(0,3)+surname.substring(0,3) + Math.round(Math.random()*899+100)).trim();
+            username = (name.substring(0, 3) + surname.substring(0, 3) + Math.round(Math.random() * 899 + 100)).trim();
 
-            password = ""+ name.charAt(0) + surname.charAt(0) + Math.round(Math.random()*89999999+1000000);
+            password = "" + name.charAt(0) + surname.charAt(0) + Math.round(Math.random() * 89999999 + 1000000);
             lblPassword.setText(password.trim());
             btnSubmit.setEnabled(true);
             btnSubmit.setBackground(Color.BLUE);
             btnSubmit.setForeground(Color.white);
-        }
-        catch(StringIndexOutOfBoundsException string){
-            JOptionPane.showMessageDialog(rootPane,"Please fill in all the fields correctly", "Error", JOptionPane.ERROR_MESSAGE);
+        } catch (StringIndexOutOfBoundsException string) {
+            JOptionPane.showMessageDialog(rootPane, "Please fill in all the fields correctly", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnNewPassActionPerformed
 
@@ -348,51 +346,29 @@ public class Screen2Register extends javax.swing.JFrame {
     }//GEN-LAST:event_txfSecurityQuestionActionPerformed
 
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
-        try{
+        try {
             name = txfName.getText().trim().toLowerCase();
             surname = txfSurname.getText().trim().toLowerCase();
-            username = name.substring(0,3)+surname.substring(0,3) + Math.round(Math.random()*899+100);
+            username = name.substring(0, 3) + surname.substring(0, 3) + Math.round(Math.random() * 899 + 100);
             secQuestion = txfSecurityQuestion.getText().trim();
+            
+            System.out.print(secQuestion);
             DOB = (txfDOB.getText()).trim();
-
             lblPassword.setText(password);
+            email = txfEmail.getText();
+            
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            java.util.Date date = sdf.parse(DOB);
+            java.sql.Date sqlDate = new java.sql.Date(date.getTime());
 
-            if(secQuestion.equals("")){
-                JOptionPane.showMessageDialog(rootPane,"Please fill in all the fields correctly", "Error", JOptionPane.ERROR_MESSAGE);
-            }else{
+            boolean correctEmailFormat = funct.checkEmail(email);
+            //boolean correctPaswordLength = funct.checkPassword(password);
 
-                /*Tblallusers inputToAll  = new Tblallusers();
-
-                inputToAll.setName(name.trim());
-                inputToAll.setSurname(surname.trim());
-                inputToAll.setUsername(username.trim());
-                inputToAll.setPassword(password.trim());
-                inputToAll.setContactno(contactNo.trim());
-                inputToAll.setSecanswer(secQuestion);
-
-                UserRegDBPUEntityManager.getTransaction().begin();
-                UserRegDBPUEntityManager.persist(inputToAll);
-                UserRegDBPUEntityManager.getTransaction().commit();
-                UserRegDBPUEntityManager.clear();
-
-                Query q = UserRegDBPUEntityManager.createNamedQuery ("Tblallusers.findByUsername");
-                q.setParameter("username", username);
-                List <Tblallusers> result = q.getResultList();
-                tblallusersList.clear();
-                tblallusersList.addAll(result);
-                //tblallusersList.clear();
-                //tblallusersList.addAll(tblallusersQuery.getResultList());
-                */
-                JOptionPane.showMessageDialog(rootPane, "--------YOUR DETAILS-------- \n" +
-                    "Name: \t\t" + name + "\n" +
-                    "Surname: \t\t" + surname + "\n" +
-                    "Email: \t" + email + "\n" +
-                    "DOB: \t\t"+ DOB + "\n"+
-                    "Security Answer: \t" + secQuestion + "\n\n" +
-                    "Username: \t\t" + username + "\n" +
-                    "Password: \t\t" + password,
-                    "Your details", JOptionPane.INFORMATION_MESSAGE);
-                
+            if (!correctEmailFormat) {
+                JOptionPane.showMessageDialog(rootPane, "Incorrect Email format", "Error", JOptionPane.ERROR_MESSAGE);
+            } else if (secQuestion.equals("")) {
+                JOptionPane.showMessageDialog(rootPane, "Please fill in all the fields correctly", "Error", JOptionPane.ERROR_MESSAGE);
+            } else {
                 txfName.setEnabled(false);
                 txfSurname.setEnabled(false);
                 txfEmail.setEnabled(false);
@@ -402,23 +378,52 @@ public class Screen2Register extends javax.swing.JFrame {
                 btnClear.setEnabled(false);
                 btnSubmit.setEnabled(false);
 
-                tblUserInformation.setVisible(true);
                 btnLogin.setEnabled(true);
                 btnNewPass.setEnabled(false);
-                
+
                 btnBack.setBackground(Color.BLUE);
                 btnLogin.setBackground(Color.BLUE);
                 btnLogin.setForeground(Color.white);
+
+                //Database Operations
+                Class.forName(jdbcDriver);
+                c = new Function().getConnection();
+
+                // the mysql insert statement
+                String query = "INSERT INTO User set Name = ?, Surname = ?, DateOfBirth = ?, Email = ?, Password = ?, SecQuestionAnswer = ?";
+                // create the mysql insert preparedstatement
+                PreparedStatement preparedStmt = c.prepareStatement(query);
+
+                preparedStmt.setString(1, name);
+                preparedStmt.setString(2, surname);
+                preparedStmt.setDate(3, sqlDate);
+                preparedStmt.setString(4, email);
+                preparedStmt.setString(5, password);
+                preparedStmt.setString(6, secQuestion);
+                // execute the preparedstatement
+                preparedStmt.execute();
+                
+                JOptionPane.showMessageDialog(rootPane, "--------YOUR DETAILS-------- \n"
+                        + "Name: \t\t" + name + "\n"
+                        + "Surname: \t\t" + surname + "\n"
+                        + "Email: \t" + email + "\n"
+                        + "DOB: \t\t" + DOB + "\n"
+                        + "Security Answer: \t" + secQuestion + "\n\n"
+                        + "Username: \t\t" + username + "\n"
+                        + "Password: \t\t" + password,
+                        "Your details", JOptionPane.INFORMATION_MESSAGE);
+
+                //c.close();
             }
             btnNewPass.setEnabled(false);
 
-        }catch(StringIndexOutOfBoundsException string){
-            JOptionPane.showMessageDialog(rootPane,"Please fill in all the fields correctly", "Error", JOptionPane.ERROR_MESSAGE);
+        } catch (StringIndexOutOfBoundsException | HeadlessException | ClassNotFoundException | SQLException | ParseException string) {
+            JOptionPane.showMessageDialog(rootPane, "Please fill in all the fields correctly", "Error", JOptionPane.ERROR_MESSAGE);
         }
-        catch(Exception ex){
-            JOptionPane.showMessageDialog(rootPane,"Please fill in all the fields correctly", "Error", JOptionPane.ERROR_MESSAGE);
+        catch(Exception e){
+            System.out.println(e.getMessage());
         }
-          
+
         //int p = JOptionPane.showConfirmDialog(rootPane, "Are you satisfied with the data you provided?", "SUBMIT", JOptionPane.YES_NO_OPTION);
     }//GEN-LAST:event_btnSubmitActionPerformed
 
@@ -509,13 +514,11 @@ public class Screen2Register extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPopupMenu.Separator jSeparator2;
     private javax.swing.JPopupMenu.Separator jSeparator3;
     private javax.swing.JLabel lblPassword;
     private javax.swing.JMenuItem mnuExit;
     private javax.swing.JMenuItem mnuSignIn;
-    private javax.swing.JTable tblUserInformation;
     private javax.swing.JTextField txfDOB;
     private javax.swing.JTextField txfEmail;
     private javax.swing.JTextField txfName;

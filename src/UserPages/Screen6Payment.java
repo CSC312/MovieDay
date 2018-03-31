@@ -29,6 +29,9 @@ public class Screen6Payment extends javax.swing.JFrame {
     private void initComponents() {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(430, 230));
+        setPreferredSize(new java.awt.Dimension(430, 230));
+        setSize(new java.awt.Dimension(430, 230));
         getContentPane().setLayout(null);
 
         pack();

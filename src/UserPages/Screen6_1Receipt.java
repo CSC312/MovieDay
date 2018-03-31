@@ -59,32 +59,32 @@ public class Screen6_1Receipt extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Digital Receipt");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(154, 26, 150, 15);
+        jLabel1.setBounds(154, 26, 150, 16);
 
         lblMovie.setForeground(new java.awt.Color(255, 255, 255));
         lblMovie.setText("Movie name:");
         getContentPane().add(lblMovie);
-        lblMovie.setBounds(110, 59, 230, 15);
+        lblMovie.setBounds(110, 59, 230, 16);
 
         lblDate.setForeground(new java.awt.Color(255, 255, 255));
         lblDate.setText("Date:");
         getContentPane().add(lblDate);
-        lblDate.setBounds(110, 78, 230, 15);
+        lblDate.setBounds(110, 78, 230, 16);
 
         lblTime.setForeground(new java.awt.Color(255, 255, 255));
         lblTime.setText("Show Time:");
         getContentPane().add(lblTime);
-        lblTime.setBounds(110, 99, 230, 15);
+        lblTime.setBounds(110, 99, 230, 16);
 
         lblSeats.setForeground(new java.awt.Color(255, 255, 255));
         lblSeats.setText("Seat no(s):");
         getContentPane().add(lblSeats);
-        lblSeats.setBounds(110, 120, 240, 15);
+        lblSeats.setBounds(110, 120, 240, 16);
 
         lblTotal.setForeground(new java.awt.Color(255, 255, 255));
         lblTotal.setText("Total Amount:");
         getContentPane().add(lblTotal);
-        lblTotal.setBounds(110, 141, 240, 15);
+        lblTotal.setBounds(110, 141, 240, 16);
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
         jPanel1.setLayout(null);
@@ -92,12 +92,12 @@ public class Screen6_1Receipt extends javax.swing.JFrame {
         btnConfirm.setForeground(new java.awt.Color(255, 255, 255));
         btnConfirm.setText("Confirm");
         jPanel1.add(btnConfirm);
-        btnConfirm.setBounds(120, 170, 90, 25);
+        btnConfirm.setBounds(120, 170, 90, 29);
 
         btnCancel.setForeground(new java.awt.Color(255, 255, 255));
         btnCancel.setText("Cancel");
         jPanel1.add(btnCancel);
-        btnCancel.setBounds(210, 210, 90, 25);
+        btnCancel.setBounds(210, 210, 90, 29);
 
         btnExit.setForeground(new java.awt.Color(255, 255, 255));
         btnExit.setText("Exit");
@@ -107,7 +107,7 @@ public class Screen6_1Receipt extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnExit);
-        btnExit.setBounds(310, 210, 70, 25);
+        btnExit.setBounds(310, 210, 70, 29);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 420, 290);

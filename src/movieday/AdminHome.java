@@ -5,6 +5,13 @@
  */
 package movieday;
 
+import UserPages.Screen1Home;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -15,10 +22,90 @@ public class AdminHome extends javax.swing.JFrame {
 
     /**
      * Creates new form AdminHome
+     *
+     * @param UserID
      */
-    public AdminHome() {
+    //Databases Variables
+    String jdbcDriver = "com.mysql.jdbc.Driver";
+    String dbUrl = "jdbc:mysql://localhost:8889/MovieDay";
+    String dbUserID = "root";
+    String dbPassword = "root";
+
+    ResultSet res;
+    Connection c;
+
+    static int UserID;
+    static String AdminName = "";
+
+    int totalSeatsBooked = 0;
+    int totalSeatsCancelled = 0;
+    int totalProfit = 0;
+
+    public AdminHome(int UsrID) {
         initComponents();
         this.setLocationRelativeTo(null);
+        UserID = UsrID;
+
+        try {
+            Class.forName(jdbcDriver);
+            c = new Function().getConnection();
+
+            String query = "SELECT * FROM `Admin` WHERE UserID = " + UserID;
+            PreparedStatement preparedStmt = c.prepareStatement(query);
+            ResultSet rs = preparedStmt.executeQuery(query);
+
+            while (rs.next()) {
+                AdminName = rs.getString("Name");
+            }
+
+            //Get Summary values
+            String query2 = "SELECT count(r.SeatID) AS `Count`\n"
+                    + "FROM Reservation r\n"
+                    + "Left Join Movie m\n"
+                    + "on m.MovieID = r.MovieID\n"
+                    + "left join Seat s\n"
+                    + "on s.SeatID = r.SeatID\n"
+                    + ";";
+            PreparedStatement preparedStmt2 = c.prepareStatement(query2);
+            ResultSet rs2 = preparedStmt2.executeQuery(query2);
+
+            while (rs2.next()) {
+                totalSeatsBooked += rs2.getInt("Count");
+            }
+
+            seatsBookedTxt.setText("" + totalSeatsBooked);
+
+            String query3 = "SELECT sum(m.Cancelled) AS `Count`\n"
+                    + "FROM Reservation r\n"
+                    + "Left Join Movie m\n"
+                    + "on m.MovieID = r.MovieID\n"
+                    + "left join Seat s\n"
+                    + "on s.SeatID = r.SeatID\n"
+                    + ";";
+            
+            PreparedStatement preparedStmt3 = c.prepareStatement(query3);
+            ResultSet rs3 = preparedStmt3.executeQuery(query3);
+
+            while (rs3.next()) {
+                totalSeatsCancelled += rs2.getInt("Count");
+            }
+            
+            seatsCancelledTxt.setText(""+totalSeatsCancelled);
+            
+            TotalSalesTxt.setText(""+(totalSeatsBooked-totalSeatsCancelled)*93);
+
+            //c.close();
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(AdminHome.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(AdminHome.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        if (AdminName.equals("")) {
+        } else {
+            lblWelcome.setText("Welcome " + AdminName + "!");
+        }
+
     }
 
     /**
@@ -31,16 +118,16 @@ public class AdminHome extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        lblWelcome = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
+        TotalSalesTxt = new javax.swing.JTextField();
+        seatsCancelledTxt = new javax.swing.JTextField();
+        seatsBookedTxt = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         viewMoviesButton = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
@@ -56,6 +143,7 @@ public class AdminHome extends javax.swing.JFrame {
         adminProfileMenu = new javax.swing.JMenu();
         adminHelpMenu = new javax.swing.JMenu();
         adminExitMenu = new javax.swing.JMenu();
+        adminLogoutMenu = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Admin Home");
@@ -65,9 +153,10 @@ public class AdminHome extends javax.swing.JFrame {
         jPanel1.setAutoscrolls(true);
         jPanel1.setLayout(null);
 
-        jLabel1.setText("Welcome [Admin Name]");
-        jPanel1.add(jLabel1);
-        jLabel1.setBounds(800, 40, 149, 30);
+        lblWelcome.setFont(new java.awt.Font("Avenir", 0, 18)); // NOI18N
+        lblWelcome.setText("Welcome Admin!");
+        jPanel1.add(lblWelcome);
+        lblWelcome.setBounds(679, 40, 270, 30);
 
         jLabel2.setText("Current Show");
         jPanel1.add(jLabel2);
@@ -75,35 +164,35 @@ public class AdminHome extends javax.swing.JFrame {
 
         jLabel6.setText("Current Summary");
         jPanel1.add(jLabel6);
-        jLabel6.setBounds(20, 450, 130, 30);
+        jLabel6.setBounds(20, 430, 130, 30);
 
         jLabel8.setText("Seats Booked");
         jPanel1.add(jLabel8);
-        jLabel8.setBounds(30, 490, 100, 30);
+        jLabel8.setBounds(30, 480, 100, 30);
 
         jLabel9.setText("Seats Cancelled");
         jPanel1.add(jLabel9);
-        jLabel9.setBounds(30, 530, 100, 30);
+        jLabel9.setBounds(30, 520, 120, 30);
 
-        jLabel7.setText("Total Sales");
+        jLabel7.setText("Total Sales (In Rands)");
         jPanel1.add(jLabel7);
-        jLabel7.setBounds(30, 570, 100, 30);
+        jLabel7.setBounds(30, 570, 150, 30);
 
         jButton2.setText("View Reports");
         jPanel1.add(jButton2);
-        jButton2.setBounds(270, 620, 160, 29);
+        jButton2.setBounds(180, 610, 160, 40);
 
-        jTextField1.setText("R1080");
-        jPanel1.add(jTextField1);
-        jTextField1.setBounds(240, 570, 110, 26);
+        TotalSalesTxt.setText("R1080");
+        jPanel1.add(TotalSalesTxt);
+        TotalSalesTxt.setBounds(180, 570, 160, 40);
 
-        jTextField2.setText("12");
-        jPanel1.add(jTextField2);
-        jTextField2.setBounds(240, 530, 110, 26);
+        seatsCancelledTxt.setText("12");
+        jPanel1.add(seatsCancelledTxt);
+        seatsCancelledTxt.setBounds(180, 520, 160, 40);
 
-        jTextField4.setText("120");
-        jPanel1.add(jTextField4);
-        jTextField4.setBounds(240, 490, 110, 26);
+        seatsBookedTxt.setText("120");
+        jPanel1.add(seatsBookedTxt);
+        seatsBookedTxt.setBounds(180, 470, 160, 40);
 
         jPanel2.setBackground(new java.awt.Color(102, 102, 102));
         jPanel2.setLayout(null);
@@ -208,62 +297,75 @@ public class AdminHome extends javax.swing.JFrame {
         });
         jMenuBar1.add(adminExitMenu);
 
+        adminLogoutMenu.setText("Logout");
+        adminLogoutMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                adminLogoutMenuMouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(adminLogoutMenu);
+
         setJMenuBar(jMenuBar1);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void viewMoviesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewMoviesButtonActionPerformed
+        Function.goToAdminMoviesScreen(UserID);
+        this.setVisible(false);
+    }//GEN-LAST:event_viewMoviesButtonActionPerformed
+
+    private void viewUsersButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewUsersButtonActionPerformed
+        Function.goToAdminUserScreen(UserID);
+        this.setVisible(false);
+    }//GEN-LAST:event_viewUsersButtonActionPerformed
+
+    private void viewProfileButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewProfileButtonActionPerformed
+        Function.goToAdminUserScreen(UserID);
+        this.setVisible(false);
+    }//GEN-LAST:event_viewProfileButtonActionPerformed
+
+    private void adminHomeMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminHomeMenuMouseClicked
+        Function.goToAdminHome(UserID);
+        this.setVisible(false);
+    }//GEN-LAST:event_adminHomeMenuMouseClicked
+
     private void adminReportsMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminReportsMenuMouseClicked
-        Function.goToReportScreen();
+        Function.goToReportScreen(UserID);
         this.setVisible(false);
     }//GEN-LAST:event_adminReportsMenuMouseClicked
 
-    private void adminHomeMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminHomeMenuMouseClicked
-       Function.goToAdminHome();
-       this.setVisible(false);
-    }//GEN-LAST:event_adminHomeMenuMouseClicked
-
     private void adminMoviesMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminMoviesMenuMouseClicked
-       Function.goToAdminMoviesScreen();
-       this.setVisible(false);
+        Function.goToAdminMoviesScreen(UserID);
+        this.setVisible(false);
     }//GEN-LAST:event_adminMoviesMenuMouseClicked
 
     private void adminUsersMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminUsersMenuMouseClicked
-       Function.goToAdminUserScreen();
-       this.setVisible(false);
+        Function.goToAdminUserScreen(UserID);
+        this.setVisible(false);
     }//GEN-LAST:event_adminUsersMenuMouseClicked
 
     private void adminProfileMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminProfileMenuMouseClicked
-        Function.goToAdminUserScreen();
+        Function.goToAdminUserScreen(UserID);
         this.setVisible(false);
     }//GEN-LAST:event_adminProfileMenuMouseClicked
 
     private void adminHelpMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminHelpMenuMouseClicked
-        Function.goToAdminHelpScreen();
+        Function.goToAdminHelpScreen(UserID);
         this.setVisible(false);
     }//GEN-LAST:event_adminHelpMenuMouseClicked
 
     private void adminExitMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminExitMenuMouseClicked
-       int choice  = JOptionPane.showConfirmDialog(rootPane, "Are you sure you want to exit?");
-       if(choice == 0){
-           System.exit(0);
-       }
+        int choice = JOptionPane.showConfirmDialog(rootPane, "Are you sure you want to exit?");
+        if (choice == 0) {
+            System.exit(0);
+        }
     }//GEN-LAST:event_adminExitMenuMouseClicked
 
-    private void viewMoviesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewMoviesButtonActionPerformed
-       Function.goToAdminMoviesScreen();
-       this.setVisible(false);
-    }//GEN-LAST:event_viewMoviesButtonActionPerformed
-
-    private void viewUsersButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewUsersButtonActionPerformed
-      Function.goToAdminUserScreen();
-      this.setVisible(false);
-    }//GEN-LAST:event_viewUsersButtonActionPerformed
-
-    private void viewProfileButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewProfileButtonActionPerformed
-      Function.goToAdminUserScreen();
-      this.setVisible(false);
-    }//GEN-LAST:event_viewProfileButtonActionPerformed
+    private void adminLogoutMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminLogoutMenuMouseClicked
+        new Screen1Home().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_adminLogoutMenuMouseClicked
 
     /**
      * @param args the command line arguments
@@ -294,22 +396,24 @@ public class AdminHome extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
-                new AdminHome().setVisible(true);
+                new AdminHome(UserID).setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField TotalSalesTxt;
     private javax.swing.JMenu adminExitMenu;
     private javax.swing.JMenu adminHelpMenu;
     private javax.swing.JMenu adminHomeMenu;
+    private javax.swing.JMenu adminLogoutMenu;
     private javax.swing.JMenu adminMoviesMenu;
     private javax.swing.JMenu adminProfileMenu;
     private javax.swing.JMenu adminReportsMenu;
     private javax.swing.JMenu adminUsersMenu;
     private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
@@ -321,9 +425,9 @@ public class AdminHome extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JLabel lblWelcome;
+    private javax.swing.JTextField seatsBookedTxt;
+    private javax.swing.JTextField seatsCancelledTxt;
     private javax.swing.JButton viewMoviesButton;
     private javax.swing.JButton viewProfileButton;
     private javax.swing.JButton viewUsersButton;
