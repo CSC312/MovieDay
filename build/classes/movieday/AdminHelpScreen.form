@@ -15,7 +15,6 @@
         <Menu class="javax.swing.JMenu" name="adminReportsMenu">
           <Properties>
             <Property name="text" type="java.lang.String" value="Reports"/>
-            <Property name="toolTipText" type="java.lang.String" value=""/>
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="adminReportsMenuMouseClicked"/>
@@ -59,6 +58,14 @@
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="adminExitMenuMouseClicked"/>
+          </Events>
+        </Menu>
+        <Menu class="javax.swing.JMenu" name="adminLogoutMenu">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Logout"/>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="adminLogoutMenuMouseClicked"/>
           </Events>
         </Menu>
       </SubComponents>

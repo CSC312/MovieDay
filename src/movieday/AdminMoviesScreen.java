@@ -5,6 +5,7 @@
  */
 package movieday;
 
+import UserPages.Screen1Home;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.DriverManager;
@@ -69,25 +70,30 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
 
     //Databases Variables
     String jdbcDriver = "com.mysql.jdbc.Driver";
-    String dbUrl = "jdbc:mysql://localhost:8889/";
+    String dbUrl = "jdbc:mysql://localhost:8889/MovieDay";
     String dbUserID = "root";
     String dbPassword = "root";
+    
+    static int UserID;
 
     ResultSet res;
     Connection c;
     ResultSetMetaData meta;
     DefaultTableModel model;
 
-    public AdminMoviesScreen() {
+    Function funct = new Function();
+
+    public AdminMoviesScreen(int usrID) {
         initComponents();
         this.setLocationRelativeTo(null);
+        UserID = usrID;
 
         //Code to retrieve data from database and populate Fields
         try {
             Class.forName(jdbcDriver);
             c = DriverManager.getConnection("jdbc:mysql://localhost:8889/MovieDay", dbUserID, dbPassword);
 
-            // The SQL SELECT query. 
+            // The SQL SELECT query.
             // if you only need a few columns, specify them by name instead of using "*"
             String query = "SELECT * FROM Movie WHERE Movie.MovieID = 1";
 
@@ -190,6 +196,7 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
             PreparedStatement statement = c.prepareStatement("SELECT r.ReservationID AS `Reservation ID`,\n"
                     + "u.Email AS `Email`,\n"
                     + "m.Title AS `Movie`,\n"
+                    + "s.SeatID AS `Seat Number`,\n"
                     + "ms.ShowID AS `Show`\n"
                     + "FROM Reservation r\n"
                     + "LEFT JOIN Seat s\n"
@@ -200,49 +207,22 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
                     + "ON u.UserID = r.UserID\n"
                     + "LEFT JOIN MovieShow ms\n"
                     + "ON ms.ShowID = r.ShowID\n"
-                    + "GROUP BY r.ReservationID\n");
+                    + "GROUP BY r.ReservationID");
             res = statement.executeQuery();
             meta = res.getMetaData();
             // It creates and displays the table
-            model = buildTableModel(res);
+            model = funct.buildTableModel(res);
             reservationsTable.setModel(model);
             // Closes the Connection
             //JOptionPane.showMessageDialog(null, new JScrollPane(reservationsTable));
 
-            c.close();
-
+            //c.close();
         } catch (ClassNotFoundException exp) {
             System.err.println("Could not load the JDBC driver " + jdbcDriver);
             return;
         } catch (SQLException ex) {
             Logger.getLogger(AdminMoviesScreen.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }
-
-    public static DefaultTableModel buildTableModel(ResultSet rs)
-            throws SQLException {
-
-        ResultSetMetaData metaData = rs.getMetaData();
-
-        // names of columns
-        Vector<String> columnNames = new Vector<String>();
-        int columnCount = metaData.getColumnCount();
-        for (int column = 1; column <= columnCount; column++) {
-            columnNames.add(metaData.getColumnName(column));
-        }
-
-        // data of the table
-        Vector<Vector<Object>> data = new Vector<Vector<Object>>();
-        while (rs.next()) {
-            Vector<Object> vector = new Vector<Object>();
-            for (int columnIndex = 1; columnIndex <= columnCount; columnIndex++) {
-                vector.add(rs.getObject(columnIndex));
-            }
-            data.add(vector);
-        }
-
-        return new DefaultTableModel(data, columnNames);
-
     }
 
     /**
@@ -367,9 +347,10 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
         reservationsTable = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         jLabel47 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        emailTxt = new javax.swing.JTextField();
+        btnSearchReservation = new javax.swing.JButton();
+        btnDeleteReservation = new javax.swing.JButton();
+        btnClearAll = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         adminHomeMenu = new javax.swing.JMenu();
         adminReportsMenu = new javax.swing.JMenu();
@@ -378,6 +359,7 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
         adminProfileMenu = new javax.swing.JMenu();
         adminHelpMenu = new javax.swing.JMenu();
         adminExitMenu = new javax.swing.JMenu();
+        adminLogoutMenu = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBounds(new java.awt.Rectangle(0, 0, 960, 770));
@@ -387,6 +369,9 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(960, 770));
         getContentPane().setLayout(null);
 
+        jTabbedPane1.setBackground(new java.awt.Color(51, 51, 51));
+
+        show1.setBackground(new java.awt.Color(51, 51, 51));
         show1.setLayout(null);
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
@@ -487,6 +472,7 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
         show1.add(jPanel4);
         jPanel4.setBounds(600, 20, 300, 620);
 
+        jPanel5.setBackground(new java.awt.Color(153, 153, 153));
         jPanel5.setLayout(null);
 
         s1m2Image.setIcon(new javax.swing.ImageIcon(getClass().getResource("/movieday/images/Folder.jpg"))); // NOI18N
@@ -543,8 +529,10 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Show 1-15:00", show1);
 
+        show2.setBackground(new java.awt.Color(51, 51, 51));
         show2.setLayout(null);
 
+        jPanel6.setBackground(new java.awt.Color(51, 51, 51));
         jPanel6.setLayout(null);
 
         jPanel7.setBackground(new java.awt.Color(255, 255, 255));
@@ -625,6 +613,7 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
         jPanel6.add(jPanel8);
         jPanel8.setBounds(600, 20, 300, 620);
 
+        jPanel9.setBackground(new java.awt.Color(153, 153, 153));
         jPanel9.setLayout(null);
 
         jLabel28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/movieday/images/Folder.jpg"))); // NOI18N
@@ -677,8 +666,10 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Show 2-17:00", show2);
 
+        show3.setBackground(new java.awt.Color(51, 51, 51));
         show3.setLayout(null);
 
+        jPanel11.setBackground(new java.awt.Color(51, 51, 51));
         jPanel11.setLayout(null);
 
         jPanel12.setBackground(new java.awt.Color(255, 255, 255));
@@ -759,6 +750,7 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
         jPanel11.add(jPanel13);
         jPanel13.setBounds(600, 20, 300, 620);
 
+        jPanel14.setBackground(new java.awt.Color(153, 153, 153));
         jPanel14.setLayout(null);
 
         jLabel42.setIcon(new javax.swing.ImageIcon(getClass().getResource("/movieday/images/Folder.jpg"))); // NOI18N
@@ -773,6 +765,7 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
         jPanel14.add(jLabel44);
         jLabel44.setBounds(40, 320, 50, 30);
 
+        jLabel45.setBackground(new java.awt.Color(255, 255, 255));
         jLabel45.setText("Title");
         jPanel14.add(jLabel45);
         jLabel45.setBounds(40, 280, 50, 40);
@@ -798,7 +791,7 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
         jPanel14.setBounds(300, 20, 300, 620);
 
         show3.add(jPanel11);
-        jPanel11.setBounds(0, 0, 920, 650);
+        jPanel11.setBounds(0, 0, 940, 650);
 
         s3SaveChangesButton.setText("Save Changes");
         s3SaveChangesButton.addActionListener(new java.awt.event.ActionListener() {
@@ -822,24 +815,38 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
         manageReservations.add(jLabel1);
         jLabel1.setBounds(30, 60, 230, 40);
 
-        jLabel47.setText("Search");
+        jLabel47.setText("Search By Email");
         manageReservations.add(jLabel47);
-        jLabel47.setBounds(40, 110, 60, 40);
-        manageReservations.add(jTextField1);
-        jTextField1.setBounds(100, 110, 120, 40);
+        jLabel47.setBounds(40, 110, 120, 40);
+        manageReservations.add(emailTxt);
+        emailTxt.setBounds(140, 110, 160, 40);
 
-        jButton4.setText("Go");
-        manageReservations.add(jButton4);
-        jButton4.setBounds(230, 110, 90, 40);
-
-        jButton5.setText("Delete Selected");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        btnSearchReservation.setText("Go");
+        btnSearchReservation.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                btnSearchReservationActionPerformed(evt);
             }
         });
-        manageReservations.add(jButton5);
-        jButton5.setBounds(30, 440, 150, 50);
+        manageReservations.add(btnSearchReservation);
+        btnSearchReservation.setBounds(320, 110, 90, 40);
+
+        btnDeleteReservation.setText("Delete Selected");
+        btnDeleteReservation.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteReservationActionPerformed(evt);
+            }
+        });
+        manageReservations.add(btnDeleteReservation);
+        btnDeleteReservation.setBounds(30, 440, 150, 50);
+
+        btnClearAll.setText("Clear All");
+        btnClearAll.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClearAllActionPerformed(evt);
+            }
+        });
+        manageReservations.add(btnClearAll);
+        btnClearAll.setBounds(410, 110, 150, 40);
 
         jTabbedPane1.addTab("Manage Reservations", manageReservations);
 
@@ -902,57 +909,63 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
         });
         jMenuBar1.add(adminExitMenu);
 
+        adminLogoutMenu.setText("Logout");
+        adminLogoutMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                adminLogoutMenuMouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(adminLogoutMenu);
+
         setJMenuBar(jMenuBar1);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void btnDeleteReservationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteReservationActionPerformed
         int row = reservationsTable.getSelectedRow();
+        int selected = Integer.parseInt(model.getValueAt(row, 0).toString());
+        //System.out.println(selected);
         model.removeRow(row);
-        String selected = model.getValueAt(row, 0).toString();
-        System.out.println(selected);
-        /*
+
         String sql = "delete from reservation where ReservationID= ?";
-        PreparedStatement stmt = null;
         try {
-            stmt = c.prepareStatement(sql);
+            PreparedStatement stmt = c.prepareStatement(sql);
             stmt.setInt(1, selected);
             stmt.executeUpdate();
         } catch (SQLException ex) {
             Logger.getLogger(AdminMoviesScreen.class.getName()).log(Level.SEVERE, null, ex);
         }
-         */
         JOptionPane.showMessageDialog(rootPane, "Reservations Deleted Successfully.");
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_btnDeleteReservationActionPerformed
 
     private void adminHomeMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminHomeMenuMouseClicked
-        Function.goToAdminHome();
+        Function.goToAdminHome(UserID);
         this.setVisible(false);
     }//GEN-LAST:event_adminHomeMenuMouseClicked
 
     private void adminReportsMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminReportsMenuMouseClicked
-        Function.goToReportScreen();
+        Function.goToReportScreen(UserID);
         this.setVisible(false);
     }//GEN-LAST:event_adminReportsMenuMouseClicked
 
     private void adminMoviesMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminMoviesMenuMouseClicked
-        Function.goToAdminMoviesScreen();
+        Function.goToAdminMoviesScreen(UserID);
         this.setVisible(false);
     }//GEN-LAST:event_adminMoviesMenuMouseClicked
 
     private void adminUsersMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminUsersMenuMouseClicked
-        Function.goToAdminUserScreen();
+        Function.goToAdminUserScreen(UserID);
         this.setVisible(false);
     }//GEN-LAST:event_adminUsersMenuMouseClicked
 
     private void adminProfileMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminProfileMenuMouseClicked
-        Function.goToAdminUserScreen();
+        Function.goToAdminUserScreen(UserID);
         this.setVisible(false);
     }//GEN-LAST:event_adminProfileMenuMouseClicked
 
     private void adminHelpMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminHelpMenuMouseClicked
-        Function.goToAdminHelpScreen();
+        Function.goToAdminHelpScreen(UserID);
         this.setVisible(false);
     }//GEN-LAST:event_adminHelpMenuMouseClicked
 
@@ -1192,6 +1205,72 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_s3SaveChangesButtonActionPerformed
 
+    private void btnSearchReservationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchReservationActionPerformed
+        String email = emailTxt.getText();
+        // the mysql insert statement
+        String query = "SELECT r.ReservationID AS `Reservation ID`,\n"
+                + "u.Email AS `Email`,\n"
+                + "m.Title AS `Movie`,\n"
+                + "ms.ShowID AS `Show`\n"
+                + "FROM Reservation r\n"
+                + "LEFT JOIN Movie m\n"
+                + "ON m.MovieID = r.MovieID\n"
+                + "LEFT JOIN `User` u\n"
+                + "ON u.UserID = r.UserID\n"
+                + "LEFT JOIN MovieShow ms\n"
+                + "ON ms.ShowID = r.ShowID\n"
+                + "WHERE u.Email = ?";
+
+        //Repopulate Reservations Table
+        PreparedStatement statement;
+        try {
+            statement = c.prepareStatement(query);
+            statement.setString(1, email);
+            res = statement.executeQuery();
+            // It creates and displays the table
+            model = funct.buildTableModel(res);
+            reservationsTable.setModel(model);
+        } catch (SQLException ex) {
+            Logger.getLogger(AdminMoviesScreen.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }//GEN-LAST:event_btnSearchReservationActionPerformed
+
+    private void btnClearAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearAllActionPerformed
+        //Populate Reservations Table
+        PreparedStatement statement;
+        try {
+            statement = c.prepareStatement("SELECT r.ReservationID AS `Reservation ID`,\n"
+                    + "u.Email AS `Email`,\n"
+                    + "m.Title AS `Movie`,\n"
+                    + "ms.ShowID AS `Show`\n"
+                    + "FROM Reservation r\n"
+                    + "LEFT JOIN Seat s\n"
+                    + "ON s.SeatID = r.SeatID\n"
+                    + "LEFT JOIN Movie m\n"
+                    + "ON m.MovieID = r.MovieID\n"
+                    + "LEFT JOIN `User` u\n"
+                    + "ON u.UserID = r.UserID\n"
+                    + "LEFT JOIN MovieShow ms\n"
+                    + "ON ms.ShowID = r.ShowID\n"
+                    + "GROUP BY r.ReservationID\n");
+            res = statement.executeQuery();
+            meta = res.getMetaData();
+            // It creates and displays the table
+            model = funct.buildTableModel(res);
+            reservationsTable.setModel(model);
+            // Closes the Connection
+        } catch (SQLException ex) {
+            Logger.getLogger(AdminMoviesScreen.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }//GEN-LAST:event_btnClearAllActionPerformed
+
+    private void adminLogoutMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminLogoutMenuMouseClicked
+        new Screen1Home().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_adminLogoutMenuMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -1222,7 +1301,7 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AdminMoviesScreen().setVisible(true);
+                new AdminMoviesScreen(UserID).setVisible(true);
             }
         });
     }
@@ -1231,12 +1310,15 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
     private javax.swing.JMenu adminExitMenu;
     private javax.swing.JMenu adminHelpMenu;
     private javax.swing.JMenu adminHomeMenu;
+    private javax.swing.JMenu adminLogoutMenu;
     private javax.swing.JMenu adminMoviesMenu;
     private javax.swing.JMenu adminProfileMenu;
     private javax.swing.JMenu adminReportsMenu;
     private javax.swing.JMenu adminUsersMenu;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
+    private javax.swing.JButton btnClearAll;
+    private javax.swing.JButton btnDeleteReservation;
+    private javax.swing.JButton btnSearchReservation;
+    private javax.swing.JTextField emailTxt;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1304,7 +1386,6 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JPanel manageReservations;
     private javax.swing.JTable reservationsTable;
     private javax.swing.JButton s1Savechanges;

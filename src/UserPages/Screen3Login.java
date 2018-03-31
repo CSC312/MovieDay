@@ -6,16 +6,36 @@
 package UserPages;
 
 import java.awt.Color;
+import java.awt.HeadlessException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import movieday.AdminMoviesScreen;
+import movieday.Function;
 
 /**
  *
  * @author Nino
  */
 public class Screen3Login extends javax.swing.JFrame {
+
     String username = "";
     String password = "";
-    char[] pass = null;
+
+    //Databases Variables
+    String jdbcDriver = "com.mysql.jdbc.Driver";
+    String dbUrl = "jdbc:mysql://localhost:8889/MovieDay";
+    String dbUserID = "root";
+    String dbPassword = "root";
+
+    ResultSet res;
+    Connection c;
 
     public Screen3Login() {
         initComponents();
@@ -25,7 +45,7 @@ public class Screen3Login extends javax.swing.JFrame {
         btnExit.setBackground(Color.blue);
         btnHome.setBackground(Color.blue);
         btnCreateAcc.setBackground(Color.blue);
-        
+
         btnClear.setForeground(Color.white);
         btnLogin.setForeground(Color.white);
         btnExit.setForeground(Color.white);
@@ -50,10 +70,11 @@ public class Screen3Login extends javax.swing.JFrame {
         txfUsername = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         pwfPassword = new javax.swing.JPasswordField();
-        btnClear = new javax.swing.JButton();
-        btnHome = new javax.swing.JButton();
-        btnExit = new javax.swing.JButton();
+        cbxLogInAdmin = new java.awt.Checkbox();
         jPanel1 = new javax.swing.JPanel();
+        btnExit = new javax.swing.JButton();
+        btnHome = new javax.swing.JButton();
+        btnClear = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         mnuCreateAccount = new javax.swing.JMenuItem();
@@ -67,15 +88,18 @@ public class Screen3Login extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Login");
         setBackground(new java.awt.Color(51, 51, 51));
-        setMaximumSize(new java.awt.Dimension(487, 283));
-        setMinimumSize(new java.awt.Dimension(487, 283));
+        setBounds(new java.awt.Rectangle(0, 0, 580, 430));
+        setMinimumSize(new java.awt.Dimension(580, 430));
         setName("Login"); // NOI18N
-        setPreferredSize(new java.awt.Dimension(487, 283));
+        setPreferredSize(new java.awt.Dimension(580, 430));
         setResizable(false);
         getContentPane().setLayout(null);
 
         jPanel2.setBackground(new java.awt.Color(51, 51, 51));
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Login details", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Lucida Grande", 0, 13), new java.awt.Color(255, 255, 255))); // NOI18N
+        jPanel2.setMaximumSize(new java.awt.Dimension(570, 340));
+        jPanel2.setMinimumSize(new java.awt.Dimension(570, 340));
+        jPanel2.setPreferredSize(new java.awt.Dimension(570, 230));
         jPanel2.setLayout(null);
 
         btnLogin.setBackground(new java.awt.Color(51, 102, 255));
@@ -88,7 +112,7 @@ public class Screen3Login extends javax.swing.JFrame {
             }
         });
         jPanel2.add(btnLogin);
-        btnLogin.setBounds(100, 120, 100, 29);
+        btnLogin.setBounds(90, 180, 100, 40);
 
         jLabel5.setBackground(new java.awt.Color(0, 51, 255));
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -99,7 +123,7 @@ public class Screen3Login extends javax.swing.JFrame {
             }
         });
         jPanel2.add(jLabel5);
-        jLabel5.setBounds(260, 90, 110, 16);
+        jLabel5.setBounds(260, 110, 120, 20);
 
         btnCreateAcc.setBackground(new java.awt.Color(51, 102, 255));
         btnCreateAcc.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
@@ -111,56 +135,42 @@ public class Screen3Login extends javax.swing.JFrame {
             }
         });
         jPanel2.add(btnCreateAcc);
-        btnCreateAcc.setBounds(210, 120, 162, 29);
+        btnCreateAcc.setBounds(210, 180, 162, 40);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Username:");
+        jLabel3.setText("Email:");
         jPanel2.add(jLabel3);
-        jLabel3.setBounds(100, 30, 90, 17);
+        jLabel3.setBounds(100, 20, 90, 30);
 
         txfUsername.setBackground(new java.awt.Color(0, 0, 0));
         txfUsername.setForeground(new java.awt.Color(255, 255, 255));
         jPanel2.add(txfUsername);
-        txfUsername.setBounds(200, 19, 163, 30);
+        txfUsername.setBounds(200, 19, 180, 40);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Password:");
         jPanel2.add(jLabel4);
-        jLabel4.setBounds(100, 70, 90, 17);
+        jLabel4.setBounds(100, 77, 90, 20);
 
         pwfPassword.setBackground(new java.awt.Color(0, 0, 0));
         pwfPassword.setForeground(new java.awt.Color(255, 255, 255));
         jPanel2.add(pwfPassword);
-        pwfPassword.setBounds(200, 60, 163, 30);
+        pwfPassword.setBounds(200, 70, 180, 40);
+
+        cbxLogInAdmin.setForeground(new java.awt.Color(255, 255, 255));
+        cbxLogInAdmin.setLabel("Log in as an Admin");
+        jPanel2.add(cbxLogInAdmin);
+        cbxLogInAdmin.setBounds(200, 140, 160, 30);
 
         getContentPane().add(jPanel2);
-        jPanel2.setBounds(12, 20, 460, 160);
+        jPanel2.setBounds(12, 20, 560, 230);
 
-        btnClear.setBackground(new java.awt.Color(51, 102, 255));
-        btnClear.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        btnClear.setForeground(new java.awt.Color(255, 255, 255));
-        btnClear.setText("Clear");
-        btnClear.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnClearActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnClear);
-        btnClear.setBounds(10, 190, 80, 29);
-
-        btnHome.setBackground(new java.awt.Color(51, 102, 255));
-        btnHome.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        btnHome.setForeground(new java.awt.Color(255, 255, 255));
-        btnHome.setText("Home");
-        btnHome.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnHomeActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnHome);
-        btnHome.setBounds(340, 190, 73, 29);
+        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel1.setMinimumSize(new java.awt.Dimension(580, 340));
+        jPanel1.setPreferredSize(new java.awt.Dimension(570, 410));
+        jPanel1.setLayout(null);
 
         btnExit.setBackground(new java.awt.Color(51, 102, 255));
         btnExit.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
@@ -171,12 +181,35 @@ public class Screen3Login extends javax.swing.JFrame {
                 btnExitActionPerformed(evt);
             }
         });
-        getContentPane().add(btnExit);
-        btnExit.setBounds(420, 190, 75, 29);
+        jPanel1.add(btnExit);
+        btnExit.setBounds(420, 270, 75, 40);
 
-        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
+        btnHome.setBackground(new java.awt.Color(51, 102, 255));
+        btnHome.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        btnHome.setForeground(new java.awt.Color(255, 255, 255));
+        btnHome.setText("Home");
+        btnHome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHomeActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnHome);
+        btnHome.setBounds(340, 270, 73, 40);
+
+        btnClear.setBackground(new java.awt.Color(51, 102, 255));
+        btnClear.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        btnClear.setForeground(new java.awt.Color(255, 255, 255));
+        btnClear.setText("Clear");
+        btnClear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClearActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnClear);
+        btnClear.setBounds(10, 270, 80, 40);
+
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(0, 0, 490, 270);
+        jPanel1.setBounds(0, 0, 580, 410);
 
         jMenu1.setText("Menu");
 
@@ -223,39 +256,72 @@ public class Screen3Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
-        
-        try{
-            pass=null;
+        char[] pass = null;
+        password = "";
+        try {
+            pass = null;
             username = "";
             pass = pwfPassword.getPassword();
-            for(int i = 0; i < pass.length;i++){ password += pass[i];}
+            for (int i = 0; i < pass.length; i++) {
+                password += pass[i];
+            }
 
             username = txfUsername.getText();
 
-            if(!(username.equals("")) || !(password.equals(""))){
-                /*if(Screen3LoginGUI.login(username, password)==true){
-                    Screen3LoginGUI objNewJ = new Screen3LoginGUI();
-                    JOptionPane.showMessageDialog(rootPane, "Successfully logged in!");
-                    //lbl1.setText(learnerID);
-                    //lbl2.setText(parentID);
-                    new Screen4WelcomeScreenGUI().setVisible(true);
-                    dispose();
-                    this.setVisible(false);
+            if ((!(username.equals("")) || !(password.equals(""))) && cbxLogInAdmin.getState()==false) {
 
-                }else{
-                    JOptionPane.showMessageDialog(rootPane,"Username or password incorrect!");
-                }*/
-            }else{
-                JOptionPane.showMessageDialog(rootPane,"Please enter username and password!");
+                Class.forName(jdbcDriver);
+                c = new Function().getConnection();
+
+                String query = "SELECT * FROM `User` WHERE Email = \""
+                        + username
+                        + "\" AND Password = \""
+                        + password
+                        + "\"\n";
+                PreparedStatement preparedStmt = c.prepareStatement(query);
+                ResultSet rs = preparedStmt.executeQuery(query);
+                // iterate through the java resultset
+                if (rs.next() == false) {
+                    JOptionPane.showMessageDialog(rootPane, "Incorrect Email and Password Combination!");
+                    c.close();
+                } else {
+                    new Screen4_MovieReservations(rs.getInt("UserID")).setVisible(true);
+                    this.setVisible(false);
+                }
             }
-        }catch(StringIndexOutOfBoundsException string){
-            JOptionPane.showMessageDialog(rootPane,"Please fill in all the fields correctly", "Error", JOptionPane.ERROR_MESSAGE);
-        }catch(Exception ex){
-            JOptionPane.showMessageDialog(rootPane,"Please provide data of correct data type in all fields", "Error", JOptionPane.ERROR_MESSAGE);
+            else if((!(username.equals("")) || !(password.equals(""))) && cbxLogInAdmin.getState()==true){
+                
+                Class.forName(jdbcDriver);
+                c = new Function().getConnection();
+
+                String query = "SELECT * FROM `Admin` WHERE Email = \""
+                        + username
+                        + "\" AND Password = \""
+                        + password
+                        + "\"\n";
+                PreparedStatement preparedStmt = c.prepareStatement(query);
+                ResultSet rs = preparedStmt.executeQuery(query);
+                // iterate through the java resultset
+                if (rs.next() == false) {
+                    JOptionPane.showMessageDialog(rootPane, "Incorrect Email and Password Combination!");
+                    c.close();
+                } else {
+                    //System.out.println("Admin ID"+rs.getInt("UserID"));
+                    Function.goToAdminHome(rs.getInt("UserID"));
+                    this.setVisible(false);
+                }
+            }
+            else {
+                JOptionPane.showMessageDialog(rootPane, "Please enter username and password!");
+            }
+        } catch (StringIndexOutOfBoundsException string) {
+            JOptionPane.showMessageDialog(rootPane, "Please fill in all the fields correctly", "Error", JOptionPane.ERROR_MESSAGE);
+        } catch (HeadlessException | ClassNotFoundException ex) {
+            JOptionPane.showMessageDialog(rootPane, "Please provide data of correct data type in all fields", "Error", JOptionPane.ERROR_MESSAGE);
+        } catch (SQLException ex) {
+            Logger.getLogger(Screen3Login.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        new Screen4_MovieReservations().setVisible(true);
-        this.setVisible(false);
+
     }//GEN-LAST:event_btnLoginActionPerformed
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
@@ -341,6 +407,7 @@ public class Screen3Login extends javax.swing.JFrame {
     private javax.swing.JButton btnExit;
     private javax.swing.JButton btnHome;
     private javax.swing.JButton btnLogin;
+    private java.awt.Checkbox cbxLogInAdmin;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

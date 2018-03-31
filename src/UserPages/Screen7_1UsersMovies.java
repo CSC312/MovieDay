@@ -66,44 +66,44 @@ public class Screen7_1UsersMovies extends javax.swing.JFrame {
         getContentPane().setLayout(null);
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "About Movie", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 11), new java.awt.Color(255, 255, 255))); // NOI18N
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "About Movie", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Lucida Grande", 0, 13), new java.awt.Color(255, 255, 255))); // NOI18N
         jPanel1.setLayout(null);
 
         lblLength.setForeground(new java.awt.Color(255, 255, 255));
         lblLength.setText("Length");
         jPanel1.add(lblLength);
-        lblLength.setBounds(17, 113, 280, 15);
+        lblLength.setBounds(17, 113, 280, 16);
 
         lblMovie.setForeground(new java.awt.Color(255, 255, 255));
         lblMovie.setText("Movie name");
         jPanel1.add(lblMovie);
-        lblMovie.setBounds(17, 29, 280, 15);
+        lblMovie.setBounds(17, 29, 280, 16);
 
         lblSeats.setForeground(new java.awt.Color(255, 255, 255));
         lblSeats.setText("Your seats");
         jPanel1.add(lblSeats);
-        lblSeats.setBounds(17, 134, 280, 15);
+        lblSeats.setBounds(17, 134, 280, 16);
 
         lblTime.setForeground(new java.awt.Color(255, 255, 255));
         lblTime.setText("Time(s)");
         jPanel1.add(lblTime);
-        lblTime.setBounds(17, 50, 280, 15);
+        lblTime.setBounds(17, 50, 280, 16);
 
         lblGenre.setForeground(new java.awt.Color(255, 255, 255));
         lblGenre.setText("Genre(s)");
         jPanel1.add(lblGenre);
-        lblGenre.setBounds(17, 71, 280, 15);
+        lblGenre.setBounds(17, 71, 280, 16);
 
         lblYear.setForeground(new java.awt.Color(255, 255, 255));
         lblYear.setText("Year");
         jPanel1.add(lblYear);
-        lblYear.setBounds(17, 92, 280, 15);
+        lblYear.setBounds(17, 92, 280, 16);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(210, 20, 310, 170);
 
         jPanel2.setBackground(new java.awt.Color(51, 51, 51));
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Movie List", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 11), new java.awt.Color(255, 255, 255))); // NOI18N
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Movie List", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Lucida Grande", 0, 13), new java.awt.Color(255, 255, 255))); // NOI18N
         jPanel2.setLayout(null);
 
         lstMovieList.setModel(new javax.swing.AbstractListModel() {
@@ -122,17 +122,17 @@ public class Screen7_1UsersMovies extends javax.swing.JFrame {
         btnBack.setForeground(new java.awt.Color(255, 255, 255));
         btnBack.setText("Back");
         getContentPane().add(btnBack);
-        btnBack.setBounds(370, 240, 70, 25);
+        btnBack.setBounds(370, 240, 70, 29);
 
         btnCancelRes.setForeground(new java.awt.Color(255, 255, 255));
         btnCancelRes.setText("Cancel Reservation");
         getContentPane().add(btnCancelRes);
-        btnCancelRes.setBounds(370, 200, 150, 25);
+        btnCancelRes.setBounds(370, 200, 150, 29);
 
         btnExit.setForeground(new java.awt.Color(255, 255, 255));
         btnExit.setText("Exit");
         getContentPane().add(btnExit);
-        btnExit.setBounds(460, 240, 60, 25);
+        btnExit.setBounds(460, 240, 60, 29);
 
         jPanel3.setBackground(new java.awt.Color(51, 51, 51));
         getContentPane().add(jPanel3);

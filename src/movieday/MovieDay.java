@@ -4,6 +4,7 @@
 package movieday;
 
 import UserPages.Screen1Home;
+import UserPages.Screen3Login;
 
 /**
  *
@@ -18,6 +19,6 @@ public class MovieDay {
         //new AdminHome().setVisible(true);
         
         new Function().initDatabase();
-        //new Screen1Home().setVisible(true);
+        new UserPages.Screen3Login().setVisible(true);
     }   
 }

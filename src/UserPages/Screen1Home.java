@@ -3,7 +3,7 @@ package UserPages;
 import movieday.AdminHome;
 
 public class Screen1Home extends javax.swing.JFrame {
-
+    static int UserID;
     public Screen1Home() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -190,7 +190,7 @@ public class Screen1Home extends javax.swing.JFrame {
     }//GEN-LAST:event_mnuSignInActionPerformed
 
     private void mnnuSignInAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnnuSignInAdminActionPerformed
-        new AdminHome().setVisible(true);
+        new Screen3Login().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_mnnuSignInAdminActionPerformed
 

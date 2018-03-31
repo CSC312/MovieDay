@@ -5,7 +5,19 @@
  */
 package movieday;
 
+import UserPages.Screen1Home;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Arrays;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -16,9 +28,73 @@ public class AdminUsersScreen extends javax.swing.JFrame {
     /**
      * Creates new form AdminUsersScreen
      */
-    public AdminUsersScreen() {
+    String name, surname, email, password;
+    //Databases Variables
+    String jdbcDriver = "com.mysql.jdbc.Driver";
+    String dbUrl = "jdbc:mysql://localhost:8889/MovieDay";
+    String dbUserID = "root";
+    String dbPassword = "root";
+
+    static int AdminID ;
+
+    ResultSet res;
+    Connection c;
+    ResultSetMetaData meta;
+    DefaultTableModel model;
+
+    Function funct = new Function();
+
+    public AdminUsersScreen(int usrID) {
         initComponents();
         this.setLocationRelativeTo(null);
+        AdminID = usrID;
+        lblEmailError.setVisible(false);
+        lblPasswordError.setVisible(false);
+
+        //Code to retrieve data from database and populate Fields
+        try {
+            Class.forName(jdbcDriver);
+            c = funct.getConnection();
+
+            // The SQL SELECT query.
+            // if you only need a few columns, specify them by name instead of using "*"
+            String query = "SELECT * FROM `Admin` WHERE UserID = "+AdminID;
+
+            // create the java statement
+            PreparedStatement preparedStmt = c.prepareStatement(query);
+            // execute the query, and get a java resultset
+            ResultSet rs = preparedStmt.executeQuery(query);
+            // iterate through the java resultset
+            while (rs.next()) {
+                //int id = rs.getInt("id");
+                txtName.setText(rs.getString("Name"));
+                txtSurname.setText(rs.getString("Surname"));
+                txtEmail.setText(rs.getString("Email"));
+                txtPassword.setText(rs.getString("Password"));
+
+            }
+
+            //Populate Reservations Table
+            PreparedStatement statement = c.prepareStatement("SELECT u.`Name`,\n"
+                    + "u.Surname,\n"
+                    + "u.DateOfBirth,\n"
+                    + "u.Email,\n"
+                    + "u.Password,\n"
+                    + "u.SecQuestionAnswer\n"
+                    + "FROM `User` u");
+            res = statement.executeQuery();
+            meta = res.getMetaData();
+            // It creates and displays the table
+            model = Function.buildTableModel(res);
+            usersTable.setModel(model);
+
+        } catch (ClassNotFoundException exp) {
+            System.err.println("Could not load the JDBC driver " + jdbcDriver);
+            return;
+        } catch (SQLException ex) {
+            Logger.getLogger(AdminMoviesScreen.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }
 
     /**
@@ -35,18 +111,18 @@ public class AdminUsersScreen extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
+        txtPassword = new javax.swing.JPasswordField();
+        txtEmail = new javax.swing.JTextField();
+        txtName = new javax.swing.JTextField();
+        txtSurname = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
+        usersTable = new javax.swing.JTable();
+        btnSaveDetails = new javax.swing.JButton();
+        lblEmailError = new javax.swing.JLabel();
+        lblPasswordError = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         adminHomeMenu = new javax.swing.JMenu();
         adminReportsMenu = new javax.swing.JMenu();
@@ -55,6 +131,7 @@ public class AdminUsersScreen extends javax.swing.JFrame {
         adminProfileMenu = new javax.swing.JMenu();
         adminHelpMenu = new javax.swing.JMenu();
         adminExitMenu = new javax.swing.JMenu();
+        adminLogoutMenu = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBounds(new java.awt.Rectangle(0, 0, 960, 725));
@@ -69,53 +146,45 @@ public class AdminUsersScreen extends javax.swing.JFrame {
 
         jLabel1.setText("My Profile");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(20, 30, 100, 30);
+        jLabel1.setBounds(20, 20, 100, 30);
 
         jLabel2.setText("Last Name");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(20, 110, 70, 20);
+        jLabel2.setBounds(20, 110, 70, 40);
 
         jLabel3.setText("First Name");
         jPanel1.add(jLabel3);
         jLabel3.setBounds(20, 70, 70, 20);
 
-        jLabel4.setText("D.O.B");
-        jPanel1.add(jLabel4);
-        jLabel4.setBounds(20, 150, 60, 20);
-
         jLabel5.setText("Email");
         jPanel1.add(jLabel5);
-        jLabel5.setBounds(20, 190, 70, 20);
+        jLabel5.setBounds(20, 160, 90, 40);
 
         jLabel6.setText("Password");
         jPanel1.add(jLabel6);
-        jLabel6.setBounds(20, 230, 110, 30);
+        jLabel6.setBounds(20, 220, 110, 30);
 
-        jPasswordField1.setText("jPasswordField1");
-        jPanel1.add(jPasswordField1);
-        jPasswordField1.setBounds(130, 230, 160, 30);
+        txtPassword.setText("jPasswordField1");
+        jPanel1.add(txtPassword);
+        txtPassword.setBounds(130, 210, 160, 40);
 
-        jTextField1.setText("mail@mailman.com");
-        jPanel1.add(jTextField1);
-        jTextField1.setBounds(130, 190, 160, 30);
+        txtEmail.setText("mail@mailman.com");
+        jPanel1.add(txtEmail);
+        txtEmail.setBounds(130, 160, 160, 40);
 
-        jTextField2.setText("John");
-        jPanel1.add(jTextField2);
-        jTextField2.setBounds(130, 70, 160, 30);
+        txtName.setText("John");
+        jPanel1.add(txtName);
+        txtName.setBounds(130, 60, 160, 40);
 
-        jTextField3.setText("12/12/2012");
-        jPanel1.add(jTextField3);
-        jTextField3.setBounds(130, 150, 160, 30);
-
-        jTextField4.setText("Doe");
-        jPanel1.add(jTextField4);
-        jTextField4.setBounds(130, 110, 160, 30);
+        txtSurname.setText("Doe");
+        jPanel1.add(txtSurname);
+        txtSurname.setBounds(130, 110, 160, 40);
 
         jLabel7.setText("Registered Users");
         jPanel1.add(jLabel7);
-        jLabel7.setBounds(20, 340, 200, 30);
+        jLabel7.setBounds(20, 350, 200, 30);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        usersTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Kamo", "Matjila", "F", "1996", "kamo@uwc.ac.za", "1234", "IDK"},
                 {"Sive", "Mbiza", "M", "1996", "sive@yahoo.com", "1243", "IDK"},
@@ -134,19 +203,27 @@ public class AdminUsersScreen extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        jScrollPane3.setViewportView(jTable1);
+        jScrollPane3.setViewportView(usersTable);
 
         jPanel1.add(jScrollPane3);
         jScrollPane3.setBounds(20, 390, 680, 270);
 
-        jButton1.setText("Save Details");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnSaveDetails.setText("Save Details");
+        btnSaveDetails.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnSaveDetailsActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1);
-        jButton1.setBounds(130, 280, 160, 40);
+        jPanel1.add(btnSaveDetails);
+        btnSaveDetails.setBounds(130, 270, 160, 40);
+
+        lblEmailError.setForeground(new java.awt.Color(255, 0, 51));
+        jPanel1.add(lblEmailError);
+        lblEmailError.setBounds(310, 170, 330, 30);
+
+        lblPasswordError.setForeground(new java.awt.Color(255, 0, 0));
+        jPanel1.add(lblPasswordError);
+        lblPasswordError.setBounds(320, 220, 320, 30);
 
         jScrollPane1.setViewportView(jPanel1);
 
@@ -209,53 +286,106 @@ public class AdminUsersScreen extends javax.swing.JFrame {
         });
         jMenuBar1.add(adminExitMenu);
 
+        adminLogoutMenu.setText("Logout");
+        adminLogoutMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                adminLogoutMenuMouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(adminLogoutMenu);
+
         setJMenuBar(jMenuBar1);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-         System.out.println("Menu Clicked"); 
-        new AdminHome().setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void btnSaveDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveDetailsActionPerformed
+        name = txtName.getText();
+        surname = txtSurname.getText();
+        email = txtEmail.getText();
+        password = Arrays.toString(txtPassword.getPassword());
+        boolean correctEmailFormat = funct.checkEmail(email);
+        boolean correctPaswordLength = funct.checkPassword(password);
+        if (!correctEmailFormat) {
+            lblEmailError.setText("Incorrect Email format");
+            lblEmailError.setVisible(true);
+        } else if (!correctPaswordLength) {
+            lblPasswordError.setText("Password must be at least 5 characters long");
+            lblPasswordError.setVisible(true);
+        } else {
+            lblPasswordError.setVisible(false);
+            lblEmailError.setVisible(false);
+            try {
+                Class.forName(jdbcDriver);
+                c = new Function().getConnection();
+
+                // the mysql insert statement
+                String query = " UPDATE Admin set Name = ?, Surname = ?, Email = ?, Password = ? WHERE UserID = ?";
+                // create the mysql insert preparedstatement
+                PreparedStatement preparedStmt = c.prepareStatement(query);
+
+                preparedStmt.setString(1, name);
+                preparedStmt.setString(2, surname);
+                preparedStmt.setString(3, email);
+                preparedStmt.setString(4, password);
+                preparedStmt.setInt(5, AdminID);
+                // execute the preparedstatement
+                preparedStmt.execute();
+                JOptionPane.showMessageDialog(rootPane, "Your Details Have Been Saved Successfully");
+
+                //c.close();
+            } catch (ClassNotFoundException exp) {
+                System.err.println("Could not load the JDBC driver " + jdbcDriver);
+                return;
+            } catch (SQLException ex) {
+                Logger.getLogger(AdminMoviesScreen.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+
+
+    }//GEN-LAST:event_btnSaveDetailsActionPerformed
 
     private void adminHomeMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminHomeMenuMouseClicked
-        Function.goToAdminHome();
+        Function.goToAdminHome(AdminID);
         this.setVisible(false);
     }//GEN-LAST:event_adminHomeMenuMouseClicked
 
     private void adminReportsMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminReportsMenuMouseClicked
-        Function.goToReportScreen();
+        Function.goToReportScreen(AdminID);
         this.setVisible(false);
     }//GEN-LAST:event_adminReportsMenuMouseClicked
 
     private void adminMoviesMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminMoviesMenuMouseClicked
-        Function.goToAdminMoviesScreen();
+        Function.goToAdminMoviesScreen(AdminID);
         this.setVisible(false);
     }//GEN-LAST:event_adminMoviesMenuMouseClicked
 
     private void adminUsersMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminUsersMenuMouseClicked
-        Function.goToAdminUserScreen();
+        Function.goToAdminUserScreen(AdminID);
         this.setVisible(false);
     }//GEN-LAST:event_adminUsersMenuMouseClicked
 
     private void adminProfileMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminProfileMenuMouseClicked
-        Function.goToAdminUserScreen();
+        Function.goToAdminUserScreen(AdminID);
         this.setVisible(false);
     }//GEN-LAST:event_adminProfileMenuMouseClicked
 
     private void adminHelpMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminHelpMenuMouseClicked
-        Function.goToAdminHelpScreen();
+        Function.goToAdminHelpScreen(AdminID);
         this.setVisible(false);
     }//GEN-LAST:event_adminHelpMenuMouseClicked
 
     private void adminExitMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminExitMenuMouseClicked
-        int choice  = JOptionPane.showConfirmDialog(rootPane, "Are you sure you want to exit?");
-        if(choice == 0){
+        int choice = JOptionPane.showConfirmDialog(rootPane, "Are you sure you want to exit?");
+        if (choice == 0) {
             System.exit(0);
         }
     }//GEN-LAST:event_adminExitMenuMouseClicked
+
+    private void adminLogoutMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminLogoutMenuMouseClicked
+        new Screen1Home().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_adminLogoutMenuMouseClicked
 
     /**
      * @param args the command line arguments
@@ -287,7 +417,7 @@ public class AdminUsersScreen extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AdminUsersScreen().setVisible(true);
+                new AdminUsersScreen(AdminID).setVisible(true);
             }
         });
     }
@@ -296,27 +426,28 @@ public class AdminUsersScreen extends javax.swing.JFrame {
     private javax.swing.JMenu adminExitMenu;
     private javax.swing.JMenu adminHelpMenu;
     private javax.swing.JMenu adminHomeMenu;
+    private javax.swing.JMenu adminLogoutMenu;
     private javax.swing.JMenu adminMoviesMenu;
     private javax.swing.JMenu adminProfileMenu;
     private javax.swing.JMenu adminReportsMenu;
     private javax.swing.JMenu adminUsersMenu;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnSaveDetails;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JLabel lblEmailError;
+    private javax.swing.JLabel lblPasswordError;
+    private javax.swing.JTextField txtEmail;
+    private javax.swing.JTextField txtName;
+    private javax.swing.JPasswordField txtPassword;
+    private javax.swing.JTextField txtSurname;
+    private javax.swing.JTable usersTable;
     // End of variables declaration//GEN-END:variables
 }

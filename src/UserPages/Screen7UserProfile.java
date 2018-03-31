@@ -36,11 +36,11 @@ public class Screen7UserProfile extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         lbName = new javax.swing.JLabel();
-        lblSurname = new javax.swing.JLabel();
-        lblEmail = new javax.swing.JLabel();
-        btnViewReservations = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         btnExit = new javax.swing.JButton();
+        btnViewReservations = new javax.swing.JButton();
+        lblEmail = new javax.swing.JLabel();
+        lblSurname = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
@@ -61,32 +61,12 @@ public class Screen7UserProfile extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Your profile");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(96, 33, 100, 15);
+        jLabel1.setBounds(96, 33, 100, 16);
 
         lbName.setForeground(new java.awt.Color(255, 255, 255));
         lbName.setText("Name:");
         getContentPane().add(lbName);
-        lbName.setBounds(21, 66, 180, 15);
-
-        lblSurname.setForeground(new java.awt.Color(255, 255, 255));
-        lblSurname.setText("Surname:");
-        getContentPane().add(lblSurname);
-        lblSurname.setBounds(21, 87, 180, 15);
-
-        lblEmail.setForeground(new java.awt.Color(255, 255, 255));
-        lblEmail.setText("Email:");
-        getContentPane().add(lblEmail);
-        lblEmail.setBounds(21, 114, 210, 15);
-
-        btnViewReservations.setForeground(new java.awt.Color(255, 255, 255));
-        btnViewReservations.setText("View Reservations");
-        btnViewReservations.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnViewReservationsActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnViewReservations);
-        btnViewReservations.setBounds(21, 156, 140, 25);
+        lbName.setBounds(21, 66, 280, 30);
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -99,7 +79,27 @@ public class Screen7UserProfile extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnExit);
-        btnExit.setBounds(300, 210, 70, 25);
+        btnExit.setBounds(300, 190, 70, 40);
+
+        btnViewReservations.setForeground(new java.awt.Color(255, 255, 255));
+        btnViewReservations.setText("View Reservations");
+        btnViewReservations.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnViewReservationsActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnViewReservations);
+        btnViewReservations.setBounds(10, 190, 140, 40);
+
+        lblEmail.setForeground(new java.awt.Color(255, 255, 255));
+        lblEmail.setText("Email:");
+        jPanel1.add(lblEmail);
+        lblEmail.setBounds(20, 140, 280, 30);
+
+        lblSurname.setForeground(new java.awt.Color(255, 255, 255));
+        lblSurname.setText("Surname:");
+        jPanel1.add(lblSurname);
+        lblSurname.setBounds(20, 100, 260, 30);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 410, 300);

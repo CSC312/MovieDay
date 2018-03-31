@@ -5,6 +5,7 @@
  */
 package movieday;
 
+import UserPages.Screen1Home;
 import javax.swing.JOptionPane;
 
 /**
@@ -16,9 +17,11 @@ public class AdminHelpScreen extends javax.swing.JFrame {
     /**
      * Creates new form AdminHelpScreen
      */
-    public AdminHelpScreen() {
+    static int UserID;
+    public AdminHelpScreen(int usrID) {
         initComponents();
         this.setLocationRelativeTo(null);
+        UserID = usrID;
     }
 
     /**
@@ -42,6 +45,7 @@ public class AdminHelpScreen extends javax.swing.JFrame {
         adminProfileMenu = new javax.swing.JMenu();
         adminHelpMenu = new javax.swing.JMenu();
         adminExitMenu = new javax.swing.JMenu();
+        adminLogoutMenu = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(950, 725));
@@ -75,7 +79,6 @@ public class AdminHelpScreen extends javax.swing.JFrame {
         jMenuBar1.add(adminHomeMenu);
 
         adminReportsMenu.setText("Reports");
-        adminReportsMenu.setToolTipText("");
         adminReportsMenu.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 adminReportsMenuMouseClicked(evt);
@@ -123,41 +126,60 @@ public class AdminHelpScreen extends javax.swing.JFrame {
         });
         jMenuBar1.add(adminExitMenu);
 
+        adminLogoutMenu.setText("Logout");
+        adminLogoutMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                adminLogoutMenuMouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(adminLogoutMenu);
+
         setJMenuBar(jMenuBar1);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void adminHomeMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminHomeMenuMouseClicked
-        Function.goToAdminHome();
+        Function.goToAdminHome(UserID);
+        this.setVisible(false);
     }//GEN-LAST:event_adminHomeMenuMouseClicked
 
     private void adminReportsMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminReportsMenuMouseClicked
-        Function.goToReportScreen();
+        Function.goToReportScreen(UserID);
+        this.setVisible(false);
     }//GEN-LAST:event_adminReportsMenuMouseClicked
 
     private void adminMoviesMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminMoviesMenuMouseClicked
-        Function.goToAdminMoviesScreen();
+        Function.goToAdminMoviesScreen(UserID);
+        this.setVisible(false);
     }//GEN-LAST:event_adminMoviesMenuMouseClicked
 
     private void adminUsersMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminUsersMenuMouseClicked
-        Function.goToAdminUserScreen();
+        Function.goToAdminUserScreen(UserID);
+        this.setVisible(false);
     }//GEN-LAST:event_adminUsersMenuMouseClicked
 
     private void adminProfileMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminProfileMenuMouseClicked
-        Function.goToAdminUserScreen();
+        Function.goToAdminUserScreen(UserID);
+        this.setVisible(false);
     }//GEN-LAST:event_adminProfileMenuMouseClicked
 
     private void adminHelpMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminHelpMenuMouseClicked
-        Function.goToAdminHelpScreen();
+        Function.goToAdminHelpScreen(UserID);
+        this.setVisible(false);
     }//GEN-LAST:event_adminHelpMenuMouseClicked
 
     private void adminExitMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminExitMenuMouseClicked
-        int choice  = JOptionPane.showConfirmDialog(rootPane, "Are you sure you want to exit?");
-        if(choice == 0){
+        int choice = JOptionPane.showConfirmDialog(rootPane, "Are you sure you want to exit?");
+        if (choice == 0) {
             System.exit(0);
         }
     }//GEN-LAST:event_adminExitMenuMouseClicked
+
+    private void adminLogoutMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminLogoutMenuMouseClicked
+        new Screen1Home().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_adminLogoutMenuMouseClicked
 
     /**
      * @param args the command line arguments
@@ -189,7 +211,7 @@ public class AdminHelpScreen extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AdminHelpScreen().setVisible(true);
+                new AdminHelpScreen(UserID).setVisible(true);
             }
         });
     }
@@ -198,6 +220,7 @@ public class AdminHelpScreen extends javax.swing.JFrame {
     private javax.swing.JMenu adminExitMenu;
     private javax.swing.JMenu adminHelpMenu;
     private javax.swing.JMenu adminHomeMenu;
+    private javax.swing.JMenu adminLogoutMenu;
     private javax.swing.JMenu adminMoviesMenu;
     private javax.swing.JMenu adminProfileMenu;
     private javax.swing.JMenu adminReportsMenu;
