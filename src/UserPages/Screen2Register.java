@@ -2,8 +2,6 @@ package UserPages;
 
 import java.awt.Color;
 import javax.swing.JOptionPane;
-import movieday.AdminHelpScreen;
-
 public class Screen2Register extends javax.swing.JFrame {
     String name = "",surname = "",username = "",
            email="", DOB="", password = "",secQuestion = "";
@@ -473,7 +471,7 @@ public class Screen2Register extends javax.swing.JFrame {
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
         // TODO add your handling code here:
-        new AdminHelpScreen().setVisible(true);
+        new HelpScreen().setVisible(true);
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     /**

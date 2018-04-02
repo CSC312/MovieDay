@@ -6,8 +6,6 @@
 package UserPages;
 
 import java.awt.Color;
-import movieday.AdminHelpScreen;
-
 /**
  *
  * @author Nino
@@ -120,6 +118,11 @@ public class Screen7_1UsersMovies extends javax.swing.JFrame {
         btnBack.setForeground(new java.awt.Color(255, 255, 255));
         btnBack.setText("Back");
         btnBack.setToolTipText("Go to prevoius screen");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnBack);
         btnBack.setBounds(370, 240, 70, 25);
 
@@ -132,6 +135,11 @@ public class Screen7_1UsersMovies extends javax.swing.JFrame {
         btnExit.setForeground(new java.awt.Color(255, 255, 255));
         btnExit.setText("Exit");
         btnExit.setToolTipText("Exit");
+        btnExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExitActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnExit);
         btnExit.setBounds(460, 240, 60, 25);
 
@@ -196,7 +204,7 @@ public class Screen7_1UsersMovies extends javax.swing.JFrame {
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         // TODO add your handling code here:
-        new AdminHelpScreen().setVisible(true);
+        new HelpScreen().setVisible(true);
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
@@ -208,6 +216,17 @@ public class Screen7_1UsersMovies extends javax.swing.JFrame {
         // TODO add your handling code here:
         new AboutScreen().setVisible(true);
     }//GEN-LAST:event_jMenuItem5ActionPerformed
+
+    private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_btnExitActionPerformed
+
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+        // TODO add your handling code here:
+        new Screen7UserProfile().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnBackActionPerformed
 
     /**
      * @param args the command line arguments

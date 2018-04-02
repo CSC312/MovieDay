@@ -53,7 +53,6 @@ public class AdminUsersScreen extends javax.swing.JFrame {
         adminMoviesMenu = new javax.swing.JMenu();
         adminUsersMenu = new javax.swing.JMenu();
         adminProfileMenu = new javax.swing.JMenu();
-        adminHelpMenu = new javax.swing.JMenu();
         adminExitMenu = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -198,14 +197,6 @@ public class AdminUsersScreen extends javax.swing.JFrame {
         });
         jMenuBar1.add(adminProfileMenu);
 
-        adminHelpMenu.setText("Help");
-        adminHelpMenu.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                adminHelpMenuMouseClicked(evt);
-            }
-        });
-        jMenuBar1.add(adminHelpMenu);
-
         adminExitMenu.setText("Exit");
         adminExitMenu.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -249,11 +240,6 @@ public class AdminUsersScreen extends javax.swing.JFrame {
         Function.goToAdminUserScreen();
         this.setVisible(false);
     }//GEN-LAST:event_adminProfileMenuMouseClicked
-
-    private void adminHelpMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminHelpMenuMouseClicked
-        Function.goToAdminHelpScreen();
-        this.setVisible(false);
-    }//GEN-LAST:event_adminHelpMenuMouseClicked
 
     private void adminExitMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminExitMenuMouseClicked
         int choice  = JOptionPane.showConfirmDialog(rootPane, "Are you sure you want to exit?");
@@ -299,7 +285,6 @@ public class AdminUsersScreen extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu adminExitMenu;
-    private javax.swing.JMenu adminHelpMenu;
     private javax.swing.JMenu adminHomeMenu;
     private javax.swing.JMenu adminMoviesMenu;
     private javax.swing.JMenu adminProfileMenu;

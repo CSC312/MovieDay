@@ -5,6 +5,7 @@
  */
 package movieday;
 
+import UserPages.HelpScreen;
 import static com.sun.glass.ui.Cursor.setVisible;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -42,7 +43,7 @@ public class Function {
     }
 
     public static void goToAdminHelpScreen() {
-        new AdminHelpScreen().setVisible(true);
+        new HelpScreen().setVisible(true);
     }
 
     public void initDatabase() {

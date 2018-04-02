@@ -111,11 +111,11 @@
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="33" green="33" red="33" type="rgb"/>
+                  <Color blue="66" green="66" red="66" type="rgb"/>
                 </Property>
                 <Property name="columns" type="int" value="20"/>
                 <Property name="rows" type="int" value="5"/>
-                <Property name="text" type="java.lang.String" value="UWC Movies is a free movie booking application created by a group of &#xa;students of the University of the Western Cape. UWC Movie application &#xa;works on essentially every popular platform and can accomodate many &#xa;users.&#xa;&#xa;Authors&#xa;-----------&#xa;Nino Jacobs&#xa;John Clause&#xa;Sive Mbiza&#xa;Patrick &#xa;Kamo"/>
+                <Property name="text" type="java.lang.String" value="UWC Movies is a free movie booking application created by a group of &#xa;students of the University of the Western Cape. UWC Movie application &#xa;works on essentially every popular platform and can accomodate many &#xa;users.&#xa;&#xa;Authors&#xa;-----------&#xa;Nino Jacobs&#xa;John Clause&#xa;Sive Mbiza&#xa;Patrick &#xa;Kamo Matjila"/>
               </Properties>
             </Component>
           </SubComponents>

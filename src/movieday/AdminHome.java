@@ -54,14 +54,13 @@ public class AdminHome extends javax.swing.JFrame {
         adminMoviesMenu = new javax.swing.JMenu();
         adminUsersMenu = new javax.swing.JMenu();
         adminProfileMenu = new javax.swing.JMenu();
-        adminHelpMenu = new javax.swing.JMenu();
         adminExitMenu = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Admin Home");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
         jPanel1.setAutoscrolls(true);
         jPanel1.setLayout(null);
 
@@ -96,15 +95,15 @@ public class AdminHome extends javax.swing.JFrame {
 
         jTextField1.setText("R1080");
         jPanel1.add(jTextField1);
-        jTextField1.setBounds(240, 570, 110, 19);
+        jTextField1.setBounds(240, 559, 110, 30);
 
         jTextField2.setText("12");
         jPanel1.add(jTextField2);
-        jTextField2.setBounds(240, 530, 110, 19);
+        jTextField2.setBounds(240, 519, 110, 30);
 
         jTextField4.setText("120");
         jPanel1.add(jTextField4);
-        jTextField4.setBounds(240, 490, 110, 19);
+        jTextField4.setBounds(240, 479, 110, 30);
 
         jPanel2.setBackground(new java.awt.Color(102, 102, 102));
         jPanel2.setLayout(null);
@@ -196,14 +195,6 @@ public class AdminHome extends javax.swing.JFrame {
         });
         jMenuBar1.add(adminProfileMenu);
 
-        adminHelpMenu.setText("Help");
-        adminHelpMenu.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                adminHelpMenuMouseClicked(evt);
-            }
-        });
-        jMenuBar1.add(adminHelpMenu);
-
         adminExitMenu.setText("Exit");
         adminExitMenu.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -241,11 +232,6 @@ public class AdminHome extends javax.swing.JFrame {
         Function.goToAdminUserScreen();
         this.setVisible(false);
     }//GEN-LAST:event_adminProfileMenuMouseClicked
-
-    private void adminHelpMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminHelpMenuMouseClicked
-        Function.goToAdminHelpScreen();
-        this.setVisible(false);
-    }//GEN-LAST:event_adminHelpMenuMouseClicked
 
     private void adminExitMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminExitMenuMouseClicked
        int choice  = JOptionPane.showConfirmDialog(rootPane, "Are you sure you want to exit?");
@@ -306,7 +292,6 @@ public class AdminHome extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu adminExitMenu;
-    private javax.swing.JMenu adminHelpMenu;
     private javax.swing.JMenu adminHomeMenu;
     private javax.swing.JMenu adminMoviesMenu;
     private javax.swing.JMenu adminProfileMenu;

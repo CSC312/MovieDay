@@ -44,14 +44,6 @@
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="adminProfileMenuMouseClicked"/>
           </Events>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="adminHelpMenu">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Help"/>
-          </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="adminHelpMenuMouseClicked"/>
-          </Events>
-        </Menu>
         <Menu class="javax.swing.JMenu" name="adminExitMenu">
           <Properties>
             <Property name="text" type="java.lang.String" value="Exit"/>
@@ -92,7 +84,7 @@
     <Container class="javax.swing.JPanel" name="jPanel1">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+          <Color blue="33" green="33" red="33" type="rgb"/>
         </Property>
         <Property name="autoscrolls" type="boolean" value="true"/>
       </Properties>
@@ -183,7 +175,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="240" y="570" width="110" height="-1"/>
+              <AbsoluteConstraints x="240" y="559" width="110" height="30"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -193,7 +185,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="240" y="530" width="110" height="-1"/>
+              <AbsoluteConstraints x="240" y="519" width="110" height="30"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -203,7 +195,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="240" y="490" width="110" height="-1"/>
+              <AbsoluteConstraints x="240" y="479" width="110" height="30"/>
             </Constraint>
           </Constraints>
         </Component>

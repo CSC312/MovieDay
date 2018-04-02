@@ -370,7 +370,6 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
         adminMoviesMenu = new javax.swing.JMenu();
         adminUsersMenu = new javax.swing.JMenu();
         adminProfileMenu = new javax.swing.JMenu();
-        adminHelpMenu = new javax.swing.JMenu();
         adminExitMenu = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -380,9 +379,10 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(960, 770));
         getContentPane().setLayout(null);
 
+        show1.setBackground(new java.awt.Color(51, 51, 51));
         show1.setLayout(null);
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setBackground(new java.awt.Color(51, 51, 51));
         jPanel2.setLayout(null);
 
         s1m1Image.setIcon(new javax.swing.ImageIcon(getClass().getResource("/movieday/images/Folder.jpg"))); // NOI18N
@@ -434,7 +434,7 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
         show1.add(jPanel2);
         jPanel2.setBounds(10, 20, 300, 620);
 
-        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel4.setBackground(new java.awt.Color(51, 51, 51));
         jPanel4.setLayout(null);
 
         s1m3Image.setIcon(new javax.swing.ImageIcon(getClass().getResource("/movieday/images/Folder.jpg"))); // NOI18N
@@ -480,6 +480,7 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
         show1.add(jPanel4);
         jPanel4.setBounds(600, 20, 300, 620);
 
+        jPanel5.setBackground(new java.awt.Color(51, 51, 51));
         jPanel5.setLayout(null);
 
         s1m2Image.setIcon(new javax.swing.ImageIcon(getClass().getResource("/movieday/images/Folder.jpg"))); // NOI18N
@@ -537,11 +538,13 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Show 1-15:00", show1);
 
+        show2.setBackground(new java.awt.Color(51, 51, 51));
         show2.setLayout(null);
 
+        jPanel6.setBackground(new java.awt.Color(51, 51, 51));
         jPanel6.setLayout(null);
 
-        jPanel7.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel7.setBackground(new java.awt.Color(51, 51, 51));
         jPanel7.setLayout(null);
 
         jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/movieday/images/Folder.jpg"))); // NOI18N
@@ -580,7 +583,7 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
         jPanel6.add(jPanel7);
         jPanel7.setBounds(10, 20, 300, 620);
 
-        jPanel8.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel8.setBackground(new java.awt.Color(51, 51, 51));
         jPanel8.setLayout(null);
 
         jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/movieday/images/Folder.jpg"))); // NOI18N
@@ -619,6 +622,7 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
         jPanel6.add(jPanel8);
         jPanel8.setBounds(600, 20, 300, 620);
 
+        jPanel9.setBackground(new java.awt.Color(51, 51, 51));
         jPanel9.setLayout(null);
 
         jLabel28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/movieday/images/Folder.jpg"))); // NOI18N
@@ -671,11 +675,13 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Show 2-17:00", show2);
 
+        show3.setBackground(new java.awt.Color(51, 51, 51));
         show3.setLayout(null);
 
+        jPanel11.setBackground(new java.awt.Color(51, 51, 51));
         jPanel11.setLayout(null);
 
-        jPanel12.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel12.setBackground(new java.awt.Color(51, 51, 51));
         jPanel12.setLayout(null);
 
         jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/movieday/images/Folder.jpg"))); // NOI18N
@@ -714,7 +720,7 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
         jPanel11.add(jPanel12);
         jPanel12.setBounds(10, 20, 300, 620);
 
-        jPanel13.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel13.setBackground(new java.awt.Color(51, 51, 51));
         jPanel13.setLayout(null);
 
         jLabel37.setIcon(new javax.swing.ImageIcon(getClass().getResource("/movieday/images/Folder.jpg"))); // NOI18N
@@ -753,6 +759,7 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
         jPanel11.add(jPanel13);
         jPanel13.setBounds(600, 20, 300, 620);
 
+        jPanel14.setBackground(new java.awt.Color(51, 51, 51));
         jPanel14.setLayout(null);
 
         jLabel42.setIcon(new javax.swing.ImageIcon(getClass().getResource("/movieday/images/Folder.jpg"))); // NOI18N
@@ -805,8 +812,10 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Show 3-19:00", show3);
 
+        manageReservations.setBackground(new java.awt.Color(51, 51, 51));
         manageReservations.setLayout(null);
 
+        reservationsTable.setBackground(new java.awt.Color(102, 102, 102));
         jScrollPane11.setViewportView(reservationsTable);
 
         manageReservations.add(jScrollPane11);
@@ -880,14 +889,6 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
         });
         jMenuBar1.add(adminProfileMenu);
 
-        adminHelpMenu.setText("Help");
-        adminHelpMenu.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                adminHelpMenuMouseClicked(evt);
-            }
-        });
-        jMenuBar1.add(adminHelpMenu);
-
         adminExitMenu.setText("Exit");
         adminExitMenu.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -929,11 +930,6 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
         Function.goToAdminUserScreen();
         this.setVisible(false);
     }//GEN-LAST:event_adminProfileMenuMouseClicked
-
-    private void adminHelpMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminHelpMenuMouseClicked
-        Function.goToAdminHelpScreen();
-        this.setVisible(false);
-    }//GEN-LAST:event_adminHelpMenuMouseClicked
 
     private void adminExitMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminExitMenuMouseClicked
         int choice = JOptionPane.showConfirmDialog(rootPane, "Are you sure you want to exit?");
@@ -1208,7 +1204,6 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu adminExitMenu;
-    private javax.swing.JMenu adminHelpMenu;
     private javax.swing.JMenu adminHomeMenu;
     private javax.swing.JMenu adminMoviesMenu;
     private javax.swing.JMenu adminProfileMenu;

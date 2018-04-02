@@ -6,8 +6,6 @@
 package UserPages;
 
 import java.awt.Color;
-import movieday.AdminHelpScreen;
-
 public class Screen6_1Receipt extends javax.swing.JFrame {
 
     /**
@@ -136,7 +134,7 @@ public class Screen6_1Receipt extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setText("Help & About");
+        jMenu2.setText("Help");
 
         jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1, 0));
         jMenuItem4.setText("Help");
@@ -174,7 +172,7 @@ public class Screen6_1Receipt extends javax.swing.JFrame {
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         // TODO add your handling code here:
-        new AdminHelpScreen().setVisible(true);
+        new HelpScreen().setVisible(true);
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed

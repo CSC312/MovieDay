@@ -1,7 +1,6 @@
 package UserPages;
 
 import java.awt.Color;
-import movieday.AdminHelpScreen;
 
 public class Screen4_MovieReservations extends javax.swing.JFrame {
 
@@ -227,7 +226,7 @@ public class Screen4_MovieReservations extends javax.swing.JFrame {
 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
         // TODO add your handling code here:
-        new AdminHelpScreen().setVisible(true);
+        new HelpScreen().setVisible(true);
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed

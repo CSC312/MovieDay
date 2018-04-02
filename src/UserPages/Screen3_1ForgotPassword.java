@@ -8,8 +8,6 @@ package UserPages;
 import java.awt.Color;
 import javax.swing.ButtonGroup;
 import javax.swing.JOptionPane;
-import movieday.AdminHelpScreen;
-
 /**
  *
  * @author Nino
@@ -456,7 +454,7 @@ public class Screen3_1ForgotPassword extends javax.swing.JFrame {
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         // TODO add your handling code here:
-        new AdminHelpScreen().setVisible(true);
+        new HelpScreen().setVisible(true);
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void btnSubmit2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmit2ActionPerformed

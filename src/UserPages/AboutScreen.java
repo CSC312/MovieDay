@@ -5,6 +5,8 @@
  */
 package UserPages;
 
+
+
 /**
  *
  * @author sive
@@ -16,8 +18,10 @@ public class AboutScreen extends javax.swing.JFrame {
      */
     public AboutScreen() {
         initComponents();
+        this.setResizable(false);
+        this.setDefaultCloseOperation(HIDE_ON_CLOSE);
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -59,10 +63,10 @@ public class AboutScreen extends javax.swing.JFrame {
         jLabel3.setBounds(303, 61, 116, 22);
 
         jTextArea1.setEditable(false);
-        jTextArea1.setBackground(new java.awt.Color(51, 51, 51));
+        jTextArea1.setBackground(new java.awt.Color(102, 102, 102));
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
-        jTextArea1.setText("UWC Movies is a free movie booking application created by a group of \nstudents of the University of the Western Cape. UWC Movie application \nworks on essentially every popular platform and can accomodate many \nusers.\n\nAuthors\n-----------\nNino Jacobs\nJohn Clause\nSive Mbiza\nPatrick \nKamo");
+        jTextArea1.setText("UWC Movies is a free movie booking application created by a group of \nstudents of the University of the Western Cape. UWC Movie application \nworks on essentially every popular platform and can accomodate many \nusers.\n\nAuthors\n-----------\nNino Jacobs\nJohn Clause\nSive Mbiza\nPatrick \nKamo Matjila");
         jScrollPane1.setViewportView(jTextArea1);
 
         jPanel1.add(jScrollPane1);

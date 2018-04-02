@@ -1,6 +1,4 @@
 package UserPages;
-
-import movieday.AdminHelpScreen;
 import movieday.AdminHome;
 
 public class Screen1Home extends javax.swing.JFrame {
@@ -185,7 +183,7 @@ public class Screen1Home extends javax.swing.JFrame {
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         // TODO add your handling code here:
-        new AdminHelpScreen().setVisible(true);
+        new HelpScreen().setVisible(true);
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void mnuCreateAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuCreateAccountActionPerformed

@@ -44,14 +44,6 @@
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="adminProfileMenuMouseClicked"/>
           </Events>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="adminHelpMenu">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Help"/>
-          </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="adminHelpMenuMouseClicked"/>
-          </Events>
-        </Menu>
         <Menu class="javax.swing.JMenu" name="adminExitMenu">
           <Properties>
             <Property name="text" type="java.lang.String" value="Exit"/>
