@@ -78,16 +78,16 @@ public class ReportScreen extends javax.swing.JFrame {
 
         movieSummaryTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Movie 1", "67", "2", "69"},
-                {"Movie 2", "54", "4", "58"},
-                {"Movie 3", "29", "3", "32"},
-                {"Movie 4", "34", "5", "39"},
-                {"Movie 5", "89", "6", "95"},
-                {"Movie 6", "12", "7", "19"},
-                {"Movie 7", "43", "8", "51"},
-                {"Movie 8", "56", "9", "65"},
-                {"Movie 9", "46", "5", "51"},
-                {"Grand Total", "123", "123", "246"}
+                {"Movie 1", "8", "0", "8"},
+                {"Movie 2", "2", "0", "2"},
+                {"Movie 3", "1", "0", "1"},
+                {"Movie 4", "0", "0", "0"},
+                {"Movie 5", "0", "0", "0"},
+                {"Movie 6", "1", "0", "1"},
+                {"Movie 7", "2", "0", "2"},
+                {"Movie 8", "0", "0", "0"},
+                {"Movie 9", "0", "0", "0"},
+                {"Grand Total", "14", "0", "246"}
             },
             new String [] {
                 "", "Booked", "Canceleld", "Total"
@@ -117,9 +117,9 @@ public class ReportScreen extends javax.swing.JFrame {
 
         showSummaryTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Seats Booked", "123", "123", "123"},
-                {"Seats Cancelled", "12", "12", "12"},
-                {"Total Sold", "1234", "1234", null},
+                {"Seats Booked", "8", "4", "4"},
+                {"Seats Cancelled", "0", "0", "0"},
+                {"Total Sold", "8", "4", "4"},
                 {null, null, null, null}
             },
             new String [] {
