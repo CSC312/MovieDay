@@ -19,6 +19,6 @@ public class MovieDay {
         //new AdminHome().setVisible(true);
         
         new Function().initDatabase();
-        new UserPages.Screen3Login().setVisible(true);
+        new UserPages.Screen1Home().setVisible(true);
     }   
 }
