@@ -118,7 +118,7 @@ public class Screen1Home extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("|");
         jPanel1.add(jLabel6);
-        jLabel6.setBounds(566, 49, 7, 15);
+        jLabel6.setBounds(566, 49, 8, 15);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -147,7 +147,7 @@ public class Screen1Home extends javax.swing.JFrame {
             }
         });
         jPanel3.add(btnNext);
-        btnNext.setBounds(310, 250, 100, 25);
+        btnNext.setBounds(310, 250, 100, 29);
 
         btnPrev.setText("Previous");
         btnPrev.addActionListener(new java.awt.event.ActionListener() {
@@ -156,7 +156,7 @@ public class Screen1Home extends javax.swing.JFrame {
             }
         });
         jPanel3.add(btnPrev);
-        btnPrev.setBounds(200, 250, 90, 25);
+        btnPrev.setBounds(200, 250, 90, 29);
 
         jPanel1.add(jPanel3);
         jPanel3.setBounds(130, 80, 580, 290);

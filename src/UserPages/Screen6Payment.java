@@ -55,7 +55,7 @@ public class Screen6Payment extends javax.swing.JFrame {
 
         cbxCardType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Card type", "Visa", "Mastercard", "Discover", "American Express" }));
         jPanel1.add(cbxCardType);
-        cbxCardType.setBounds(140, 120, 130, 24);
+        cbxCardType.setBounds(140, 120, 130, 27);
 
         txfCardNumber.setText("Card Number");
         jPanel1.add(txfCardNumber);
@@ -73,7 +73,7 @@ public class Screen6Payment extends javax.swing.JFrame {
         btnConfirm.setForeground(new java.awt.Color(255, 255, 255));
         btnConfirm.setText("Confirm");
         jPanel1.add(btnConfirm);
-        btnConfirm.setBounds(140, 260, 110, 25);
+        btnConfirm.setBounds(140, 260, 110, 29);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 440, 300);
