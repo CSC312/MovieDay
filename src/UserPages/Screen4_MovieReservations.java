@@ -282,7 +282,7 @@ public class Screen4_MovieReservations extends javax.swing.JFrame {
                     selectedSelectedShowID = 3;
                     break;
             }
-            new Screen5Reservation(UserID, selectedMovieID, selectedSelectedShowID).setVisible(true);
+            new Screen5Reservation(UserID, selectedMovieID, selectedSelectedShowID, model.getValueAt(row, 1).toString()).setVisible(true);
             this.setVisible(false);
         } catch (Exception e) {
             System.out.println(e.getLocalizedMessage());
