@@ -49,13 +49,13 @@ public class Screen7_1UsersMovies extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
+        mnuReserve = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
         mnuExit = new javax.swing.JMenuItem();
         jSeparator3 = new javax.swing.JPopupMenu.Separator();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
-        jMenuItem6 = new javax.swing.JMenuItem();
         jSeparator2 = new javax.swing.JPopupMenu.Separator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -66,44 +66,44 @@ public class Screen7_1UsersMovies extends javax.swing.JFrame {
         getContentPane().setLayout(null);
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "About Movie", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Lucida Grande", 0, 13), new java.awt.Color(255, 255, 255))); // NOI18N
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "About Movie", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 11), new java.awt.Color(255, 255, 255))); // NOI18N
         jPanel1.setLayout(null);
 
         lblLength.setForeground(new java.awt.Color(255, 255, 255));
         lblLength.setText("Length");
         jPanel1.add(lblLength);
-        lblLength.setBounds(17, 113, 280, 16);
+        lblLength.setBounds(17, 113, 280, 15);
 
         lblMovie.setForeground(new java.awt.Color(255, 255, 255));
         lblMovie.setText("Movie name");
         jPanel1.add(lblMovie);
-        lblMovie.setBounds(17, 29, 280, 16);
+        lblMovie.setBounds(17, 29, 280, 15);
 
         lblSeats.setForeground(new java.awt.Color(255, 255, 255));
         lblSeats.setText("Your seats");
         jPanel1.add(lblSeats);
-        lblSeats.setBounds(17, 134, 280, 16);
+        lblSeats.setBounds(17, 134, 280, 15);
 
         lblTime.setForeground(new java.awt.Color(255, 255, 255));
         lblTime.setText("Time(s)");
         jPanel1.add(lblTime);
-        lblTime.setBounds(17, 50, 280, 16);
+        lblTime.setBounds(17, 50, 280, 15);
 
         lblGenre.setForeground(new java.awt.Color(255, 255, 255));
         lblGenre.setText("Genre(s)");
         jPanel1.add(lblGenre);
-        lblGenre.setBounds(17, 71, 280, 16);
+        lblGenre.setBounds(17, 71, 280, 15);
 
         lblYear.setForeground(new java.awt.Color(255, 255, 255));
         lblYear.setText("Year");
         jPanel1.add(lblYear);
-        lblYear.setBounds(17, 92, 280, 16);
+        lblYear.setBounds(17, 92, 280, 15);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(210, 20, 310, 170);
 
         jPanel2.setBackground(new java.awt.Color(51, 51, 51));
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Movie List", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Lucida Grande", 0, 13), new java.awt.Color(255, 255, 255))); // NOI18N
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Movie List", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 11), new java.awt.Color(255, 255, 255))); // NOI18N
         jPanel2.setLayout(null);
 
         lstMovieList.setModel(new javax.swing.AbstractListModel() {
@@ -122,23 +122,32 @@ public class Screen7_1UsersMovies extends javax.swing.JFrame {
         btnBack.setForeground(new java.awt.Color(255, 255, 255));
         btnBack.setText("Back");
         getContentPane().add(btnBack);
-        btnBack.setBounds(370, 240, 70, 29);
+        btnBack.setBounds(370, 240, 70, 25);
 
         btnCancelRes.setForeground(new java.awt.Color(255, 255, 255));
         btnCancelRes.setText("Cancel Reservation");
         getContentPane().add(btnCancelRes);
-        btnCancelRes.setBounds(370, 200, 150, 29);
+        btnCancelRes.setBounds(370, 200, 150, 25);
 
         btnExit.setForeground(new java.awt.Color(255, 255, 255));
         btnExit.setText("Exit");
         getContentPane().add(btnExit);
-        btnExit.setBounds(460, 240, 60, 29);
+        btnExit.setBounds(460, 240, 60, 25);
 
         jPanel3.setBackground(new java.awt.Color(51, 51, 51));
         getContentPane().add(jPanel3);
-        jPanel3.setBounds(0, 0, 560, 350);
+        jPanel3.setBounds(0, 0, 560, 340);
 
         jMenu1.setText("Menu");
+
+        mnuReserve.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.CTRL_MASK));
+        mnuReserve.setText("View Reservations");
+        mnuReserve.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuReserveActionPerformed(evt);
+            }
+        });
+        jMenu1.add(mnuReserve);
 
         jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem2.setText("Log out");
@@ -163,7 +172,7 @@ public class Screen7_1UsersMovies extends javax.swing.JFrame {
 
         jMenu2.setText("Help & About");
 
-        jMenuItem4.setText("About UWC Movies");
+        jMenuItem4.setText("About");
         jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem4ActionPerformed(evt);
@@ -173,9 +182,6 @@ public class Screen7_1UsersMovies extends javax.swing.JFrame {
 
         jMenuItem5.setText("FAQ");
         jMenu2.add(jMenuItem5);
-
-        jMenuItem6.setText("Not sure what to do?");
-        jMenu2.add(jMenuItem6);
         jMenu2.add(jSeparator2);
 
         jMenuBar1.add(jMenu2);
@@ -185,6 +191,16 @@ public class Screen7_1UsersMovies extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void mnuReserveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuReserveActionPerformed
+        new Screen7_1UsersMovies().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_mnuReserveActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        new Screen1Home().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
     private void mnuExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuExitActionPerformed
         System.exit(0);
     }//GEN-LAST:event_mnuExitActionPerformed
@@ -192,11 +208,6 @@ public class Screen7_1UsersMovies extends javax.swing.JFrame {
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem4ActionPerformed
-
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        new Screen1Home().setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -243,7 +254,6 @@ public class Screen7_1UsersMovies extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -258,5 +268,6 @@ public class Screen7_1UsersMovies extends javax.swing.JFrame {
     private javax.swing.JLabel lblYear;
     private javax.swing.JList lstMovieList;
     private javax.swing.JMenuItem mnuExit;
+    private javax.swing.JMenuItem mnuReserve;
     // End of variables declaration//GEN-END:variables
 }
