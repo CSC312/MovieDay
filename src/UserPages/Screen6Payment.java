@@ -28,14 +28,126 @@ public class Screen6Payment extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        cbxCardType = new javax.swing.JComboBox<>();
+        txfCardNumber = new javax.swing.JTextField();
+        txfExpiration = new javax.swing.JTextField();
+        txfCSC = new javax.swing.JTextField();
+        btnConfirm = new javax.swing.JButton();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        mnuReserve = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        mnuExit = new javax.swing.JMenuItem();
+        jSeparator3 = new javax.swing.JPopupMenu.Separator();
+        jMenu2 = new javax.swing.JMenu();
+        jMenuItem4 = new javax.swing.JMenuItem();
+        jMenuItem5 = new javax.swing.JMenuItem();
+        jSeparator2 = new javax.swing.JPopupMenu.Separator();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(430, 230));
         setPreferredSize(new java.awt.Dimension(430, 230));
         setSize(new java.awt.Dimension(430, 230));
         getContentPane().setLayout(null);
 
+        jPanel1.setLayout(null);
+
+        cbxCardType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Card type", "Visa", "Mastercard", "Discover", "American Express" }));
+        jPanel1.add(cbxCardType);
+        cbxCardType.setBounds(140, 120, 130, 24);
+
+        txfCardNumber.setText("Card Number");
+        jPanel1.add(txfCardNumber);
+        txfCardNumber.setBounds(140, 160, 140, 30);
+
+        txfExpiration.setText("Expiration MM/YY");
+        jPanel1.add(txfExpiration);
+        txfExpiration.setBounds(140, 210, 140, 30);
+
+        txfCSC.setText("CSC (3 digits)");
+        jPanel1.add(txfCSC);
+        txfCSC.setBounds(290, 210, 110, 30);
+
+        btnConfirm.setBackground(new java.awt.Color(51, 102, 255));
+        btnConfirm.setForeground(new java.awt.Color(255, 255, 255));
+        btnConfirm.setText("Confirm");
+        jPanel1.add(btnConfirm);
+        btnConfirm.setBounds(140, 260, 110, 25);
+
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(0, 0, 440, 300);
+
+        jMenu1.setText("Menu");
+
+        mnuReserve.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.CTRL_MASK));
+        mnuReserve.setText("View Reservations");
+        mnuReserve.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuReserveActionPerformed(evt);
+            }
+        });
+        jMenu1.add(mnuReserve);
+
+        jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem2.setText("Log out");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem2);
+
+        mnuExit.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
+        mnuExit.setText("Exit");
+        mnuExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuExitActionPerformed(evt);
+            }
+        });
+        jMenu1.add(mnuExit);
+        jMenu1.add(jSeparator3);
+
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("Help & About");
+
+        jMenuItem4.setText("About");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem4);
+
+        jMenuItem5.setText("FAQ");
+        jMenu2.add(jMenuItem5);
+        jMenu2.add(jSeparator2);
+
+        jMenuBar1.add(jMenu2);
+
+        setJMenuBar(jMenuBar1);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        new Screen1Home().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void mnuExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuExitActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_mnuExitActionPerformed
+
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
+
+    private void mnuReserveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuReserveActionPerformed
+        new Screen7_1UsersMovies().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_mnuReserveActionPerformed
 
     /**
      * @param args the command line arguments
@@ -74,5 +186,21 @@ public class Screen6Payment extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnConfirm;
+    private javax.swing.JComboBox<String> cbxCardType;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPopupMenu.Separator jSeparator2;
+    private javax.swing.JPopupMenu.Separator jSeparator3;
+    private javax.swing.JMenuItem mnuExit;
+    private javax.swing.JMenuItem mnuReserve;
+    private javax.swing.JTextField txfCSC;
+    private javax.swing.JTextField txfCardNumber;
+    private javax.swing.JTextField txfExpiration;
     // End of variables declaration//GEN-END:variables
 }

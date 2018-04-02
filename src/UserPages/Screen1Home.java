@@ -1,13 +1,50 @@
 package UserPages;
 
 import movieday.AdminHome;
+import javax.swing.*;
 
 public class Screen1Home extends javax.swing.JFrame {
     static int UserID;
+    int counter = 0;
+    ImageIcon[] image = new ImageIcon[9];
+    
     public Screen1Home() {
         initComponents();
         this.setLocationRelativeTo(null);
+        getImag();
+        btnPrev.setEnabled(false);
     }
+    
+     public void getImag() {
+        for (int i = 0; i < image.length; ++i) {
+            image[i] = new ImageIcon("C:/Users/Nino/Desktop/New folder/sterk/" + i + ".png");
+        }
+        lblPicture.setIcon(image[0]);
+    }
+
+    public void next() {
+        if (counter != 8) {
+            btnPrev.setEnabled(true);
+            counter++;
+            lblPicture.setIcon(image[counter]);
+        }
+        if(counter == 8){
+            btnNext.setEnabled(false);
+        }
+
+    }
+
+    public void previous() {
+        if (counter != 0) {
+            btnNext.setEnabled(true);
+            counter--;
+            lblPicture.setIcon(image[counter]);
+        }
+        if(counter == 0){
+            btnPrev.setEnabled(false);
+        }
+    }
+    
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -19,6 +56,10 @@ public class Screen1Home extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        lblPicture = new javax.swing.JLabel();
+        btnNext = new javax.swing.JButton();
+        btnPrev = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         mnuCreateAccount = new javax.swing.JMenuItem();
@@ -34,10 +75,10 @@ public class Screen1Home extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Home Screen");
         setBackground(new java.awt.Color(51, 51, 51));
-        setMaximumSize(new java.awt.Dimension(826, 401));
-        setMinimumSize(new java.awt.Dimension(826, 401));
+        setMaximumSize(new java.awt.Dimension(826, 425));
+        setMinimumSize(new java.awt.Dimension(826, 425));
         setName("Home"); // NOI18N
-        setPreferredSize(new java.awt.Dimension(826, 401));
+        setPreferredSize(new java.awt.Dimension(826, 425));
         setResizable(false);
         getContentPane().setLayout(null);
 
@@ -77,7 +118,7 @@ public class Screen1Home extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("|");
         jPanel1.add(jLabel6);
-        jLabel6.setBounds(566, 49, 8, 15);
+        jLabel6.setBounds(566, 49, 7, 15);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -92,6 +133,33 @@ public class Screen1Home extends javax.swing.JFrame {
 
         jPanel1.add(jPanel2);
         jPanel2.setBounds(0, 0, 6, 100);
+
+        jPanel3.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51), 3));
+        jPanel3.setLayout(null);
+        jPanel3.add(lblPicture);
+        lblPicture.setBounds(20, 20, 540, 220);
+
+        btnNext.setText("Next");
+        btnNext.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNextActionPerformed(evt);
+            }
+        });
+        jPanel3.add(btnNext);
+        btnNext.setBounds(310, 250, 100, 25);
+
+        btnPrev.setText("Previous");
+        btnPrev.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPrevActionPerformed(evt);
+            }
+        });
+        jPanel3.add(btnPrev);
+        btnPrev.setBounds(200, 250, 90, 25);
+
+        jPanel1.add(jPanel3);
+        jPanel3.setBounds(130, 80, 580, 290);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(-10, 0, 840, 380);
@@ -198,6 +266,14 @@ public class Screen1Home extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_mnuExitActionPerformed
 
+    private void btnNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNextActionPerformed
+        next();
+    }//GEN-LAST:event_btnNextActionPerformed
+
+    private void btnPrevActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrevActionPerformed
+        previous();
+    }//GEN-LAST:event_btnPrevActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -235,6 +311,8 @@ public class Screen1Home extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnNext;
+    private javax.swing.JButton btnPrev;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -246,8 +324,10 @@ public class Screen1Home extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JPopupMenu.Separator jSeparator2;
     private javax.swing.JPopupMenu.Separator jSeparator3;
+    private javax.swing.JLabel lblPicture;
     private javax.swing.JMenuItem mnnuSignInAdmin;
     private javax.swing.JMenuItem mnuCreateAccount;
     private javax.swing.JMenuItem mnuExit;
