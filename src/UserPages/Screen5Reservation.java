@@ -703,67 +703,71 @@ public class Screen5Reservation extends javax.swing.JFrame {
     }//GEN-LAST:event_btnBackActionPerformed
 
     private void btnReserveSeatsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReserveSeatsActionPerformed
-        String seatsList = lblUserSeats.getText();
-        String seatsArray[] = seatsList.split(",");
-        int choice = JOptionPane.showConfirmDialog(rootPane, "Are you sure you want to reserve these seats?");
-        if (choice == 0) {
-            for (int i = 0; i < seatsArray.length; i++) {
-                int SeatID = getSeatID(seatsArray[i].trim());
-                //Add Reservation to DB using UserID, MovieID, ShowID, SeatID
-                /*
+        if (seatsBooked == 0) {
+            JOptionPane.showMessageDialog(rootPane, "You need to select at least 1 seat");
+        } else {
+
+            String seatsList = lblUserSeats.getText().substring(12);
+            String seatsArray[] = seatsList.split(",");
+            int choice = JOptionPane.showConfirmDialog(rootPane, "Are you sure you want to reserve these seats?");
+            if (choice == 0) {
+                for (int i = 0; i < seatsArray.length; i++) {
+                    int SeatID = getSeatID(seatsArray[i].trim());
+                    //Add Reservation to DB using UserID, MovieID, ShowID, SeatID
+                    /*
             System.out.println("UserID = " + UserID + "\n"
                     + "MovieID " + movieID + "\n"
                     + "ShowID " + showID + "\n"
                     + "SeatID " + SeatID+"\n"
                     + ""+seatsArray[i]);
-                 */
+                     */
 
-                try {
-                    //Database Operations
-                    Class.forName(jdbcDriver);
-                    c = new Function().getConnection();
+                    try {
+                        //Database Operations
+                        Class.forName(jdbcDriver);
+                        c = new Function().getConnection();
 
-                    // the mysql insert statement
-                    String query = "INSERT INTO Reservation set UserID = ?, SeatID = ?, ShowID = ?, MovieID = ?";
-                    // create the mysql insert preparedstatement
-                    PreparedStatement preparedStmt = c.prepareStatement(query);
+                        // the mysql insert statement
+                        String query = "INSERT INTO Reservation set UserID = ?, SeatID = ?, ShowID = ?, MovieID = ?";
+                        // create the mysql insert preparedstatement
+                        PreparedStatement preparedStmt = c.prepareStatement(query);
 
-                    preparedStmt.setInt(1, UserID);
-                    preparedStmt.setInt(2, SeatID);
-                    preparedStmt.setInt(3, showID);
-                    preparedStmt.setInt(4, movieID);
-                    // execute the preparedstatement
+                        preparedStmt.setInt(1, UserID);
+                        preparedStmt.setInt(2, SeatID);
+                        preparedStmt.setInt(3, showID);
+                        preparedStmt.setInt(4, movieID);
+                        // execute the preparedstatement
 
-                    preparedStmt.execute();
+                        preparedStmt.execute();
 
-                } catch (Exception ex) {
-                    JOptionPane.showMessageDialog(rootPane, "Something went wrong when trying to reserve your seats!");
+                    } catch (Exception ex) {
+                        JOptionPane.showMessageDialog(rootPane, "Something went wrong when trying to reserve your seats!");
+                    }
                 }
-            }
-            String price = lblPrice.getText();
-            String time = "";
-            switch (showID) {
-                case 1:
-                    time = "15:00";
-                    break;
-                case 2:
-                    time = "17:00";
-                    break;
-                case 3:
-                    time = "19:00";
-            }
-            JOptionPane.showMessageDialog(rootPane, "Seats reserved successfully.\n"
-                    + "Movie: " + movieName
-                    + "Time: "+time+"\n"
-                    + "Seats: " + lblUserSeats.getText() + "\n"
-                    + "Total Amount: " + price);
-            new Screen6Payment().setVisible(true);
-            this.setVisible(false);
+                //String price = lblPrice.getText();
+                String time = "";
+                switch (showID) {
+                    case 1:
+                        time = "15:00";
+                        break;
+                    case 2:
+                        time = "17:00";
+                        break;
+                    case 3:
+                        time = "19:00";
+                }
+                JOptionPane.showMessageDialog(rootPane, "Seats reserved successfully.\n"
+                        + "Movie: " + movieName
+                        + "Time: " + time + "\n"
+                        + "Seats: " + lblUserSeats.getText() + "\n"
+                        + "Total Amount: " + price);
+                new Screen6Payment(price, seatsList).setVisible(true);
+                this.setVisible(false);
 
-        } else {
-
+            } else {
+                JOptionPane.showMessageDialog(rootPane, "Cancelled");
+            }
         }
-
 
     }//GEN-LAST:event_btnReserveSeatsActionPerformed
 
