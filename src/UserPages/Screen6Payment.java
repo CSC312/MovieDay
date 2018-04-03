@@ -5,18 +5,22 @@
  */
 package UserPages;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Nino
  */
 public class Screen6Payment extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Screen6_Payment
-     */
-    public Screen6Payment() {
+    static int price;
+    static String seats;
+    
+    public Screen6Payment(int p, String seat) {
         initComponents();
         this.setLocationRelativeTo(null);
+         price = p;
+        seats = seat;
     }
 
     /**
@@ -29,11 +33,12 @@ public class Screen6Payment extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
         cbxCardType = new javax.swing.JComboBox<>();
         txfCardNumber = new javax.swing.JTextField();
         txfExpiration = new javax.swing.JTextField();
-        txfCSC = new javax.swing.JTextField();
         btnConfirm = new javax.swing.JButton();
+        txfCSC = new javax.swing.JTextField();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         mnuReserve = new javax.swing.JMenuItem();
@@ -46,37 +51,90 @@ public class Screen6Payment extends javax.swing.JFrame {
         jSeparator2 = new javax.swing.JPopupMenu.Separator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(430, 230));
-        setPreferredSize(new java.awt.Dimension(430, 230));
+        setMaximumSize(new java.awt.Dimension(345, 370));
+        setMinimumSize(new java.awt.Dimension(345, 370));
+        setPreferredSize(new java.awt.Dimension(345, 370));
         setSize(new java.awt.Dimension(430, 230));
         getContentPane().setLayout(null);
 
+        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
         jPanel1.setLayout(null);
 
+        jPanel2.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Payment Details", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 11), new java.awt.Color(255, 255, 255))); // NOI18N
+        jPanel2.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel2.setLayout(null);
+
+        cbxCardType.setBackground(new java.awt.Color(51, 102, 255));
+        cbxCardType.setForeground(new java.awt.Color(255, 255, 255));
         cbxCardType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Card type", "Visa", "Mastercard", "Discover", "American Express" }));
-        jPanel1.add(cbxCardType);
-        cbxCardType.setBounds(140, 120, 130, 27);
+        jPanel2.add(cbxCardType);
+        cbxCardType.setBounds(20, 30, 140, 24);
 
+        txfCardNumber.setBackground(new java.awt.Color(0, 0, 0));
+        txfCardNumber.setForeground(new java.awt.Color(255, 255, 255));
         txfCardNumber.setText("Card Number");
-        jPanel1.add(txfCardNumber);
-        txfCardNumber.setBounds(140, 160, 140, 30);
+        txfCardNumber.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txfCardNumberFocusLost(evt);
+            }
+        });
+        txfCardNumber.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txfCardNumberMouseClicked(evt);
+            }
+        });
+        jPanel2.add(txfCardNumber);
+        txfCardNumber.setBounds(20, 70, 140, 30);
 
-        txfExpiration.setText("Expiration MM/YY");
-        jPanel1.add(txfExpiration);
-        txfExpiration.setBounds(140, 210, 140, 30);
-
-        txfCSC.setText("CSC (3 digits)");
-        jPanel1.add(txfCSC);
-        txfCSC.setBounds(290, 210, 110, 30);
+        txfExpiration.setBackground(new java.awt.Color(0, 0, 0));
+        txfExpiration.setForeground(new java.awt.Color(255, 255, 255));
+        txfExpiration.setText("Expiration MM-YY");
+        txfExpiration.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txfExpirationFocusLost(evt);
+            }
+        });
+        txfExpiration.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txfExpirationMouseClicked(evt);
+            }
+        });
+        jPanel2.add(txfExpiration);
+        txfExpiration.setBounds(20, 120, 140, 30);
 
         btnConfirm.setBackground(new java.awt.Color(51, 102, 255));
         btnConfirm.setForeground(new java.awt.Color(255, 255, 255));
         btnConfirm.setText("Confirm");
-        jPanel1.add(btnConfirm);
-        btnConfirm.setBounds(140, 260, 110, 29);
+        btnConfirm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConfirmActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnConfirm);
+        btnConfirm.setBounds(20, 170, 110, 25);
+
+        txfCSC.setBackground(new java.awt.Color(0, 0, 0));
+        txfCSC.setForeground(new java.awt.Color(255, 255, 255));
+        txfCSC.setText("CSC (3 digits)");
+        txfCSC.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txfCSCFocusLost(evt);
+            }
+        });
+        txfCSC.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txfCSCMouseClicked(evt);
+            }
+        });
+        jPanel2.add(txfCSC);
+        txfCSC.setBounds(180, 120, 110, 30);
+
+        jPanel1.add(jPanel2);
+        jPanel2.setBounds(10, 50, 310, 230);
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(0, 0, 440, 300);
+        jPanel1.setBounds(0, 0, 340, 350);
 
         jMenu1.setText("Menu");
 
@@ -149,6 +207,66 @@ public class Screen6Payment extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_mnuReserveActionPerformed
 
+    private void txfCardNumberFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txfCardNumberFocusLost
+        String text = txfCardNumber.getText().trim();
+        if (text.isEmpty()) {
+            txfCardNumber.setText("Card Number");
+        }
+    }//GEN-LAST:event_txfCardNumberFocusLost
+
+    private void txfCardNumberMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txfCardNumberMouseClicked
+        String text = txfCardNumber.getText().trim();
+        if (text.equals("Card Number")) {
+            txfCardNumber.setText("");
+        }
+    }//GEN-LAST:event_txfCardNumberMouseClicked
+
+    private void txfExpirationFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txfExpirationFocusLost
+        String text = txfExpiration.getText().trim();
+        if (text.isEmpty()) {
+            txfExpiration.setText("Expiration MM/YY");
+        }
+    }//GEN-LAST:event_txfExpirationFocusLost
+
+    private void txfExpirationMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txfExpirationMouseClicked
+        String text = txfExpiration.getText().trim();
+        if (text.equals("Expiration MM-YY")) {
+            txfExpiration.setText("");
+        }
+    }//GEN-LAST:event_txfExpirationMouseClicked
+
+    private void btnConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmActionPerformed
+        if (cbxCardType.getSelectedItem().equals("Card type") || txfCSC.getText().equals("CSC (3 digits)") || txfCardNumber.getText().equals("Card Number") || txfExpiration.getText().equals("Expiration MM-YY")) {
+            JOptionPane.showMessageDialog(rootPane, "Please fill in all the textfields");
+        } else {
+            int choice = JOptionPane.showConfirmDialog(rootPane, "Confirm payment of:\n"
+                + "Seat(s): " + seats + "\n"
+                + "Price: R" + price);
+            if (choice == 0) {
+                JOptionPane.showMessageDialog(rootPane, "Payment was successful! View more movies?");
+                new Screen4_MovieReservations(ERROR).setVisible(true);
+                this.setVisible(false);
+            } else {
+                JOptionPane.showMessageDialog(rootPane, "Payment was cancelled");
+            }
+        }
+
+    }//GEN-LAST:event_btnConfirmActionPerformed
+
+    private void txfCSCFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txfCSCFocusLost
+        String text = txfCSC.getText().trim();
+        if (text.isEmpty()) {
+            txfCSC.setText("CSC (3 digits)");
+        }
+    }//GEN-LAST:event_txfCSCFocusLost
+
+    private void txfCSCMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txfCSCMouseClicked
+        String text = txfCSC.getText().trim();
+        if (text.equals("CSC (3 digits)")) {
+            txfCSC.setText("");
+        }
+    }//GEN-LAST:event_txfCSCMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -180,7 +298,7 @@ public class Screen6Payment extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Screen6Payment().setVisible(true);
+                new Screen6Payment(price, seats).setVisible(true);
             }
         });
     }
@@ -195,6 +313,7 @@ public class Screen6Payment extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPopupMenu.Separator jSeparator2;
     private javax.swing.JPopupMenu.Separator jSeparator3;
     private javax.swing.JMenuItem mnuExit;
