@@ -75,7 +75,7 @@ public class Screen4_MovieReservations extends javax.swing.JFrame {
         tblMovies = new javax.swing.JTable();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        txaDescription = new javax.swing.JTextArea();
         jPanel4 = new javax.swing.JPanel();
         btnExit = new javax.swing.JButton();
         btnReservation = new javax.swing.JButton();
@@ -98,7 +98,7 @@ public class Screen4_MovieReservations extends javax.swing.JFrame {
         getContentPane().setLayout(null);
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Sort By", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 11), new java.awt.Color(255, 255, 255))); // NOI18N
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Sort By", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Lucida Grande", 0, 13), new java.awt.Color(255, 255, 255))); // NOI18N
         jPanel1.setLayout(null);
 
         btnMovieName.setBackground(new java.awt.Color(51, 102, 255));
@@ -141,7 +141,7 @@ public class Screen4_MovieReservations extends javax.swing.JFrame {
         jPanel1.setBounds(10, 20, 160, 160);
 
         jPanel2.setBackground(new java.awt.Color(51, 51, 51));
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Movies", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 11), new java.awt.Color(255, 255, 255))); // NOI18N
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Movies", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Lucida Grande", 0, 13), new java.awt.Color(255, 255, 255))); // NOI18N
         jPanel2.setLayout(null);
 
         tblMovies.setBackground(new java.awt.Color(51, 102, 255));
@@ -164,6 +164,11 @@ public class Screen4_MovieReservations extends javax.swing.JFrame {
             }
         });
         tblMovies.getTableHeader().setReorderingAllowed(false);
+        tblMovies.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblMoviesMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tblMovies);
         if (tblMovies.getColumnModel().getColumnCount() > 0) {
             tblMovies.getColumnModel().getColumn(0).setResizable(false);
@@ -182,15 +187,15 @@ public class Screen4_MovieReservations extends javax.swing.JFrame {
         jPanel2.setBounds(180, 20, 640, 210);
 
         jPanel3.setBackground(new java.awt.Color(51, 51, 51));
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Movie Description", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 11), new java.awt.Color(255, 255, 255))); // NOI18N
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Movie Description", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Lucida Grande", 0, 13), new java.awt.Color(255, 255, 255))); // NOI18N
         jPanel3.setLayout(null);
 
-        jTextArea1.setEditable(false);
-        jTextArea1.setBackground(new java.awt.Color(0, 0, 0));
-        jTextArea1.setColumns(20);
-        jTextArea1.setForeground(new java.awt.Color(255, 255, 255));
-        jTextArea1.setRows(5);
-        jScrollPane2.setViewportView(jTextArea1);
+        txaDescription.setEditable(false);
+        txaDescription.setBackground(new java.awt.Color(0, 0, 0));
+        txaDescription.setColumns(20);
+        txaDescription.setForeground(new java.awt.Color(255, 255, 255));
+        txaDescription.setRows(5);
+        jScrollPane2.setViewportView(txaDescription);
 
         jPanel3.add(jScrollPane2);
         jScrollPane2.setBounds(20, 30, 560, 99);
@@ -285,7 +290,7 @@ public class Screen4_MovieReservations extends javax.swing.JFrame {
         int row = tblMovies.getSelectedRow();
         int selectedMovieID = Integer.parseInt(model.getValueAt(row, 0).toString());
         int selectedSelectedShowID = 0;
-
+       
         try {
             switch (selectedMovieID) {
                 case 1:
@@ -343,6 +348,11 @@ public class Screen4_MovieReservations extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
+    private void tblMoviesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblMoviesMouseClicked
+        int row = tblMovies.getSelectedRow();
+        txaDescription.setText(model.getValueAt(row, 4).toString());
+    }//GEN-LAST:event_tblMoviesMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -399,8 +409,8 @@ public class Screen4_MovieReservations extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JPopupMenu.Separator jSeparator2;
     private javax.swing.JPopupMenu.Separator jSeparator3;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JMenuItem mnuExit;
     private javax.swing.JTable tblMovies;
+    private javax.swing.JTextArea txaDescription;
     // End of variables declaration//GEN-END:variables
 }
