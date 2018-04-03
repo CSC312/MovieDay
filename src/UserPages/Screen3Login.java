@@ -81,8 +81,13 @@ public class Screen3Login extends javax.swing.JFrame {
         mnuExit = new javax.swing.JMenuItem();
         jSeparator3 = new javax.swing.JPopupMenu.Separator();
         jMenu2 = new javax.swing.JMenu();
+<<<<<<< HEAD
         jMenuItem5 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
+=======
+        jMenuItem4 = new javax.swing.JMenuItem();
+        jMenuItem5 = new javax.swing.JMenuItem();
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         jSeparator2 = new javax.swing.JPopupMenu.Separator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -91,11 +96,19 @@ public class Screen3Login extends javax.swing.JFrame {
         setBounds(new java.awt.Rectangle(0, 0, 580, 430));
         setMinimumSize(new java.awt.Dimension(580, 430));
         setName("Login"); // NOI18N
+<<<<<<< HEAD
+=======
+        setPreferredSize(new java.awt.Dimension(580, 430));
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         setResizable(false);
         getContentPane().setLayout(null);
 
         jPanel2.setBackground(new java.awt.Color(51, 51, 51));
+<<<<<<< HEAD
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Login details", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(255, 255, 255))); // NOI18N
+=======
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Login details", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Lucida Grande", 0, 13), new java.awt.Color(255, 255, 255))); // NOI18N
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         jPanel2.setMaximumSize(new java.awt.Dimension(570, 340));
         jPanel2.setMinimumSize(new java.awt.Dimension(570, 340));
         jPanel2.setPreferredSize(new java.awt.Dimension(570, 230));
@@ -105,7 +118,10 @@ public class Screen3Login extends javax.swing.JFrame {
         btnLogin.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         btnLogin.setForeground(new java.awt.Color(255, 255, 255));
         btnLogin.setText("Login");
+<<<<<<< HEAD
         btnLogin.setToolTipText("Log in to your account");
+=======
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         btnLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLoginActionPerformed(evt);
@@ -117,7 +133,10 @@ public class Screen3Login extends javax.swing.JFrame {
         jLabel5.setBackground(new java.awt.Color(0, 51, 255));
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Forgot password?");
+<<<<<<< HEAD
         jLabel5.setToolTipText("Forgot password, click here");
+=======
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel5MouseClicked(evt);
@@ -130,14 +149,21 @@ public class Screen3Login extends javax.swing.JFrame {
         btnCreateAcc.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         btnCreateAcc.setForeground(new java.awt.Color(255, 255, 255));
         btnCreateAcc.setText("Dont have an account?");
+<<<<<<< HEAD
         btnCreateAcc.setToolTipText("Create an account");
+=======
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         btnCreateAcc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCreateAccActionPerformed(evt);
             }
         });
         jPanel2.add(btnCreateAcc);
+<<<<<<< HEAD
         btnCreateAcc.setBounds(210, 180, 152, 40);
+=======
+        btnCreateAcc.setBounds(210, 180, 162, 40);
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -147,7 +173,10 @@ public class Screen3Login extends javax.swing.JFrame {
 
         txfUsername.setBackground(new java.awt.Color(0, 0, 0));
         txfUsername.setForeground(new java.awt.Color(255, 255, 255));
+<<<<<<< HEAD
         txfUsername.setToolTipText("Your email(e.g mbizasive@gmail.com)");
+=======
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         jPanel2.add(txfUsername);
         txfUsername.setBounds(200, 19, 180, 40);
 
@@ -159,7 +188,10 @@ public class Screen3Login extends javax.swing.JFrame {
 
         pwfPassword.setBackground(new java.awt.Color(0, 0, 0));
         pwfPassword.setForeground(new java.awt.Color(255, 255, 255));
+<<<<<<< HEAD
         pwfPassword.setToolTipText("Your password");
+=======
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         jPanel2.add(pwfPassword);
         pwfPassword.setBounds(200, 70, 180, 40);
 
@@ -180,20 +212,30 @@ public class Screen3Login extends javax.swing.JFrame {
         btnExit.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         btnExit.setForeground(new java.awt.Color(255, 255, 255));
         btnExit.setText("Exit");
+<<<<<<< HEAD
         btnExit.setToolTipText("Exit the program");
+=======
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         btnExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnExitActionPerformed(evt);
             }
         });
         jPanel1.add(btnExit);
+<<<<<<< HEAD
         btnExit.setBounds(420, 270, 55, 40);
+=======
+        btnExit.setBounds(420, 270, 75, 40);
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
 
         btnHome.setBackground(new java.awt.Color(51, 102, 255));
         btnHome.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         btnHome.setForeground(new java.awt.Color(255, 255, 255));
         btnHome.setText("Home");
+<<<<<<< HEAD
         btnHome.setToolTipText("Go to home screen");
+=======
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         btnHome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnHomeActionPerformed(evt);
@@ -206,7 +248,10 @@ public class Screen3Login extends javax.swing.JFrame {
         btnClear.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         btnClear.setForeground(new java.awt.Color(255, 255, 255));
         btnClear.setText("Clear");
+<<<<<<< HEAD
         btnClear.setToolTipText("Clear all fields");
+=======
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         btnClear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnClearActionPerformed(evt);
@@ -241,6 +286,7 @@ public class Screen3Login extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
+<<<<<<< HEAD
         jMenu2.setText("Help ");
 
         jMenuItem5.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1, 0));
@@ -253,6 +299,10 @@ public class Screen3Login extends javax.swing.JFrame {
         jMenu2.add(jMenuItem5);
 
         jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F2, 0));
+=======
+        jMenu2.setText("Help & About");
+
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         jMenuItem4.setText("About");
         jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -260,6 +310,12 @@ public class Screen3Login extends javax.swing.JFrame {
             }
         });
         jMenu2.add(jMenuItem4);
+<<<<<<< HEAD
+=======
+
+        jMenuItem5.setText("FAQ");
+        jMenu2.add(jMenuItem5);
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         jMenu2.add(jSeparator2);
 
         jMenuBar1.add(jMenu2);
@@ -377,6 +433,7 @@ public class Screen3Login extends javax.swing.JFrame {
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         // TODO add your handling code here:
+<<<<<<< HEAD
         new AboutScreen().setVisible(true);
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
@@ -385,6 +442,10 @@ public class Screen3Login extends javax.swing.JFrame {
         new HelpScreen().setVisible(true);
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
+=======
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
+
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
     /**
      * @param args the command line arguments
      */

@@ -68,15 +68,27 @@ public class Screen1Home extends javax.swing.JFrame {
         mnuExit = new javax.swing.JMenuItem();
         jSeparator3 = new javax.swing.JPopupMenu.Separator();
         jMenu2 = new javax.swing.JMenu();
+<<<<<<< HEAD
         jMenuItem5 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
+=======
+        jMenuItem4 = new javax.swing.JMenuItem();
+        jMenuItem5 = new javax.swing.JMenuItem();
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         jSeparator2 = new javax.swing.JPopupMenu.Separator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Home Screen");
         setBackground(new java.awt.Color(51, 51, 51));
+<<<<<<< HEAD
         setMinimumSize(new java.awt.Dimension(826, 425));
         setName("Home"); // NOI18N
+=======
+        setMaximumSize(new java.awt.Dimension(826, 425));
+        setMinimumSize(new java.awt.Dimension(826, 425));
+        setName("Home"); // NOI18N
+        setPreferredSize(new java.awt.Dimension(826, 425));
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         setResizable(false);
         getContentPane().setLayout(null);
 
@@ -93,7 +105,10 @@ public class Screen1Home extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Create account");
+<<<<<<< HEAD
         jLabel5.setToolTipText("Dont have an account? Create an account");
+=======
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel5MouseClicked(evt);
@@ -105,7 +120,10 @@ public class Screen1Home extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Sign in");
+<<<<<<< HEAD
         jLabel3.setToolTipText("Log in into your account");
+=======
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel3MouseClicked(evt);
@@ -118,7 +136,11 @@ public class Screen1Home extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("|");
         jPanel1.add(jLabel6);
+<<<<<<< HEAD
         jLabel6.setBounds(566, 49, 4, 15);
+=======
+        jLabel6.setBounds(566, 49, 8, 15);
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -141,24 +163,37 @@ public class Screen1Home extends javax.swing.JFrame {
         lblPicture.setBounds(20, 20, 540, 220);
 
         btnNext.setText("Next");
+<<<<<<< HEAD
         btnNext.setToolTipText("next screen");
+=======
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         btnNext.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNextActionPerformed(evt);
             }
         });
         jPanel3.add(btnNext);
+<<<<<<< HEAD
         btnNext.setBounds(310, 250, 100, 25);
 
         btnPrev.setText("Previous");
         btnPrev.setToolTipText("Previous screen");
+=======
+        btnNext.setBounds(310, 250, 100, 29);
+
+        btnPrev.setText("Previous");
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         btnPrev.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPrevActionPerformed(evt);
             }
         });
         jPanel3.add(btnPrev);
+<<<<<<< HEAD
         btnPrev.setBounds(200, 250, 90, 25);
+=======
+        btnPrev.setBounds(200, 250, 90, 29);
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
 
         jPanel1.add(jPanel3);
         jPanel3.setBounds(130, 80, 580, 290);
@@ -214,6 +249,7 @@ public class Screen1Home extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
+<<<<<<< HEAD
         jMenu2.setText("Help");
 
         jMenuItem5.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1, 0));
@@ -226,6 +262,10 @@ public class Screen1Home extends javax.swing.JFrame {
         jMenu2.add(jMenuItem5);
 
         jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F2, 0));
+=======
+        jMenu2.setText("Help & About");
+
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         jMenuItem4.setText("About");
         jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -233,6 +273,12 @@ public class Screen1Home extends javax.swing.JFrame {
             }
         });
         jMenu2.add(jMenuItem4);
+<<<<<<< HEAD
+=======
+
+        jMenuItem5.setText("FAQ");
+        jMenu2.add(jMenuItem5);
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         jMenu2.add(jSeparator2);
 
         jMenuBar1.add(jMenu2);
@@ -254,7 +300,10 @@ public class Screen1Home extends javax.swing.JFrame {
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         // TODO add your handling code here:
+<<<<<<< HEAD
         new AboutScreen().setVisible(true);
+=======
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void mnuCreateAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuCreateAccountActionPerformed
@@ -284,11 +333,14 @@ public class Screen1Home extends javax.swing.JFrame {
         previous();
     }//GEN-LAST:event_btnPrevActionPerformed
 
+<<<<<<< HEAD
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
         // TODO add your handling code here:
         new HelpScreen().setVisible(true);
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
+=======
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
     /**
      * @param args the command line arguments
      */

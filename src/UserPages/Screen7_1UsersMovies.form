@@ -48,6 +48,7 @@
         </Menu>
         <Menu class="javax.swing.JMenu" name="jMenu2">
           <Properties>
+<<<<<<< HEAD
             <Property name="text" type="java.lang.String" value="Help"/>
           </Properties>
           <SubComponents>
@@ -67,12 +68,27 @@
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
                   <KeyStroke key="F2"/>
                 </Property>
+=======
+            <Property name="text" type="java.lang.String" value="Help &amp; About"/>
+          </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem4">
+              <Properties>
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
                 <Property name="text" type="java.lang.String" value="About"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem4ActionPerformed"/>
               </Events>
             </MenuItem>
+<<<<<<< HEAD
+=======
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem5">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="FAQ"/>
+              </Properties>
+            </MenuItem>
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
             <MenuItem class="javax.swing.JPopupMenu$Separator" name="jSeparator2">
             </MenuItem>
           </SubComponents>
@@ -82,9 +98,21 @@
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
+<<<<<<< HEAD
     <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
       <Dimension value="[545, 356]"/>
     </Property>
+=======
+    <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+      <Dimension value="[545, 356]"/>
+    </Property>
+    <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+      <Dimension value="[545, 356]"/>
+    </Property>
+    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+      <Dimension value="[545, 356]"/>
+    </Property>
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
     <Property name="resizable" type="boolean" value="false"/>
   </Properties>
   <SyntheticProperties>
@@ -258,7 +286,10 @@
                     <StringItem index="4" value="Item 5"/>
                   </StringArray>
                 </Property>
+<<<<<<< HEAD
                 <Property name="toolTipText" type="java.lang.String" value="List of movies"/>
+=======
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
               </Properties>
             </Component>
           </SubComponents>
@@ -271,7 +302,10 @@
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Back"/>
+<<<<<<< HEAD
         <Property name="toolTipText" type="java.lang.String" value="Go to previous screen"/>
+=======
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -285,7 +319,10 @@
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Cancel Reservation"/>
+<<<<<<< HEAD
         <Property name="toolTipText" type="java.lang.String" value="Cancel this reservation"/>
+=======
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -299,7 +336,10 @@
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Exit"/>
+<<<<<<< HEAD
         <Property name="toolTipText" type="java.lang.String" value="Exit the program"/>
+=======
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">

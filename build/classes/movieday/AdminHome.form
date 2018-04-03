@@ -44,6 +44,17 @@
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="adminProfileMenuMouseClicked"/>
           </Events>
         </Menu>
+<<<<<<< HEAD
+=======
+        <Menu class="javax.swing.JMenu" name="adminHelpMenu">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Help"/>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="adminHelpMenuMouseClicked"/>
+          </Events>
+        </Menu>
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         <Menu class="javax.swing.JMenu" name="adminExitMenu">
           <Properties>
             <Property name="text" type="java.lang.String" value="Exit"/>
@@ -172,7 +183,10 @@
         <Component class="javax.swing.JButton" name="jButton2">
           <Properties>
             <Property name="text" type="java.lang.String" value="View Reports"/>
+<<<<<<< HEAD
             <Property name="toolTipText" type="java.lang.String" value=""/>
+=======
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
@@ -196,7 +210,10 @@
         <Component class="javax.swing.JTextField" name="seatsCancelledTxt">
           <Properties>
             <Property name="text" type="java.lang.String" value="12"/>
+<<<<<<< HEAD
             <Property name="toolTipText" type="java.lang.String" value=""/>
+=======
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -207,7 +224,10 @@
         <Component class="javax.swing.JTextField" name="seatsBookedTxt">
           <Properties>
             <Property name="text" type="java.lang.String" value="120"/>
+<<<<<<< HEAD
             <Property name="toolTipText" type="java.lang.String" value="Price of the seats booked"/>
+=======
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -234,7 +254,10 @@
             <Component class="javax.swing.JButton" name="viewMoviesButton">
               <Properties>
                 <Property name="text" type="java.lang.String" value="View Movies"/>
+<<<<<<< HEAD
                 <Property name="toolTipText" type="java.lang.String" value=""/>
+=======
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="viewMoviesButtonActionPerformed"/>
@@ -272,7 +295,10 @@
             <Component class="javax.swing.JButton" name="viewUsersButton">
               <Properties>
                 <Property name="text" type="java.lang.String" value="View Users"/>
+<<<<<<< HEAD
                 <Property name="toolTipText" type="java.lang.String" value=""/>
+=======
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="viewUsersButtonActionPerformed"/>
@@ -286,7 +312,10 @@
             <Component class="javax.swing.JButton" name="viewProfileButton">
               <Properties>
                 <Property name="text" type="java.lang.String" value="View Profile"/>
+<<<<<<< HEAD
                 <Property name="toolTipText" type="java.lang.String" value=""/>
+=======
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="viewProfileButtonActionPerformed"/>

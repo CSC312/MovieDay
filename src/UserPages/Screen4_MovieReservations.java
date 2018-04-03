@@ -76,17 +76,32 @@ public class Screen4_MovieReservations extends javax.swing.JFrame {
         mnuExit = new javax.swing.JMenuItem();
         jSeparator3 = new javax.swing.JPopupMenu.Separator();
         jMenu2 = new javax.swing.JMenu();
+<<<<<<< HEAD
         jMenuItem5 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
         jSeparator2 = new javax.swing.JPopupMenu.Separator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(830, 440));
+=======
+        jMenuItem4 = new javax.swing.JMenuItem();
+        jMenuItem5 = new javax.swing.JMenuItem();
+        jSeparator2 = new javax.swing.JPopupMenu.Separator();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(830, 440));
+        setMinimumSize(new java.awt.Dimension(830, 440));
+        setPreferredSize(new java.awt.Dimension(830, 440));
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         setResizable(false);
         getContentPane().setLayout(null);
 
         jPanel2.setBackground(new java.awt.Color(51, 51, 51));
+<<<<<<< HEAD
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Movies", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(255, 255, 255))); // NOI18N
+=======
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Movies", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Lucida Grande", 0, 13), new java.awt.Color(255, 255, 255))); // NOI18N
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         jPanel2.setLayout(null);
 
         tblMovies.setBackground(new java.awt.Color(51, 102, 255));
@@ -132,7 +147,11 @@ public class Screen4_MovieReservations extends javax.swing.JFrame {
         jPanel2.setBounds(10, 20, 810, 210);
 
         jPanel3.setBackground(new java.awt.Color(51, 51, 51));
+<<<<<<< HEAD
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Movie Description", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(255, 255, 255))); // NOI18N
+=======
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Movie Description", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Lucida Grande", 0, 13), new java.awt.Color(255, 255, 255))); // NOI18N
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         jPanel3.setLayout(null);
 
         txaDescription.setEditable(false);
@@ -155,7 +174,10 @@ public class Screen4_MovieReservations extends javax.swing.JFrame {
         btnExit.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         btnExit.setForeground(new java.awt.Color(255, 255, 255));
         btnExit.setText("Exit");
+<<<<<<< HEAD
         btnExit.setToolTipText("Exit the program");
+=======
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         btnExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnExitActionPerformed(evt);
@@ -168,7 +190,10 @@ public class Screen4_MovieReservations extends javax.swing.JFrame {
         btnReservation.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         btnReservation.setForeground(new java.awt.Color(255, 255, 255));
         btnReservation.setText("Make Reservation");
+<<<<<<< HEAD
         btnReservation.setToolTipText("Make reservation for the selected movies");
+=======
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         btnReservation.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnReservationActionPerformed(evt);
@@ -212,6 +237,7 @@ public class Screen4_MovieReservations extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
+<<<<<<< HEAD
         jMenu2.setText("Help");
 
         jMenuItem5.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1, 0));
@@ -224,6 +250,10 @@ public class Screen4_MovieReservations extends javax.swing.JFrame {
         jMenu2.add(jMenuItem5);
 
         jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F2, 0));
+=======
+        jMenu2.setText("Help & About");
+
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         jMenuItem4.setText("About");
         jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -231,6 +261,12 @@ public class Screen4_MovieReservations extends javax.swing.JFrame {
             }
         });
         jMenu2.add(jMenuItem4);
+<<<<<<< HEAD
+=======
+
+        jMenuItem5.setText("FAQ");
+        jMenu2.add(jMenuItem5);
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         jMenu2.add(jSeparator2);
 
         jMenuBar1.add(jMenu2);
@@ -278,7 +314,10 @@ public class Screen4_MovieReservations extends javax.swing.JFrame {
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         // TODO add your handling code here:
+<<<<<<< HEAD
         new AboutScreen().setVisible(true);
+=======
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
@@ -296,11 +335,14 @@ public class Screen4_MovieReservations extends javax.swing.JFrame {
         txaDescription.setText(model.getValueAt(row, 4).toString());
     }//GEN-LAST:event_tblMoviesMouseClicked
 
+<<<<<<< HEAD
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
         // TODO add your handling code here:
         new HelpScreen().setVisible(true);
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
+=======
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
     /**
      * @param args the command line arguments
      */

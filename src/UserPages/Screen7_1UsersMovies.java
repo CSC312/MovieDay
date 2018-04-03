@@ -108,54 +108,97 @@ public class Screen7_1UsersMovies extends javax.swing.JFrame {
         mnuExit = new javax.swing.JMenuItem();
         jSeparator3 = new javax.swing.JPopupMenu.Separator();
         jMenu2 = new javax.swing.JMenu();
+<<<<<<< HEAD
         jMenuItem5 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
         jSeparator2 = new javax.swing.JPopupMenu.Separator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(545, 356));
+=======
+        jMenuItem4 = new javax.swing.JMenuItem();
+        jMenuItem5 = new javax.swing.JMenuItem();
+        jSeparator2 = new javax.swing.JPopupMenu.Separator();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(545, 356));
+        setMinimumSize(new java.awt.Dimension(545, 356));
+        setPreferredSize(new java.awt.Dimension(545, 356));
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         setResizable(false);
         getContentPane().setLayout(null);
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
+<<<<<<< HEAD
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "About Movie", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(255, 255, 255))); // NOI18N
+=======
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "About Movie", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Lucida Grande", 0, 13), new java.awt.Color(255, 255, 255))); // NOI18N
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         jPanel1.setLayout(null);
 
         lblLength.setForeground(new java.awt.Color(255, 255, 255));
         lblLength.setText("Length");
         jPanel1.add(lblLength);
+<<<<<<< HEAD
         lblLength.setBounds(17, 113, 280, 15);
+=======
+        lblLength.setBounds(17, 113, 280, 16);
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
 
         lblMovie.setForeground(new java.awt.Color(255, 255, 255));
         lblMovie.setText("Movie name");
         jPanel1.add(lblMovie);
+<<<<<<< HEAD
         lblMovie.setBounds(17, 29, 280, 15);
+=======
+        lblMovie.setBounds(17, 29, 280, 16);
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
 
         lblSeats.setForeground(new java.awt.Color(255, 255, 255));
         lblSeats.setText("Your seats");
         jPanel1.add(lblSeats);
+<<<<<<< HEAD
         lblSeats.setBounds(17, 134, 280, 15);
+=======
+        lblSeats.setBounds(17, 134, 280, 16);
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
 
         lblTime.setForeground(new java.awt.Color(255, 255, 255));
         lblTime.setText("Time(s)");
         jPanel1.add(lblTime);
+<<<<<<< HEAD
         lblTime.setBounds(17, 50, 280, 15);
+=======
+        lblTime.setBounds(17, 50, 280, 16);
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
 
         lblGenre.setForeground(new java.awt.Color(255, 255, 255));
         lblGenre.setText("Genre(s)");
         jPanel1.add(lblGenre);
+<<<<<<< HEAD
         lblGenre.setBounds(17, 71, 280, 15);
+=======
+        lblGenre.setBounds(17, 71, 280, 16);
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
 
         lblYear.setForeground(new java.awt.Color(255, 255, 255));
         lblYear.setText("Year");
         jPanel1.add(lblYear);
+<<<<<<< HEAD
         lblYear.setBounds(17, 92, 280, 15);
+=======
+        lblYear.setBounds(17, 92, 280, 16);
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(210, 20, 310, 170);
 
         jPanel2.setBackground(new java.awt.Color(51, 51, 51));
+<<<<<<< HEAD
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Movie List", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(255, 255, 255))); // NOI18N
+=======
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Movie List", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Lucida Grande", 0, 13), new java.awt.Color(255, 255, 255))); // NOI18N
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         jPanel2.setLayout(null);
 
         lstMovieList.setModel(new javax.swing.AbstractListModel() {
@@ -163,7 +206,10 @@ public class Screen7_1UsersMovies extends javax.swing.JFrame {
             public int getSize() { return strings.length; }
             public Object getElementAt(int i) { return strings[i]; }
         });
+<<<<<<< HEAD
         lstMovieList.setToolTipText("List of movies");
+=======
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         jScrollPane1.setViewportView(lstMovieList);
 
         jPanel2.add(jScrollPane1);
@@ -174,6 +220,7 @@ public class Screen7_1UsersMovies extends javax.swing.JFrame {
 
         btnBack.setForeground(new java.awt.Color(255, 255, 255));
         btnBack.setText("Back");
+<<<<<<< HEAD
         btnBack.setToolTipText("Go to previous screen");
         getContentPane().add(btnBack);
         btnBack.setBounds(370, 240, 70, 25);
@@ -189,6 +236,20 @@ public class Screen7_1UsersMovies extends javax.swing.JFrame {
         btnExit.setToolTipText("Exit the program");
         getContentPane().add(btnExit);
         btnExit.setBounds(460, 240, 60, 25);
+=======
+        getContentPane().add(btnBack);
+        btnBack.setBounds(370, 240, 70, 29);
+
+        btnCancelRes.setForeground(new java.awt.Color(255, 255, 255));
+        btnCancelRes.setText("Cancel Reservation");
+        getContentPane().add(btnCancelRes);
+        btnCancelRes.setBounds(370, 200, 150, 29);
+
+        btnExit.setForeground(new java.awt.Color(255, 255, 255));
+        btnExit.setText("Exit");
+        getContentPane().add(btnExit);
+        btnExit.setBounds(460, 240, 60, 29);
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
 
         jPanel3.setBackground(new java.awt.Color(51, 51, 51));
         getContentPane().add(jPanel3);
@@ -226,6 +287,7 @@ public class Screen7_1UsersMovies extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
+<<<<<<< HEAD
         jMenu2.setText("Help");
 
         jMenuItem5.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1, 0));
@@ -238,6 +300,10 @@ public class Screen7_1UsersMovies extends javax.swing.JFrame {
         jMenu2.add(jMenuItem5);
 
         jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F2, 0));
+=======
+        jMenu2.setText("Help & About");
+
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         jMenuItem4.setText("About");
         jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -245,6 +311,12 @@ public class Screen7_1UsersMovies extends javax.swing.JFrame {
             }
         });
         jMenu2.add(jMenuItem4);
+<<<<<<< HEAD
+=======
+
+        jMenuItem5.setText("FAQ");
+        jMenu2.add(jMenuItem5);
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         jMenu2.add(jSeparator2);
 
         jMenuBar1.add(jMenu2);
@@ -270,6 +342,7 @@ public class Screen7_1UsersMovies extends javax.swing.JFrame {
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         // TODO add your handling code here:
+<<<<<<< HEAD
         new AboutScreen().setVisible(true);
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
@@ -278,6 +351,10 @@ public class Screen7_1UsersMovies extends javax.swing.JFrame {
         new HelpScreen().setVisible(true);
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
+=======
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
+
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
     /**
      * @param args the command line arguments
      */

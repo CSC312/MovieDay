@@ -91,19 +91,35 @@ public class Screen2Register extends javax.swing.JFrame {
         mnuExit = new javax.swing.JMenuItem();
         jSeparator3 = new javax.swing.JPopupMenu.Separator();
         jMenu2 = new javax.swing.JMenu();
+<<<<<<< HEAD
         jMenuItem5 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
+=======
+        jMenuItem4 = new javax.swing.JMenuItem();
+        jMenuItem5 = new javax.swing.JMenuItem();
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         jSeparator2 = new javax.swing.JPopupMenu.Separator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(51, 51, 51));
+<<<<<<< HEAD
         setMinimumSize(new java.awt.Dimension(823, 431));
         setName("Registration"); // NOI18N
+=======
+        setMaximumSize(new java.awt.Dimension(823, 431));
+        setMinimumSize(new java.awt.Dimension(823, 431));
+        setName("Registration"); // NOI18N
+        setPreferredSize(new java.awt.Dimension(823, 431));
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         setResizable(false);
         getContentPane().setLayout(null);
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
+<<<<<<< HEAD
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Details", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(255, 255, 255))); // NOI18N
+=======
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Details", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Lucida Grande", 0, 13), new java.awt.Color(255, 255, 255))); // NOI18N
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(null);
 
@@ -111,7 +127,10 @@ public class Screen2Register extends javax.swing.JFrame {
         btnSubmit.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         btnSubmit.setForeground(new java.awt.Color(255, 255, 255));
         btnSubmit.setText("Submit");
+<<<<<<< HEAD
         btnSubmit.setToolTipText("Click to submit");
+=======
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         btnSubmit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSubmitActionPerformed(evt);
@@ -124,32 +143,49 @@ public class Screen2Register extends javax.swing.JFrame {
         btnBack.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         btnBack.setForeground(new java.awt.Color(255, 255, 255));
         btnBack.setText("Back");
+<<<<<<< HEAD
         btnBack.setToolTipText("Go to previous screen");
+=======
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackActionPerformed(evt);
             }
         });
         jPanel1.add(btnBack);
+<<<<<<< HEAD
         btnBack.setBounds(600, 110, 60, 40);
+=======
+        btnBack.setBounds(600, 110, 75, 40);
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
 
         btnClear.setBackground(new java.awt.Color(51, 102, 255));
         btnClear.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         btnClear.setForeground(new java.awt.Color(255, 255, 255));
         btnClear.setText("Clear");
+<<<<<<< HEAD
         btnClear.setToolTipText("Go to the next screen");
+=======
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         btnClear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnClearActionPerformed(evt);
             }
         });
         jPanel1.add(btnClear);
+<<<<<<< HEAD
         btnClear.setBounds(670, 110, 64, 40);
+=======
+        btnClear.setBounds(670, 110, 75, 40);
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
 
         txfSecurityQuestion.setBackground(new java.awt.Color(0, 0, 0));
         txfSecurityQuestion.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
         txfSecurityQuestion.setForeground(java.awt.Color.white);
+<<<<<<< HEAD
         txfSecurityQuestion.setToolTipText("A security question in case you forget your password");
+=======
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         txfSecurityQuestion.setMaximumSize(new java.awt.Dimension(4, 19));
         txfSecurityQuestion.setMinimumSize(new java.awt.Dimension(4, 19));
         txfSecurityQuestion.setPreferredSize(new java.awt.Dimension(4, 19));
@@ -175,17 +211,28 @@ public class Screen2Register extends javax.swing.JFrame {
         jLabel15.setForeground(new java.awt.Color(255, 255, 255));
         jLabel15.setText("Security Question:");
         jPanel1.add(jLabel15);
+<<<<<<< HEAD
         jLabel15.setBounds(480, 20, 147, 17);
+=======
+        jLabel15.setBounds(480, 20, 129, 17);
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Name:");
         jPanel1.add(jLabel3);
+<<<<<<< HEAD
         jLabel3.setBounds(40, 40, 50, 17);
 
         txfName.setBackground(new java.awt.Color(0, 0, 0));
         txfName.setForeground(new java.awt.Color(255, 255, 255));
         txfName.setToolTipText("Enter your name");
+=======
+        jLabel3.setBounds(40, 40, 45, 17);
+
+        txfName.setBackground(new java.awt.Color(0, 0, 0));
+        txfName.setForeground(new java.awt.Color(255, 255, 255));
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         txfName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txfNameActionPerformed(evt);
@@ -198,11 +245,18 @@ public class Screen2Register extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Surname:");
         jPanel1.add(jLabel6);
+<<<<<<< HEAD
         jLabel6.setBounds(40, 80, 76, 17);
 
         txfSurname.setBackground(new java.awt.Color(0, 0, 0));
         txfSurname.setForeground(java.awt.Color.white);
         txfSurname.setToolTipText("Enter your surname");
+=======
+        jLabel6.setBounds(40, 80, 67, 17);
+
+        txfSurname.setBackground(new java.awt.Color(0, 0, 0));
+        txfSurname.setForeground(java.awt.Color.white);
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         jPanel1.add(txfSurname);
         txfSurname.setBounds(150, 70, 170, 30);
 
@@ -214,7 +268,11 @@ public class Screen2Register extends javax.swing.JFrame {
 
         txfEmail.setBackground(new java.awt.Color(0, 0, 0));
         txfEmail.setForeground(java.awt.Color.white);
+<<<<<<< HEAD
         txfEmail.setToolTipText("Your email address(e.g mbizasive@gmail.com)");
+=======
+        txfEmail.setToolTipText("");
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         txfEmail.setMaximumSize(new java.awt.Dimension(4, 19));
         jPanel1.add(txfEmail);
         txfEmail.setBounds(150, 150, 170, 30);
@@ -223,12 +281,20 @@ public class Screen2Register extends javax.swing.JFrame {
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Date of Birth:");
         jPanel1.add(jLabel11);
+<<<<<<< HEAD
         jLabel11.setBounds(40, 120, 105, 17);
+=======
+        jLabel11.setBounds(40, 120, 95, 17);
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
 
         txfDOB.setBackground(new java.awt.Color(0, 0, 0));
         txfDOB.setForeground(java.awt.Color.white);
         txfDOB.setText("YYYY-MM-DD");
+<<<<<<< HEAD
         txfDOB.setToolTipText("Date of birth(e.g 1999-10-03)");
+=======
+        txfDOB.setToolTipText("");
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         txfDOB.setMaximumSize(new java.awt.Dimension(4, 19));
         jPanel1.add(txfDOB);
         txfDOB.setBounds(150, 110, 170, 30);
@@ -236,6 +302,7 @@ public class Screen2Register extends javax.swing.JFrame {
         jLabel14.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setText("Password:");
+<<<<<<< HEAD
         jLabel14.setToolTipText("Your password");
         jPanel1.add(jLabel14);
         jLabel14.setBounds(40, 200, 84, 17);
@@ -243,19 +310,34 @@ public class Screen2Register extends javax.swing.JFrame {
         lblPassword.setText("<Password>");
         jPanel1.add(lblPassword);
         lblPassword.setBounds(150, 200, 126, 15);
+=======
+        jPanel1.add(jLabel14);
+        jLabel14.setBounds(40, 200, 72, 17);
+
+        lblPassword.setText("<Password>");
+        jPanel1.add(lblPassword);
+        lblPassword.setBounds(150, 200, 126, 16);
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
 
         btnNewPass.setBackground(new java.awt.Color(51, 102, 255));
         btnNewPass.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         btnNewPass.setForeground(new java.awt.Color(255, 255, 255));
         btnNewPass.setText("Generate new password");
+<<<<<<< HEAD
         btnNewPass.setToolTipText("Click to generate a password");
+=======
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         btnNewPass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNewPassActionPerformed(evt);
             }
         });
         jPanel1.add(btnNewPass);
+<<<<<<< HEAD
         btnNewPass.setBounds(40, 230, 157, 40);
+=======
+        btnNewPass.setBounds(40, 230, 167, 40);
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 12, 820, 280);
@@ -267,7 +349,10 @@ public class Screen2Register extends javax.swing.JFrame {
         btnLogin.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         btnLogin.setForeground(new java.awt.Color(255, 255, 255));
         btnLogin.setText("Login");
+<<<<<<< HEAD
         btnLogin.setToolTipText("Log in to your account");
+=======
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         btnLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLoginActionPerformed(evt);
@@ -302,6 +387,7 @@ public class Screen2Register extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
+<<<<<<< HEAD
         jMenu2.setText("Help");
 
         jMenuItem5.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1, 0));
@@ -314,6 +400,10 @@ public class Screen2Register extends javax.swing.JFrame {
         jMenu2.add(jMenuItem5);
 
         jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F2, 0));
+=======
+        jMenu2.setText("Help & About");
+
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         jMenuItem4.setText("About");
         jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -321,6 +411,12 @@ public class Screen2Register extends javax.swing.JFrame {
             }
         });
         jMenu2.add(jMenuItem4);
+<<<<<<< HEAD
+=======
+
+        jMenuItem5.setText("FAQ");
+        jMenu2.add(jMenuItem5);
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         jMenu2.add(jSeparator2);
 
         jMenuBar1.add(jMenu2);
@@ -471,6 +567,7 @@ public class Screen2Register extends javax.swing.JFrame {
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         // TODO add your handling code here:
+<<<<<<< HEAD
         new AboutScreen().setVisible(true);
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
@@ -479,6 +576,10 @@ public class Screen2Register extends javax.swing.JFrame {
         new HelpScreen().setVisible(true);
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
+=======
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
+
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
     /**
      * @param args the command line arguments
      */

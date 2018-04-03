@@ -141,6 +141,10 @@ public class AdminHome extends javax.swing.JFrame {
         adminMoviesMenu = new javax.swing.JMenu();
         adminUsersMenu = new javax.swing.JMenu();
         adminProfileMenu = new javax.swing.JMenu();
+<<<<<<< HEAD
+=======
+        adminHelpMenu = new javax.swing.JMenu();
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         adminExitMenu = new javax.swing.JMenu();
         adminLogoutMenu = new javax.swing.JMenu();
 
@@ -178,7 +182,10 @@ public class AdminHome extends javax.swing.JFrame {
         jLabel7.setBounds(30, 570, 150, 30);
 
         jButton2.setText("View Reports");
+<<<<<<< HEAD
         jButton2.setToolTipText("");
+=======
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -192,12 +199,18 @@ public class AdminHome extends javax.swing.JFrame {
         TotalSalesTxt.setBounds(180, 570, 160, 40);
 
         seatsCancelledTxt.setText("12");
+<<<<<<< HEAD
         seatsCancelledTxt.setToolTipText("");
+=======
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         jPanel1.add(seatsCancelledTxt);
         seatsCancelledTxt.setBounds(180, 520, 160, 40);
 
         seatsBookedTxt.setText("120");
+<<<<<<< HEAD
         seatsBookedTxt.setToolTipText("Price of the seats booked");
+=======
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         jPanel1.add(seatsBookedTxt);
         seatsBookedTxt.setBounds(180, 470, 160, 40);
 
@@ -205,7 +218,10 @@ public class AdminHome extends javax.swing.JFrame {
         jPanel2.setLayout(null);
 
         viewMoviesButton.setText("View Movies");
+<<<<<<< HEAD
         viewMoviesButton.setToolTipText("");
+=======
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         viewMoviesButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 viewMoviesButtonActionPerformed(evt);
@@ -223,7 +239,10 @@ public class AdminHome extends javax.swing.JFrame {
         jLabel10.setBounds(380, 40, 200, 200);
 
         viewUsersButton.setText("View Users");
+<<<<<<< HEAD
         viewUsersButton.setToolTipText("");
+=======
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         viewUsersButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 viewUsersButtonActionPerformed(evt);
@@ -233,7 +252,10 @@ public class AdminHome extends javax.swing.JFrame {
         viewUsersButton.setBounds(410, 250, 140, 40);
 
         viewProfileButton.setText("View Profile");
+<<<<<<< HEAD
         viewProfileButton.setToolTipText("");
+=======
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         viewProfileButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 viewProfileButtonActionPerformed(evt);
@@ -291,6 +313,17 @@ public class AdminHome extends javax.swing.JFrame {
         });
         jMenuBar1.add(adminProfileMenu);
 
+<<<<<<< HEAD
+=======
+        adminHelpMenu.setText("Help");
+        adminHelpMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                adminHelpMenuMouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(adminHelpMenu);
+
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         adminExitMenu.setText("Exit");
         adminExitMenu.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -352,6 +385,14 @@ public class AdminHome extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_adminProfileMenuMouseClicked
 
+<<<<<<< HEAD
+=======
+    private void adminHelpMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminHelpMenuMouseClicked
+        Function.goToAdminHelpScreen(UserID);
+        this.setVisible(false);
+    }//GEN-LAST:event_adminHelpMenuMouseClicked
+
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
     private void adminExitMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminExitMenuMouseClicked
         int choice = JOptionPane.showConfirmDialog(rootPane, "Are you sure you want to exit?");
         if (choice == 0) {
@@ -408,6 +449,10 @@ public class AdminHome extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField TotalSalesTxt;
     private javax.swing.JMenu adminExitMenu;
+<<<<<<< HEAD
+=======
+    private javax.swing.JMenu adminHelpMenu;
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
     private javax.swing.JMenu adminHomeMenu;
     private javax.swing.JMenu adminLogoutMenu;
     private javax.swing.JMenu adminMoviesMenu;

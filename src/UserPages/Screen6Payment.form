@@ -48,6 +48,7 @@
         </Menu>
         <Menu class="javax.swing.JMenu" name="jMenu2">
           <Properties>
+<<<<<<< HEAD
             <Property name="text" type="java.lang.String" value="Help "/>
           </Properties>
           <SubComponents>
@@ -67,12 +68,27 @@
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
                   <KeyStroke key="F2"/>
                 </Property>
+=======
+            <Property name="text" type="java.lang.String" value="Help &amp; About"/>
+          </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem4">
+              <Properties>
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
                 <Property name="text" type="java.lang.String" value="About"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem4ActionPerformed"/>
               </Events>
             </MenuItem>
+<<<<<<< HEAD
+=======
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem5">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="FAQ"/>
+              </Properties>
+            </MenuItem>
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
             <MenuItem class="javax.swing.JPopupMenu$Separator" name="jSeparator2">
             </MenuItem>
           </SubComponents>
@@ -82,9 +98,21 @@
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
+<<<<<<< HEAD
     <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
       <Dimension value="[345, 370]"/>
     </Property>
+=======
+    <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+      <Dimension value="[345, 370]"/>
+    </Property>
+    <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+      <Dimension value="[345, 370]"/>
+    </Property>
+    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+      <Dimension value="[345, 370]"/>
+    </Property>
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
     <Property name="size" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
       <Dimension value="[430, 230]"/>
     </Property>
@@ -170,7 +198,10 @@
                     <StringItem index="4" value="American Express"/>
                   </StringArray>
                 </Property>
+<<<<<<< HEAD
                 <Property name="toolTipText" type="java.lang.String" value="Choose your card type"/>
+=======
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -190,7 +221,10 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Card Number"/>
+<<<<<<< HEAD
                 <Property name="toolTipText" type="java.lang.String" value="Your card number"/>
+=======
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
               </Properties>
               <Events>
                 <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txfCardNumberFocusLost"/>
@@ -211,7 +245,10 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Expiration MM-YY"/>
+<<<<<<< HEAD
                 <Property name="toolTipText" type="java.lang.String" value="Your card expiry date(e.g MM-YY(10-20))"/>
+=======
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
               </Properties>
               <Events>
                 <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txfExpirationFocusLost"/>
@@ -232,7 +269,10 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Confirm"/>
+<<<<<<< HEAD
                 <Property name="toolTipText" type="java.lang.String" value="Proceed"/>
+=======
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnConfirmActionPerformed"/>
@@ -252,7 +292,10 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="CSC (3 digits)"/>
+<<<<<<< HEAD
                 <Property name="toolTipText" type="java.lang.String" value="Your card CSC"/>
+=======
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
               </Properties>
               <Events>
                 <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txfCSCFocusLost"/>

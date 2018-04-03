@@ -48,12 +48,23 @@ public class Screen6Payment extends javax.swing.JFrame {
         mnuExit = new javax.swing.JMenuItem();
         jSeparator3 = new javax.swing.JPopupMenu.Separator();
         jMenu2 = new javax.swing.JMenu();
+<<<<<<< HEAD
         jMenuItem5 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
         jSeparator2 = new javax.swing.JPopupMenu.Separator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(345, 370));
+=======
+        jMenuItem4 = new javax.swing.JMenuItem();
+        jMenuItem5 = new javax.swing.JMenuItem();
+        jSeparator2 = new javax.swing.JPopupMenu.Separator();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(345, 370));
+        setMinimumSize(new java.awt.Dimension(345, 370));
+        setPreferredSize(new java.awt.Dimension(345, 370));
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         setSize(new java.awt.Dimension(430, 230));
         getContentPane().setLayout(null);
 
@@ -61,21 +72,33 @@ public class Screen6Payment extends javax.swing.JFrame {
         jPanel1.setLayout(null);
 
         jPanel2.setBackground(new java.awt.Color(51, 51, 51));
+<<<<<<< HEAD
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Payment Details", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(255, 255, 255))); // NOI18N
+=======
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Payment Details", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Lucida Grande", 0, 13), new java.awt.Color(255, 255, 255))); // NOI18N
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         jPanel2.setForeground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(null);
 
         cbxCardType.setBackground(new java.awt.Color(51, 102, 255));
         cbxCardType.setForeground(new java.awt.Color(255, 255, 255));
         cbxCardType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Card type", "Visa", "Mastercard", "Discover", "American Express" }));
+<<<<<<< HEAD
         cbxCardType.setToolTipText("Choose your card type");
         jPanel2.add(cbxCardType);
         cbxCardType.setBounds(20, 30, 140, 24);
+=======
+        jPanel2.add(cbxCardType);
+        cbxCardType.setBounds(20, 30, 140, 27);
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
 
         txfCardNumber.setBackground(new java.awt.Color(0, 0, 0));
         txfCardNumber.setForeground(new java.awt.Color(255, 255, 255));
         txfCardNumber.setText("Card Number");
+<<<<<<< HEAD
         txfCardNumber.setToolTipText("Your card number");
+=======
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         txfCardNumber.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 txfCardNumberFocusLost(evt);
@@ -92,7 +115,10 @@ public class Screen6Payment extends javax.swing.JFrame {
         txfExpiration.setBackground(new java.awt.Color(0, 0, 0));
         txfExpiration.setForeground(new java.awt.Color(255, 255, 255));
         txfExpiration.setText("Expiration MM-YY");
+<<<<<<< HEAD
         txfExpiration.setToolTipText("Your card expiry date(e.g MM-YY(10-20))");
+=======
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         txfExpiration.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 txfExpirationFocusLost(evt);
@@ -109,19 +135,29 @@ public class Screen6Payment extends javax.swing.JFrame {
         btnConfirm.setBackground(new java.awt.Color(51, 102, 255));
         btnConfirm.setForeground(new java.awt.Color(255, 255, 255));
         btnConfirm.setText("Confirm");
+<<<<<<< HEAD
         btnConfirm.setToolTipText("Proceed");
+=======
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         btnConfirm.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnConfirmActionPerformed(evt);
             }
         });
         jPanel2.add(btnConfirm);
+<<<<<<< HEAD
         btnConfirm.setBounds(20, 170, 110, 25);
+=======
+        btnConfirm.setBounds(20, 170, 110, 29);
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
 
         txfCSC.setBackground(new java.awt.Color(0, 0, 0));
         txfCSC.setForeground(new java.awt.Color(255, 255, 255));
         txfCSC.setText("CSC (3 digits)");
+<<<<<<< HEAD
         txfCSC.setToolTipText("Your card CSC");
+=======
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         txfCSC.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 txfCSCFocusLost(evt);
@@ -173,6 +209,7 @@ public class Screen6Payment extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
+<<<<<<< HEAD
         jMenu2.setText("Help ");
 
         jMenuItem5.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1, 0));
@@ -185,6 +222,10 @@ public class Screen6Payment extends javax.swing.JFrame {
         jMenu2.add(jMenuItem5);
 
         jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F2, 0));
+=======
+        jMenu2.setText("Help & About");
+
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         jMenuItem4.setText("About");
         jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -192,6 +233,12 @@ public class Screen6Payment extends javax.swing.JFrame {
             }
         });
         jMenu2.add(jMenuItem4);
+<<<<<<< HEAD
+=======
+
+        jMenuItem5.setText("FAQ");
+        jMenu2.add(jMenuItem5);
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         jMenu2.add(jSeparator2);
 
         jMenuBar1.add(jMenu2);
@@ -212,7 +259,10 @@ public class Screen6Payment extends javax.swing.JFrame {
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         // TODO add your handling code here:
+<<<<<<< HEAD
         new AboutScreen().setVisible(true);
+=======
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void mnuReserveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuReserveActionPerformed
@@ -280,11 +330,14 @@ public class Screen6Payment extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_txfCSCMouseClicked
 
+<<<<<<< HEAD
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
         // TODO add your handling code here:
         new HelpScreen().setVisible(true);
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
+=======
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
     /**
      * @param args the command line arguments
      */

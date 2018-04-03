@@ -114,14 +114,26 @@ public class Screen3_1ForgotPassword extends javax.swing.JFrame {
         mnuExit = new javax.swing.JMenuItem();
         jSeparator3 = new javax.swing.JPopupMenu.Separator();
         jMenu2 = new javax.swing.JMenu();
+<<<<<<< HEAD
         jMenuItem5 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
+=======
+        jMenuItem4 = new javax.swing.JMenuItem();
+        jMenuItem5 = new javax.swing.JMenuItem();
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         jSeparator2 = new javax.swing.JPopupMenu.Separator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Password Recovery");
+<<<<<<< HEAD
         setMinimumSize(new java.awt.Dimension(500, 369));
         setName("Password Recovery"); // NOI18N
+=======
+        setMaximumSize(new java.awt.Dimension(500, 369));
+        setMinimumSize(new java.awt.Dimension(500, 369));
+        setName("Password Recovery"); // NOI18N
+        setPreferredSize(new java.awt.Dimension(500, 369));
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         setResizable(false);
         setSize(new java.awt.Dimension(546, 411));
         getContentPane().setLayout(null);
@@ -131,7 +143,10 @@ public class Screen3_1ForgotPassword extends javax.swing.JFrame {
         jPn2.setLayout(null);
 
         lblUsername.setText("<Username>");
+<<<<<<< HEAD
         lblUsername.setToolTipText("Your username");
+=======
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         jPn2.add(lblUsername);
         lblUsername.setBounds(12, 177, 210, 30);
 
@@ -140,7 +155,10 @@ public class Screen3_1ForgotPassword extends javax.swing.JFrame {
         jLabel5.setBounds(12, 162, 220, 15);
 
         btnSubmit2.setText("Submit");
+<<<<<<< HEAD
         btnSubmit2.setToolTipText("Click to submit");
+=======
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         btnSubmit2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSubmit2ActionPerformed(evt);
@@ -155,7 +173,10 @@ public class Screen3_1ForgotPassword extends javax.swing.JFrame {
 
         txfName.setBackground(new java.awt.Color(0, 0, 0));
         txfName.setForeground(new java.awt.Color(255, 255, 255));
+<<<<<<< HEAD
         txfName.setToolTipText("Your name");
+=======
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         txfName.setMaximumSize(new java.awt.Dimension(4, 19));
         jPn2.add(txfName);
         txfName.setBounds(90, 19, 130, 30);
@@ -166,7 +187,10 @@ public class Screen3_1ForgotPassword extends javax.swing.JFrame {
 
         txfSurname.setBackground(new java.awt.Color(0, 0, 0));
         txfSurname.setForeground(new java.awt.Color(255, 255, 255));
+<<<<<<< HEAD
         txfSurname.setToolTipText("Your surname");
+=======
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         jPn2.add(txfSurname);
         txfSurname.setBounds(90, 59, 130, 30);
 
@@ -176,7 +200,10 @@ public class Screen3_1ForgotPassword extends javax.swing.JFrame {
 
         txfPassword.setBackground(new java.awt.Color(0, 0, 0));
         txfPassword.setForeground(new java.awt.Color(255, 255, 255));
+<<<<<<< HEAD
         txfPassword.setToolTipText("Your password");
+=======
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         jPn2.add(txfPassword);
         txfPassword.setBounds(90, 99, 130, 30);
 
@@ -188,7 +215,10 @@ public class Screen3_1ForgotPassword extends javax.swing.JFrame {
         jPn1.setLayout(null);
 
         btnSubmit1.setText("Submit");
+<<<<<<< HEAD
         btnSubmit1.setToolTipText("Click to submit");
+=======
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         btnSubmit1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSubmit1ActionPerformed(evt);
@@ -198,7 +228,10 @@ public class Screen3_1ForgotPassword extends javax.swing.JFrame {
         btnSubmit1.setBounds(140, 140, 80, 25);
 
         lblPassword.setText("<Password>");
+<<<<<<< HEAD
         lblPassword.setToolTipText("Your password");
+=======
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         jPn1.add(lblPassword);
         lblPassword.setBounds(12, 177, 210, 30);
 
@@ -212,7 +245,10 @@ public class Screen3_1ForgotPassword extends javax.swing.JFrame {
 
         txfUsername.setBackground(new java.awt.Color(0, 0, 0));
         txfUsername.setForeground(new java.awt.Color(255, 255, 255));
+<<<<<<< HEAD
         txfUsername.setToolTipText("Your email address(e.g mbizasive@gamil.com)");
+=======
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         jPn1.add(txfUsername);
         txfUsername.setBounds(80, 19, 140, 30);
 
@@ -226,7 +262,10 @@ public class Screen3_1ForgotPassword extends javax.swing.JFrame {
 
         txfSecQuest.setBackground(new java.awt.Color(0, 0, 0));
         txfSecQuest.setForeground(new java.awt.Color(255, 255, 255));
+<<<<<<< HEAD
         txfSecQuest.setToolTipText("Your security question answer");
+=======
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         jPn1.add(txfSecQuest);
         txfSecQuest.setBounds(10, 99, 210, 30);
 
@@ -235,7 +274,10 @@ public class Screen3_1ForgotPassword extends javax.swing.JFrame {
 
         rbtnPassword.setForeground(new java.awt.Color(255, 255, 255));
         rbtnPassword.setText("Forgot Password?");
+<<<<<<< HEAD
         rbtnPassword.setToolTipText("Forgot your password?, check here");
+=======
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
 
         org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, buttonGroup1, org.jdesktop.beansbinding.ELProperty.create("${selection.selected}"), rbtnPassword, org.jdesktop.beansbinding.BeanProperty.create("selected"));
         bindingGroup.addBinding(binding);
@@ -250,7 +292,10 @@ public class Screen3_1ForgotPassword extends javax.swing.JFrame {
 
         rbtnUsername.setForeground(new java.awt.Color(255, 255, 255));
         rbtnUsername.setText("Forgot Username?");
+<<<<<<< HEAD
         rbtnUsername.setToolTipText("Forgot username?, check here");
+=======
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
 
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, buttonGroup1, org.jdesktop.beansbinding.ELProperty.create("${selection.selected}"), rbtnUsername, org.jdesktop.beansbinding.BeanProperty.create("selected"));
         bindingGroup.addBinding(binding);
@@ -271,7 +316,10 @@ public class Screen3_1ForgotPassword extends javax.swing.JFrame {
         btnClear.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         btnClear.setForeground(new java.awt.Color(255, 255, 255));
         btnClear.setText("Clear");
+<<<<<<< HEAD
         btnClear.setToolTipText("Clear everything");
+=======
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         btnClear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnClearActionPerformed(evt);
@@ -284,7 +332,10 @@ public class Screen3_1ForgotPassword extends javax.swing.JFrame {
         btnBack.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         btnBack.setForeground(new java.awt.Color(255, 255, 255));
         btnBack.setText("Back");
+<<<<<<< HEAD
         btnBack.setToolTipText("Go to previous screen");
+=======
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackActionPerformed(evt);
@@ -297,7 +348,10 @@ public class Screen3_1ForgotPassword extends javax.swing.JFrame {
         btnLogin.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         btnLogin.setForeground(new java.awt.Color(255, 255, 255));
         btnLogin.setText("Login");
+<<<<<<< HEAD
         btnLogin.setToolTipText("Log in to your account");
+=======
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         btnLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLoginActionPerformed(evt);
@@ -310,7 +364,10 @@ public class Screen3_1ForgotPassword extends javax.swing.JFrame {
         btnExit.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         btnExit.setForeground(new java.awt.Color(255, 255, 255));
         btnExit.setText("Exit");
+<<<<<<< HEAD
         btnExit.setToolTipText("Exit the program");
+=======
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         btnExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnExitActionPerformed(evt);
@@ -354,6 +411,7 @@ public class Screen3_1ForgotPassword extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
+<<<<<<< HEAD
         jMenu2.setText("Help ");
 
         jMenuItem5.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1, 0));
@@ -366,6 +424,10 @@ public class Screen3_1ForgotPassword extends javax.swing.JFrame {
         jMenu2.add(jMenuItem5);
 
         jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F2, 0));
+=======
+        jMenu2.setText("Help & About");
+
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         jMenuItem4.setText("About");
         jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -373,6 +435,12 @@ public class Screen3_1ForgotPassword extends javax.swing.JFrame {
             }
         });
         jMenu2.add(jMenuItem4);
+<<<<<<< HEAD
+=======
+
+        jMenuItem5.setText("FAQ");
+        jMenu2.add(jMenuItem5);
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
         jMenu2.add(jSeparator2);
 
         jMenuBar1.add(jMenu2);
@@ -474,7 +542,10 @@ public class Screen3_1ForgotPassword extends javax.swing.JFrame {
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         // TODO add your handling code here:
+<<<<<<< HEAD
         new AboutScreen().setVisible(true);
+=======
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void btnSubmit2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmit2ActionPerformed
@@ -555,11 +626,14 @@ public class Screen3_1ForgotPassword extends javax.swing.JFrame {
         btnSubmit2.setForeground(Color.gray);
     }//GEN-LAST:event_rbtnPasswordMouseClicked
 
+<<<<<<< HEAD
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
         // TODO add your handling code here:
         new HelpScreen().setVisible(true);
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
+=======
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
     /**
      * @param args the command line arguments
      */

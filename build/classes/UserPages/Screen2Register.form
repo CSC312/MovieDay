@@ -37,6 +37,7 @@
         </Menu>
         <Menu class="javax.swing.JMenu" name="jMenu2">
           <Properties>
+<<<<<<< HEAD
             <Property name="text" type="java.lang.String" value="Help"/>
           </Properties>
           <SubComponents>
@@ -56,12 +57,27 @@
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
                   <KeyStroke key="F2"/>
                 </Property>
+=======
+            <Property name="text" type="java.lang.String" value="Help &amp; About"/>
+          </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem4">
+              <Properties>
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
                 <Property name="text" type="java.lang.String" value="About"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem4ActionPerformed"/>
               </Events>
             </MenuItem>
+<<<<<<< HEAD
+=======
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem5">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="FAQ"/>
+              </Properties>
+            </MenuItem>
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
             <MenuItem class="javax.swing.JPopupMenu$Separator" name="jSeparator2">
             </MenuItem>
           </SubComponents>
@@ -74,10 +90,22 @@
     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
       <Color blue="33" green="33" red="33" type="rgb"/>
     </Property>
+<<<<<<< HEAD
+=======
+    <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+      <Dimension value="[823, 431]"/>
+    </Property>
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
     <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
       <Dimension value="[823, 431]"/>
     </Property>
     <Property name="name" type="java.lang.String" value="Registration" noResource="true"/>
+<<<<<<< HEAD
+=======
+    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+      <Dimension value="[823, 431]"/>
+    </Property>
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
     <Property name="resizable" type="boolean" value="false"/>
   </Properties>
   <SyntheticProperties>
@@ -140,7 +168,10 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Submit"/>
+<<<<<<< HEAD
             <Property name="toolTipText" type="java.lang.String" value="Click to submit"/>
+=======
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSubmitActionPerformed"/>
@@ -163,7 +194,10 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Back"/>
+<<<<<<< HEAD
             <Property name="toolTipText" type="java.lang.String" value="Go to previous screen"/>
+=======
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBackActionPerformed"/>
@@ -186,7 +220,10 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Clear"/>
+<<<<<<< HEAD
             <Property name="toolTipText" type="java.lang.String" value="Go to the next screen"/>
+=======
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnClearActionPerformed"/>
@@ -208,7 +245,10 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
             </Property>
+<<<<<<< HEAD
             <Property name="toolTipText" type="java.lang.String" value="A security question in case you forget your password"/>
+=======
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
               <Dimension value="[4, 19]"/>
             </Property>
@@ -282,7 +322,10 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
+<<<<<<< HEAD
             <Property name="toolTipText" type="java.lang.String" value="Enter your name"/>
+=======
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txfNameActionPerformed"/>
@@ -317,7 +360,10 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
             </Property>
+<<<<<<< HEAD
             <Property name="toolTipText" type="java.lang.String" value="Enter your surname"/>
+=======
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -349,7 +395,11 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
             </Property>
+<<<<<<< HEAD
             <Property name="toolTipText" type="java.lang.String" value="Your email address(e.g mbizasive@gmail.com)"/>
+=======
+            <Property name="toolTipText" type="java.lang.String" value=""/>
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
               <Dimension value="[4, 19]"/>
             </Property>
@@ -385,7 +435,11 @@
               <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
             </Property>
             <Property name="text" type="java.lang.String" value="YYYY-MM-DD"/>
+<<<<<<< HEAD
             <Property name="toolTipText" type="java.lang.String" value="Date of birth(e.g 1999-10-03)"/>
+=======
+            <Property name="toolTipText" type="java.lang.String" value=""/>
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
               <Dimension value="[4, 19]"/>
             </Property>
@@ -405,7 +459,10 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Password:"/>
+<<<<<<< HEAD
             <Property name="toolTipText" type="java.lang.String" value="Your password"/>
+=======
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -435,7 +492,10 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Generate new password"/>
+<<<<<<< HEAD
             <Property name="toolTipText" type="java.lang.String" value="Click to generate a password"/>
+=======
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNewPassActionPerformed"/>
@@ -476,7 +536,10 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Login"/>
+<<<<<<< HEAD
             <Property name="toolTipText" type="java.lang.String" value="Log in to your account"/>
+=======
+>>>>>>> 3bc0e0938838a685967f42153c5a8d9cc784ef09
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLoginActionPerformed"/>
