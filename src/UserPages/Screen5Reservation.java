@@ -707,7 +707,7 @@ public class Screen5Reservation extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane, "You need to select at least 1 seat");
         } else {
 
-            String seatsList = lblUserSeats.getText().substring(12);
+            String seatsList = lblUserSeats.getText();
             String seatsArray[] = seatsList.split(",");
             int choice = JOptionPane.showConfirmDialog(rootPane, "Are you sure you want to reserve these seats?");
             if (choice == 0) {
@@ -761,7 +761,7 @@ public class Screen5Reservation extends javax.swing.JFrame {
                         + "Time: " + time + "\n"
                         + "Seats: " + lblUserSeats.getText() + "\n"
                         + "Total Amount: " + price);
-                new Screen6Payment(price, seatsList).setVisible(true);
+                new Screen6Payment(price, seatsList, UserID).setVisible(true);
                 this.setVisible(false);
 
             } else {
