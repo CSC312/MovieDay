@@ -12,10 +12,13 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.Vector;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.ListModel;
 import javax.swing.table.DefaultTableModel;
+import movieday.AdminMoviesScreen;
 import movieday.Function;
 
 /**
@@ -41,36 +44,33 @@ public class Screen7_1UsersMovies extends javax.swing.JFrame {
 
     Function funct = new Function();
 
-    public Screen7_1UsersMovies() {
+    public Screen7_1UsersMovies(int usrID) {
         initComponents();
         this.setLocationRelativeTo(null);
-        btnBack.setBackground(Color.blue);
         btnCancelRes.setBackground(Color.blue);
         btnExit.setBackground(Color.blue);
 
+        UserID = usrID;
         try {
             Class.forName(jdbcDriver);
             c = funct.getConnection();
             //Populate Movies Table
-            PreparedStatement statement = c.prepareStatement("SELECT m.Title \n"
+            PreparedStatement statement = c.prepareStatement("SELECT m.Title, m.Year, m.Description, m.Length \n"
                     + "FROM Reservation r\n"
                     + "LEFT JOIN Movie m\n"
                     + "ON m.MovieID = r.MovieID\n"
                     + "LEFT JOIN `User` u\n"
                     + "ON u.UserID = r.UserID\n"
-                    + "where u.UserID = ? \n"
-                    + "Group by r.ReservationID\n"
-                    + ";\n"
-                    + "");
-            statement.setInt(1, UserID);
+                    + "where u.UserID = "
+                    + 1
+                    + " \n"
+                    + "Group by r.ReservationID\n");
+            //statement.setInt(1, UserID);
             res = statement.executeQuery();
             meta = res.getMetaData();
             // It creates and displays the table
-            Vector<String> temp = new Vector<String>();
-            while(res.next()){
-                temp.add(res.getString("Title"));
-            }
-            lstMovieList = new JList(temp);
+            model = Function.buildTableModel(res);
+            tblMovies.setModel(model);
         } catch (ClassNotFoundException | SQLException ex) {
             JOptionPane.showMessageDialog(rootPane, "Oops. Something went wrong. Please contact the systems developer.");
             System.out.println("Screen 4 Error: " + ex.getMessage());
@@ -87,20 +87,12 @@ public class Screen7_1UsersMovies extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        lblLength = new javax.swing.JLabel();
-        lblMovie = new javax.swing.JLabel();
-        lblSeats = new javax.swing.JLabel();
-        lblTime = new javax.swing.JLabel();
-        lblGenre = new javax.swing.JLabel();
-        lblYear = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        lstMovieList = new javax.swing.JList();
-        btnBack = new javax.swing.JButton();
+        tblMovies = new javax.swing.JTable();
+        jPanel3 = new javax.swing.JPanel();
         btnCancelRes = new javax.swing.JButton();
         btnExit = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         mnuReserve = new javax.swing.JMenuItem();
@@ -117,82 +109,56 @@ public class Screen7_1UsersMovies extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(null);
 
-        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "About Movie", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(255, 255, 255))); // NOI18N
-        jPanel1.setLayout(null);
-
-        lblLength.setForeground(new java.awt.Color(255, 255, 255));
-        lblLength.setText("Length");
-        jPanel1.add(lblLength);
-        lblLength.setBounds(17, 113, 280, 15);
-
-        lblMovie.setForeground(new java.awt.Color(255, 255, 255));
-        lblMovie.setText("Movie name");
-        jPanel1.add(lblMovie);
-        lblMovie.setBounds(17, 29, 280, 15);
-
-        lblSeats.setForeground(new java.awt.Color(255, 255, 255));
-        lblSeats.setText("Your seats");
-        jPanel1.add(lblSeats);
-        lblSeats.setBounds(17, 134, 280, 15);
-
-        lblTime.setForeground(new java.awt.Color(255, 255, 255));
-        lblTime.setText("Time(s)");
-        jPanel1.add(lblTime);
-        lblTime.setBounds(17, 50, 280, 15);
-
-        lblGenre.setForeground(new java.awt.Color(255, 255, 255));
-        lblGenre.setText("Genre(s)");
-        jPanel1.add(lblGenre);
-        lblGenre.setBounds(17, 71, 280, 15);
-
-        lblYear.setForeground(new java.awt.Color(255, 255, 255));
-        lblYear.setText("Year");
-        jPanel1.add(lblYear);
-        lblYear.setBounds(17, 92, 280, 15);
-
-        getContentPane().add(jPanel1);
-        jPanel1.setBounds(210, 20, 310, 170);
-
         jPanel2.setBackground(new java.awt.Color(51, 51, 51));
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Movie List", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(255, 255, 255))); // NOI18N
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Movie List", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Lucida Grande", 0, 13), new java.awt.Color(255, 255, 255))); // NOI18N
         jPanel2.setLayout(null);
 
-        lstMovieList.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
-        });
-        lstMovieList.setToolTipText("List of movies");
-        jScrollPane1.setViewportView(lstMovieList);
+        tblMovies.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(tblMovies);
 
         jPanel2.add(jScrollPane1);
-        jScrollPane1.setBounds(17, 29, 137, 241);
+        jScrollPane1.setBounds(30, 20, 490, 240);
 
         getContentPane().add(jPanel2);
-        jPanel2.setBounds(10, 20, 170, 287);
+        jPanel2.setBounds(10, 20, 550, 287);
 
-        btnBack.setForeground(new java.awt.Color(255, 255, 255));
-        btnBack.setText("Back");
-        btnBack.setToolTipText("Go to previous screen");
-        getContentPane().add(btnBack);
-        btnBack.setBounds(370, 240, 70, 25);
+        jPanel3.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel3.setLayout(null);
 
         btnCancelRes.setForeground(new java.awt.Color(255, 255, 255));
         btnCancelRes.setText("Cancel Reservation");
         btnCancelRes.setToolTipText("Cancel this reservation");
-        getContentPane().add(btnCancelRes);
-        btnCancelRes.setBounds(370, 200, 150, 25);
+        btnCancelRes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelResActionPerformed(evt);
+            }
+        });
+        jPanel3.add(btnCancelRes);
+        btnCancelRes.setBounds(130, 310, 150, 40);
 
         btnExit.setForeground(new java.awt.Color(255, 255, 255));
         btnExit.setText("Exit");
         btnExit.setToolTipText("Exit the program");
-        getContentPane().add(btnExit);
-        btnExit.setBounds(460, 240, 60, 25);
+        btnExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExitActionPerformed(evt);
+            }
+        });
+        jPanel3.add(btnExit);
+        btnExit.setBounds(300, 310, 90, 40);
 
-        jPanel3.setBackground(new java.awt.Color(51, 51, 51));
         getContentPane().add(jPanel3);
-        jPanel3.setBounds(0, 0, 560, 340);
+        jPanel3.setBounds(0, 0, 610, 370);
 
         jMenu1.setText("Menu");
 
@@ -255,7 +221,7 @@ public class Screen7_1UsersMovies extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void mnuReserveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuReserveActionPerformed
-        new Screen7_1UsersMovies().setVisible(true);
+        new Screen7_1UsersMovies(UserID).setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_mnuReserveActionPerformed
 
@@ -277,6 +243,35 @@ public class Screen7_1UsersMovies extends javax.swing.JFrame {
         // TODO add your handling code here:
         new HelpScreen().setVisible(true);
     }//GEN-LAST:event_jMenuItem5ActionPerformed
+
+    private void btnCancelResActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelResActionPerformed
+        int choice = JOptionPane.showConfirmDialog(rootPane, "Are you sure you want to cancel the reservation?");
+        if (choice == 0) {
+            int row = tblMovies.getSelectedRow();
+            int selected = Integer.parseInt(model.getValueAt(row, 0).toString());
+            //System.out.println(selected);
+            model.removeRow(row);
+
+            String sql = "delete from Reservation where ReservationID= ?";
+            try {
+                PreparedStatement stmt = c.prepareStatement(sql);
+                stmt.setInt(1, selected);
+                stmt.executeUpdate();
+            } catch (SQLException ex) {
+                Logger.getLogger(AdminMoviesScreen.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            JOptionPane.showMessageDialog(rootPane, "Reservations Deleted Successfully.");
+        }
+
+    }//GEN-LAST:event_btnCancelResActionPerformed
+
+    private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
+        int choice = JOptionPane.showConfirmDialog(rootPane, "Are you sure you want to exit?");
+        if(choice ==0){
+            System.exit(0);
+        }
+
+    }//GEN-LAST:event_btnExitActionPerformed
 
     /**
      * @param args the command line arguments
@@ -308,13 +303,12 @@ public class Screen7_1UsersMovies extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Screen7_1UsersMovies().setVisible(true);
+                new Screen7_1UsersMovies(UserID).setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnBack;
     private javax.swing.JButton btnCancelRes;
     private javax.swing.JButton btnExit;
     private javax.swing.JMenu jMenu1;
@@ -323,20 +317,13 @@ public class Screen7_1UsersMovies extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPopupMenu.Separator jSeparator2;
     private javax.swing.JPopupMenu.Separator jSeparator3;
-    private javax.swing.JLabel lblGenre;
-    private javax.swing.JLabel lblLength;
-    private javax.swing.JLabel lblMovie;
-    private javax.swing.JLabel lblSeats;
-    private javax.swing.JLabel lblTime;
-    private javax.swing.JLabel lblYear;
-    private javax.swing.JList lstMovieList;
     private javax.swing.JMenuItem mnuExit;
     private javax.swing.JMenuItem mnuReserve;
+    private javax.swing.JTable tblMovies;
     // End of variables declaration//GEN-END:variables
 }

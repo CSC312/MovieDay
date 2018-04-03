@@ -287,7 +287,7 @@ public class Screen4_MovieReservations extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        new Screen7_1UsersMovies().setVisible(true);
+        new Screen7_1UsersMovies(UserID).setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 

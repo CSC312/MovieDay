@@ -1164,7 +1164,7 @@ public class Screen5Reservation extends javax.swing.JFrame {
     }//GEN-LAST:event_btnE1ActionPerformed
 
     private void mnuReserveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuReserveActionPerformed
-        new Screen7_1UsersMovies().setVisible(true);
+        new Screen7_1UsersMovies(UserID).setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_mnuReserveActionPerformed
 

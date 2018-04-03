@@ -216,7 +216,7 @@ public class Screen6Payment extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void mnuReserveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuReserveActionPerformed
-        new Screen7_1UsersMovies().setVisible(true);
+        new Screen7_1UsersMovies(UserID).setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_mnuReserveActionPerformed
 
