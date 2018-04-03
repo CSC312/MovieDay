@@ -62,7 +62,7 @@ public class Screen7_1UsersMovies extends javax.swing.JFrame {
                     + "LEFT JOIN `User` u\n"
                     + "ON u.UserID = r.UserID\n"
                     + "where u.UserID = "
-                    + 1
+                    + UserID
                     + " \n"
                     + "Group by r.ReservationID\n");
             //statement.setInt(1, UserID);
@@ -105,7 +105,8 @@ public class Screen7_1UsersMovies extends javax.swing.JFrame {
         jSeparator2 = new javax.swing.JPopupMenu.Separator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(545, 356));
+        setMinimumSize(new java.awt.Dimension(610, 400));
+        setPreferredSize(new java.awt.Dimension(610, 400));
         setResizable(false);
         getContentPane().setLayout(null);
 
