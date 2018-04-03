@@ -179,6 +179,11 @@ public class AdminHome extends javax.swing.JFrame {
         jLabel7.setBounds(30, 570, 150, 30);
 
         jButton2.setText("View Reports");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton2);
         jButton2.setBounds(180, 610, 160, 40);
 
@@ -366,6 +371,11 @@ public class AdminHome extends javax.swing.JFrame {
         new Screen1Home().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_adminLogoutMenuMouseClicked
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        Function.goToReportScreen(UserID);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
