@@ -33,16 +33,10 @@ public class Screen4_MovieReservations extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         UserID = usrID;
-        btnMovieName.setBackground(Color.BLUE);
-        btnTime.setBackground(Color.BLUE);
-        btnGenre.setBackground(Color.BLUE);
         btnReservation.setBackground(Color.BLUE);
         btnExit.setBackground(Color.BLUE);
 
-        btnMovieName.setForeground(Color.white);
         btnReservation.setForeground(Color.white);
-        btnTime.setForeground(Color.white);
-        btnGenre.setForeground(Color.white);
         btnExit.setForeground(Color.white);
 
         try {
@@ -66,10 +60,6 @@ public class Screen4_MovieReservations extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        btnMovieName = new javax.swing.JButton();
-        btnTime = new javax.swing.JButton();
-        btnGenre = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblMovies = new javax.swing.JTable();
@@ -96,49 +86,6 @@ public class Screen4_MovieReservations extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(830, 440));
         setResizable(false);
         getContentPane().setLayout(null);
-
-        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Sort By", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Lucida Grande", 0, 13), new java.awt.Color(255, 255, 255))); // NOI18N
-        jPanel1.setLayout(null);
-
-        btnMovieName.setBackground(new java.awt.Color(51, 102, 255));
-        btnMovieName.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        btnMovieName.setForeground(new java.awt.Color(255, 255, 255));
-        btnMovieName.setText("Movie name (A-z)");
-        btnMovieName.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnMovieNameActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnMovieName);
-        btnMovieName.setBounds(20, 30, 130, 40);
-
-        btnTime.setBackground(new java.awt.Color(51, 102, 255));
-        btnTime.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        btnTime.setForeground(new java.awt.Color(255, 255, 255));
-        btnTime.setText("Time");
-        btnTime.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnTimeActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnTime);
-        btnTime.setBounds(20, 70, 130, 40);
-
-        btnGenre.setBackground(new java.awt.Color(51, 102, 255));
-        btnGenre.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        btnGenre.setForeground(new java.awt.Color(255, 255, 255));
-        btnGenre.setText("Genre");
-        btnGenre.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGenreActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnGenre);
-        btnGenre.setBounds(20, 110, 130, 40);
-
-        getContentPane().add(jPanel1);
-        jPanel1.setBounds(10, 20, 160, 160);
 
         jPanel2.setBackground(new java.awt.Color(51, 51, 51));
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Movies", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Lucida Grande", 0, 13), new java.awt.Color(255, 255, 255))); // NOI18N
@@ -181,10 +128,10 @@ public class Screen4_MovieReservations extends javax.swing.JFrame {
         }
 
         jPanel2.add(jScrollPane1);
-        jScrollPane1.setBounds(20, 30, 601, 165);
+        jScrollPane1.setBounds(20, 30, 780, 165);
 
         getContentPane().add(jPanel2);
-        jPanel2.setBounds(180, 20, 640, 210);
+        jPanel2.setBounds(10, 20, 810, 210);
 
         jPanel3.setBackground(new java.awt.Color(51, 51, 51));
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Movie Description", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Lucida Grande", 0, 13), new java.awt.Color(255, 255, 255))); // NOI18N
@@ -216,7 +163,7 @@ public class Screen4_MovieReservations extends javax.swing.JFrame {
             }
         });
         jPanel4.add(btnExit);
-        btnExit.setBounds(670, 350, 140, 40);
+        btnExit.setBounds(670, 300, 140, 40);
 
         btnReservation.setBackground(new java.awt.Color(51, 102, 255));
         btnReservation.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
@@ -228,7 +175,7 @@ public class Screen4_MovieReservations extends javax.swing.JFrame {
             }
         });
         jPanel4.add(btnReservation);
-        btnReservation.setBounds(670, 300, 140, 40);
+        btnReservation.setBounds(670, 250, 140, 40);
 
         getContentPane().add(jPanel4);
         jPanel4.setBounds(0, 0, 840, 430);
@@ -331,18 +278,6 @@ public class Screen4_MovieReservations extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
-    private void btnMovieNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMovieNameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnMovieNameActionPerformed
-
-    private void btnTimeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTimeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnTimeActionPerformed
-
-    private void btnGenreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenreActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnGenreActionPerformed
-
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         new Screen7_1UsersMovies().setVisible(true);
         this.setVisible(false);
@@ -390,10 +325,7 @@ public class Screen4_MovieReservations extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnExit;
-    private javax.swing.JButton btnGenre;
-    private javax.swing.JButton btnMovieName;
     private javax.swing.JButton btnReservation;
-    private javax.swing.JButton btnTime;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
@@ -401,7 +333,6 @@ public class Screen4_MovieReservations extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;

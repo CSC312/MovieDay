@@ -15,12 +15,14 @@ public class Screen6Payment extends javax.swing.JFrame {
 
     static int price;
     static String seats;
+    static int UserID;
     
-    public Screen6Payment(int p, String seat) {
+    public Screen6Payment(int p, String seat, int usrID) {
         initComponents();
         this.setLocationRelativeTo(null);
          price = p;
         seats = seat;
+        UserID = usrID;
     }
 
     /**
@@ -61,7 +63,7 @@ public class Screen6Payment extends javax.swing.JFrame {
         jPanel1.setLayout(null);
 
         jPanel2.setBackground(new java.awt.Color(51, 51, 51));
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Payment Details", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 11), new java.awt.Color(255, 255, 255))); // NOI18N
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Payment Details", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Lucida Grande", 0, 13), new java.awt.Color(255, 255, 255))); // NOI18N
         jPanel2.setForeground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(null);
 
@@ -69,7 +71,7 @@ public class Screen6Payment extends javax.swing.JFrame {
         cbxCardType.setForeground(new java.awt.Color(255, 255, 255));
         cbxCardType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Card type", "Visa", "Mastercard", "Discover", "American Express" }));
         jPanel2.add(cbxCardType);
-        cbxCardType.setBounds(20, 30, 140, 24);
+        cbxCardType.setBounds(20, 30, 140, 27);
 
         txfCardNumber.setBackground(new java.awt.Color(0, 0, 0));
         txfCardNumber.setForeground(new java.awt.Color(255, 255, 255));
@@ -112,7 +114,7 @@ public class Screen6Payment extends javax.swing.JFrame {
             }
         });
         jPanel2.add(btnConfirm);
-        btnConfirm.setBounds(20, 170, 110, 25);
+        btnConfirm.setBounds(20, 170, 110, 29);
 
         txfCSC.setBackground(new java.awt.Color(0, 0, 0));
         txfCSC.setForeground(new java.awt.Color(255, 255, 255));
@@ -298,7 +300,7 @@ public class Screen6Payment extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Screen6Payment(price, seats).setVisible(true);
+                new Screen6Payment(price, seats, UserID).setVisible(true);
             }
         });
     }

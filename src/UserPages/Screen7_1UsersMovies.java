@@ -11,6 +11,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
+import java.util.Vector;
+import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.ListModel;
 import javax.swing.table.DefaultTableModel;
@@ -45,21 +47,35 @@ public class Screen7_1UsersMovies extends javax.swing.JFrame {
         btnBack.setBackground(Color.blue);
         btnCancelRes.setBackground(Color.blue);
         btnExit.setBackground(Color.blue);
-        
+
         try {
             Class.forName(jdbcDriver);
             c = funct.getConnection();
             //Populate Movies Table
-            PreparedStatement statement = c.prepareStatement("SELECT MovieID, Title, `Year`, `Length`, `Description`  FROM Movie;");
+            PreparedStatement statement = c.prepareStatement("SELECT m.Title \n"
+                    + "FROM Reservation r\n"
+                    + "LEFT JOIN Movie m\n"
+                    + "ON m.MovieID = r.MovieID\n"
+                    + "LEFT JOIN `User` u\n"
+                    + "ON u.UserID = r.UserID\n"
+                    + "where u.UserID = ? \n"
+                    + "Group by r.ReservationID\n"
+                    + ";\n"
+                    + "");
+            statement.setInt(1, UserID);
             res = statement.executeQuery();
             meta = res.getMetaData();
             // It creates and displays the table
-            model = Function.buildTableModel(res);
-            lstMovieList.setModel((ListModel) model);
+            Vector<String> temp = new Vector<String>();
+            while(res.next()){
+                temp.add(res.getString("Title"));
+            }
+            lstMovieList = new JList(temp);
         } catch (ClassNotFoundException | SQLException ex) {
             JOptionPane.showMessageDialog(rootPane, "Oops. Something went wrong. Please contact the systems developer.");
             System.out.println("Screen 4 Error: " + ex.getMessage());
         }
+
     }
 
     /**
