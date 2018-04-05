@@ -55,7 +55,7 @@ public class Screen7_1UsersMovies extends javax.swing.JFrame {
             Class.forName(jdbcDriver);
             c = funct.getConnection();
             //Populate Movies Table
-            PreparedStatement statement = c.prepareStatement("SELECT m.Title, m.Year, m.Description, m.Length \n"
+            PreparedStatement statement = c.prepareStatement("SELECT r.ReservationID, m.Title, m.Year, m.Description, m.Length \n"
                     + "FROM Reservation r\n"
                     + "LEFT JOIN Movie m\n"
                     + "ON m.MovieID = r.MovieID\n"

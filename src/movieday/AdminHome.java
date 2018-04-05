@@ -214,11 +214,11 @@ public class AdminHome extends javax.swing.JFrame {
         jPanel2.add(viewMoviesButton);
         viewMoviesButton.setBounds(100, 250, 140, 40);
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/movieday/images/Folder.jpg"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/movieday/images/m.png"))); // NOI18N
         jPanel2.add(jLabel4);
         jLabel4.setBounds(70, 40, 200, 200);
 
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/movieday/images/Folder.jpg"))); // NOI18N
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/movieday/images/u.png"))); // NOI18N
         jPanel2.add(jLabel10);
         jLabel10.setBounds(380, 40, 200, 200);
 
@@ -242,7 +242,7 @@ public class AdminHome extends javax.swing.JFrame {
         jPanel2.add(viewProfileButton);
         viewProfileButton.setBounds(710, 250, 140, 40);
 
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/movieday/images/Folder.jpg"))); // NOI18N
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/movieday/images/u.png"))); // NOI18N
         jPanel2.add(jLabel11);
         jLabel11.setBounds(680, 40, 200, 200);
 

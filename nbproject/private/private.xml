@@ -5,18 +5,19 @@
             <url>src/movieday/Function.java</url>
             <bookmark id="1">
                 <name/>
-                <line>144</line>
+                <line>150</line>
                 <key/>
             </bookmark>
         </file>
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/media/sive/5EC4A1B7C4A19237/New%20Folder/MovieDay/src/UserPages/Screen2Register.java</file>
-            <file>file:/media/sive/5EC4A1B7C4A19237/New%20Folder/MovieDay/src/UserPages/Screen1Home.java</file>
-            <file>file:/media/sive/5EC4A1B7C4A19237/New%20Folder/MovieDay/src/UserPages/AboutScreen.java</file>
-            <file>file:/media/sive/5EC4A1B7C4A19237/New%20Folder/MovieDay/src/UserPages/Screen7_1UsersMovies.java</file>
-            <file>file:/media/sive/5EC4A1B7C4A19237/New%20Folder/MovieDay/src/UserPages/HelpScreen.java</file>
+            <file>file:/Users/johnclaude/NetBeansProjects/MovieDay/src/movieday/AdminMoviesScreen.java</file>
+            <file>file:/Users/johnclaude/NetBeansProjects/MovieDay/src/UserPages/Screen7_1UsersMovies.java</file>
+            <file>file:/Users/johnclaude/NetBeansProjects/MovieDay/src/UserPages/Screen4_MovieReservations.java</file>
+            <file>file:/Users/johnclaude/NetBeansProjects/MovieDay/src/UserPages/Screen5Reservation.java</file>
+            <file>file:/Users/johnclaude/NetBeansProjects/MovieDay/src/movieday/AdminHome.java</file>
+            <file>file:/Users/johnclaude/NetBeansProjects/MovieDay/src/UserPages/Screen1Home.java</file>
         </group>
     </open-files>
 </project-private>

@@ -377,14 +377,14 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(null);
 
-        s1m1Image.setIcon(new javax.swing.ImageIcon(getClass().getResource("/movieday/images/Folder.jpg"))); // NOI18N
+        s1m1Image.setIcon(new javax.swing.ImageIcon(getClass().getResource("/movieday/images/m1.png"))); // NOI18N
         s1m1Image.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 s1m1ImageMouseClicked(evt);
             }
         });
         jPanel2.add(s1m1Image);
-        s1m1Image.setBounds(40, 80, 200, 180);
+        s1m1Image.setBounds(60, 80, 200, 180);
 
         jLabel2.setText("Length");
         jPanel2.add(jLabel2);
@@ -429,9 +429,9 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
         jPanel4.setLayout(null);
 
-        s1m3Image.setIcon(new javax.swing.ImageIcon(getClass().getResource("/movieday/images/Folder.jpg"))); // NOI18N
+        s1m3Image.setIcon(new javax.swing.ImageIcon(getClass().getResource("/movieday/images/m3.png"))); // NOI18N
         jPanel4.add(s1m3Image);
-        s1m3Image.setBounds(40, 80, 200, 180);
+        s1m3Image.setBounds(60, 80, 200, 180);
 
         jLabel9.setText("Length");
         jPanel4.add(jLabel9);
@@ -475,9 +475,9 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
         jPanel5.setBackground(new java.awt.Color(153, 153, 153));
         jPanel5.setLayout(null);
 
-        s1m2Image.setIcon(new javax.swing.ImageIcon(getClass().getResource("/movieday/images/Folder.jpg"))); // NOI18N
+        s1m2Image.setIcon(new javax.swing.ImageIcon(getClass().getResource("/movieday/images/m2.png"))); // NOI18N
         jPanel5.add(s1m2Image);
-        s1m2Image.setBounds(40, 80, 200, 180);
+        s1m2Image.setBounds(60, 80, 200, 180);
 
         jLabel13.setText("Length");
         jPanel5.add(jLabel13);
@@ -538,7 +538,7 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
         jPanel7.setBackground(new java.awt.Color(255, 255, 255));
         jPanel7.setLayout(null);
 
-        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/movieday/images/Folder.jpg"))); // NOI18N
+        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/movieday/images/m1.png"))); // NOI18N
         jPanel7.add(jLabel17);
         jLabel17.setBounds(40, 80, 200, 180);
 
@@ -577,7 +577,7 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
         jPanel8.setBackground(new java.awt.Color(255, 255, 255));
         jPanel8.setLayout(null);
 
-        jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/movieday/images/Folder.jpg"))); // NOI18N
+        jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/movieday/images/m3.png"))); // NOI18N
         jPanel8.add(jLabel23);
         jLabel23.setBounds(40, 80, 200, 180);
 
@@ -616,7 +616,7 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
         jPanel9.setBackground(new java.awt.Color(153, 153, 153));
         jPanel9.setLayout(null);
 
-        jLabel28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/movieday/images/Folder.jpg"))); // NOI18N
+        jLabel28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/movieday/images/m2.png"))); // NOI18N
         jPanel9.add(jLabel28);
         jLabel28.setBounds(40, 80, 200, 180);
 
@@ -675,7 +675,7 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
         jPanel12.setBackground(new java.awt.Color(255, 255, 255));
         jPanel12.setLayout(null);
 
-        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/movieday/images/Folder.jpg"))); // NOI18N
+        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/movieday/images/m1.png"))); // NOI18N
         jPanel12.add(jLabel18);
         jLabel18.setBounds(40, 80, 200, 180);
 
@@ -714,7 +714,7 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
         jPanel13.setBackground(new java.awt.Color(255, 255, 255));
         jPanel13.setLayout(null);
 
-        jLabel37.setIcon(new javax.swing.ImageIcon(getClass().getResource("/movieday/images/Folder.jpg"))); // NOI18N
+        jLabel37.setIcon(new javax.swing.ImageIcon(getClass().getResource("/movieday/images/m3.png"))); // NOI18N
         jPanel13.add(jLabel37);
         jLabel37.setBounds(40, 80, 200, 180);
 
@@ -753,7 +753,7 @@ public class AdminMoviesScreen extends javax.swing.JFrame {
         jPanel14.setBackground(new java.awt.Color(153, 153, 153));
         jPanel14.setLayout(null);
 
-        jLabel42.setIcon(new javax.swing.ImageIcon(getClass().getResource("/movieday/images/Folder.jpg"))); // NOI18N
+        jLabel42.setIcon(new javax.swing.ImageIcon(getClass().getResource("/movieday/images/m2.png"))); // NOI18N
         jPanel14.add(jLabel42);
         jLabel42.setBounds(40, 80, 200, 180);
 
